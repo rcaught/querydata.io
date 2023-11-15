@@ -1,9 +1,11 @@
 title: data.company.tools
 description_html: |-
-  <ul>
-    <li><a href="https://github.com/rcaught/data.company.tools" target="_blank">https://github.com/rcaught/data.company.tools</a></li>
-    <li><a href="https://www.linkedin.com/in/rcaught/" target="_blank">https://www.linkedin.com/in/rcaught/</a></li>
-  </ul>
+  - <a href="https://github.com/rcaught/data.company.tools" target="_blank">https://github.com/rcaught/data.company.tools</a></li>
+  <br />
+  - <a href="https://www.linkedin.com/in/rcaught/" target="_blank">https://www.linkedin.com/in/rcaught/</a></li>
+  <br />
+  <br />
+  This site employs heavy caching techniques that may result in unexpected results for dynamic SQL values, such as RANDOM() or DATE('now').
 plugins:
   datasette-block-robots:
     allow_only_index: true
