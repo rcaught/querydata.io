@@ -169,9 +169,9 @@ databases:
               tagNamespaceId = 'whats-new#general-products'
               and name = 'aws-fargate'
           )
-          SELECT * FROM whats_new WHERE id IN tags;
+          SELECT * FROM whats_new WHERE id IN tags ORDER BY postDateTime DESC LIMIT 100;
       whats_new_tags_category_updates:
-        title: What's new - updates by tag category (eg. databases)
+        title: What's new - updates by category tag (eg. databases)
         sql: |-
           WITH tags AS (
             SELECT
@@ -182,7 +182,7 @@ databases:
               tagNamespaceId = 'whats-new#marketing-marchitecture'
               and name = 'databases'
           )
-          SELECT * FROM whats_new WHERE id IN tags;
+          SELECT * FROM whats_new WHERE id IN tags ORDER BY postDateTime DESC LIMIT 100;
       whats_new_exclude_region_availability_updates:
         title: What's new - exclude region availability updates
         sql: |-
@@ -208,7 +208,9 @@ databases:
             OR postSummary like '%deprecation%'
             OR postBody like '%deprecation%'
           ORDER BY
-            postDateTime DESC;
+            postDateTime DESC
+          LIMIT
+            100;
       whats_new_utc_offset:
         title: What's new - localise by adding a UTC offset to dates
         sql: |-
@@ -223,3 +225,5 @@ databases:
             whats_new
           ORDER BY
             postDateTime DESC
+          LIMIT
+            100;
