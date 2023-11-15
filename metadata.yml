@@ -1,0 +1,223 @@
+title: data.company.tools
+description_html: |-
+  <ul>
+    <li><a href="https://github.com/rcaught/data.company.tools" target="_blank">https://github.com/rcaught/data_company_tools</a></li>
+    <li><a href="https://www.linkedin.com/in/rcaught/" target="_blank">https://www.linkedin.com/in/rcaught/</a></li>
+  </ul>
+plugins:
+  datasette-block-robots:
+    allow_only_index: true
+databases:
+  aws:
+    tables:
+      whats_new:
+        sort_desc: postDateTime
+        source: What's New with AWS?
+        source_url: https://aws.amazon.com/new/
+        description_html: |-
+          <a href="/aws#queries">Check out some examples queries</a>
+          <br />
+          Inspired by <a href="https://bigorange.cloud/updates?ref=data.company.tools" target="_blank">bigorange.cloud/updates</a> and others.
+      whats_new_tags:
+        source: What's New with AWS?
+        source_url: https://aws.amazon.com/new/
+        description_html: |-
+          <a href="/aws#queries">Check out some examples queries</a>
+    queries:
+      whats_new_reinvent_2023_updates:
+        title: What's new - re:Invent 2023 updates
+        sql: |-
+          SELECT
+            *
+          FROM
+            whats_new
+          WHERE
+            postDateTime BETWEEN '2023-11-27' AND '2023-12-02'
+          ORDER BY
+            postDateTime ASC;
+      whats_new_reinvent_2022_updates:
+        title: What's new - re:Invent 2022 updates
+        sql: |-
+          SELECT
+            *
+          FROM
+            whats_new
+          WHERE
+            postDateTime BETWEEN '2022-11-28' AND '2022-12-03'
+          ORDER BY
+            postDateTime ASC;
+      whats_new_updates_over_time:
+        title: What's new - updates over time
+        description_html: |-
+          <a href="https://data.company.tools/aws/whats_new_updates_over_time?graph=true#g.mark=bar&g.x_column=postDate&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
+        sql: |-
+          WITH RECURSIVE dates(date) AS (
+            VALUES('2004-10-01')
+            UNION ALL
+            SELECT
+                date(date, '+1 month')
+            FROM
+                dates
+            WHERE
+                date < date('now')
+          ),
+          updates as (
+            SELECT
+              count(*) as count,
+              strftime('%Y-%m', postDateTime) as postDate
+            FROM
+              whats_new
+            GROUP BY
+              postDate
+          ),
+          results as (
+            SELECT
+              strftime('%Y-%m', dates.date) as postDate,
+              COALESCE(updates.count, 0) as count
+            FROM
+              dates
+            LEFT JOIN updates ON
+              strftime('%Y-%m', dates.date) = updates.postDate
+          )
+          SELECT
+            *
+          FROM
+            results;
+      whats_new_atom_feed:
+        title: What's new - atom/RSS feed (add your own conditions!)
+        description_html: |-
+          Append .atom to any URL that has these resulting fields, or click the link below.
+        sql: |-
+          SELECT
+            id as atom_id,
+            headline as atom_title,
+            dateUpdated as atom_updated,
+            headlineUrl as atom_link,
+            postSummary || postBody as atom_content,
+            author as atom_author_name
+          FROM
+            whats_new
+          ORDER BY
+            postDateTime DESC
+          LIMIT
+            25;
+      whats_new_ipv6_updates_over_time:
+        title: What's new - IPv6 updates over time
+        description_html: |-
+          <a href="https://data.company.tools/aws/whats_new_ipv6_updates_over_time?graph=true#g.mark=bar&g.x_column=postDate&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
+        sql: |-
+          WITH RECURSIVE dates(date) AS (
+            VALUES('2011-05-01')
+            UNION ALL
+            SELECT
+                date(date, '+1 month')
+            FROM
+                dates
+            WHERE
+                date < date('now')
+          ),
+          ipv6 as (
+            SELECT
+              count(*) as count,
+              strftime('%Y-%m', postDateTime) as postDate
+            FROM
+              whats_new
+            WHERE
+              headline like '%ipv6%'
+              OR postSummary like '%ipv6%'
+              OR postBody like '%ipv6%'
+            GROUP BY
+              postDate
+            ORDER BY
+              postDate ASC
+          ),
+          results as (
+            SELECT
+              strftime('%Y-%m', dates.date) as postDate,
+              COALESCE(ipv6.count, 0) as count
+            FROM
+              dates
+            LEFT JOIN ipv6 ON
+              strftime('%Y-%m', dates.date) = ipv6.postDate
+          )
+          SELECT
+            *
+          FROM
+            results;
+      whats_new_find_updates_from_when_i_was_away:
+        title: What's new - find updates from when I was away
+        sql: |-
+          SELECT
+            *
+          FROM
+            whats_new
+          WHERE
+            postDateTime BETWEEN :fromYearMonthDay AND :toYearMonthDay
+          ORDER BY
+            postDateTime ASC;
+      whats_new_tags_exact_product_updates:
+        title: What's new - updates by product tag (eg. Fargate)
+        sql: |-
+          WITH tags AS (
+            SELECT
+              whats_new_id
+            FROM
+              whats_new_tags
+            WHERE
+              tagNamespaceId = 'whats-new#general-products'
+              and name = 'aws-fargate'
+          )
+          SELECT * FROM whats_new WHERE id IN tags;
+      whats_new_tags_category_updates:
+        title: What's new - updates by tag category (eg. databases)
+        sql: |-
+          WITH tags AS (
+            SELECT
+              whats_new_id
+            FROM
+              whats_new_tags
+            WHERE
+              tagNamespaceId = 'whats-new#marketing-marchitecture'
+              and name = 'databases'
+          )
+          SELECT * FROM whats_new WHERE id IN tags;
+      whats_new_exclude_region_availability_updates:
+        title: What's new - exclude region availability updates
+        sql: |-
+          SELECT
+            *
+          FROM
+            whats_new
+          WHERE
+            headline not like "%available%region%"
+          ORDER BY
+            postDateTime DESC
+          LIMIT
+            100;
+      whats_new_deprecations:
+        title: What's new - updates mentioning deprecations
+        sql: |-
+          SELECT
+            *
+          FROM
+            whats_new
+          WHERE
+            headline like '%deprecation%'
+            OR postSummary like '%deprecation%'
+            OR postBody like '%deprecation%'
+          ORDER BY
+            postDateTime DESC;
+      whats_new_utc_offset:
+        title: What's new - localise by adding a UTC offset to dates
+        sql: |-
+          SELECT
+            id,
+            datetime(postDateTime, "+10:00") as postDateTime,
+            headline,
+            headlineUrl,
+            postSummary,
+            postBody
+          FROM
+            whats_new
+          ORDER BY
+            postDateTime DESC

@@ -1,0 +1,45 @@
+name: build
+
+on:
+  # schedule:
+  #   - cron: "*/15 * * * *"
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install poetry
+        run: pipx install poetry
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11.3'
+          cache: 'poetry'
+      - name: Install deps
+        run: poetry install
+      - name: Cache AWS DB
+        id: cache-aws-db
+        uses: actions/cache@v3
+        with:
+          path: dbs/aws.db
+          key: aws-db
+      - name: Build (full)
+        # TODO: add push condition
+        if: steps.cache-aws-db.outputs.cache-hit != 'true'
+        run: |
+          poetry run python -u src/data_company_tools/aws/whats_new/full.py
+      - name: Build (partial)
+        if: steps.cache-aws-db.outputs.cache-hit == 'true'
+        run: |
+          poetry run python -u src/data_company_tools/aws/whats_new/partial.py
+      - name: Deploy Datasette using Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          CLOUDFLARE_PURGE_API_TOKEN: ${{ secrets.CLOUDFLARE_PURGE_API_TOKEN }}
+        run: |-
+          sh ./bin/deploy.sh

@@ -1,0 +1,16 @@
+{
+  "name": "data-company-tools",
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.py",
+      "use": "@vercel/python@3.1.60"
+    }
+  ],
+  "routes": [
+    {
+      "src": "(.*)",
+      "dest": "index.py"
+    }
+  ]
+}
