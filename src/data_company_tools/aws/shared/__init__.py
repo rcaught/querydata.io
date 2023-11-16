@@ -81,9 +81,7 @@ def process(
             """
                 CREATE OR REPLACE TEMP TABLE t1 AS
                 SELECT
-                  * EXCLUDE (tags) REPLACE(CAST(dateCreated AS TIMESTAMPTZ) AS dateCreated,
-                  CAST(dateUpdated AS TIMESTAMPTZ) AS dateUpdated,
-                  'https://aws.amazon.com' || headlineUrl AS headlineUrl)
+                  * EXCLUDE (tags) REPLACE('https://aws.amazon.com' || headlineUrl AS headlineUrl)
                 FROM
                   unnested_items;
 
