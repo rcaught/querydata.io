@@ -29,7 +29,7 @@ def get_data(
     page: int,
     max_records_size: int = MAX_RECORDS_SIZE,
 ) -> duckdb.DuckDBPyRelation:
-    """Gets data. Limits on pagination necessitate the following year and page scopes."""
+    """Gets data. Pagination limits necessitate the following year and page scopes."""
 
     target_url = (
         f"{MAIN_URL_PREFIX}&size={max_records_size}"
@@ -266,6 +266,8 @@ def merge_sqlite_tables(sqlitedb: Database, old_table: Table, new_table: Table):
     print()
     print("Merging")
     print("=======")
+
+    # TODO: transaction if keeping, but this probably shouldn't be a union query as elements update
 
     sqlitedb.execute(
         f"""
