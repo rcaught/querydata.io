@@ -38,15 +38,11 @@ whats_new_tags_old_table: Table = sqlitedb.table(
 
 whats_new_old_table_count = whats_new_old_table.count
 
-print(whats_new_old_table_count)
-
 for table in [
     (whats_new_old_table, whats_new_new_table),
     (whats_new_tags_old_table, whats_new_tags_new_table),
 ]:
     aws_shared.merge_sqlite_tables(sqlitedb, table[0], table[1])
-
-print(whats_new_old_table.count)
 
 if whats_new_old_table.count == whats_new_old_table_count:
     print()
