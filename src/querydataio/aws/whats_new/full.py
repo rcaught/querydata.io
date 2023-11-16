@@ -4,8 +4,8 @@ import os
 from sqlite_utils import Database
 from sqlite_utils.db import Table
 
-from data_company_tools import shared
-from data_company_tools.aws import shared as aws_shared
+from querydataio import shared
+from querydataio.aws import shared as aws_shared
 
 if os.path.exists(aws_shared.SQLITE_DB):
     os.remove(aws_shared.SQLITE_DB)

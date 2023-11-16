@@ -30,13 +30,13 @@ jobs:
           key: aws-db
       - name: Build (full)
         # TODO: add push condition
-        if: steps.cache-aws-db.outputs.cache-hit != 'true'
+        # if: steps.cache-aws-db.outputs.cache-hit != 'true'
         run: |
-          poetry run python -u src/data_company_tools/aws/whats_new/full.py
-      - name: Build (partial)
-        if: steps.cache-aws-db.outputs.cache-hit == 'true'
-        run: |
-          poetry run python -u src/data_company_tools/aws/whats_new/partial.py
+          poetry run python -u src/querydataio/aws/whats_new/full.py
+      # - name: Build (partial)
+      #   if: steps.cache-aws-db.outputs.cache-hit == 'true'
+      #   run: |
+      #     poetry run python -u src/querydataio/aws/whats_new/partial.py
       - name: Deploy Datasette using Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}

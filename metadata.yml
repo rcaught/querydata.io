@@ -1,6 +1,6 @@
-title: data.company.tools
+title: querydata.io
 description_html: |-
-  - <a href="https://github.com/rcaught/data.company.tools" target="_blank">https://github.com/rcaught/data.company.tools</a></li>
+  - <a href="https://github.com/rcaught/querydata.io" target="_blank">https://github.com/rcaught/querydata.io</a></li>
   <br />
   - <a href="https://www.linkedin.com/in/rcaught/" target="_blank">https://www.linkedin.com/in/rcaught/</a></li>
   <br />
@@ -19,7 +19,7 @@ databases:
         description_html: |-
           <a href="/aws#queries">Check out some examples queries</a>
           <br />
-          Inspired by <a href="https://bigorange.cloud/updates?ref=data.company.tools" target="_blank">bigorange.cloud/updates</a> and others.
+          Inspired by <a href="https://bigorange.cloud/updates?ref=querydata.io" target="_blank">bigorange.cloud/updates</a> and others.
       whats_new_tags:
         source: What's New with AWS?
         source_url: https://aws.amazon.com/new/
@@ -51,7 +51,7 @@ databases:
       whats_new_updates_over_time:
         title: What's new - updates over time
         description_html: |-
-          <a href="https://data.company.tools/aws/whats_new_updates_over_time?graph=true#g.mark=bar&g.x_column=postDate&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
+          <a href="https://querydata.io/aws/whats_new_updates_over_time?graph=true#g.mark=bar&g.x_column=postDate&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
         sql: |-
           WITH RECURSIVE dates(date) AS (
             VALUES('2004-10-01')
@@ -106,7 +106,7 @@ databases:
       whats_new_ipv6_updates_over_time:
         title: What's new - IPv6 updates over time
         description_html: |-
-          <a href="https://data.company.tools/aws/whats_new_ipv6_updates_over_time?graph=true#g.mark=bar&g.x_column=postDate&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
+          <a href="https://querydata.io/aws/whats_new_ipv6_updates_over_time?graph=true#g.mark=bar&g.x_column=postDate&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
         sql: |-
           WITH RECURSIVE dates(date) AS (
             VALUES('2011-05-01')
@@ -192,7 +192,7 @@ databases:
       whats_new_tags_updates_per_product:
         title: What's new - number of updates per product
         description_html: |-
-          <a href="https://data.company.tools/aws/whats_new_tags_updates_per_product?graph=true#g.mark=bar&g.x_column=graphLabel&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
+          <a href="https://querydata.io/aws/whats_new_tags_updates_per_product?graph=true#g.mark=bar&g.x_column=graphLabel&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
         sql: |-
           SELECT
             FORMAT('%03d', ROW_NUMBER() OVER (ORDER BY COUNT(whats_new_tags.name) DESC)) || '. ' || name as graphLabel,
