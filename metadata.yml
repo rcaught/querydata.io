@@ -146,17 +146,6 @@ databases:
             *
           FROM
             results;
-      whats_new_find_updates_from_when_i_was_away:
-        title: What's new - find updates from when I was away
-        sql: |-
-          SELECT
-            *
-          FROM
-            whats_new
-          WHERE
-            postDateTime BETWEEN :fromYearMonthDay AND :toYearMonthDay
-          ORDER BY
-            postDateTime ASC;
       whats_new_tags_exact_product_updates:
         title: What's new - updates by product tag (eg. Fargate)
         sql: |-
@@ -183,6 +172,51 @@ databases:
               and name = 'databases'
           )
           SELECT * FROM whats_new WHERE id IN tags ORDER BY postDateTime DESC LIMIT 100;
+      whats_new_tags_last_update_per_product:
+        title: What's new - last update per product
+        sql: |-
+          SELECT
+            wnt.name,
+            wn.headline,
+            wn.headlineUrl,
+            max(wn.postDateTime)
+          FROM
+            whats_new_tags wnt
+            LEFT JOIN whats_new wn on wnt.whats_new_id = wn.id
+          GROUP BY
+            wnt.name
+          HAVING
+            wnt.tagNamespaceId = 'whats-new#general-products'
+          ORDER BY
+            wnt.name ASC;
+      whats_new_tags_updates_per_product:
+        title: What's new - number of updates per product
+        description_html: |-
+          <a href="https://data.company.tools/aws/whats_new_tags_updates_per_product?graph=true#g.mark=bar&g.x_column=graphLabel&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
+        sql: |-
+          SELECT
+            FORMAT('%03d', ROW_NUMBER() OVER (ORDER BY COUNT(whats_new_tags.name) DESC)) || '. ' || name as graphLabel,
+            name,
+            COUNT(whats_new_tags.name) as count
+          FROM
+            whats_new_tags
+          GROUP BY
+            whats_new_tags.name
+          HAVING
+            whats_new_tags.tagNamespaceId = 'whats-new#general-products'
+          ORDER BY
+            count DESC;
+      whats_new_find_updates_from_when_i_was_away:
+        title: What's new - find updates from when I was away
+        sql: |-
+          SELECT
+            *
+          FROM
+            whats_new
+          WHERE
+            postDateTime BETWEEN :fromYearMonthDay AND :toYearMonthDay
+          ORDER BY
+            postDateTime ASC;
       whats_new_exclude_region_availability_updates:
         title: What's new - exclude region availability updates
         sql: |-
