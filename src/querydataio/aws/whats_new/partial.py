@@ -1,10 +1,11 @@
 """Run"""
 
+import sys
 from sqlite_utils import Database
 from sqlite_utils.db import Table
 
-from data_company_tools import shared
-from data_company_tools.aws import shared as aws_shared
+from querydataio import shared
+from querydataio.aws import shared as aws_shared
 
 PARTIAL_COLLECTION_SIZE = 200
 
@@ -35,11 +36,19 @@ whats_new_tags_old_table: Table = sqlitedb.table(
     aws_shared.SQLITE_WHATS_NEW_TAGS_TABLE_NAME
 )
 
+whats_new_old_table_count = whats_new_old_table.count
+
 for table in [
     (whats_new_old_table, whats_new_new_table),
     (whats_new_tags_old_table, whats_new_tags_new_table),
 ]:
     aws_shared.merge_sqlite_tables(sqlitedb, table[0], table[1])
+
+if whats_new_old_table.count == whats_new_old_table_count:
+    print()
+    print("No new data... hard exit to stop deploy")
+    print("=======================================")
+    sys.exit(1)
 
 aws_shared.final_sqlite_transform(
     sqlitedb, whats_new_old_table, whats_new_tags_old_table

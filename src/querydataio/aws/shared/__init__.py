@@ -246,7 +246,7 @@ def final_sqlite_transform(
 
     whats_new_tags_table.transform(pk=["whats_new_id", "id"])
 
-    whats_new_tags_table.add_foreign_key("whats_new_id", "whats_new", "id")
+    whats_new_tags_table.add_foreign_key("whats_new_id", "whats_new", "id", ignore=True)
     sqlitedb.index_foreign_keys()
 
     whats_new_tags_table.create_index(["id"])
@@ -267,26 +267,12 @@ def merge_sqlite_tables(sqlitedb: Database, old_table: Table, new_table: Table):
     print("Merging")
     print("=======")
 
-    # TODO: transaction if keeping, but this probably shouldn't be a union query as elements update
-
     sqlitedb.execute(
         f"""
-        CREATE TABLE merged AS
-        SELECT
-          *
-        FROM
-          {old_table.name}
-        UNION
-        SELECT
-          *
-        FROM
-          {new_table.name}
-        ;
-        """
+        INSERT OR REPLACE INTO {old_table.name} SELECT * FROM {new_table.name};
+    """
     )
-
-    sqlitedb.execute(f"DROP TABLE {old_table.name};")
     sqlitedb.execute(f"DROP TABLE {new_table.name};")
-    sqlitedb.execute(f"ALTER TABLE merged RENAME TO {old_table.name};")
+
 
     print(f"{new_table.name} => {old_table.name}... done")
