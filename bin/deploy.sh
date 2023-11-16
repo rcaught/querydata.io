@@ -13,4 +13,4 @@ poetry run datasette publish vercel dbs/aws.db \
   --token $VERCEL_TOKEN &&
 echo &&
 CLOUDFLARE_API_KEY=$CLOUDFLARE_PURGE_API_TOKEN poetry run \
-  cli4 --delete purge_everything=true /zones/:querydata.io/purge_cache
+  cli4 --delete purge_everything=true /zones/bf147aba15972081173a0047f501e229/purge_cache
