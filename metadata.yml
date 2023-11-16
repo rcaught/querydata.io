@@ -11,6 +11,8 @@ plugins:
     allow_only_index: true
 databases:
   aws:
+    description_html: |-
+      Inspired by <a href="https://bigorange.cloud/updates?ref=querydata.io" target="_blank">bigorange.cloud/updates</a> and others.
     tables:
       whats_new:
         sort_desc: postDateTime
