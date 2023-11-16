@@ -2,7 +2,7 @@
 
 npm install -g vercel@32.2.5 && # breaks after this version
 poetry run datasette publish vercel dbs/aws.db \
-  --project data-company-tools \
+  --project querydataio \
   --metadata metadata.yml \
   --install=datasette-vega \
   --install=datasette-atom \
