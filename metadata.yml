@@ -49,7 +49,7 @@ databases:
           ORDER BY
             postDateTime ASC;
       whats_new_updates_over_time:
-        title: What's new - updates over time
+        title: What's new - updates over time (with graph)
         description_html: |-
           <a href="https://querydata.io/aws/whats_new_updates_over_time?graph=true#g.mark=bar&g.x_column=postDate&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
         sql: |-
@@ -104,7 +104,7 @@ databases:
           LIMIT
             25;
       whats_new_ipv6_updates_over_time:
-        title: What's new - IPv6 updates over time
+        title: What's new - IPv6 updates over time (with graph)
         description_html: |-
           <a href="https://querydata.io/aws/whats_new_ipv6_updates_over_time?graph=true#g.mark=bar&g.x_column=postDate&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
         sql: |-
@@ -190,7 +190,7 @@ databases:
           ORDER BY
             wnt.name ASC;
       whats_new_tags_updates_per_product:
-        title: What's new - number of updates per product
+        title: What's new - number of updates per product (with graph)
         description_html: |-
           <a href="https://querydata.io/aws/whats_new_tags_updates_per_product?graph=true#g.mark=bar&g.x_column=graphLabel&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
         sql: |-
