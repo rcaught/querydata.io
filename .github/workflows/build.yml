@@ -2,7 +2,9 @@ name: build
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    # update these below if changing
+    - cron: "*/30 * * * *" # every 30 mins
+    - cron: "0 0 * * 0" # once a week "At 00:00 on Sunday."
   push:
     branches: [master]
 
@@ -29,14 +31,13 @@ jobs:
           path: dbs/aws.db
           key: aws-db
       - name: Build (full)
-        # TODO: add push condition
-        # if: steps.cache-aws-db.outputs.cache-hit != 'true'
+        if: steps.cache-aws-db.outputs.cache-hit != 'true' || github.event.schedule == '0 0 * * 0'
         run: |
           poetry run python -u src/querydataio/aws/whats_new/full.py
-      # - name: Build (partial)
-      #   if: steps.cache-aws-db.outputs.cache-hit == 'true'
-      #   run: |
-      #     poetry run python -u src/querydataio/aws/whats_new/partial.py
+      - name: Build (partial)
+        if: steps.cache-aws-db.outputs.cache-hit == 'true' && github.event.schedule == '*/30 * * * *'
+        run: |
+          poetry run python -u src/querydataio/aws/whats_new/partial.py
       - name: Deploy Datasette using Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
