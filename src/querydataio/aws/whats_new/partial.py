@@ -6,20 +6,25 @@ from sqlite_utils.db import Table
 
 from querydataio import shared
 from querydataio.aws import shared as aws_shared
-
-PARTIAL_COLLECTION_SIZE = 200
+from querydataio.aws import whats_new
 
 sqlitedb = Database(aws_shared.SQLITE_DB)
 duckdb = shared.init_duckdb()
 
 print()
-print(f"Downloading last {PARTIAL_COLLECTION_SIZE} and merging")
+print(f"Downloading last {aws_shared.PARTIAL_COLLECTION_SIZE} and merging")
 print()
 
-downloaded_years = aws_shared.download_years(
-    duckdb, shared.current_year(), shared.current_year(), PARTIAL_COLLECTION_SIZE, 1
+downloaded_years = aws_shared.download(
+    duckdb,
+    whats_new.URL_PREFIX,
+    whats_new.DIRECTORY_ID,
+    whats_new.TAG_ID_PREFIX,
+    range(shared.current_year(), shared.current_year() + 1),
+    aws_shared.PARTIAL_COLLECTION_SIZE,
+    1,
 )
-new_updates, new_tags = aws_shared.process(duckdb, downloaded_years)
+new_updates, new_tags = whats_new.process(duckdb, downloaded_years)
 
 # SQLite processing
 
@@ -29,11 +34,11 @@ whats_new_tags_new_table: Table = sqlitedb.table("whats_new_tags_new")
 aws_shared.to_sqlite(whats_new_new_table.name, new_updates)
 aws_shared.to_sqlite(whats_new_tags_new_table.name, new_tags)
 
-aws_shared.initial_sqlite_transform(whats_new_new_table)
+whats_new.initial_sqlite_transform(whats_new_new_table)
 
-whats_new_old_table: Table = sqlitedb.table(aws_shared.SQLITE_WHATS_NEW_TABLE_NAME)
+whats_new_old_table: Table = sqlitedb.table(whats_new.SQLITE_WHATS_NEW_TABLE_NAME)
 whats_new_tags_old_table: Table = sqlitedb.table(
-    aws_shared.SQLITE_WHATS_NEW_TAGS_TABLE_NAME
+    whats_new.SQLITE_WHATS_NEW_TAGS_TABLE_NAME
 )
 
 whats_new_old_table_count = whats_new_old_table.count
@@ -50,6 +55,6 @@ if whats_new_old_table.count == whats_new_old_table_count:
     print("=======================================")
     sys.exit(1)
 
-aws_shared.final_sqlite_transform(
+whats_new.final_sqlite_transform(
     sqlitedb, whats_new_old_table, whats_new_tags_old_table
 )
