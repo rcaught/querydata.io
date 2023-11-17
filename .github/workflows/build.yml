@@ -28,8 +28,8 @@ jobs:
         id: cache-aws-db
         uses: actions/cache@v3
         with:
-          path: dbs/*.db
-          key: dbs-${{ hashFiles('dbs/*.db') }}
+          path: dbs
+          key: dbs
       - name: Build (full)
         if: github.event_name == 'push' && (steps.cache-aws-db.outputs.cache-hit != 'true' || github.event.schedule == '0 0 * * 0')
         run: |
