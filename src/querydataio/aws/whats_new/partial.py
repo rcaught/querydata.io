@@ -1,4 +1,4 @@
-"""Run"""
+"""Partial"""
 
 import sys
 from sqlite_utils import Database
@@ -12,10 +12,10 @@ sqlitedb = Database(aws_shared.SQLITE_DB)
 duckdb = shared.init_duckdb()
 
 print()
-print(f"Downloading last {aws_shared.PARTIAL_COLLECTION_SIZE} and merging")
+print(f"Partial download - last {aws_shared.PARTIAL_COLLECTION_SIZE} and merging")
 print()
 
-downloaded_years = aws_shared.download(
+downloaded = aws_shared.download(
     duckdb,
     whats_new.URL_PREFIX,
     whats_new.DIRECTORY_ID,
@@ -24,37 +24,35 @@ downloaded_years = aws_shared.download(
     aws_shared.PARTIAL_COLLECTION_SIZE,
     1,
 )
-new_updates, new_tags = whats_new.process(duckdb, downloaded_years)
+result_updates, result_tags = whats_new.process(duckdb, downloaded)
 
 # SQLite processing
 
-whats_new_new_table: Table = sqlitedb.table("whats_new_new")
-whats_new_tags_new_table: Table = sqlitedb.table("whats_new_tags_new")
-
-aws_shared.to_sqlite(whats_new_new_table.name, new_updates)
-aws_shared.to_sqlite(whats_new_tags_new_table.name, new_tags)
-
-whats_new.initial_sqlite_transform(whats_new_new_table)
-
-whats_new_old_table: Table = sqlitedb.table(whats_new.SQLITE_WHATS_NEW_TABLE_NAME)
-whats_new_tags_old_table: Table = sqlitedb.table(
-    whats_new.SQLITE_WHATS_NEW_TAGS_TABLE_NAME
+main_new_table: Table = sqlitedb.table(whats_new.SQLITE_WHATS_NEW_TABLE_NAME + "_new")
+tags_new_table: Table = sqlitedb.table(
+    whats_new.SQLITE_WHATS_NEW_TAGS_TABLE_NAME + "_new"
 )
 
-whats_new_old_table_count = whats_new_old_table.count
+aws_shared.to_sqlite(main_new_table.name, result_updates)
+aws_shared.to_sqlite(tags_new_table.name, result_tags)
+
+whats_new.initial_sqlite_transform(main_new_table)
+
+main_table: Table = sqlitedb.table(whats_new.SQLITE_WHATS_NEW_TABLE_NAME)
+tags_table: Table = sqlitedb.table(whats_new.SQLITE_WHATS_NEW_TAGS_TABLE_NAME)
+
+main_table_count = main_table.count
 
 for table in [
-    (whats_new_old_table, whats_new_new_table),
-    (whats_new_tags_old_table, whats_new_tags_new_table),
+    (main_table, main_new_table),
+    (tags_table, tags_new_table),
 ]:
     aws_shared.merge_sqlite_tables(sqlitedb, table[0], table[1])
 
-if whats_new_old_table.count == whats_new_old_table_count:
+if main_table.count == main_table_count:
     print()
     print("No new data... hard exit to stop deploy")
     print("=======================================")
     sys.exit(1)
 
-whats_new.final_sqlite_transform(
-    sqlitedb, whats_new_old_table, whats_new_tags_old_table
-)
+whats_new.final_sqlite_transform(sqlitedb, main_table, tags_table)

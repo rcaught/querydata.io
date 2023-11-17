@@ -18,6 +18,7 @@ FIRST_YEAR = 2004
 SQLITE_WHATS_NEW_TABLE_NAME = "whats_new"
 SQLITE_WHATS_NEW_TAGS_TABLE_NAME = "whats_new_tags"
 
+
 def process(
     con: duckdb.DuckDBPyConnection, all_data: list[duckdb.DuckDBPyRelation]
 ) -> list[pd.DataFrame]:
@@ -26,13 +27,12 @@ def process(
     processed_updates: list[pd.DataFrame] = []
     processed_tags: list[pd.DataFrame] = []
 
-    print("")
+    print()
     print("Processing data")
     print("===============")
-    print("")
 
     for i, data in enumerate(all_data):  # pylint: disable=unused-variable
-        print(f"    Page: {i + 1}")
+        print(f"  Page: {i + 1}")
         unnested_items = con.sql(  # pylint: disable=unused-variable
             """
               SELECT
@@ -75,10 +75,11 @@ def process(
 
     return [result_updates, result_tags]
 
-def initial_sqlite_transform(whats_new_table: str):
+
+def initial_sqlite_transform(main_table: str):
     """Initial tranformations"""
 
-    whats_new_table.transform(
+    main_table.transform(
         column_order=(
             "id",
             "postDateTime",
@@ -99,32 +100,32 @@ def initial_sqlite_transform(whats_new_table: str):
     )
 
 
-def final_sqlite_transform(
-    sqlitedb: Database, whats_new_table: Table, whats_new_tags_table: Table
-):
+def final_sqlite_transform(sqlitedb: Database, main_table: Table, tags_table: Table):
     """Final tranformations"""
 
     print()
     print("Final optimisations")
     print("===================")
 
-    whats_new_table.transform(
+    main_table.transform(
         pk="id",
     )
 
-    whats_new_table.create_index(["id"], unique=True)
-    whats_new_table.create_index(["postDateTime"])
-    whats_new_table.create_index(["headline"])
+    main_table.create_index(["id"], unique=True)
+    main_table.create_index(["postDateTime"])
+    main_table.create_index(["headline"])
 
-    whats_new_tags_table.transform(pk=["whats_new_id", "id"])
+    tags_table.transform(pk=[f"{main_table.name}_id", "id"])
 
-    whats_new_tags_table.add_foreign_key("whats_new_id", "whats_new", "id", ignore=True)
+    tags_table.add_foreign_key(
+        f"{main_table.name}_id", main_table.name, "id", ignore=True
+    )
     sqlitedb.index_foreign_keys()
 
-    whats_new_tags_table.create_index(["id"])
-    whats_new_tags_table.create_index(["tagNamespaceId"])
-    whats_new_tags_table.create_index(["name"])
-    whats_new_tags_table.create_index(["tagNamespaceId", "name"])
+    tags_table.create_index(["id"])
+    tags_table.create_index(["tagNamespaceId"])
+    tags_table.create_index(["name"])
+    tags_table.create_index(["tagNamespaceId", "name"])
 
     sqlitedb.analyze()
     sqlitedb.vacuum()

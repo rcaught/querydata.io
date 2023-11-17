@@ -30,9 +30,9 @@ def download(
 
     all_data: list[duckdb.DuckDBPyRelation] = []
 
+    print()
     print("Downloading data")
     print("================")
-    print("")
     print("  AWS")
     print(f"    {directory_id}")
 
