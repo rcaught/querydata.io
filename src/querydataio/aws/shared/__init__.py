@@ -120,3 +120,13 @@ def merge_sqlite_tables(sqlitedb: Database, old_table: Table, new_table: Table, 
 
 
     print(f"{print_indent * ' '}  {new_table.name} => {old_table.name}... done")
+
+def drop_tables(tables: list[Table], print_indent=0):
+    print()
+    print(f"{print_indent * ' '}Dropping tables")
+    print(f"{print_indent * ' '}===============")
+
+    for table in tables:
+        table.drop(ignore=True)
+        print(f"{print_indent * ' '}- {table.name}... done")
+
