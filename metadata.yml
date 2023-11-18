@@ -27,6 +27,9 @@ databases:
         source_url: https://aws.amazon.com/new/
         description_html: |-
           <a href="/aws#queries">Check out some examples queries</a>
+      tags:
+        description_html: |-
+          <a href="/aws#queries">Check out some examples queries</a>
     queries:
       whats_new_reinvent_2023_updates:
         title: What's new - re:Invent 2023 updates
@@ -106,7 +109,7 @@ databases:
           LIMIT
             25;
       whats_new_ipv6_updates_over_time:
-        title: What's new - IPv6 updates over time (with graph)
+        title: What's new - IPv6 mentions over time (with graph)
         description_html: |-
           <a href="https://querydata.io/aws/whats_new_ipv6_updates_over_time?graph=true#g.mark=bar&g.x_column=postDate&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
         sql: |-
