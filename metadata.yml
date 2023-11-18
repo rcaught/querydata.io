@@ -157,8 +157,7 @@ databases:
             FROM
               whats_new_tags
             WHERE
-              tagNamespaceId = 'whats-new#general-products'
-              and name = 'aws-fargate'
+              tag_id = 'whats-new#general-products#aws-fargate'
           )
           SELECT * FROM whats_new WHERE id IN tags ORDER BY postDateTime DESC LIMIT 100;
       whats_new_tags_category_updates:
@@ -170,42 +169,51 @@ databases:
             FROM
               whats_new_tags
             WHERE
-              tagNamespaceId = 'whats-new#marketing-marchitecture'
-              and name = 'databases'
+              tag_id = 'whats-new#marketing-marchitecture#databases'
           )
           SELECT * FROM whats_new WHERE id IN tags ORDER BY postDateTime DESC LIMIT 100;
       whats_new_tags_last_update_per_product:
         title: What's new - last update per product
         sql: |-
           SELECT
-            wnt.name,
+            tags.name,
             wn.headline,
             wn.headlineUrl,
-            max(wn.postDateTime)
+            MAX(wn.postDateTime)
           FROM
-            whats_new_tags wnt
-            LEFT JOIN whats_new wn on wnt.whats_new_id = wn.id
+            tags
+          JOIN whats_new_tags wnt ON
+            wnt.tag_id = tags.id
+          JOIN whats_new wn ON
+            wn.id = wnt.whats_new_id
           GROUP BY
-            wnt.name
+            tags.name
           HAVING
-            wnt.tagNamespaceId = 'whats-new#general-products'
+            tags.tagNamespaceId = 'whats-new#general-products'
           ORDER BY
-            wnt.name ASC;
+            tags.name ASC;
       whats_new_tags_updates_per_product:
         title: What's new - number of updates per product (with graph)
         description_html: |-
           <a href="https://querydata.io/aws/whats_new_tags_updates_per_product?graph=true#g.mark=bar&g.x_column=graphLabel&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
         sql: |-
           SELECT
-            FORMAT('%03d', ROW_NUMBER() OVER (ORDER BY COUNT(whats_new_tags.name) DESC)) || '. ' || name as graphLabel,
-            name,
-            COUNT(whats_new_tags.name) as count
+            FORMAT(
+                '%03d',
+                ROW_NUMBER() OVER (ORDER BY COUNT(tags.name) DESC)
+              ) || '. ' || tags.name as graphLabel,
+            tags.name,
+            COUNT(tags.name) as count
           FROM
-            whats_new_tags
+            tags
+          JOIN whats_new_tags wnt ON
+            wnt.tag_id = tags.id
+          JOIN whats_new wn ON
+            wn.id = wnt.whats_new_id
           GROUP BY
-            whats_new_tags.name
+            tags.name
           HAVING
-            whats_new_tags.tagNamespaceId = 'whats-new#general-products'
+            tags.tagNamespaceId = 'whats-new#general-products'
           ORDER BY
             count DESC;
       whats_new_find_updates_from_when_i_was_away:
