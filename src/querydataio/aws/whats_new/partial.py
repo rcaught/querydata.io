@@ -9,14 +9,16 @@ from querydataio.aws import whats_new
 
 
 def run(print_indent=0) -> bool:
+    print()
+    print(f"{print_indent * ' '}Whats New")
+    print(f"{print_indent * ' '}=========")
+
     sqlitedb = Database(aws_shared.SQLITE_DB)
     duckdb = shared.init_duckdb()
 
-    print()
     print(
         f"{print_indent * ' '}- downloading last {aws_shared.PARTIAL_COLLECTION_SIZE} and merging"
     )
-    print()
 
     downloaded = aws_shared.download(
         duckdb,
@@ -48,7 +50,8 @@ def run(print_indent=0) -> bool:
             (result_whats_new, whats_new_new_table),
             (result_tags, tags_new_table),
             (result_whats_new_tags, whats_new_tags_new_table),
-        ]
+        ],
+        print_indent=print_indent + 2,
     )
 
     whats_new.initial_sqlite_transform(whats_new_new_table)
@@ -70,11 +73,14 @@ def run(print_indent=0) -> bool:
             (tags_table, tags_new_table),
             (whats_new_tags_table, whats_new_tags_new_table),
         ],
+        print_indent=print_indent + 2,
     )
 
     if whats_new_table.count == whats_new_table_count:
         return False
 
-    whats_new.final_sqlite_transform(whats_new_table, tags_table, whats_new_tags_table)
+    whats_new.final_sqlite_transform(
+        whats_new_table, tags_table, whats_new_tags_table, print_indent=print_indent + 2
+    )
 
     return True

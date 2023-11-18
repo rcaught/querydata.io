@@ -134,7 +134,7 @@ def merge_sqlite_tables(
         )
         sqlitedb.execute(f"DROP TABLE {new_table.name};")
 
-    print(f"{print_indent * ' '}- {new_table.name} => {old_table.name}... done")
+        print(f"{print_indent * ' '}- {new_table.name} => {old_table.name}... done")
 
 
 def drop_tables(tables: list[Table], print_indent=0):
