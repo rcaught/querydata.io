@@ -31,7 +31,7 @@ jobs:
           path: dbs
           key: dbs
       - name: Build (full)
-        if: github.event_name == 'push' && (steps.cache-aws-db.outputs.cache-hit != 'true' || github.event.schedule == '0 0 * * 0')
+        if: github.event_name == 'push' || steps.cache-aws-db.outputs.cache-hit != 'true' || github.event.schedule == '0 0 * * 0'
         run: |
           poetry run python -u src/querydataio/aws/whats_new/full.py
       - name: Build (partial)
