@@ -18,14 +18,17 @@ FIRST_YEAR = 2004
 SQLITE_WHATS_NEW_TABLE_NAME = "whats_new"
 SQLITE_WHATS_NEW_TAGS_TABLE_NAME = "whats_new_tags"
 
+
 def process(
-    con: duckdb.DuckDBPyConnection, all_data: list[duckdb.DuckDBPyRelation], print_indent=0
+    con: duckdb.DuckDBPyConnection,
+    all_data: list[duckdb.DuckDBPyRelation],
+    print_indent=0,
 ) -> list[pd.DataFrame]:
     """Clean and transform into a Dataframe"""
 
-    processed_updates: list[pd.DataFrame] = []
+    processed_whats_new: list[pd.DataFrame] = []
     processed_tags: list[pd.DataFrame] = []
-    processed_joins: list[pd.DataFrame] = []
+    processed_whats_new_tags: list[pd.DataFrame] = []
 
     print()
     print(f"{print_indent * ' '}Processing data")
@@ -42,7 +45,7 @@ def process(
             """
         )
 
-        updates = con.sql(
+        whats_new = con.sql(
             """
                 CREATE OR REPLACE TEMP TABLE t1 AS
                 SELECT
@@ -67,7 +70,7 @@ def process(
             """
         )
 
-        joins = con.sql(
+        whats_new_tags = con.sql(
             """
                 SELECT
                   whats_new_id,
@@ -85,21 +88,29 @@ def process(
             """
         )
 
-        processed_updates.append(updates.df())
+        processed_whats_new.append(whats_new.df())
         processed_tags.append(tags.df())
-        processed_joins.append(joins.df())
+        processed_whats_new_tags.append(whats_new_tags.df())
 
-    result_updates = pd.concat(processed_updates, ignore_index=True)
+    result_whats_new = pd.concat(processed_whats_new, ignore_index=True)
     result_tags = pd.concat(processed_tags, ignore_index=True)
-    result_joins = pd.concat(processed_joins, ignore_index=True)
+    result_whats_new_tags = pd.concat(processed_whats_new_tags, ignore_index=True)
 
-    return [result_updates, result_tags, result_joins]
+    result_tags_distinct = con.sql(
+        """
+            SELECT DISTINCT *
+            FROM
+              result_tags;
+        """
+    ).df()
+
+    return [result_whats_new, result_tags_distinct, result_whats_new_tags]
 
 
-def initial_sqlite_transform(main_table: str):
+def initial_sqlite_transform(whats_new_table: str):
     """Initial tranformations"""
 
-    main_table.transform(
+    whats_new_table.transform(
         column_order=(
             "id",
             "postDateTime",
@@ -120,36 +131,35 @@ def initial_sqlite_transform(main_table: str):
     )
 
 
-def final_sqlite_transform(sqlitedb: Database, main_table: Table, tags_table: Table, joins_table: Table):
-    """Final tranformations"""
-
+def final_sqlite_transform(
+    whats_new_table: Table,
+    tags_table: Table,
+    whats_new_tags_table: Table,
+    print_indent=0,
+):
     print()
-    print("Final optimisations")
-    print("===================")
+    print(f"{print_indent * ' '}Optimising tables")
+    print(f"{print_indent * ' '}=================")
 
-    main_table.transform(
+    whats_new_table.transform(
         pk="id",
     )
-    main_table.create_index(["postDateTime"])
-    main_table.create_index(["headline"])
+    whats_new_table.create_index(["postDateTime"])
+    whats_new_table.create_index(["headline"])
 
-    tags_table.transform(
-        pk="id",
-    )
+    print(f"{print_indent * ' '}- whats_new... done")
+
+    tags_table.transform(pk="id")
     tags_table.create_index(["tagNamespaceId"])
     tags_table.create_index(["name"])
     tags_table.create_index(["tagNamespaceId", "name"])
 
-    joins_table.transform(pk=[main_table.name + "_id", "tag_id"])
-    joins_table.add_foreign_key(
-        f"{main_table.name}_id", main_table.name, "id", ignore=True
-    )
-    joins_table.add_foreign_key(
-        f"tag_id", tags_table.name, "id", ignore=True
-    )
-    sqlitedb.index_foreign_keys()
+    print(f"{print_indent * ' '}- tags... done")
 
-    sqlitedb.analyze()
-    sqlitedb.vacuum()
+    whats_new_tags_table.transform(pk=[whats_new_table.name + "_id", "tag_id"])
+    whats_new_tags_table.add_foreign_key(
+        f"{whats_new_table.name}_id", whats_new_table.name, "id", ignore=True
+    )
+    whats_new_tags_table.add_foreign_key(f"tag_id", tags_table.name, "id", ignore=True)
 
-    print("... done")
+    print(f"{print_indent * ' '}- whats_new_tags... done")

@@ -25,7 +25,7 @@ def download(
     paritions: list[str],
     max_records_size: Optional[int] = None,
     max_pages: Optional[int] = None,
-    print_indent=0
+    print_indent=0,
 ) -> list[duckdb.DuckDBPyRelation]:
     """Break up download range"""
 
@@ -40,7 +40,15 @@ def download(
 
     for partition in paritions:
         print(f"{print_indent * ' '}- partition: {partition}")
-        result = get_data(con, url, tag_id_prefix, partition, 0, max_records_size, print_indent=print_indent+2)
+        result = get_data(
+            con,
+            url,
+            tag_id_prefix,
+            partition,
+            0,
+            max_records_size,
+            print_indent=print_indent + 2,
+        )
         all_data.append(result)
 
         total_hits = result.fetchall()[0][1]["totalHits"]
@@ -51,7 +59,15 @@ def download(
             item_max_pages = max_pages
 
         for page in range(1, item_max_pages):
-            result = get_data(con, url, tag_id_prefix, partition, page, max_records_size, print_indent=print_indent+2)
+            result = get_data(
+                con,
+                url,
+                tag_id_prefix,
+                partition,
+                page,
+                max_records_size,
+                print_indent=print_indent + 2,
+            )
             all_data.append(result)
 
     return all_data
@@ -64,7 +80,7 @@ def get_data(
     item: str,
     page: int,
     max_records_size: int = MAX_RECORDS_SIZE,
-    print_indent=0
+    print_indent=0,
 ) -> duckdb.DuckDBPyRelation:
     """Gets data. Pagination limits necessitate the following year and page scopes."""
 
@@ -103,20 +119,22 @@ def to_sqlite(items: list[tuple[pd.DataFrame, Table]], print_indent=0):
         print(f"{print_indent * ' '}- {table.name}... done")
 
 
-def merge_sqlite_tables(sqlitedb: Database, old_table: Table, new_table: Table, print_indent=0):
-    """Merge"""
-
+def merge_sqlite_tables(
+    sqlitedb: Database, tables: list[tuple[Table, Table]], print_indent=0
+):
     print()
     print(f"{print_indent * ' '}Merging")
     print(f"{print_indent * ' '}=======")
 
-    sqlitedb.execute(
-        f"""
-        INSERT OR REPLACE INTO {old_table.name} SELECT * FROM {new_table.name};
-    """
-    )
-    sqlitedb.execute(f"DROP TABLE {new_table.name};")
+    for old_table, new_table in tables:
+        sqlitedb.execute(
+            f"""
+            INSERT OR REPLACE INTO {old_table.name} SELECT * FROM {new_table.name};
+            """
+        )
+        sqlitedb.execute(f"DROP TABLE {new_table.name};")
 
+    print(f"{print_indent * ' '}- {new_table.name} => {old_table.name}... done")
 
     print(f"{print_indent * ' '}  {new_table.name} => {old_table.name}... done")
 
