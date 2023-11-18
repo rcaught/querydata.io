@@ -18,3 +18,5 @@ print("===")
 aws_shared.drop_tables([aws_shared.tags_table(sqlitedb)], print_indent=2)
 
 whats_new.run(sqlitedb, duckdb, print_indent=2)
+
+aws_shared.final_database_optimisations(sqlitedb, print_indent=2)

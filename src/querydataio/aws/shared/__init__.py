@@ -136,7 +136,6 @@ def merge_sqlite_tables(
 
     print(f"{print_indent * ' '}- {new_table.name} => {old_table.name}... done")
 
-    print(f"{print_indent * ' '}  {new_table.name} => {old_table.name}... done")
 
 def drop_tables(tables: list[Table], print_indent=0):
     print()
@@ -147,5 +146,19 @@ def drop_tables(tables: list[Table], print_indent=0):
         table.drop(ignore=True)
         print(f"{print_indent * ' '}- {table.name}... done")
 
+
 def tags_table(sqlitedb: Database) -> Table:
     return sqlitedb.table(SQLITE_TAGS_TABLE_NAME)
+
+
+def final_database_optimisations(sqlitedb: Database, print_indent=0):
+    print()
+    print(f"{print_indent * ' '}Optimising database")
+    print(f"{print_indent * ' '}===================")
+
+    sqlitedb.index_foreign_keys()
+
+    sqlitedb.analyze()
+    sqlitedb.vacuum()
+
+    print(f"{print_indent * ' '}{SQLITE_DB}... done")
