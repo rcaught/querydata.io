@@ -91,15 +91,16 @@ def get_data(
     return data
 
 
-def to_sqlite(table: str, df: pd.DataFrame):
+def to_sqlite(items: list[tuple[pd.DataFrame, Table]], print_indent=0):
     """Export Dataframe to SQLite"""
 
     print("")
     print(f"{print_indent * ' '}Export to SQLite")
     print(f"{print_indent * ' '}================")
 
-    sqlite = sqlite3.connect(SQLITE_DB)
-    df.to_sql(table, sqlite, if_exists="replace", index=False)
+    for data, table in items:
+        sqlite = sqlite3.connect(SQLITE_DB)
+        data.to_sql(table.name, sqlite, if_exists="replace", index=False)
 
         print(f"{print_indent * ' '}- {table.name}... done")
 
