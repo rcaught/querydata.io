@@ -25,6 +25,7 @@ def download(
     paritions: list[str],
     max_records_size: Optional[int] = None,
     max_pages: Optional[int] = None,
+    print_indent=0
 ) -> list[duckdb.DuckDBPyRelation]:
     """Break up download range"""
 
@@ -39,9 +40,9 @@ def download(
     if max_records_size is None:
         max_records_size = MAX_RECORDS_SIZE
 
-    for item in paritions:
-        print(f"      item: {item}")
-        result = get_data(con, url, tag_id_prefix, item, 0, max_records_size)
+    for partition in paritions:
+        print(f"{print_indent * ' '}- partition: {partition}")
+        result = get_data(con, url, tag_id_prefix, partition, 0, max_records_size, print_indent=print_indent+2)
         all_data.append(result)
 
         total_hits = result.fetchall()[0][1]["totalHits"]
@@ -52,7 +53,7 @@ def download(
             item_max_pages = max_pages
 
         for page in range(1, item_max_pages):
-            result = get_data(con, url, tag_id_prefix, item, page, max_records_size)
+            result = get_data(con, url, tag_id_prefix, partition, page, max_records_size, print_indent=print_indent+2)
             all_data.append(result)
 
     return all_data
@@ -65,6 +66,7 @@ def get_data(
     item: str,
     page: int,
     max_records_size: int = MAX_RECORDS_SIZE,
+    print_indent=0
 ) -> duckdb.DuckDBPyRelation:
     """Gets data. Pagination limits necessitate the following year and page scopes."""
 
@@ -83,7 +85,7 @@ def get_data(
 
     count = con.sql("SELECT metadata.count FROM data").fetchall()[0][0]
 
-    print(f"        downloading page {page} - {count} records")
+    print(f"{print_indent * ' '}- downloading page {page} - {count} records")
     # print(f"          {target_url}")
 
     return data
@@ -93,21 +95,21 @@ def to_sqlite(table: str, df: pd.DataFrame):
     """Export Dataframe to SQLite"""
 
     print("")
-    print("Export to SQLite")
-    print("================")
+    print(f"{print_indent * ' '}Export to SQLite")
+    print(f"{print_indent * ' '}================")
 
     sqlite = sqlite3.connect(SQLITE_DB)
     df.to_sql(table, sqlite, if_exists="replace", index=False)
 
-    print(f"{table}... done")
+        print(f"{print_indent * ' '}- {table.name}... done")
 
 
-def merge_sqlite_tables(sqlitedb: Database, old_table: Table, new_table: Table):
+def merge_sqlite_tables(sqlitedb: Database, old_table: Table, new_table: Table, print_indent=0):
     """Merge"""
 
     print()
-    print("Merging")
-    print("=======")
+    print(f"{print_indent * ' '}Merging")
+    print(f"{print_indent * ' '}=======")
 
     sqlitedb.execute(
         f"""
@@ -117,4 +119,4 @@ def merge_sqlite_tables(sqlitedb: Database, old_table: Table, new_table: Table):
     sqlitedb.execute(f"DROP TABLE {new_table.name};")
 
 
-    print(f"{new_table.name} => {old_table.name}... done")
+    print(f"{print_indent * ' '}  {new_table.name} => {old_table.name}... done")

@@ -20,7 +20,7 @@ SQLITE_WHATS_NEW_TAGS_TABLE_NAME = "whats_new_tags"
 
 
 def process(
-    con: duckdb.DuckDBPyConnection, all_data: list[duckdb.DuckDBPyRelation]
+    con: duckdb.DuckDBPyConnection, all_data: list[duckdb.DuckDBPyRelation], print_indent=0
 ) -> list[pd.DataFrame]:
     """Clean and transform into a Dataframe"""
 
@@ -28,11 +28,11 @@ def process(
     processed_tags: list[pd.DataFrame] = []
 
     print()
-    print("Processing data")
-    print("===============")
+    print(f"{print_indent * ' '}Processing data")
+    print(f"{print_indent * ' '}===============")
 
     for i, data in enumerate(all_data):  # pylint: disable=unused-variable
-        print(f"  Page: {i + 1}")
+        print(f"{print_indent * ' '}- page {i + 1}")
         unnested_items = con.sql(  # pylint: disable=unused-variable
             """
               SELECT
