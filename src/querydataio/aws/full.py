@@ -1,6 +1,5 @@
 from sqlite_utils import Database
 import querydataio.aws.whats_new.full as whats_new
-import querydataio.aws.blogs.full as blogs
 from querydataio.aws import shared as aws_shared
 from querydataio import shared
 
