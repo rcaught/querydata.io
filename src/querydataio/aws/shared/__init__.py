@@ -11,6 +11,7 @@ from sqlite_utils.db import Table
 MAX_RECORDS_SIZE = 1000
 PARTIAL_COLLECTION_SIZE = 200
 SQLITE_DB = "dbs/aws.db"
+SQLITE_TAGS_TABLE_NAME = "tags"
 
 pd.set_option("display.max_rows", 500)
 pd.set_option("display.max_columns", 500)
@@ -20,7 +21,6 @@ pd.set_option("display.width", 1000)
 def download(
     con: duckdb.DuckDBPyConnection,
     url: str,
-    directory_id: str,
     tag_id_prefix: str,
     paritions: list[str],
     max_records_size: Optional[int] = None,
@@ -32,10 +32,8 @@ def download(
     all_data: list[duckdb.DuckDBPyRelation] = []
 
     print()
-    print("Downloading data")
-    print("================")
-    print("  AWS")
-    print(f"    {directory_id}")
+    print(f"{print_indent * ' '}Downloading data")
+    print(f"{print_indent * ' '}================")
 
     if max_records_size is None:
         max_records_size = MAX_RECORDS_SIZE
@@ -131,3 +129,5 @@ def drop_tables(tables: list[Table], print_indent=0):
         table.drop(ignore=True)
         print(f"{print_indent * ' '}- {table.name}... done")
 
+def tags_table(sqlitedb: Database) -> Table:
+    return sqlitedb.table(SQLITE_TAGS_TABLE_NAME)

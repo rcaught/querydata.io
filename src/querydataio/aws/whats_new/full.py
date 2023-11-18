@@ -1,5 +1,6 @@
 """Full"""
 
+from duckdb import DuckDBPyConnection
 from sqlite_utils import Database
 from sqlite_utils.db import Table
 
