@@ -18,7 +18,6 @@ FIRST_YEAR = 2004
 SQLITE_WHATS_NEW_TABLE_NAME = "whats_new"
 SQLITE_WHATS_NEW_TAGS_TABLE_NAME = "whats_new_tags"
 
-
 def process(
     con: duckdb.DuckDBPyConnection, all_data: list[duckdb.DuckDBPyRelation], print_indent=0
 ) -> list[pd.DataFrame]:
@@ -26,6 +25,7 @@ def process(
 
     processed_updates: list[pd.DataFrame] = []
     processed_tags: list[pd.DataFrame] = []
+    processed_joins: list[pd.DataFrame] = []
 
     print()
     print(f"{print_indent * ' '}Processing data")
@@ -57,7 +57,7 @@ def process(
             """
         )
 
-        tags = con.sql(
+        tags_with_id = con.sql(
             """
                 SELECT
                   id as whats_new_id,
@@ -67,13 +67,33 @@ def process(
             """
         )
 
+        joins = con.sql(
+            """
+                SELECT
+                  whats_new_id,
+                  id as tag_id
+                FROM
+                  tags_with_id;
+            """
+        )
+
+        tags = con.sql(
+            """
+                SELECT DISTINCT * EXCLUDE (whats_new_id)
+                FROM
+                  tags_with_id;
+            """
+        )
+
         processed_updates.append(updates.df())
         processed_tags.append(tags.df())
+        processed_joins.append(joins.df())
 
     result_updates = pd.concat(processed_updates, ignore_index=True)
     result_tags = pd.concat(processed_tags, ignore_index=True)
+    result_joins = pd.concat(processed_joins, ignore_index=True)
 
-    return [result_updates, result_tags]
+    return [result_updates, result_tags, result_joins]
 
 
 def initial_sqlite_transform(main_table: str):
@@ -100,7 +120,7 @@ def initial_sqlite_transform(main_table: str):
     )
 
 
-def final_sqlite_transform(sqlitedb: Database, main_table: Table, tags_table: Table):
+def final_sqlite_transform(sqlitedb: Database, main_table: Table, tags_table: Table, joins_table: Table):
     """Final tranformations"""
 
     print()
@@ -110,22 +130,24 @@ def final_sqlite_transform(sqlitedb: Database, main_table: Table, tags_table: Ta
     main_table.transform(
         pk="id",
     )
-
-    main_table.create_index(["id"], unique=True)
     main_table.create_index(["postDateTime"])
     main_table.create_index(["headline"])
 
-    tags_table.transform(pk=[f"{main_table.name}_id", "id"])
-
-    tags_table.add_foreign_key(
-        f"{main_table.name}_id", main_table.name, "id", ignore=True
+    tags_table.transform(
+        pk="id",
     )
-    sqlitedb.index_foreign_keys()
-
-    tags_table.create_index(["id"])
     tags_table.create_index(["tagNamespaceId"])
     tags_table.create_index(["name"])
     tags_table.create_index(["tagNamespaceId", "name"])
+
+    joins_table.transform(pk=[main_table.name + "_id", "tag_id"])
+    joins_table.add_foreign_key(
+        f"{main_table.name}_id", main_table.name, "id", ignore=True
+    )
+    joins_table.add_foreign_key(
+        f"tag_id", tags_table.name, "id", ignore=True
+    )
+    sqlitedb.index_foreign_keys()
 
     sqlitedb.analyze()
     sqlitedb.vacuum()
