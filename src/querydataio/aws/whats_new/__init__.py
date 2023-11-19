@@ -90,17 +90,6 @@ def final_sqlite_transform(
 
     print(f"{print_indent * ' '}- {whats_new_table.name}... done")
 
-    tags_table.transform(pk="id")
-    tags_table.create_index(["tagNamespaceId"])
-    tags_table.create_index(["name"])
-    tags_table.create_index(["tagNamespaceId", "name"])
-
-    print(f"{print_indent * ' '}- {tags_table.name}... done")
-
-    whats_new_tags_table.transform(pk=[whats_new_table.name + "_id", "tag_id"])
-    whats_new_tags_table.add_foreign_key(
-        f"{whats_new_table.name}_id", whats_new_table.name, "id", ignore=True
+    aws_shared.common_table_optimisations(
+        tags_table, whats_new_tags_table, whats_new_table, RELATION_ID, print_indent
     )
-    whats_new_tags_table.add_foreign_key(f"tag_id", tags_table.name, "id", ignore=True)
-
-    print(f"{print_indent * ' '}- {whats_new_tags_table.name}... done")

@@ -385,3 +385,24 @@ def run_partial(
     )
 
     return True
+
+
+def common_table_optimisations(
+    tags_table: Table,
+    main_tags_table: Table,
+    main_table: Table,
+    relation_id: str,
+    print_indent=0,
+):
+    tags_table.transform(pk="id")
+    tags_table.create_index(["tagNamespaceId"])
+    tags_table.create_index(["name"])
+    tags_table.create_index(["tagNamespaceId", "name"])
+
+    print(f"{print_indent * ' '}- {tags_table.name}... done")
+
+    main_tags_table.transform(pk=[relation_id, "tag_id"])
+    main_tags_table.add_foreign_key(relation_id, main_table.name, "id", ignore=True)
+    main_tags_table.add_foreign_key("tag_id", tags_table.name, "id", ignore=True)
+
+    print(f"{print_indent * ' '}- {main_tags_table.name}... done")
