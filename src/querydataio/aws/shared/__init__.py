@@ -2,11 +2,13 @@
 
 import math
 import sqlite3
-from typing import Optional
+from typing import Optional, Union
+from types import ModuleType
 import pandas as pd
-import duckdb
+from duckdb import DuckDBPyConnection, DuckDBPyRelation
 from sqlite_utils import Database
 from sqlite_utils.db import Table
+from querydataio.aws import shared as aws_shared
 
 MAX_RECORDS_SIZE = 1000
 PARTIAL_COLLECTION_SIZE = 200
@@ -15,17 +17,17 @@ SQLITE_TAGS_TABLE_NAME = "tags"
 
 
 def download(
-    con: duckdb.DuckDBPyConnection,
+    con: DuckDBPyConnection,
     url: str,
     tag_id_prefix: Optional[str] = None,
     paritions: list[str] = [],
     max_records_size: Optional[int] = None,
     max_pages: Optional[int] = None,
     print_indent=0,
-) -> list[duckdb.DuckDBPyRelation]:
+) -> list[DuckDBPyRelation]:
     """Break up download range"""
 
-    all_data: list[duckdb.DuckDBPyRelation] = []
+    all_data: list[DuckDBPyRelation] = []
 
     print()
     print(f"{print_indent * ' '}Downloading data")
@@ -72,14 +74,14 @@ def download(
 
 
 def get_data(
-    con: duckdb.DuckDBPyConnection,
+    con: DuckDBPyConnection,
     url: str,
     tag_id_prefix: Optional[str],
     item: str,
     page: int,
     max_records_size: int = MAX_RECORDS_SIZE,
     print_indent=0,
-) -> duckdb.DuckDBPyRelation:
+) -> DuckDBPyRelation:
     """Gets data. Pagination limits necessitate the following year and page scopes."""
 
     target_url = f"{url}&size={max_records_size}&page={page}"
@@ -164,8 +166,8 @@ def final_database_optimisations(sqlitedb: Database, print_indent=0):
 
 
 def process(
-    con: duckdb.DuckDBPyConnection,
-    all_data: list[duckdb.DuckDBPyRelation],
+    con: DuckDBPyConnection,
+    all_data: list[DuckDBPyRelation],
     relation_id: str,
     print_indent=0,
 ) -> list[pd.DataFrame]:
@@ -257,5 +259,5 @@ def process(
         """
     ).df()
 
-    return [result_blogs, result_tags_distinct, result_blog_tags]
+    return [result_main, result_tags_distinct, result_main_tags]
 

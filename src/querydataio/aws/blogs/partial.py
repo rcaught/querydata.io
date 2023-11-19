@@ -9,7 +9,7 @@ from querydataio.aws import shared as aws_shared
 from querydataio.aws import blogs
 
 
-def run() -> bool:
+def run(print_indent=0) -> bool:
     print()
     print(f"{print_indent * ' '}Blogs")
     print(f"{print_indent * ' '}=====")
@@ -56,9 +56,9 @@ def run() -> bool:
 
     # Merge into existing
 
-    blog_table: Table = sqlitedb.table(blogs.SQLITE_BLOGS_TABLE_NAME)
+    blogs_table: Table = sqlitedb.table(blogs.SQLITE_BLOGS_TABLE_NAME)
     tags_table = aws_shared.tags_table(sqlitedb)
-    blog_tags_table: Table = sqlitedb.table(blogs.SQLITE_BLOG_TAGS_TABLE_NAME)
+    blogs_tag_table: Table = sqlitedb.table(blogs.SQLITE_BLOG_TAGS_TABLE_NAME)
 
     blogs_table_count = blogs_table.count
 
@@ -67,7 +67,7 @@ def run() -> bool:
         [
             (blogs_table, blogs_new_table),
             (tags_table, tags_new_table),
-            (blog_tags_table, blog_tags_new_table),
+            (blogs_tag_table, blog_tags_new_table),
         ],
         print_indent=print_indent + 2,
     )
@@ -76,7 +76,7 @@ def run() -> bool:
         return False
 
     blogs.final_sqlite_transform(
-        blogs_table, tags_table, blog_tags_table, print_indent=print_indent + 2
+        blogs_table, tags_table, blogs_tag_table, print_indent=print_indent + 2
     )
 
     return True

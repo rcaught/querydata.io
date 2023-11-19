@@ -38,11 +38,11 @@ def run(print_indent=0) -> bool:
     # NOTE: more would be done in duckDB, but errors on column reordering were happening
 
     whats_new_new_table: Table = sqlitedb.table(
-        whats_new.SQLITE_WHATS_NEW_TABLE_NAME + "_new"
+        whats_new.SQLITE_MAIN_TABLE_NAME + "_new"
     )
     tags_new_table: Table = sqlitedb.table(aws_shared.SQLITE_TAGS_TABLE_NAME + "_new")
     whats_new_tags_new_table: Table = sqlitedb.table(
-        whats_new.SQLITE_WHATS_NEW_TAGS_TABLE_NAME + "_new"
+        whats_new.SQLITE_MAIN_TAGS_TABLE_NAME + "_new"
     )
 
     aws_shared.to_sqlite(
@@ -58,11 +58,9 @@ def run(print_indent=0) -> bool:
 
     # Merge into existing
 
-    whats_new_table: Table = sqlitedb.table(whats_new.SQLITE_WHATS_NEW_TABLE_NAME)
+    whats_new_table: Table = sqlitedb.table(whats_new.SQLITE_MAIN_TABLE_NAME)
     tags_table = aws_shared.tags_table(sqlitedb)
-    whats_new_tags_table: Table = sqlitedb.table(
-        whats_new.SQLITE_WHATS_NEW_TAGS_TABLE_NAME
-    )
+    whats_new_tags_table: Table = sqlitedb.table(whats_new.SQLITE_MAIN_TAGS_TABLE_NAME)
 
     whats_new_table_count = whats_new_table.count
 

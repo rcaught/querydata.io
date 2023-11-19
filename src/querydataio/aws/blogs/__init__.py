@@ -1,14 +1,9 @@
 import pathlib
 import sys
-
-import duckdb
+from duckdb import DuckDBPyConnection, DuckDBPyRelation
 import pandas as pd
-
 import json
-
-from sqlite_utils import Database
 from sqlite_utils.db import Table
-
 from querydataio.aws import shared as aws_shared
 
 DIRECTORY_ID = "blog-posts"
@@ -22,6 +17,8 @@ TAG_ID_PREFIX = "blog-posts%23category%23"
 
 SQLITE_BLOGS_TABLE_NAME = "blogs"
 SQLITE_BLOG_TAGS_TABLE_NAME = "blog_tags"
+
+RELATION_ID = "blog_id"
 
 
 def parse_aws_categories() -> dict[str, str]:
@@ -52,13 +49,12 @@ def aws_categories() -> list[str]:
 
 
 def process(
-    con: duckdb.DuckDBPyConnection,
-    all_data: list[duckdb.DuckDBPyRelation],
-    relation_id: str,
+    con: DuckDBPyConnection,
+    all_data: list[DuckDBPyRelation],
     print_indent=0,
 ) -> list[pd.DataFrame]:
     result_blogs, result_tags, result_blog_tags = aws_shared.process(
-        con, all_data, "blog_id", print_indent
+        con, all_data, RELATION_ID, print_indent
     )
 
     result_blogs = result_blogs.astype(str)

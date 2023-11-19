@@ -1,7 +1,7 @@
-import duckdb
+from duckdb import DuckDBPyRelation, DuckDBPyConnection
 import pandas as pd
-from sqlite_utils import Database
 from sqlite_utils.db import Table
+from querydataio.aws import shared as aws_shared
 
 
 DIRECTORY_ID = "whats-new"
@@ -15,18 +15,19 @@ TAG_ID_PREFIX = "whats-new%23year%23"
 
 FIRST_YEAR = 2004
 
-SQLITE_WHATS_NEW_TABLE_NAME = "whats_new"
-SQLITE_WHATS_NEW_TAGS_TABLE_NAME = "whats_new_tags"
+SQLITE_MAIN_TABLE_NAME = "whats_new"
+SQLITE_MAIN_TAGS_TABLE_NAME = "whats_new_tags"
+
+RELATION_ID = "whats_new_id"
 
 
 def process(
-    con: duckdb.DuckDBPyConnection,
-    all_data: list[duckdb.DuckDBPyRelation],
-    relation_id: str,
+    con: DuckDBPyConnection,
+    all_data: list[DuckDBPyRelation],
     print_indent=0,
 ) -> list[pd.DataFrame]:
     result_whats_new, result_tags, result_whats_new_tags = aws_shared.process(
-        con, all_data, "whats_new_id", print_indent
+        con, all_data, RELATION_ID, print_indent
     )
 
     result_whats_new_fixed = con.sql(
