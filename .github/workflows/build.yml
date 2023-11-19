@@ -3,8 +3,8 @@ name: build
 on:
   schedule:
     # update these below if changing
-    - cron: "*/15 * * * *" # every 15 mins
-    - cron: "0 0 * * 0" # once a week "At 00:00 on Sunday."
+    # - cron: "*/15 * * * *" # every 15 mins
+    # - cron: "0 0 * * 0" # once a week "At 00:00 on Sunday."
   push:
     branches: [master]
 
