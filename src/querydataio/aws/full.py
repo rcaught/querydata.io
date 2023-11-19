@@ -20,4 +20,4 @@ duckdb = shared.init_duckdb()
 whats_new.run(sqlitedb, duckdb, print_indent=2)
 blogs.run(sqlitedb, duckdb, print_indent=2)
 
-aws_shared.final_database_optimisations(sqlitedb, print_indent=2)
+shared.final_database_optimisations(sqlitedb, print_indent=2)

@@ -1,8 +1,6 @@
 import sys
-
 from sqlite_utils import Database
 import querydataio.aws.whats_new.partial as whats_new
-
 import querydataio.aws.blogs.partial as blogs
 from querydataio.aws import shared as aws_shared
 from querydataio import shared
@@ -24,4 +22,4 @@ if not all(x.run(print_indent=2) for x in [whats_new, blogs]):
     print("=======================================")
     sys.exit(1)
 
-aws_shared.final_database_optimisations(sqlitedb)
+shared.final_database_optimisations(sqlitedb)

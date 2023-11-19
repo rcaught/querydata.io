@@ -12,7 +12,6 @@ URL_PREFIX = (
     "&sort_order=desc"
 )
 TAG_ID_PREFIX = "whats-new%23year%23"
-
 FIRST_YEAR = 2004
 
 SQLITE_MAIN_TABLE_NAME = "whats_new"

@@ -2,7 +2,6 @@
 
 from duckdb import DuckDBPyConnection
 from sqlite_utils import Database
-
 from querydataio import shared
 from querydataio.aws import shared as aws_shared
 from querydataio.aws import whats_new
