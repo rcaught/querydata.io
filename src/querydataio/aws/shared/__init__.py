@@ -9,6 +9,7 @@ from duckdb import DuckDBPyConnection, DuckDBPyRelation
 from sqlite_utils import Database
 from sqlite_utils.db import Table
 from querydataio.aws import shared as aws_shared
+from querydataio import shared
 
 MAX_RECORDS_SIZE = 1000
 PARTIAL_COLLECTION_SIZE = 200
@@ -20,7 +21,7 @@ def download(
     con: DuckDBPyConnection,
     url: str,
     tag_id_prefix: Optional[str] = None,
-    paritions: list[str] = [],
+    paritions: range | list[str] = [],
     max_records_size: Optional[int] = None,
     max_pages: Optional[int] = None,
     print_indent=0,
@@ -305,3 +306,82 @@ def run_full(
         main_tags_table,
         print_indent=print_indent + 2,
     )
+
+
+def run_partial(
+    main_module: ModuleType,
+    tag_id_prefix: str | None,
+    partitions: range | list[any] = [],
+    print_indent=0,
+):
+    print()
+    print(f"{print_indent * ' '}{main_module.DIRECTORY_ID}")
+    print(f"{print_indent * ' '}{len(main_module.DIRECTORY_ID) * '='}")
+
+    sqlitedb = Database(aws_shared.SQLITE_DB)
+    duckdb = shared.init_duckdb()
+
+    print(
+        f"{print_indent * ' '}- downloading last {aws_shared.PARTIAL_COLLECTION_SIZE} and merging"
+    )
+
+    downloaded = aws_shared.download(
+        duckdb,
+        main_module.URL_PREFIX,
+        tag_id_prefix,
+        partitions,
+        aws_shared.PARTIAL_COLLECTION_SIZE,
+        1,
+        print_indent=print_indent + 2,
+    )
+
+    result_main, result_tags, result_main_tags = main_module.process(
+        duckdb, downloaded, print_indent + 2
+    )
+
+    # SQLite processing of new tables
+    # NOTE: more would be done in duckDB, but errors on column reordering were happening
+
+    main_new_table: Table = sqlitedb.table(main_module.SQLITE_MAIN_TABLE_NAME + "_new")
+    tags_new_table: Table = sqlitedb.table(aws_shared.SQLITE_TAGS_TABLE_NAME + "_new")
+    main_tags_new_table: Table = sqlitedb.table(
+        main_module.SQLITE_MAIN_TAGS_TABLE_NAME + "_new"
+    )
+
+    aws_shared.to_sqlite(
+        [
+            (result_main, main_new_table),
+            (result_tags, tags_new_table),
+            (result_main_tags, main_tags_new_table),
+        ],
+        print_indent=print_indent + 2,
+    )
+
+    main_module.initial_sqlite_transform(main_new_table)
+
+    # Merge into existing
+
+    main_table: Table = sqlitedb.table(main_module.SQLITE_MAIN_TABLE_NAME)
+    tags_table = aws_shared.tags_table(sqlitedb)
+    main_tags_table: Table = sqlitedb.table(main_module.SQLITE_MAIN_TAGS_TABLE_NAME)
+
+    main_table_count = main_table.count
+
+    aws_shared.merge_sqlite_tables(
+        sqlitedb,
+        [
+            (main_table, main_new_table),
+            (tags_table, tags_new_table),
+            (main_tags_table, main_tags_new_table),
+        ],
+        print_indent=print_indent + 2,
+    )
+
+    if main_table.count == main_table_count:
+        return False
+
+    main_module.final_sqlite_transform(
+        main_table, tags_table, main_tags_table, print_indent=print_indent + 2
+    )
+
+    return True
