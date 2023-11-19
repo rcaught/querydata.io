@@ -161,3 +161,101 @@ def final_database_optimisations(sqlitedb: Database, print_indent=0):
     sqlitedb.vacuum()
 
     print(f"{print_indent * ' '}{SQLITE_DB}... done")
+
+
+def process(
+    con: duckdb.DuckDBPyConnection,
+    all_data: list[duckdb.DuckDBPyRelation],
+    relation_id: str,
+    print_indent=0,
+) -> list[pd.DataFrame]:
+    """Clean and transform into a Dataframe"""
+
+    processed_main: list[pd.DataFrame] = []
+    processed_tags: list[pd.DataFrame] = []
+    processed_main_tags: list[pd.DataFrame] = []
+
+    print()
+    print(f"{print_indent * ' '}Processing data")
+    print(f"{print_indent * ' '}===============")
+    print(f"{print_indent * ' '}{len(all_data)} pages...")
+    print()
+
+    for i, data in enumerate(all_data):  # pylint: disable=unused-variable
+        print(f"{print_indent * ' '}- page {i + 1}")
+
+        unnested_items = con.sql(  # pylint: disable=unused-variable
+            """
+              SELECT
+                UNNEST(items, recursive := true)
+              FROM
+                data;
+            """
+        )
+
+        if unnested_items.count("*").fetchall()[0][0] == 0:
+            continue
+
+        main = con.sql(
+            """
+                CREATE OR REPLACE TEMP TABLE t1 AS
+                SELECT
+                  * EXCLUDE (tags)
+                FROM
+                  unnested_items;
+
+                SELECT * FROM t1;
+            """
+        )
+
+        tags_with_id = con.sql(
+            f"""
+                SELECT
+                  id as {relation_id},
+                  unnest(tags, recursive := true)
+                FROM
+                  unnested_items;
+            """
+        )
+
+        main_tags = con.sql(
+            f"""
+                SELECT
+                  {relation_id},
+                  id as tag_id
+                FROM
+                  tags_with_id;
+            """
+        )
+
+        tags = con.sql(
+            f"""
+                SELECT DISTINCT * EXCLUDE ({relation_id}, description)
+                FROM
+                  tags_with_id;
+            """
+        )
+
+        processed_main.append(main.df())
+        processed_tags.append(tags.df())
+        processed_main_tags.append(main_tags.df())
+
+    result_main = pd.concat(processed_main, ignore_index=True)
+    result_tags = pd.concat(processed_tags, ignore_index=True)
+    result_main_tags = pd.concat(processed_main_tags, ignore_index=True)
+
+    result_tags_distinct = con.sql(
+        """
+            SELECT
+              * EXCLUDE (lastUpdatedBy, dateUpdated, name),
+              MAX_BY(lastUpdatedBy, dateUpdated) as lastUpdatedBy,
+              MAX(dateUpdated) as dateUpdated,
+              MAX_BY(name, dateUpdated) as name
+            FROM
+              result_tags
+            GROUP BY ALL;
+        """
+    ).df()
+
+    return [result_blogs, result_tags_distinct, result_blog_tags]
+

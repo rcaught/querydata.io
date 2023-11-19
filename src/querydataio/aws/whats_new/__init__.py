@@ -22,89 +22,29 @@ SQLITE_WHATS_NEW_TAGS_TABLE_NAME = "whats_new_tags"
 def process(
     con: duckdb.DuckDBPyConnection,
     all_data: list[duckdb.DuckDBPyRelation],
+    relation_id: str,
     print_indent=0,
 ) -> list[pd.DataFrame]:
-    """Clean and transform into a Dataframe"""
+    result_whats_new, result_tags, result_whats_new_tags = aws_shared.process(
+        con, all_data, "whats_new_id", print_indent
+    )
 
-    processed_whats_new: list[pd.DataFrame] = []
-    processed_tags: list[pd.DataFrame] = []
-    processed_whats_new_tags: list[pd.DataFrame] = []
-
-    print()
-    print(f"{print_indent * ' '}Processing data")
-    print(f"{print_indent * ' '}===============")
-
-    for i, data in enumerate(all_data):  # pylint: disable=unused-variable
-        print(f"{print_indent * ' '}- page {i + 1}")
-        unnested_items = con.sql(  # pylint: disable=unused-variable
-            """
-              SELECT
-                UNNEST(items, recursive := true)
-              FROM
-                data;
-            """
-        )
-
-        whats_new = con.sql(
-            """
-                CREATE OR REPLACE TEMP TABLE t1 AS
-                SELECT
-                  * EXCLUDE (tags) REPLACE('https://aws.amazon.com' || headlineUrl AS headlineUrl)
-                FROM
-                  unnested_items;
-
-                UPDATE t1 SET postDateTime = '2021-06-23T12:30:32Z'
-                WHERE postDateTime = '0202-06-23T12:30:32Z';
-
-                SELECT * FROM t1;
-            """
-        )
-
-        tags_with_id = con.sql(
-            """
-                SELECT
-                  id as whats_new_id,
-                  unnest(tags, recursive := true)
-                FROM
-                  unnested_items;
-            """
-        )
-
-        whats_new_tags = con.sql(
-            """
-                SELECT
-                  whats_new_id,
-                  id as tag_id
-                FROM
-                  tags_with_id;
-            """
-        )
-
-        tags = con.sql(
-            """
-                SELECT DISTINCT * EXCLUDE (whats_new_id)
-                FROM
-                  tags_with_id;
-            """
-        )
-
-        processed_whats_new.append(whats_new.df())
-        processed_tags.append(tags.df())
-        processed_whats_new_tags.append(whats_new_tags.df())
-
-    result_whats_new = pd.concat(processed_whats_new, ignore_index=True)
-    result_tags = pd.concat(processed_tags, ignore_index=True)
-    result_whats_new_tags = pd.concat(processed_whats_new_tags, ignore_index=True)
-
-    result_tags_distinct = con.sql(
+    result_whats_new_fixed = con.sql(
         """
-            SELECT DISTINCT *
+            CREATE OR REPLACE TEMP TABLE t1 AS
+            SELECT
+              * REPLACE('https://aws.amazon.com' || headlineUrl AS headlineUrl)
             FROM
-              result_tags;
+              result_whats_new;
+
+            UPDATE t1 SET postDateTime = '2021-06-23T12:30:32Z'
+            WHERE postDateTime = '0202-06-23T12:30:32Z';
+
+            SELECT * FROM t1;
         """
     ).df()
 
-    return [result_whats_new, result_tags_distinct, result_whats_new_tags]
+    return [result_whats_new_fixed, result_tags, result_whats_new_tags]
 
 
 def initial_sqlite_transform(whats_new_table: str):
