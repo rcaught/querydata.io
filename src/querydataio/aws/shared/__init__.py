@@ -13,10 +13,6 @@ PARTIAL_COLLECTION_SIZE = 200
 SQLITE_DB = "dbs/aws.db"
 SQLITE_TAGS_TABLE_NAME = "tags"
 
-pd.set_option("display.max_rows", 500)
-pd.set_option("display.max_columns", 500)
-pd.set_option("display.width", 1000)
-
 
 def download(
     con: duckdb.DuckDBPyConnection,
