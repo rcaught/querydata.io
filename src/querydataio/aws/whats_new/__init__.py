@@ -147,14 +147,14 @@ def final_sqlite_transform(
     whats_new_table.create_index(["postDateTime"])
     whats_new_table.create_index(["headline"])
 
-    print(f"{print_indent * ' '}- whats_new... done")
+    print(f"{print_indent * ' '}- {whats_new_table.name}... done")
 
     tags_table.transform(pk="id")
     tags_table.create_index(["tagNamespaceId"])
     tags_table.create_index(["name"])
     tags_table.create_index(["tagNamespaceId", "name"])
 
-    print(f"{print_indent * ' '}- tags... done")
+    print(f"{print_indent * ' '}- {tags_table.name}... done")
 
     whats_new_tags_table.transform(pk=[whats_new_table.name + "_id", "tag_id"])
     whats_new_tags_table.add_foreign_key(
@@ -162,4 +162,4 @@ def final_sqlite_transform(
     )
     whats_new_tags_table.add_foreign_key(f"tag_id", tags_table.name, "id", ignore=True)
 
-    print(f"{print_indent * ' '}- whats_new_tags... done")
+    print(f"{print_indent * ' '}- {whats_new_tags_table.name}... done")
