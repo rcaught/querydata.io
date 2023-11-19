@@ -31,7 +31,7 @@ def run(print_indent=0) -> bool:
     )
 
     result_whats_new, result_tags, result_whats_new_tags = whats_new.process(
-        duckdb, downloaded, print_indent=print_indent + 2
+        duckdb, downloaded, "whats_new_id", print_indent + 2
     )
 
     # SQLite processing of new tables

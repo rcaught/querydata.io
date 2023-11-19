@@ -29,7 +29,7 @@ def run(sqlitedb: Database, duckdb: DuckDBPyConnection, print_indent=0):
     )
 
     result_whats_new, result_tags, result_whats_new_tags = whats_new.process(
-        duckdb, downloaded, print_indent=print_indent + 2
+        duckdb, downloaded, "whats_new_id", print_indent + 2
     )
 
     aws_shared.to_sqlite(
