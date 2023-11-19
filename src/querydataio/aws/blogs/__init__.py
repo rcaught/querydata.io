@@ -61,7 +61,7 @@ def process(
         con, all_data, "blog_id", print_indent
     )
 
-    result_blogs.astype({"author": "str", "createdBy": "str", "lastUpdatedBy": "str"})
+    result_blogs = result_blogs.astype(str)
 
     return [result_blogs, result_tags, result_blog_tags]
 
