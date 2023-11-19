@@ -8,13 +8,13 @@ print("Full download")
 print("=============")
 print()
 
-sqlitedb = Database(aws_shared.SQLITE_DB)
-duckdb = shared.init_duckdb()
-
 print("AWS")
 print("===")
 
-aws_shared.drop_tables([aws_shared.tags_table(sqlitedb)], print_indent=2)
+shared.delete_db(aws_shared.SQLITE_DB)
+
+sqlitedb = Database(aws_shared.SQLITE_DB)
+duckdb = shared.init_duckdb()
 
 whats_new.run(sqlitedb, duckdb, print_indent=2)
 

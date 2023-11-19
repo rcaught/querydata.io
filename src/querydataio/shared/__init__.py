@@ -1,6 +1,7 @@
 """Shared"""
 
 import datetime
+import os
 import duckdb
 import pandas as pd
 
@@ -17,3 +18,14 @@ def current_year() -> int:
 def init_duckdb() -> duckdb.DuckDBPyConnection:
     """DuckDB"""
     return duckdb.connect(database=":memory:")
+
+
+def delete_db(db: str):
+    print()
+    print("Deleting DB")
+    print("===========")
+    if os.path.exists(db):
+        os.remove(db)
+        print(f"- {db}... done")
+    else:
+        print(f"- WARNING: cannot remove {db}")

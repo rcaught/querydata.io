@@ -20,10 +20,6 @@ def run(sqlitedb: Database, duckdb: DuckDBPyConnection, print_indent=0):
     )
     tags_table = aws_shared.tags_table(sqlitedb)
 
-    aws_shared.drop_tables(
-        [whats_new_table, whats_new_tags_table], print_indent=print_indent + 2
-    )
-
     downloaded = aws_shared.download(
         duckdb,
         whats_new.URL_PREFIX,
