@@ -261,3 +261,47 @@ def process(
 
     return [result_main, result_tags_distinct, result_main_tags]
 
+
+def run_full(
+    sqlitedb: Database,
+    duckdb: DuckDBPyConnection,
+    main_module: ModuleType,
+    download_range: Union[range, list[any]],
+    print_indent=0,
+):
+    print()
+    print(f"{print_indent * ' '}{main_module.DIRECTORY_ID}")
+    print(f"{print_indent * ' '}{len(main_module.DIRECTORY_ID) * '='}")
+
+    main_table: Table = sqlitedb.table(main_module.SQLITE_MAIN_TABLE_NAME)
+    main_tags_table: Table = sqlitedb.table(main_module.SQLITE_MAIN_TAGS_TABLE_NAME)
+    tags_table = aws_shared.tags_table(sqlitedb)
+
+    downloaded = aws_shared.download(
+        duckdb,
+        main_module.URL_PREFIX,
+        main_module.TAG_ID_PREFIX,
+        download_range,
+        print_indent=print_indent + 2,
+    )
+
+    result_main, result_tags, result_main_tags = main_module.process(
+        duckdb, downloaded, print_indent=print_indent + 2
+    )
+
+    aws_shared.to_sqlite(
+        [
+            (result_main, main_table),
+            (result_tags, tags_table),
+            (result_main_tags, main_tags_table),
+        ],
+        print_indent=print_indent + 2,
+    )
+
+    main_module.initial_sqlite_transform(main_table)
+    main_module.final_sqlite_transform(
+        main_table,
+        tags_table,
+        main_tags_table,
+        print_indent=print_indent + 2,
+    )
