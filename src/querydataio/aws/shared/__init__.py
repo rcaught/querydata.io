@@ -237,6 +237,16 @@ def process(
         """
     ).df()
 
+    # some items exist in multiple partitions
+    result_main_distinct = con.sql(
+        """
+            SELECT
+              DISTINCT *
+            FROM
+              result_main;
+        """
+    )
+
     return [result_main, result_tags_distinct, result_main_tags]
 
 
