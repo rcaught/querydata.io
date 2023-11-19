@@ -17,8 +17,8 @@ SQLITE_TAGS_TABLE_NAME = "tags"
 def download(
     con: duckdb.DuckDBPyConnection,
     url: str,
-    tag_id_prefix: str,
-    paritions: list[str],
+    tag_id_prefix: Optional[str] = None,
+    paritions: list[str] = [],
     max_records_size: Optional[int] = None,
     max_pages: Optional[int] = None,
     print_indent=0,
@@ -30,6 +30,8 @@ def download(
     print()
     print(f"{print_indent * ' '}Downloading data")
     print(f"{print_indent * ' '}================")
+    print(f"{print_indent * ' '}{len(paritions)} partitions...")
+    print()
 
     if max_records_size is None:
         max_records_size = MAX_RECORDS_SIZE
@@ -72,7 +74,7 @@ def download(
 def get_data(
     con: duckdb.DuckDBPyConnection,
     url: str,
-    tag_id_prefix: str,
+    tag_id_prefix: Optional[str],
     item: str,
     page: int,
     max_records_size: int = MAX_RECORDS_SIZE,
@@ -80,9 +82,10 @@ def get_data(
 ) -> duckdb.DuckDBPyRelation:
     """Gets data. Pagination limits necessitate the following year and page scopes."""
 
-    target_url = (
-        f"{url}&size={max_records_size}&tags.id={tag_id_prefix}{item}&page={page}"
-    )
+    target_url = f"{url}&size={max_records_size}&page={page}"
+
+    if tag_id_prefix is not None:
+        target_url = f"{target_url}&tags.id={tag_id_prefix}{item}"
 
     data = con.sql(
         query=f"""
@@ -95,7 +98,7 @@ def get_data(
 
     count = con.sql("SELECT metadata.count FROM data").fetchall()[0][0]
 
-    print(f"{print_indent * ' '}- downloading page {page} - {count} records")
+    print(f"{print_indent * ' '}- page {page} - {count} records")
     # print(f"          {target_url}")
 
     return data
