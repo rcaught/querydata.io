@@ -15,8 +15,8 @@ URL_PREFIX = (
 )
 TAG_ID_PREFIX = "blog-posts%23category%23"
 
-SQLITE_BLOGS_TABLE_NAME = "blogs"
-SQLITE_BLOG_TAGS_TABLE_NAME = "blog_tags"
+SQLITE_MAIN_TABLE_NAME = "blogs"
+SQLITE_MAIN_TAGS_TABLE_NAME = "blog_tags"
 
 RELATION_ID = "blog_id"
 

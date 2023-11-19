@@ -37,10 +37,10 @@ def run(print_indent=0) -> bool:
     # SQLite processing of new tables
     # NOTE: more would be done in duckDB, but errors on column reordering were happening
 
-    blogs_new_table: Table = sqlitedb.table(blogs.SQLITE_BLOGS_TABLE_NAME + "_new")
+    blogs_new_table: Table = sqlitedb.table(blogs.SQLITE_MAIN_TABLE_NAME + "_new")
     tags_new_table: Table = sqlitedb.table(aws_shared.SQLITE_TAGS_TABLE_NAME + "_new")
     blog_tags_new_table: Table = sqlitedb.table(
-        blogs.SQLITE_BLOG_TAGS_TABLE_NAME + "_new"
+        blogs.SQLITE_MAIN_TAGS_TABLE_NAME + "_new"
     )
 
     aws_shared.to_sqlite(
@@ -56,9 +56,9 @@ def run(print_indent=0) -> bool:
 
     # Merge into existing
 
-    blogs_table: Table = sqlitedb.table(blogs.SQLITE_BLOGS_TABLE_NAME)
+    blogs_table: Table = sqlitedb.table(blogs.SQLITE_MAIN_TABLE_NAME)
     tags_table = aws_shared.tags_table(sqlitedb)
-    blogs_tag_table: Table = sqlitedb.table(blogs.SQLITE_BLOG_TAGS_TABLE_NAME)
+    blogs_tag_table: Table = sqlitedb.table(blogs.SQLITE_MAIN_TAGS_TABLE_NAME)
 
     blogs_table_count = blogs_table.count
 
