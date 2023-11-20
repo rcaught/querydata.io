@@ -1,6 +1,7 @@
 import pathlib
 import sys
-from duckdb import DuckDBPyConnection, DuckDBPyRelation
+from types import ModuleType
+from duckdb import DuckDBPyConnection
 import pandas as pd
 import json
 from sqlite_utils.db import Table
@@ -49,20 +50,23 @@ def aws_categories() -> list[str]:
 
 
 def process(
-    con: DuckDBPyConnection,
-    all_data: list[DuckDBPyRelation],
+    ddb_con: DuckDBPyConnection,
+    main_module: ModuleType,
+    urls: list[str],
     print_indent=0,
-) -> list[pd.DataFrame]:
-    result_blogs, result_tags, result_blog_tags = aws_shared.process(
-        con, all_data, RELATION_ID, print_indent
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    main_table, main_tags_table = aws_shared.process(
+        ddb_con, main_module, urls, print_indent
     )
 
-    result_blogs = result_blogs.astype(str)
-
-    return [result_blogs, result_tags, result_blog_tags]
+    return main_table.df(), main_tags_table.df()
 
 
-def initial_sqlite_transform(blogs_table: str):
+def initial_sqlite_transform(blogs_table: Table, print_indent=0):
+    print()
+    print(f"{print_indent * ' '}Optimising tables")
+    print(f"{print_indent * ' '}=================")
+
     blogs_table.transform(
         column_order=(
             "id",
@@ -74,17 +78,6 @@ def initial_sqlite_transform(blogs_table: str):
         )
     )
 
-
-def final_sqlite_transform(
-    blogs_table: Table,
-    tags_table: Table,
-    blog_tags_table: Table,
-    print_indent=0,
-):
-    print()
-    print(f"{print_indent * ' '}Optimising tables")
-    print(f"{print_indent * ' '}=================")
-
     blogs_table.transform(
         pk="id",
     )
@@ -92,7 +85,3 @@ def final_sqlite_transform(
     blogs_table.create_index(["title"])
 
     print(f"{print_indent * ' '}- {blogs_table.name}... done")
-
-    aws_shared.common_table_optimisations(
-        tags_table, blog_tags_table, blogs_table, RELATION_ID, print_indent
-    )
