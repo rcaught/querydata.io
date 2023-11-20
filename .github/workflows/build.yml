@@ -26,12 +26,14 @@ jobs:
         run: poetry install
       - name: Cache AWS DB
         id: cache-aws-db
+        env:
+          ACTIONS_STEP_DEBUG: true
         uses: actions/cache@v3
         with:
           path: dbs
-          key: dbs-${{ hashFiles('**/*.db') }}
+          key: ${{ runner.os }}-dbs-${{ hashFiles('dbs/*.db') }}
       - name: Build (full)
-        if: github.event_name == 'push' || steps.cache-aws-db.outputs.cache-hit != 'true' || github.event.schedule == '*/15 * * * *'
+        # if: github.event_name == 'push' || steps.cache-aws-db.outputs.cache-hit != 'true' || github.event.schedule == '*/15 * * * *'
         run: |
           poetry run python -u src/querydataio/aws/full.py
       # - name: Build (partial)
