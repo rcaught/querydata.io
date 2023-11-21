@@ -41,13 +41,22 @@ jobs:
       #   run: |
       #     poetry run python -u src/querydataio/aws/partial.py
       - name: Save Cache DBs
-        id: cache-db-save
+        id: cache-dbs-save
         uses: actions/cache/save@v3
         with:
           path: |
             dbs/aws.db
           key: ${{ runner.os }}-dbs-${{ hashFiles('dbs/aws.db') }}
+      - name: Lookup Cache DBs
+        id: cache-dbs-lookup
+        uses: actions/cache/restore@v3
+        with:
+          path: |
+            dbs/aws.db
+          key: ${{ runner.os }}-dbs-${{ hashFiles('dbs/aws.db') }}
+          lookup-only: true
       - name: Deploy Datasette using Vercel
+        if: steps.cache-dbs-restore.outputs.cache-matched-key != steps.cache-dbs-lookup.outputs.cache-matched-key
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           CLOUDFLARE_PURGE_API_TOKEN: ${{ secrets.CLOUDFLARE_PURGE_API_TOKEN }}
