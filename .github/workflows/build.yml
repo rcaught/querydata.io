@@ -46,7 +46,7 @@ jobs:
         with:
           path: |
             dbs/aws.db
-        key: ${{ steps.cache-db-restore.outputs.cache-primary-key }}
+          key: ${{ steps.cache-db-restore.outputs.cache-primary-key }}
       - name: Deploy Datasette using Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
