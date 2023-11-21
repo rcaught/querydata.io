@@ -24,14 +24,14 @@ jobs:
           cache: 'poetry'
       - name: Install deps
         run: poetry install
-      - name: Cache AWS DB
-        id: cache-aws-db
-        env:
-          ACTIONS_STEP_DEBUG: true
-        uses: actions/cache@v3
+      - name: Restore Cache DBs
+        id: cache-dbs-restore
+        uses: actions/cache/restore@v3
         with:
-          path: dbs/aws.db
+          path: |
+            dbs/aws.db
           key: ${{ runner.os }}-dbs-${{ hashFiles('dbs/aws.db') }}
+          restore-keys: ${{ runner.os }}-dbs-
       - name: Build (full)
         # if: github.event_name == 'push' || steps.cache-aws-db.outputs.cache-hit != 'true' || github.event.schedule == '*/15 * * * *'
         run: |
@@ -40,6 +40,13 @@ jobs:
       #   if: github.event_name != 'push' || (steps.cache-aws-db.outputs.cache-hit == 'true' && github.event.schedule == '*/15 * * * *')
       #   run: |
       #     poetry run python -u src/querydataio/aws/partial.py
+      - name: Save Cache DBs
+        id: cache-db-save
+        uses: actions/cache/save@v3
+        with:
+          path: |
+            dbs/aws.db
+        key: ${{ steps.cache-db-restore.outputs.cache-primary-key }}
       - name: Deploy Datasette using Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}

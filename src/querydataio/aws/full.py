@@ -17,7 +17,6 @@ shared.delete_db(aws_shared.SQLITE_DB)
 sqlitedb = Database(aws_shared.SQLITE_DB)
 ddb_con = shared.init_duckdb()
 
-ddb_con.execute("SET enable_progress_bar=true;")
 
 aws_shared.run_full(
     sqlitedb,
