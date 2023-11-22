@@ -26,28 +26,14 @@ aws_shared.run_full(
     print_indent=2,
 )
 
-# aws_shared.run_full(
-#     sqlitedb,
-#     ddb_con,
-#     blogs,
-#     blogs.aws_categories(),  # [0:2]
-#     print_indent=2,
-# )
-
 aws_shared.final_tags_processing(ddb_con, sqlitedb, 2)
 
 tags_table = aws_shared.tags_table(sqlitedb)
 whats_new_table: Table = sqlitedb.table(whats_new.SQLITE_MAIN_TABLE_NAME)
 whats_new_tags_table: Table = sqlitedb.table(whats_new.SQLITE_MAIN_TAGS_TABLE_NAME)
-# blogs_table: Table = sqlitedb.table(blogs.SQLITE_MAIN_TABLE_NAME)
-# blog_tags_table: Table = sqlitedb.table(blogs.SQLITE_MAIN_TAGS_TABLE_NAME)
 
 aws_shared.common_table_optimisations(
     tags_table, whats_new_tags_table, whats_new_table, whats_new.RELATION_ID, 4
 )
-
-# aws_shared.common_table_optimisations(
-#     tags_table, blog_tags_table, blogs_table, blogs.RELATION_ID, 2
-# )
 
 shared.final_database_optimisations(sqlitedb, 2)

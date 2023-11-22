@@ -288,8 +288,7 @@ def final_tags_processing(
         FROM
           (
             SELECT * FROM tags_whats_new
-            -- UNION
-            -- SELECT * FROM tags_blogs
+            -- UNION others here
           )
         GROUP BY ALL;
         """
