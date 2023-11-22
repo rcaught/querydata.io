@@ -14,7 +14,9 @@ SQLITE_DB = "dbs/aws.db"
 SQLITE_TAGS_TABLE_NAME = "tags"
 
 
-def to_sqlite(items: list[tuple[pd.DataFrame, Table]], print_indent=0):
+def to_sqlite(
+    sqlitedb: Database, items: list[tuple[pd.DataFrame, Table]], print_indent=0
+):
     """Export Dataframe to SQLite"""
 
     print("")
@@ -22,8 +24,7 @@ def to_sqlite(items: list[tuple[pd.DataFrame, Table]], print_indent=0):
     print(f"{print_indent * ' '}================")
 
     for data, table in items:
-        sqlite = sqlite3.connect(SQLITE_DB)
-        data.to_sql(table.name, sqlite, if_exists="replace", index=False)
+        data.to_sql(table.name, sqlitedb.conn, if_exists="replace", index=False)
 
         print(f"{print_indent * ' '}- {table.name}... done")
 
@@ -71,6 +72,7 @@ def run_full(
     )
 
     aws_shared.to_sqlite(
+        sqlitedb,
         [
             (main_table_df, main_table),
             (main_tags_table_df, main_tags_table),
@@ -297,6 +299,7 @@ def final_tags_processing(
     tags_table = aws_shared.tags_table(sqlitedb)
 
     aws_shared.to_sqlite(
+        sqlitedb,
         [
             (tags_df, tags_table),
         ],
