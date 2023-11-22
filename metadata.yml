@@ -1,8 +1,8 @@
 title: querydata.io
 description_html: |-
-  - <a href="https://github.com/rcaught/querydata.io" target="_blank">https://github.com/rcaught/querydata.io</a></li>
+  - <a href="https://github.com/rcaught/querydata.io" target="_blank">https://github.com/rcaught/querydata.io</a>
   <br />
-  - <a href="https://www.linkedin.com/in/rcaught/" target="_blank">https://www.linkedin.com/in/rcaught/</a></li>
+  - <a href="https://www.linkedin.com/in/rcaught/" target="_blank">https://www.linkedin.com/in/rcaught/</a>
   <br />
   <br />
   This site employs heavy caching techniques that may result in unexpected results for dynamic SQL values, such as RANDOM() or DATE('now').
@@ -35,7 +35,9 @@ databases:
         title: What's new - re:Invent 2023 updates
         sql: |-
           SELECT
-            *
+            headline,
+            headlineUrl,
+            strftime('%Y-%m-%d', postDateTime) as date
           FROM
             whats_new
           WHERE
@@ -46,13 +48,36 @@ databases:
         title: What's new - re:Invent 2022 updates
         sql: |-
           SELECT
-            *
+            headline,
+            headlineUrl,
+            strftime('%Y-%m-%d', postDateTime) as date
           FROM
             whats_new
           WHERE
             postDateTime BETWEEN '2022-11-28' AND '2022-12-03'
           ORDER BY
             postDateTime ASC;
+      whats_new_simple_feed:
+        title: What's new - Simple feed (like https://aws.amazon.com/new/)
+        description_html: |-
+          The order of these results is close to AWS, but not exact.
+          <br />
+          AWS publishes batches of updates that all have the same <code>postDateTime</code>. No sorting on this column, in combination with other provided datetime columns, produces the same results as AWS (including <code>dateCreated</code>).
+          <br />
+          My best guess is that there is another unpublished sort key (likely a GUID, as I would expect an auto increment to align with <code>dateCreated</code>).
+          <br />
+          <hr />
+          To scope by category, look at some other example queries, such as: <a href="https://querydata.io/aws/whats_new_tags_category_updates">What's new - updates by category tag</a>
+        sql: |-
+          SELECT
+            headline,
+            headlineUrl,
+            strftime('%Y-%m-%d', postDateTime) as date
+          FROM
+            whats_new
+          ORDER BY
+            postDateTime DESC
+          LIMIT 15;
       whats_new_updates_over_time:
         title: What's new - updates over time (with graph)
         description_html: |-
@@ -162,7 +187,16 @@ databases:
             WHERE
               tag_id = 'whats-new#general-products#aws-fargate'
           )
-          SELECT * FROM whats_new WHERE id IN tags ORDER BY postDateTime DESC LIMIT 100;
+          SELECT
+            headline,
+            headlineUrl,
+            strftime('%Y-%m-%d', postDateTime) as date
+          FROM
+            whats_new
+          WHERE
+            id IN tags
+          ORDER BY postDateTime DESC
+          LIMIT 15;
       whats_new_tags_category_updates:
         title: What's new - updates by category tag (eg. databases)
         sql: |-
@@ -174,7 +208,16 @@ databases:
             WHERE
               tag_id = 'whats-new#marketing-marchitecture#databases'
           )
-          SELECT * FROM whats_new WHERE id IN tags ORDER BY postDateTime DESC LIMIT 100;
+          SELECT
+            headline,
+            headlineUrl,
+            strftime('%Y-%m-%d', postDateTime) as date
+          FROM
+            whats_new
+          WHERE
+            id IN tags
+          ORDER BY postDateTime DESC
+          LIMIT 15;
       whats_new_tags_last_update_per_product:
         title: What's new - last update per product
         sql: |-
@@ -223,7 +266,9 @@ databases:
         title: What's new - find updates from when I was away
         sql: |-
           SELECT
-            *
+            headline,
+            headlineUrl,
+            strftime('%Y-%m-%d', postDateTime) as date
           FROM
             whats_new
           WHERE
@@ -234,7 +279,9 @@ databases:
         title: What's new - exclude region availability updates
         sql: |-
           SELECT
-            *
+            headline,
+            headlineUrl,
+            strftime('%Y-%m-%d', postDateTime) as date
           FROM
             whats_new
           WHERE
@@ -242,12 +289,16 @@ databases:
           ORDER BY
             postDateTime DESC
           LIMIT
-            100;
+            15;
       whats_new_deprecations:
         title: What's new - updates mentioning deprecations
         sql: |-
           SELECT
-            *
+            headline,
+            headlineUrl,
+            strftime('%Y-%m-%d', postDateTime) as date,
+            postSummary,
+            postBody
           FROM
             whats_new
           WHERE
@@ -257,20 +308,17 @@ databases:
           ORDER BY
             postDateTime DESC
           LIMIT
-            100;
+            15;
       whats_new_utc_offset:
         title: What's new - localise by adding a UTC offset to dates
         sql: |-
           SELECT
-            id,
-            datetime(postDateTime, "+10:00") as postDateTime,
             headline,
             headlineUrl,
-            postSummary,
-            postBody
+            datetime(postDateTime, "+10:00") as postDateTime
           FROM
             whats_new
           ORDER BY
             postDateTime DESC
           LIMIT
-            100;
+            15;
