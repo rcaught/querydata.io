@@ -256,18 +256,22 @@ def generate_urls(main_module: ModuleType, partitions: range | list[any]):
 
 
 def common_table_optimisations(
-    tags_table: Table,
-    main_tags_table: Table,
-    main_table: Table,
-    relation_id: str,
+    sqlitedb: Database,
+    main_module: ModuleType,
     print_indent=0,
 ):
     print()
     print(f"{print_indent * ' '}Optimising tables")
     print(f"{print_indent * ' '}=================")
 
-    main_tags_table.transform(pk=[relation_id, "tag_id"])
-    main_tags_table.add_foreign_key(relation_id, main_table.name, "id", ignore=True)
+    tags_table = aws_shared.tags_table(sqlitedb)
+    main_table: Table = sqlitedb.table(main_module.SQLITE_MAIN_TABLE_NAME)
+    main_tags_table: Table = sqlitedb.table(main_module.SQLITE_MAIN_TAGS_TABLE_NAME)
+
+    main_tags_table.transform(pk=[main_module.RELATION_ID, "tag_id"])
+    main_tags_table.add_foreign_key(
+        main_module.RELATION_ID, main_table.name, "id", ignore=True
+    )
     main_tags_table.add_foreign_key("tag_id", tags_table.name, "id", ignore=True)
 
     print(f"{print_indent * ' '}- {main_tags_table.name}... done")
