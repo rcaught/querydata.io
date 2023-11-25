@@ -6,26 +6,73 @@ from querydataio import shared
 print()
 print("Full download")
 print("=============")
-print()
 
+print()
 print("AWS")
 print("===")
 
-shared.delete_db(aws_shared.SQLITE_DB)
+shared.delete_dbs([aws_shared.SQLITE_DB, aws_shared.DUCKDB_DB])
 
 sqlitedb = Database(aws_shared.SQLITE_DB)
-ddb_con = shared.init_duckdb()
+ddb_con = shared.init_duckdb(aws_shared.DUCKDB_DB)
 
-aws_shared.run_full(
+main_modules = {whats_new: range(whats_new.FIRST_YEAR, shared.current_year() + 1)}
+tag_tables = []
+
+for main_module, partitions in main_modules.items():
+    print()
+    print(f"  {main_module.DIRECTORY_ID}")
+    print(f"  {'=' * len(main_module.DIRECTORY_ID)}")
+
+    main_table: str = main_module.MAIN_TABLE_NAME
+    main_tags_table: str = main_module.MAIN_TAGS_TABLE_NAME
+    tags_table: str = aws_shared.TAGS_TABLE_NAME
+
+    aws_shared.download(
+        ddb_con,
+        aws_shared.generate_urls(main_module, partitions),
+        main_table,
+        4,
+    )
+
+    main_module.process(
+        ddb_con,
+        main_module,
+        main_table,
+        main_tags_table,
+        tags_table,
+        4,
+    )
+
+    aws_shared.to_sqlite(
+        sqlitedb,
+        [
+            [ddb_con.table(main_table).df(), main_table],
+            [ddb_con.table(main_tags_table).df(), main_tags_table],
+        ],
+        4,
+    )
+
+    main_module.initial_sqlite_transform(sqlitedb, main_table, 4)
+
+    tag_tables.append(tags_table)
+
+aws_shared.merge_duckdb_tags(ddb_con, tags_table, [], 2)
+
+aws_shared.to_sqlite(
     sqlitedb,
-    ddb_con,
-    whats_new,
-    range(whats_new.FIRST_YEAR, shared.current_year() + 1),
-    print_indent=2,
+    [
+        [
+            ddb_con.table(tags_table).df(),
+            tags_table,
+        ],
+    ],
+    2,
 )
 
-aws_shared.final_tags_processing(ddb_con, sqlitedb, 2)
+aws_shared.tag_table_optimisations(sqlitedb, 2)
 
-aws_shared.common_table_optimisations(sqlitedb, whats_new, 4)
+for main_module, _ in main_modules.items():
+    aws_shared.common_table_optimisations(sqlitedb, main_module, 2)
 
-shared.final_database_optimisations(sqlitedb, 2)
+shared.final_database_optimisations(sqlitedb)

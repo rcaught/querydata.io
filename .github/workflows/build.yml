@@ -29,24 +29,24 @@ jobs:
         uses: actions/cache/restore@v3
         with:
           path: |
-            dbs/aws.db
-          key: ${{ runner.os }}-dbs-${{ hashFiles('dbs/aws.db') }}
+            dbs/aws.duckdb.db
+          key: ${{ runner.os }}-dbs-${{ hashFiles('dbs/aws.duckdb.db') }}
           restore-keys: ${{ runner.os }}-dbs-
       - name: Build (full)
-        # if: github.event_name == 'push' || steps.cache-aws-db.outputs.cache-hit != 'true' || github.event.schedule == '*/15 * * * *'
+        if: github.event_name == 'push'
         run: |
           poetry run python -u src/querydataio/aws/full.py
-      # - name: Build (partial)
-      #   if: github.event_name != 'push' || (steps.cache-aws-db.outputs.cache-hit == 'true' && github.event.schedule == '*/15 * * * *')
-      #   run: |
-      #     poetry run python -u src/querydataio/aws/partial.py
+      - name: Build (partial)
+        if: github.event.schedule == '*/30 * * * *'
+        run: |
+          poetry run python -u src/querydataio/aws/partial.py
       - name: Save Cache DBs
         id: cache-dbs-save
         uses: actions/cache/save@v3
         with:
           path: |
-            dbs/aws.db
-          key: ${{ runner.os }}-dbs-${{ hashFiles('dbs/aws.db') }}
+            dbs/aws.duckdb.db
+          key: ${{ runner.os }}-dbs-${{ hashFiles('dbs/aws.duckdb.db') }}
       - name: Deploy Datasette using Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}

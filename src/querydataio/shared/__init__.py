@@ -2,6 +2,7 @@
 
 import datetime
 import os
+import time
 import duckdb
 import pandas as pd
 from sqlite_utils import Database
@@ -13,43 +14,40 @@ pd.set_option("display.width", 2000)
 
 
 def current_year() -> int:
-    """Current year"""
     return datetime.datetime.now().year
 
 
-def init_duckdb() -> duckdb.DuckDBPyConnection:
-    """DuckDB"""
-    return duckdb.connect(database=":memory:")
+def init_duckdb(db: str) -> duckdb.DuckDBPyConnection:
+    return duckdb.connect(database=db)
 
 
-def delete_db(db: str):
+def delete_dbs(dbs: list[str]):
     print()
-    print("Deleting DB")
-    print("===========")
-    if os.path.exists(db):
-        os.remove(db)
-        print(f"- {db}... done")
-    else:
-        print(f"- WARNING: cannot remove {db}")
+    print("Deleting DBs")
+    print("============")
+
+    for db in dbs:
+        if os.path.exists(db):
+            os.remove(db)
+            print(f"- {db}... done")
+        else:
+            print(f"- WARNING: cannot remove {db}")
+
 
 def final_database_optimisations(sqlitedb: Database, print_indent=0):
     print()
     print(f"{print_indent * ' '}Optimising database")
     print(f"{print_indent * ' '}===================")
+    start = time.time()
+    file_query = "select file from pragma_database_list where name='main';"
+    print(
+        f"{print_indent * ' '}- {sqlitedb.execute(file_query).fetchone()[0]}... ",
+        end="",
+    )
 
     sqlitedb.index_foreign_keys()
 
     sqlitedb.analyze()
     sqlitedb.vacuum()
 
-    print(f"{print_indent * ' '}... done")
-
-
-def drop_tables(tables: list[Table], print_indent=0):
-    print()
-    print(f"{print_indent * ' '}Dropping tables")
-    print(f"{print_indent * ' '}===============")
-
-    for table in tables:
-        table.drop(ignore=True)
-        print(f"{print_indent * ' '}- {table.name}... done")
+    print(f"done ({time.time() - start})")

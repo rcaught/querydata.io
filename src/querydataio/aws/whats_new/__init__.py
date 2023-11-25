@@ -1,6 +1,7 @@
+import time
 from types import ModuleType
 from duckdb import DuckDBPyConnection
-import pandas as pd
+from sqlite_utils import Database
 from sqlite_utils.db import Table
 from querydataio.aws import shared as aws_shared
 
@@ -12,11 +13,14 @@ URL_PREFIX = (
     "&sort_by=item.additionalFields.postDateTime"
     "&sort_order=desc"
 )
+# https://aws.amazon.com/api/dirs/items/search?item.directoryId=whats-new&sort_by=item.additionalFields.postDateTime&sort_order=asc&size=1&item.locale=en_US&page=0&tags.id=whats-new%23year%232004|whats-new%23year%232005|whats-new%23year%232006|whats-new%23year%232007|whats-new%23year%232008|whats-new%23year%232009|whats-new%23year%232010|whats-new%23year%232011|whats-new%23year%232012|whats-new%23year%232013|whats-new%23year%232014|whats-new%23year%232015|whats-new%23year%232016|whats-new%23year%232017|whats-new%23year%232018|whats-new%23year%232019|whats-new%23year%232020|whats-new%23year%232021|whats-new%23year%232022|whats-new%23year%232023
+# https://aws.amazon.com/api/dirs/items/search?item.directoryId=whats-new&sort_by=item.additionalFields.postDateTime&sort_order=asc&size=1&item.locale=en_US&page=0
+# There is one post somewhere without a year tag
 TAG_ID_PREFIX = "whats-new%23year%23"
 FIRST_YEAR = 2004
 
-SQLITE_MAIN_TABLE_NAME = "whats_new"
-SQLITE_MAIN_TAGS_TABLE_NAME = "whats_new_tags"
+MAIN_TABLE_NAME = "whats_new"
+MAIN_TAGS_TABLE_NAME = "whats_new_tags"
 
 RELATION_ID = "whats_new_id"
 
@@ -24,37 +28,43 @@ RELATION_ID = "whats_new_id"
 def process(
     ddb_con: DuckDBPyConnection,
     main_module: ModuleType,
-    urls: list[str],
-    print_indent=0,
-) -> tuple[pd.DataFrame, pd.DataFrame]:
-    main_table, main_tags_table = aws_shared.process(
-        ddb_con, main_module, urls, print_indent
+    main_table: str,
+    main_tags_table: str,
+    tags_main_table: str,
+    print_indent: int = 0,
+):
+    aws_shared.process(
+        ddb_con,
+        main_module,
+        main_table,
+        main_tags_table,
+        tags_main_table,
+        print_indent,
     )
 
-    main_table = ddb_con.sql(
-        """
-            CREATE OR REPLACE TEMP TABLE t1 AS
-            SELECT
-              * REPLACE('https://aws.amazon.com' || headlineUrl AS headlineUrl)
-            FROM
-              main_table;
+    ddb_con.execute(
+        f"""
+        UPDATE {main_table}
+          SET headlineUrl = 'https://aws.amazon.com' || headlineUrl;
 
-            UPDATE t1 SET postDateTime = '2021-06-23T12:30:32Z'
-            WHERE postDateTime = '0202-06-23T12:30:32Z';
-
-            SELECT * FROM t1;
+        UPDATE {main_table}
+          SET postDateTime = '2021-06-23T12:30:32Z'
+        WHERE postDateTime = '0202-06-23T12:30:32Z';
         """
     )
 
-    return main_table.df(), main_tags_table.df()
 
-
-def initial_sqlite_transform(whats_new_table: Table, print_indent=0):
+def initial_sqlite_transform(sqlitedb: Database, main_table: str, print_indent=0):
     print()
     print(f"{print_indent * ' '}Optimising tables")
     print(f"{print_indent * ' '}=================")
 
-    whats_new_table.transform(
+    start = time.time()
+    print(f"{print_indent * ' '}- {main_table}... ", end="")
+
+    main_table: Table = sqlitedb.table(main_table)
+
+    main_table.transform(
         column_order=(
             "id",
             "postDateTime",
@@ -74,10 +84,10 @@ def initial_sqlite_transform(whats_new_table: Table, print_indent=0):
         },
     )
 
-    whats_new_table.transform(
+    main_table.transform(
         pk="id",
     )
-    whats_new_table.create_index(["postDateTime"])
-    whats_new_table.create_index(["headline"])
+    main_table.create_index(["postDateTime"])
+    main_table.create_index(["headline"])
 
-    print(f"{print_indent * ' '}- {whats_new_table.name}... done")
+    print(f"done ({time.time() - start})")
