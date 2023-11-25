@@ -57,6 +57,22 @@ databases:
             postDateTime BETWEEN '2022-11-28' AND '2022-12-03'
           ORDER BY
             postDateTime ASC;
+      whats_new_last_batches:
+        title: What's new - Only show last n batches
+        description_html: |-
+          AWS post updates in batches.
+        sql: |-
+          WITH ranked AS (
+            SELECT
+              dense_rank() OVER (ORDER BY postDateTime DESC) AS batch,
+              headline,
+              headlineUrl,
+              strftime('%Y-%m-%d', postDateTime) AS date
+            FROM
+              whats_new
+            ORDER BY
+              postDateTime DESC
+          ) SELECT * FROM ranked WHERE batch <= CAST(:numberOfBatches AS int);
       whats_new_simple_feed:
         title: What's new - Simple feed (like https://aws.amazon.com/new/)
         description_html: |-
@@ -264,6 +280,8 @@ databases:
             count DESC;
       whats_new_find_updates_from_when_i_was_away:
         title: What's new - find updates from when I was away
+        description_html: |-
+          Date format, eg. <code>2023-11-01</code>
         sql: |-
           SELECT
             headline,
@@ -322,3 +340,7 @@ databases:
             postDateTime DESC
           LIMIT
             15;
+      tags_namespaces_names:
+        title: Tags - unique tag namespaces and available names
+        sql: |-
+          SELECT tagNamespaceId, group_concat(name) AS names FROM tags GROUP BY tagNamespaceId;
