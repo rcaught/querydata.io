@@ -194,6 +194,8 @@ databases:
             results;
       whats_new_tags_exact_product_updates:
         title: What's new - updates by product tag (eg. Fargate)
+        description_html: |-
+          Check out <a href="https://querydata.io/aws/tags_all_general_products">this query</a> for all available product ids and names.
         sql: |-
           WITH tags AS (
             SELECT
@@ -215,6 +217,8 @@ databases:
           LIMIT 15;
       whats_new_tags_category_updates:
         title: What's new - updates by category tag (eg. databases)
+        description_html: |-
+          Check out <a href="https://querydata.io/aws/tags_namespaces_names">this query</a> for all available <code>whats-new#marketing-marchitecture</code> names.
         sql: |-
           WITH tags AS (
             SELECT
@@ -344,3 +348,9 @@ databases:
         title: Tags - unique tag namespaces and available names
         sql: |-
           SELECT tagNamespaceId, group_concat(name) AS names FROM tags GROUP BY tagNamespaceId;
+      tags_all_general_products:
+        title: Tags - all general products, tag ids and names
+        sql: |-
+          SELECT id, name FROM tags WHERE tagNamespaceId = 'whats-new#general-products';
+        description_html: |-
+          <a href="https://querydata.io/aws/tags_namespaces_names">Tags - unique tag namespaces and available names</a> truncates this larger set, so providing dedicated query.
