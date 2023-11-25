@@ -351,6 +351,6 @@ databases:
       tags_all_general_products:
         title: Tags - all general products, tag ids and names
         sql: |-
-          SELECT id, name FROM tags WHERE tagNamespaceId = 'whats-new#general-products';
+          SELECT id, name FROM tags WHERE tagNamespaceId = 'whats-new#general-products' ORDER BY id;
         description_html: |-
           <a href="https://querydata.io/aws/tags_namespaces_names">Tags - unique tag namespaces and available names</a> truncates this larger set, so providing dedicated query.
