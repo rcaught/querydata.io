@@ -31,30 +31,30 @@ databases:
         description_html: |-
           <a href="/aws#queries">Check out some examples queries</a>
     queries:
-      whats_new_reinvent_2023_updates:
-        title: What's new - re:Invent 2023 updates
+      whats_new_reinvent_updates:
+        title: What's new - re:Invent updates
         sql: |-
           SELECT
             headline,
             headlineUrl,
-            strftime('%Y-%m-%d', postDateTime) as date
+            strftime('%Y-%m-%d', postDateTime) as dayDate
           FROM
             whats_new
           WHERE
-            postDateTime BETWEEN '2023-11-27' AND '2023-12-02'
-          ORDER BY
-            postDateTime ASC;
-      whats_new_reinvent_2022_updates:
-        title: What's new - re:Invent 2022 updates
-        sql: |-
-          SELECT
-            headline,
-            headlineUrl,
-            strftime('%Y-%m-%d', postDateTime) as date
-          FROM
-            whats_new
-          WHERE
-            postDateTime BETWEEN '2022-11-28' AND '2022-12-03'
+            CASE
+              WHEN :year = '2012' THEN dayDate BETWEEN '2012-11-27' AND '2012-11-29'
+              WHEN :year = '2013' THEN dayDate BETWEEN '2013-11-12' AND '2013-11-15'
+              WHEN :year = '2014' THEN dayDate BETWEEN '2014-11-11' AND '2014-11-14'
+              WHEN :year = '2015' THEN dayDate BETWEEN '2015-10-06' AND '2015-10-09'
+              WHEN :year = '2016' THEN dayDate BETWEEN '2016-11-28' AND '2016-12-02'
+              WHEN :year = '2017' THEN dayDate BETWEEN '2017-11-27' AND '2017-12-01'
+              WHEN :year = '2018' THEN dayDate BETWEEN '2018-11-26' AND '2018-11-30'
+              WHEN :year = '2019' THEN dayDate BETWEEN '2019-12-02' AND '2019-12-06'
+              WHEN :year = '2020' THEN dayDate BETWEEN '2020-11-30' AND '2020-12-18'
+              WHEN :year = '2021' THEN dayDate BETWEEN '2021-11-30' AND '2021-12-03'
+              WHEN :year = '2022' THEN dayDate BETWEEN '2022-11-28' AND '2022-12-02'
+              WHEN :year = '2023' THEN dayDate BETWEEN '2023-11-27' AND '2023-12-02'
+            END
           ORDER BY
             postDateTime ASC;
       whats_new_last_batches:
@@ -67,7 +67,7 @@ databases:
               dense_rank() OVER (ORDER BY postDateTime DESC) AS batch,
               headline,
               headlineUrl,
-              strftime('%Y-%m-%d', postDateTime) AS date
+              strftime('%Y-%m-%d', postDateTime) AS dayDate
             FROM
               whats_new
             ORDER BY
@@ -88,7 +88,7 @@ databases:
           SELECT
             headline,
             headlineUrl,
-            strftime('%Y-%m-%d', postDateTime) as date
+            strftime('%Y-%m-%d', postDateTime) as dayDate
           FROM
             whats_new
           ORDER BY
@@ -208,7 +208,7 @@ databases:
           SELECT
             headline,
             headlineUrl,
-            strftime('%Y-%m-%d', postDateTime) as date
+            strftime('%Y-%m-%d', postDateTime) as dayDate
           FROM
             whats_new
           WHERE
@@ -231,7 +231,7 @@ databases:
           SELECT
             headline,
             headlineUrl,
-            strftime('%Y-%m-%d', postDateTime) as date
+            strftime('%Y-%m-%d', postDateTime) as dayDate
           FROM
             whats_new
           WHERE
@@ -290,11 +290,11 @@ databases:
           SELECT
             headline,
             headlineUrl,
-            strftime('%Y-%m-%d', postDateTime) as date
+            strftime('%Y-%m-%d', postDateTime) as dayDate
           FROM
             whats_new
           WHERE
-            postDateTime BETWEEN :fromYearMonthDay AND :toYearMonthDay
+            dayDate BETWEEN :fromYearMonthDay AND :toYearMonthDay
           ORDER BY
             postDateTime ASC;
       whats_new_exclude_region_availability_updates:
@@ -303,7 +303,7 @@ databases:
           SELECT
             headline,
             headlineUrl,
-            strftime('%Y-%m-%d', postDateTime) as date
+            strftime('%Y-%m-%d', postDateTime) as dayDate
           FROM
             whats_new
           WHERE
@@ -318,7 +318,7 @@ databases:
           SELECT
             headline,
             headlineUrl,
-            strftime('%Y-%m-%d', postDateTime) as date,
+            strftime('%Y-%m-%d', postDateTime) as dayDate,
             postSummary,
             postBody
           FROM
