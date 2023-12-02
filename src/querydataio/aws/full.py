@@ -30,7 +30,7 @@ for main_module, partitions in main_modules.items():
 
     aws_shared.download(
         ddb_con,
-        aws_shared.generate_urls(main_module, partitions),
+        aws_shared.generate_urls(ddb_con, main_module, partitions, 4),
         main_table,
         4,
     )

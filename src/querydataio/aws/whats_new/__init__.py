@@ -11,7 +11,6 @@ URL_PREFIX = (
     "https://aws.amazon.com/api/dirs/items/search?"
     f"item.locale=en_US&item.directoryId={DIRECTORY_ID}"
     "&sort_by=item.additionalFields.postDateTime"
-    "&sort_order=desc"
 )
 # https://aws.amazon.com/api/dirs/items/search?item.directoryId=whats-new&sort_by=item.additionalFields.postDateTime&sort_order=asc&size=1&item.locale=en_US&page=0&tags.id=whats-new%23year%232004|whats-new%23year%232005|whats-new%23year%232006|whats-new%23year%232007|whats-new%23year%232008|whats-new%23year%232009|whats-new%23year%232010|whats-new%23year%232011|whats-new%23year%232012|whats-new%23year%232013|whats-new%23year%232014|whats-new%23year%232015|whats-new%23year%232016|whats-new%23year%232017|whats-new%23year%232018|whats-new%23year%232019|whats-new%23year%232020|whats-new%23year%232021|whats-new%23year%232022|whats-new%23year%232023
 # https://aws.amazon.com/api/dirs/items/search?item.directoryId=whats-new&sort_by=item.additionalFields.postDateTime&sort_order=asc&size=1&item.locale=en_US&page=0

@@ -171,26 +171,90 @@ def download(
     return f"__{main_table}_downloads"
 
 
-def generate_urls(main_module: ModuleType, partitions: range | list[any]):
+def getTotalHits(
+    ddb_con: DuckDBPyConnection,
+    main_module: ModuleType,
+    partitions: range | list[any],
+    print_indent: int = 0,
+) -> dict[str, int]:
     urls = []
     for partition in partitions:
-        # It is possible to look up the totalHits, but that requires an intital
-        # query and since out of bound requests still provide a structure, we
-        # can just request them and roll them into the aggregate. Its more resource
-        # intensive, but put it on the todo list.
+        urls.append(
+            f"{main_module.URL_PREFIX}&size=1"
+            f"&tags.id={main_module.TAG_ID_PREFIX}{partition}"
+        )
+    download_table = download(ddb_con, urls, "total_hits", print_indent)
 
-        # The maximum records size is 2000, but you can never paginate past 9999
-        # total results (no matter the size set). If we look at factors of 9999
-        # under 2000, a 1111 size will exactly paginate 9 times.
+    result = ddb_con.sql(
+        f"""
+        SELECT
+          regexp_extract(filename, 'tags.id=(.*)(&|$)', 1) as partition,
+          metadata.totalHits
+        FROM {download_table}
+        """
+    )
 
-        # Our only requirements are that partitions need to never have more than
-        # 9999 records and that their union covers all records. This can be
-        # verified by comparing our total with an unpartitioned totalHits total.
-        for i in range(0, 9):
-            urls.append(
-                f"{main_module.URL_PREFIX}&size=1111"
-                f"&page={i}&tags.id={main_module.TAG_ID_PREFIX}{partition}"
-            )
+    return dict(result.fetchall())
+
+
+def generate_urls(
+    ddb_con: DuckDBPyConnection,
+    main_module: ModuleType,
+    partitions: range | list[any],
+    print_indent: int = 4,
+):
+    # The maximum records size is 2000, but you can never paginate past 9999
+    # total results (no matter the size set). If we look at factors of 9999
+    # under 2000, a 1111 size will exactly paginate 9 times.
+
+    # Our only requirements are that partitions never have more than
+    # 9999 records and that their union covers all records. This can be
+    # verified by comparing our total with an unpartitioned totalHits request.
+
+    partition_sizes = getTotalHits(ddb_con, main_module, partitions, print_indent)
+
+    urls = []
+    for partition, size in partition_sizes.items():
+        if size == 0:
+            next
+        elif size < 10000:
+            if size <= 8000:
+                for i in range(0, int(size / 2000) + 1):
+                    urls.append(
+                        f"{main_module.URL_PREFIX}&size=2000"
+                        f"&page={i}&tags.id={partition}"
+                        f"&sort_order=desc"
+                    )
+            else:
+                for i in range(0, int(size / 1111) + 1):
+                    urls.append(
+                        f"{main_module.URL_PREFIX}&size=1111"
+                        f"&page={i}&tags.id={partition}"
+                        f"&sort_order=desc"
+                    )
+        elif size >= 10000 and size <= 20000:
+            for i in range(0, 9):
+                urls.append(
+                    f"{main_module.URL_PREFIX}&size=1111"
+                    f"&page={i}&tags.id={partition}"
+                    f"&sort_order=desc"
+                )
+            if size <= 18000:
+                for i in range(0, int((size - 10000) / 2000) + 1):
+                    urls.append(
+                        f"{main_module.URL_PREFIX}&size=2000"
+                        f"&page={i}&tags.id={partition}"
+                        f"&sort_order=asc"
+                    )
+            else:
+                for i in range(0, int((size - 10000) / 1111) + 1):
+                    urls.append(
+                        f"{main_module.URL_PREFIX}&size=1111"
+                        f"&page={i}&tags.id={partition}"
+                        f"&sort_order=asc"
+                    )
+        else:
+            raise Exception("Out of range downloads")
     return urls
 
 
