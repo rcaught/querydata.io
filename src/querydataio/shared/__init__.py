@@ -21,17 +21,17 @@ def init_duckdb(db: str) -> duckdb.DuckDBPyConnection:
     return duckdb.connect(database=db)
 
 
-def delete_dbs(dbs: list[str]):
+def delete_dbs(dbs: list[str], print_indent: int = 0):
     print()
-    print("Deleting DBs")
-    print("============")
+    print(f"{print_indent * ' '}Deleting DBs")
+    print(f"{print_indent * ' '}============")
 
     for db in dbs:
         if os.path.exists(db):
             os.remove(db)
-            print(f"- {db}... done")
+            print(f"{print_indent * ' '}- {db}... done")
         else:
-            print(f"- WARNING: cannot remove {db}")
+            print(f"{print_indent * ' '}- WARNING: cannot remove {db}")
 
 
 def final_database_optimisations(sqlitedb: Database, print_indent=0):

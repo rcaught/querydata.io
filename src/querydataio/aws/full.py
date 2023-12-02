@@ -11,7 +11,7 @@ print()
 print("AWS")
 print("===")
 
-shared.delete_dbs([aws_shared.SQLITE_DB, aws_shared.DUCKDB_DB])
+shared.delete_dbs([aws_shared.SQLITE_DB, aws_shared.DUCKDB_DB], 2)
 
 sqlitedb = Database(aws_shared.SQLITE_DB)
 ddb_con = shared.init_duckdb(aws_shared.DUCKDB_DB)

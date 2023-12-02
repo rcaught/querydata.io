@@ -17,10 +17,8 @@ URL_PREFIX = (
 # There is one post somewhere without a year tag
 TAG_ID_PREFIX = "whats-new%23year%23"
 FIRST_YEAR = 2004
-
 MAIN_TABLE_NAME = "whats_new"
 MAIN_TAGS_TABLE_NAME = "whats_new_tags"
-
 RELATION_ID = "whats_new_id"
 
 
