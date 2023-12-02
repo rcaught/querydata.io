@@ -1,0 +1,385 @@
+{
+  "metaData": {
+    "formatVersion": "1.0"
+  },
+  "filterScope": "blog-posts",
+  "filterName": "blog-master-category",
+  "filterOperator": "or",
+  "uiScope": "filtered-posts",
+  "filters": [
+    {
+      "label": "Category",
+      "value": "category",
+      "icon": "",
+      "isDefault": false,
+      "type": "tagNamespace",
+      "children": [
+        {
+          "label": "Alexa",
+          "value": "alexa",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Analytics",
+          "value": "analytics",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Application Integration",
+          "value": "application-integration",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Architecture",
+          "value": "architecture",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "AR & VR",
+          "value": "ar-vr",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "AWS Cloud Financial Management",
+          "value": "aws-cloud-financial-management",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "AWS Marketplace",
+          "value": "software",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "AWS Partner Network",
+          "value": "aws-partner-network",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "AWS Well-Architected",
+          "value": "aws-well-architected",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Big Data",
+          "value": "big-data",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Blockchain",
+          "value": "blockchain",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Business Applications",
+          "value": "business-productivity",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Compute",
+          "value": "compute",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Containers",
+          "value": "containers",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Customer Enablement",
+          "value": "customer-enablement",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Customer Engagement",
+          "value": "messaging",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Database",
+          "value": "database",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Developer Tools",
+          "value": "developer-tools",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "DevOps",
+          "value": "devops",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Diversity, Equity, and Inclusion",
+          "value": "diversity-equity-inclusion",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "End User Computing",
+          "value": "desktop-app-streaming",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Enterprise Strategy",
+          "value": "enterprise-strategy",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Front-End Web & Mobile",
+          "value": "mobile-services",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Game Development",
+          "value": "game-development",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Generative AI",
+          "value": "generative-ai-2",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "HPC",
+          "value": "high-performance-computing",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Industry",
+          "value": "industries",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Integration & Automation",
+          "value": "infrastructure-automation",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Internet of Things",
+          "value": "internet-of-things",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Machine Learning",
+          "value": "artificial-intelligence",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Mainframe & Legacy",
+          "value": "mainframe-and-legacy",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Management & Governance",
+          "value": "management-tools",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Media Services",
+          "value": "media-services",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Messaging & Targeting",
+          "value": "messaging-and-targeting",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Migration & Transfer Services",
+          "value": "migration",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Multicloud",
+          "value": "multicloud",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": ".NET",
+          "value": "dot-net",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Networking & Content Delivery",
+          "value": "networking-content-delivery",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "News",
+          "value": "news",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Open Source",
+          "value": "open-source",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Price Reduction",
+          "value": "price-reduction",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Public Sector",
+          "value": "public-sector",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Quantum Computing",
+          "value": "quantum-technologies",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Robotics",
+          "value": "robotics",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "SaaS",
+          "value": "saas",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Security, Identity, & Compliance",
+          "value": "security-identity-compliance",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Serverless",
+          "value": "serverless",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Startups",
+          "value": "startup",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Storage",
+          "value": "storage",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Sustainability",
+          "value": "sustainability",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Training & Certification",
+          "value": "aws-training-and-certification",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        },
+        {
+          "label": "Windows on AWS",
+          "value": "aws-on-windows",
+          "icon": "",
+          "isDefault": false,
+          "type": "tag"
+        }
+      ]
+    }
+  ],
+  "theme": "onLightBackground"
+}

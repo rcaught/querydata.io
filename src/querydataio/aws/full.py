@@ -1,5 +1,6 @@
 from sqlite_utils import Database
-import querydataio.aws.whats_new as whats_new
+from querydataio.aws import blog_posts
+from querydataio.aws import whats_new
 from querydataio.aws import shared as aws_shared
 from querydataio import shared
 
@@ -16,7 +17,10 @@ shared.delete_dbs([aws_shared.SQLITE_DB, aws_shared.DUCKDB_DB], 2)
 sqlitedb = Database(aws_shared.SQLITE_DB)
 ddb_con = shared.init_duckdb(aws_shared.DUCKDB_DB)
 
-main_modules = {whats_new: range(whats_new.FIRST_YEAR, shared.current_year() + 1)}
+main_modules = {
+    whats_new: range(whats_new.FIRST_YEAR, shared.current_year() + 1),
+    blog_posts: blog_posts.aws_categories(),
+}
 tag_tables = []
 
 for main_module, partitions in main_modules.items():
