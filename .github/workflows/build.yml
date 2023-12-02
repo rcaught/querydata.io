@@ -24,6 +24,8 @@ jobs:
           cache: 'poetry'
       - name: Install deps
         run: poetry install
+      - name: Run tests
+        run: poetry run pytest
       - name: Restore Cache DBs
         id: cache-dbs-restore
         uses: actions/cache/restore@v3
