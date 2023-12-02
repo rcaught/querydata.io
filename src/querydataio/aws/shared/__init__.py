@@ -76,16 +76,30 @@ def process(
 
     ddb_con.execute(
         f"""--sql
+        CREATE OR REPLACE TEMP TABLE __{main_table}_unnested_downloads AS
+        SELECT
+          unnest(items, recursive := true)
+        FROM
+          __{main_table}_downloads;
+        """
+    )
+
+    ddb_con.execute(
+        f"""--sql
         DROP INDEX IF EXISTS {main_table}_id_idx;
 
         CREATE OR REPLACE TABLE {main_table} AS
         SELECT
           DISTINCT * EXCLUDE (tags)
         FROM
-          __{main_table}_downloads;
+          __{main_table}_unnested_downloads;
+        """
+    )
 
     main_module.mid_alters(ddb_con, main_table)
 
+    ddb_con.execute(
+        f"""--sql
         CREATE UNIQUE INDEX {main_table}_id_idx ON {main_table} (id);
         """
     )
@@ -97,7 +111,7 @@ def process(
           id AS {main_module.RELATION_ID},
           unnest(tags, recursive := true)
         FROM
-          __{main_table}_downloads;
+          __{main_table}_unnested_downloads;
         """
     )
 
@@ -132,7 +146,7 @@ def process(
 
 def download(
     ddb_con: DuckDBPyConnection, urls: list[str], main_table: str, print_indent: int = 0
-):
+) -> str:
     print()
     print(f"{print_indent * ' '}Downloading")
     print(f"{print_indent * ' '}===========")
@@ -145,14 +159,16 @@ def download(
         f"""--sql
         CREATE OR REPLACE {temp} TABLE __{main_table}_downloads AS
         SELECT
-          unnest(items, recursive := true)
+          *
         FROM
-          read_json_auto(?);
+          read_json_auto(?, filename = true);
         """,
         [urls],
     )
 
     print(f"done ({time.time() - start})")
+
+    return f"__{main_table}_downloads"
 
 
 def generate_urls(main_module: ModuleType, partitions: range | list[any]):
