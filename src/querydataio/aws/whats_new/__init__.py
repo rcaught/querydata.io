@@ -3,6 +3,7 @@ from types import ModuleType
 from duckdb import DuckDBPyConnection
 from sqlite_utils import Database
 from sqlite_utils.db import Table
+from querydataio import shared
 from querydataio.aws import shared as aws_shared
 
 
@@ -112,3 +113,7 @@ def unnest(ddb_con: DuckDBPyConnection, main_table: str):
         FROM unnested;
         """
     )
+
+
+def all_years() -> range:
+    return range(FIRST_YEAR, shared.current_year() + 1)

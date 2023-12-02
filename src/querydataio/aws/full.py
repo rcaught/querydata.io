@@ -18,7 +18,7 @@ sqlitedb = Database(aws_shared.SQLITE_DB)
 ddb_con = shared.init_duckdb(aws_shared.DUCKDB_DB)
 
 main_modules = {
-    whats_new: range(whats_new.FIRST_YEAR, shared.current_year() + 1),
+    whats_new: whats_new.all_years(),
     blog_posts: blog_posts.aws_categories(),
 }
 tag_tables = []
