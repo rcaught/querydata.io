@@ -6,7 +6,6 @@ poetry run datasette publish vercel dbs/aws.db \
   --metadata metadata.yml \
   --install=datasette-vega \
   --install=datasette-atom \
-  --install=datasette-block-robots \
   --vercel-json=vercel.json \
   --setting default_page_size 100 \
   --setting allow_csv_stream off \

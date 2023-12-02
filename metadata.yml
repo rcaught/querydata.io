@@ -6,9 +6,6 @@ description_html: |-
   <br />
   <br />
   This site employs heavy caching techniques that may result in unexpected results for dynamic SQL values, such as RANDOM() or DATE('now').
-plugins:
-  datasette-block-robots:
-    allow_only_index: true
 about_url: https://github.com/rcaught/querydata.io
 databases:
   aws:

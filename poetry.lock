@@ -347,23 +347,6 @@ feedgen = "*"
 test = ["httpx", "pytest", "pytest-asyncio"]
 
 [[package]]
-name = "datasette-block-robots"
-version = "1.1"
-description = "Datasette plugin that blocks all robots using robots.txt"
-optional = false
-python-versions = "*"
-files = [
-    {file = "datasette-block-robots-1.1.tar.gz", hash = "sha256:e679fc43c5694194a6e393902bc9e06d611563f4947a8ad7ac3127877f0a9f74"},
-    {file = "datasette_block_robots-1.1-py3-none-any.whl", hash = "sha256:ea1e4046fd1aab1db13db09ea89dba95714aabf034f464cff92f2b6f0a123ef8"},
-]
-
-[package.dependencies]
-datasette = ">=0.50"
-
-[package.extras]
-test = ["httpx", "pytest", "pytest-asyncio"]
-
-[[package]]
 name = "datasette-publish-vercel"
 version = "0.14.2"
 description = "Datasette plugin for publishing data using Vercel"
