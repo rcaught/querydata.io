@@ -9,6 +9,7 @@ description_html: |-
 plugins:
   datasette-block-robots:
     allow_only_index: true
+about_url: https://github.com/rcaught/querydata.io
 databases:
   aws:
     description_html: |-
