@@ -84,8 +84,7 @@ def process(
         FROM
           __{main_table}_downloads;
 
-        ALTER TABLE {main_table} ALTER modifiedDate SET DATA TYPE VARCHAR;
-        ALTER TABLE {main_table} ALTER postDateTime SET DATA TYPE VARCHAR;
+    main_module.mid_alters(ddb_con, main_table)
 
         CREATE UNIQUE INDEX {main_table}_id_idx ON {main_table} (id);
         """

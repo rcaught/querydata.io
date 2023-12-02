@@ -54,6 +54,15 @@ def process(
     )
 
 
+def mid_alters(ddb_con: DuckDBPyConnection, main_table: str):
+    ddb_con.execute(
+        f"""
+        ALTER TABLE {main_table} ALTER modifiedDate SET DATA TYPE VARCHAR;
+        ALTER TABLE {main_table} ALTER postDateTime SET DATA TYPE VARCHAR;
+        """
+    )
+
+
 def initial_sqlite_transform(sqlitedb: Database, main_table: str, print_indent=0):
     print()
     print(f"{print_indent * ' '}Optimising tables")
