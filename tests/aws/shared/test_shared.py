@@ -7,7 +7,12 @@ from querydataio.aws import whats_new
 def test_generate_urls(mocker):
     download = mocker.patch("querydataio.aws.shared.download")
 
-    def download_side_effect(ddb_con: DuckDBPyConnection, urls, main_table):
+    def download_side_effect(
+        ddb_con: DuckDBPyConnection,
+        urls: list[str],
+        main_table: str,
+        print_indent: int = 0,
+    ) -> str:
         if urls == [
             "https://aws.amazon.com/api/dirs/items/search?item.locale=en_US&item.directoryId=whats-new&sort_by=item.additionalFields.postDateTime&size=1&tags.id=whats-new%23year%232004",
             "https://aws.amazon.com/api/dirs/items/search?item.locale=en_US&item.directoryId=whats-new&sort_by=item.additionalFields.postDateTime&size=1&tags.id=whats-new%23year%232005",
@@ -23,7 +28,7 @@ def test_generate_urls(mocker):
             )
             return f"__{main_table}_downloads"
         else:
-            return Exception("Update side effect")
+            Exception("Update side effect")
 
     download.side_effect = download_side_effect
 
