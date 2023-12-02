@@ -26,7 +26,7 @@ for main_module, partitions in main_modules.items():
 
     main_table: str = main_module.MAIN_TABLE_NAME
     main_tags_table: str = main_module.MAIN_TAGS_TABLE_NAME
-    tags_table: str = aws_shared.TAGS_TABLE_NAME
+    tags_table: str = f"__tags_{main_module.MAIN_TABLE_NAME}"
 
     aws_shared.download(
         ddb_con,
@@ -57,14 +57,14 @@ for main_module, partitions in main_modules.items():
 
     tag_tables.append(tags_table)
 
-aws_shared.merge_duckdb_tags(ddb_con, tags_table, [], 2)
+aws_shared.merge_duckdb_tags(ddb_con, aws_shared.TAGS_TABLE_NAME, tag_tables, 2)
 
 aws_shared.to_sqlite(
     sqlitedb,
     [
         [
-            ddb_con.table(tags_table).df(),
-            tags_table,
+            ddb_con.table(aws_shared.TAGS_TABLE_NAME).df(),
+            aws_shared.TAGS_TABLE_NAME,
         ],
     ],
     2,

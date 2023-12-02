@@ -295,20 +295,17 @@ def merge_duckdb_tags(
 
     start = time.time()
     print(
-        f"{print_indent * ' '}- {', '.join([primary_tag_table] + other_tag_tables)} => {primary_tag_table}... ",
+        f"{print_indent * ' '}- {', '.join(other_tag_tables)} => {primary_tag_table}... ",
         end="",
     )
 
     tag_union = " UNION ".join(
-        [
-            f"SELECT * FROM {tag_table}"
-            for tag_table in [primary_tag_table] + other_tag_tables
-        ]
+        [f"SELECT * FROM {tag_table}" for tag_table in other_tag_tables]
     )
 
     ddb_con.execute(
         f"""--sql
-        CREATE OR REPLACE TABLE __tags AS
+        CREATE OR REPLACE TABLE __{primary_tag_table} AS
         SELECT
           id,
           locale,
@@ -328,9 +325,9 @@ def merge_duckdb_tags(
 
     ddb_con.execute(
         f"""--sql
-        DROP TABLE tags;
+        DROP TABLE IF EXISTS {primary_tag_table};
 
-        ALTER TABLE __tags RENAME TO tags;
+        ALTER TABLE __{primary_tag_table} RENAME TO {primary_tag_table};
         """
     )
 

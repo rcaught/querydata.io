@@ -83,7 +83,9 @@ for main_module, partitions in main_modules.items():
 
     tag_tables.append(tags_main_new_table)
 
-aws_shared.merge_duckdb_tags(ddb_con, aws_shared.TAGS_TABLE_NAME, tag_tables, 2)
+aws_shared.merge_duckdb_tags(
+    ddb_con, aws_shared.TAGS_TABLE_NAME, [aws_shared.TAGS_TABLE_NAME] + tag_tables, 2
+)
 
 aws_shared.to_sqlite(
     sqlitedb,
