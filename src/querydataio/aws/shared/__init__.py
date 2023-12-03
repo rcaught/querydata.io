@@ -106,12 +106,23 @@ def process(
 
     ddb_con.execute(
         f"""--sql
-        CREATE OR REPLACE TEMP TABLE __{main_table}_tags_with_id AS
+        CREATE OR REPLACE TEMP TABLE {tags_main_table} AS
+        WITH unnested AS (
+          SELECT
+            id AS {main_module.RELATION_ID},
+            unnest(tags, recursive := true)
+          FROM
+            __{main_table}_unnested_downloads
+        )
         SELECT
-          id AS {main_module.RELATION_ID},
-          unnest(tags, recursive := true)
+          id,
+          tagNamespaceId,
+          name,
+          dateCreated,
+          dateUpdated,
+          {main_module.RELATION_ID}
         FROM
-          __{main_table}_unnested_downloads;
+          unnested;
         """
     )
 
@@ -125,7 +136,7 @@ def process(
           {main_module.RELATION_ID},
           id as tag_id
         FROM
-          __{main_table}_tags_with_id;
+          {tags_main_table};
 
         CREATE UNIQUE INDEX {main_tags_table}_ids_idx ON {main_tags_table} ({main_module.RELATION_ID}, tag_id);
         """
@@ -133,11 +144,7 @@ def process(
 
     ddb_con.execute(
         f"""--sql
-        CREATE OR REPLACE TEMP TABLE {tags_main_table} AS
-        SELECT
-          * EXCLUDE ({main_module.RELATION_ID}, description),
-        FROM
-          __{main_table}_tags_with_id;
+        ALTER TABLE {tags_main_table} DROP {main_module.RELATION_ID};
         """
     )
 
@@ -308,11 +315,8 @@ def merge_duckdb_tags(
         CREATE OR REPLACE TABLE __{primary_tag_table} AS
         SELECT
           id,
-          locale,
           tagNamespaceId,
           MAX_BY(name, dateUpdated) AS name,
-          MAX_BY(createdBy, dateUpdated) AS createdBy,
-          MAX_BY(lastUpdatedBy, dateUpdated) AS lastUpdatedBy,
           MAX_BY(dateCreated, dateUpdated) AS dateCreated,
           MAX(dateUpdated) AS dateUpdated,
         FROM
