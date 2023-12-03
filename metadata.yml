@@ -76,7 +76,7 @@ databases:
         description_html: |-
           The order of these results is close to AWS, but not exact.
           <br />
-          AWS publishes batches of updates that all have the same <code>postDateTime</code>. No sorting on this column, in combination with other provided datetime columns, produces the same results as AWS (including <code>dateCreated</code>).
+          AWS publishes batches of updates that all have the same <code>postDateTime</code>. No sorting on this column, in combination with any other provided datetime columns, produces the same results as AWS (including <code>dateCreated</code>).
           <br />
           My best guess is that there is another unpublished sort key (likely a GUID, as I would expect an auto increment to align with <code>dateCreated</code>).
           <br />
