@@ -352,7 +352,6 @@ def tag_table_optimisations(sqlitedb: Database, print_indent: int = 0):
         pk="id",
     )
     tags_table.create_index(["tagNamespaceId"])
-    tags_table.create_index(["name"])
     tags_table.create_index(["tagNamespaceId", "name"], unique=True)
 
     print(f"done ({time.time() - start})")
