@@ -74,15 +74,7 @@ def process(
     start = time.time()
     print(f"{print_indent * ' '}- processing... ", end="")
 
-    ddb_con.execute(
-        f"""--sql
-        CREATE OR REPLACE TEMP TABLE __{main_table}_unnested_downloads AS
-        SELECT
-          unnest(items, recursive := true)
-        FROM
-          __{main_table}_downloads;
-        """
-    )
+    main_module.unnest(ddb_con, main_table)
 
     ddb_con.execute(
         f"""--sql

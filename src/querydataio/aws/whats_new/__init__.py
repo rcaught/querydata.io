@@ -71,17 +71,6 @@ def initial_sqlite_transform(sqlitedb: Database, main_table: str, print_indent=0
     main_table: Table = sqlitedb.table(main_table)
 
     main_table.transform(
-        column_order=(
-            "id",
-            "postDateTime",
-            "headline",
-            "headlineUrl",
-            "postSummary",
-            "postBody",
-            "dateCreated",
-            "dateUpdated",
-            "modifiedDate",
-        ),
         types={
             "postDateTime": str,
             "dateCreated": str,
@@ -97,3 +86,29 @@ def initial_sqlite_transform(sqlitedb: Database, main_table: str, print_indent=0
     main_table.create_index(["headline"])
 
     print(f"done ({time.time() - start})")
+
+
+def unnest(ddb_con: DuckDBPyConnection, main_table: str):
+    ddb_con.execute(
+        f"""--sql
+        CREATE OR REPLACE TEMP TABLE __{main_table}_unnested_downloads AS
+        WITH unnested AS (
+          SELECT
+            unnest(items, recursive := true)
+          FROM
+            __{main_table}_downloads
+        )
+        SELECT
+          id,
+          postDateTime,
+          headline,
+          headlineUrl,
+          postSummary,
+          postBody,
+          dateCreated,
+          dateUpdated,
+          modifiedDate,
+          tags
+        FROM unnested;
+        """
+    )
