@@ -140,7 +140,7 @@ databases:
             dateUpdated as atom_updated,
             headlineUrl as atom_link,
             postSummary || postBody as atom_content,
-            author as atom_author_name
+            "aws" as atom_author_name
           FROM
             whats_new
           ORDER BY
