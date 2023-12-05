@@ -309,9 +309,7 @@ def merge_duckdb_tags(
           hash,
           id,
           tagNamespaceId,
-          MAX_BY(name, dateUpdated) AS name,
-          MAX_BY(dateCreated, dateUpdated) AS dateCreated,
-          MAX(dateUpdated) AS dateUpdated,
+          MAX_BY(name, dateUpdated) AS name
         FROM
           (
             {tag_union}
