@@ -390,3 +390,96 @@ databases:
             tagNamespaceId
           ORDER BY
             tagNamespaceId ASC;
+  _memory:
+    queries:
+      multiple_sources_aws_atom_feed:
+        title: Multiple sources - AWS - atom/RSS feed (add your own conditions!)
+        description_html: |-
+          Append .atom to any URL that has these resulting fields, or click the link below.
+        sql: |-
+          SELECT
+            atom_id,
+            atom_title,
+            atom_updated,
+            atom_link,
+            atom_content,
+            atom_author_name,
+            sortDateTime
+          FROM
+            (
+              SELECT
+                id as atom_id,
+                headline as atom_title,
+                dateUpdated as atom_updated,
+                headlineUrl as atom_link,
+                postSummary || postBody as atom_content,
+                "aws" as atom_author_name,
+                postDateTime as sortDateTime
+              FROM
+                whats_new
+
+              UNION ALL
+
+              SELECT
+                id as atom_id,
+                title as atom_title,
+                modifiedDate as atom_updated,
+                link as atom_link,
+                postExcerpt as atom_content,
+                author as atom_author_name,
+                createdDate as sortDateTime
+              FROM
+                blog_posts
+            )
+          ORDER BY
+            sortDateTime DESC
+          LIMIT
+            25;
+      multiple_sources_aws_reinvent_updates:
+        title: Multiple sources - AWS - re:Invent updates
+        sql: |-
+          SELECT
+            type,
+            title,
+            url,
+            sortDateTime
+          FROM
+            (
+              SELECT
+                "whats_new" as type,
+                headline as title,
+                headlineUrl as url,
+                strftime('%Y-%m-%d', postDateTime) as dayDate,
+                postDateTime as sortDateTime
+              FROM
+                whats_new
+
+              UNION ALL
+
+              SELECT
+                "blog_post" as type,
+                title,
+                link as url,
+                strftime('%Y-%m-%d', createdDate) as dayDate,
+                createdDate as sortDateTime
+              FROM
+                blog_posts
+            )
+          WHERE
+            CASE
+              WHEN :year = '2012' THEN dayDate BETWEEN '2012-11-27' AND '2012-11-29'
+              WHEN :year = '2013' THEN dayDate BETWEEN '2013-11-12' AND '2013-11-15'
+              WHEN :year = '2014' THEN dayDate BETWEEN '2014-11-11' AND '2014-11-14'
+              WHEN :year = '2015' THEN dayDate BETWEEN '2015-10-06' AND '2015-10-09'
+              WHEN :year = '2016' THEN dayDate BETWEEN '2016-11-28' AND '2016-12-02'
+              WHEN :year = '2017' THEN dayDate BETWEEN '2017-11-27' AND '2017-12-01'
+              WHEN :year = '2018' THEN dayDate BETWEEN '2018-11-26' AND '2018-11-30'
+              WHEN :year = '2019' THEN dayDate BETWEEN '2019-12-02' AND '2019-12-06'
+              WHEN :year = '2020' THEN dayDate BETWEEN '2020-11-30' AND '2020-12-18'
+              WHEN :year = '2021' THEN dayDate BETWEEN '2021-11-30' AND '2021-12-03'
+              WHEN :year = '2022' THEN dayDate BETWEEN '2022-11-28' AND '2022-12-02'
+              WHEN :year = '2023' THEN dayDate BETWEEN '2023-11-27' AND '2023-12-02'
+            END
+          ORDER BY
+            sortDateTime ASC;
+
