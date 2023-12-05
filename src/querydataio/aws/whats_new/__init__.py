@@ -20,7 +20,7 @@ TAG_ID_PREFIX = "whats-new%23year%23"
 FIRST_YEAR = 2004
 MAIN_TABLE_NAME = "whats_new"
 MAIN_TAGS_TABLE_NAME = "whats_new_tags"
-RELATION_ID = "whats_new_id"
+RELATION_ID = "whats_new_hash"
 
 
 def process(
@@ -81,7 +81,7 @@ def initial_sqlite_transform(sqlitedb: Database, main_table: str, print_indent=0
     )
 
     main_table.transform(
-        pk="id",
+        pk="hash",
     )
     main_table.create_index(["postDateTime"])
     main_table.create_index(["headline"])
@@ -100,6 +100,7 @@ def unnest(ddb_con: DuckDBPyConnection, main_table: str):
             __{main_table}_downloads
         )
         SELECT
+          md5(id)[:10] as hash,
           id,
           postDateTime,
           headline,

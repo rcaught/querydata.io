@@ -195,46 +195,40 @@ databases:
         description_html: |-
           Check out <a href="https://querydata.io/aws/tags_all_general_products">this query</a> for all available product ids and names.
         sql: |-
-          WITH tags AS (
-            SELECT
-              whats_new_id
-            FROM
-              whats_new_tags
-            WHERE
-              tag_id = 'whats-new#general-products#aws-fargate'
-          )
           SELECT
-            headline,
-            headlineUrl,
-            strftime('%Y-%m-%d', postDateTime) as dayDate
+            wn.headline,
+            wn.headlineUrl,
+            strftime('%Y-%m-%d', wn.postDateTime) as dayDate
           FROM
-            whats_new
+            tags
+          JOIN whats_new_tags wnt ON
+            wnt.tag_hash = tags.hash
+          JOIN whats_new wn ON
+            wn.hash = wnt.whats_new_hash
           WHERE
-            id IN tags
-          ORDER BY postDateTime DESC
+            tags.id = 'whats-new#general-products#aws-fargate'
+          ORDER BY
+            postDateTime DESC
           LIMIT 15;
       whats_new_tags_category_updates:
         title: What's new - updates by category tag (eg. databases)
         description_html: |-
           Check out <a href="https://querydata.io/aws/tags_namespaces_names">this query</a> for all available <code>whats-new#marketing-marchitecture</code> names.
         sql: |-
-          WITH tags AS (
-            SELECT
-              whats_new_id
-            FROM
-              whats_new_tags
-            WHERE
-              tag_id = 'whats-new#marketing-marchitecture#databases'
-          )
           SELECT
-            headline,
-            headlineUrl,
-            strftime('%Y-%m-%d', postDateTime) as dayDate
+            wn.headline,
+            wn.headlineUrl,
+            strftime('%Y-%m-%d', wn.postDateTime) as dayDate
           FROM
-            whats_new
+            tags
+          JOIN whats_new_tags wnt ON
+            wnt.tag_hash = tags.hash
+          JOIN whats_new wn ON
+            wn.hash = wnt.whats_new_hash
           WHERE
-            id IN tags
-          ORDER BY postDateTime DESC
+            tags.id = 'whats-new#marketing-marchitecture#databases'
+          ORDER BY
+            postDateTime DESC
           LIMIT 15;
       whats_new_tags_last_update_per_product:
         title: What's new - last update per product
@@ -247,9 +241,9 @@ databases:
           FROM
             tags
           JOIN whats_new_tags wnt ON
-            wnt.tag_id = tags.id
+            wnt.tag_hash = tags.hash
           JOIN whats_new wn ON
-            wn.id = wnt.whats_new_id
+            wn.hash = wnt.whats_new_hash
           GROUP BY
             tags.name
           HAVING
@@ -271,9 +265,9 @@ databases:
           FROM
             tags
           JOIN whats_new_tags wnt ON
-            wnt.tag_id = tags.id
+            wnt.tag_hash = tags.hash
           JOIN whats_new wn ON
-            wn.id = wnt.whats_new_id
+            wn.hash = wnt.whats_new_hash
           GROUP BY
             tags.name
           HAVING

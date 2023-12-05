@@ -78,7 +78,7 @@ def process(
 
     ddb_con.execute(
         f"""--sql
-        DROP INDEX IF EXISTS {main_table}_id_idx;
+        DROP INDEX IF EXISTS {main_table}_hash_idx;
 
         CREATE OR REPLACE TABLE {main_table} AS
         SELECT
@@ -92,7 +92,7 @@ def process(
 
     ddb_con.execute(
         f"""--sql
-        CREATE UNIQUE INDEX {main_table}_id_idx ON {main_table} (id);
+        CREATE UNIQUE INDEX {main_table}_hash_idx ON {main_table} (hash);
         """
     )
 
@@ -101,16 +101,16 @@ def process(
         CREATE OR REPLACE TEMP TABLE {tags_main_table} AS
         WITH unnested AS (
           SELECT
-            id AS {main_module.RELATION_ID},
+            md5(id)[:10] AS {main_module.RELATION_ID},
             unnest(tags, recursive := true)
           FROM
             __{main_table}_unnested_downloads
         )
         SELECT
+          md5(id)[:10] AS hash,
           id,
           tagNamespaceId,
           name,
-          dateCreated,
           dateUpdated,
           {main_module.RELATION_ID}
         FROM
@@ -120,17 +120,17 @@ def process(
 
     ddb_con.execute(
         f"""--sql
-        DROP INDEX IF EXISTS {main_tags_table}_ids_idx;
+        DROP INDEX IF EXISTS {main_tags_table}_hash_idx;
 
         CREATE OR REPLACE TABLE {main_tags_table} AS
         SELECT
           DISTINCT
           {main_module.RELATION_ID},
-          id as tag_id
+          md5(id)[:10] as tag_hash
         FROM
           {tags_main_table};
 
-        CREATE UNIQUE INDEX {main_tags_table}_ids_idx ON {main_tags_table} ({main_module.RELATION_ID}, tag_id);
+        CREATE UNIQUE INDEX {main_tags_table}_hash_idx ON {main_tags_table} ({main_module.RELATION_ID}, tag_hash);
         """
     )
 
@@ -273,11 +273,11 @@ def common_table_optimisations(
     start = time.time()
     print(f"{print_indent * ' '}- {main_tags_table.name}... ", end="")
 
-    main_tags_table.transform(pk=[main_module.RELATION_ID, "tag_id"])
+    main_tags_table.transform(pk=[main_module.RELATION_ID, "tag_hash"])
     main_tags_table.add_foreign_key(
-        main_module.RELATION_ID, main_table.name, "id", ignore=True
+        main_module.RELATION_ID, main_table.name, "hash", ignore=True
     )
-    main_tags_table.add_foreign_key("tag_id", tags_table.name, "id", ignore=True)
+    main_tags_table.add_foreign_key("tag_hash", tags_table.name, "hash", ignore=True)
 
     print(f"done ({time.time() - start})")
 
@@ -306,6 +306,7 @@ def merge_duckdb_tags(
         f"""--sql
         CREATE OR REPLACE TABLE __{primary_tag_table} AS
         SELECT
+          hash,
           id,
           tagNamespaceId,
           MAX_BY(name, dateUpdated) AS name,
@@ -341,8 +342,9 @@ def tag_table_optimisations(sqlitedb: Database, print_indent: int = 0):
     start = time.time()
 
     tags_table.transform(
-        pk="id",
+        pk="hash",
     )
+    tags_table.create_index(["id"], unique=True)
     tags_table.create_index(["tagNamespaceId"])
     tags_table.create_index(["tagNamespaceId", "name"], unique=True)
 

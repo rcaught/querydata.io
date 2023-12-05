@@ -17,7 +17,7 @@ URL_PREFIX = (
 TAG_ID_PREFIX = "blog-posts%23category%23"
 MAIN_TABLE_NAME = "blog_posts"
 MAIN_TAGS_TABLE_NAME = "blog_post_tags"
-RELATION_ID = "blog_post_id"
+RELATION_ID = "blog_post_hash"
 
 
 def parse_aws_categories() -> dict[str, str]:
@@ -76,6 +76,16 @@ def initial_sqlite_transform(sqlitedb: Database, main_table: str, print_indent=0
 
     main_table: Table = sqlitedb.table(main_table)
 
+    main_table.transform(
+        column_order=(
+            "id",
+            "createdDate",
+            "title",
+            "link",
+            "postExcerpt",
+            "featuredImageUrl",
+        )
+    )
     main_table.transform(
         pk="hash",
     )
