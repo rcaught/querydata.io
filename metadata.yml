@@ -346,3 +346,47 @@ databases:
           SELECT id, name FROM tags WHERE tagNamespaceId = 'whats-new#general-products' ORDER BY id;
         description_html: |-
           <a href="/aws_whats_new/tags_namespaces_names">Tags - unique tag namespaces and available names</a> truncates this larger set, so providing dedicated query.
+  aws_blog_posts:
+    queries:
+      blog_posts_tags_category_updates:
+        title: Blog posts - post by category tag (eg. big data)
+        description_html: |-
+          Check out <a href="/aws_blog_posts/tags?_sort=name&tagNamespaceId__exact=blog-posts%23category">this page</a> for all available <code>blog-posts#category</code> ids.
+        sql: |-
+          SELECT
+            wn.title,
+            wn.link,
+            strftime('%Y-%m-%d', wn.createdDate) as dayDate
+          FROM
+            tags
+          JOIN blog_post_tags wnt ON
+            wnt.tag_hash = tags.hash
+          JOIN blog_posts wn ON
+            wn.hash = wnt.blog_post_hash
+          WHERE
+            tags.id = 'blog-posts#category#big-data'
+          ORDER BY
+            wn.createdDate DESC
+          LIMIT 15;
+      tags_namespaces_names:
+        title: Tags - unique tag namespaces and available names
+        sql: |-
+          SELECT
+            tagNamespaceId,
+            group_concat('- ' || name || ' (' || id || ')', '
+          ') AS namesIds
+          FROM
+            (
+              SELECT
+                tagNamespaceId,
+                name,
+                id
+              FROM
+                tags
+              ORDER BY
+                name
+            )
+          GROUP BY
+            tagNamespaceId
+          ORDER BY
+            tagNamespaceId ASC;
