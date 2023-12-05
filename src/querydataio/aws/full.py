@@ -12,7 +12,7 @@ print()
 print("AWS")
 print("===")
 
-shared.delete_dbs([aws_shared.SQLITE_DB, aws_shared.DUCKDB_DB], 2)
+shared.delete_dbs([aws_shared.DUCKDB_DB], 2)
 
 ddb_con = shared.init_duckdb(aws_shared.DUCKDB_DB)
 
@@ -27,7 +27,9 @@ for main_module, partitions in main_modules.items():
     print(f"  {main_module.DIRECTORY_ID}")
     print(f"  {'=' * len(main_module.DIRECTORY_ID)}")
 
-    sqlitedb = Database(f"dbs/aws_{main_module.MAIN_TABLE_NAME}.sqlite3")
+    sqlitedb_name = f"dbs/aws_{main_module.MAIN_TABLE_NAME}.sqlite3"
+    shared.delete_dbs([sqlitedb_name], 4)
+    sqlitedb = Database(sqlitedb_name)
 
     main_table: str = main_module.MAIN_TABLE_NAME
     main_tags_table: str = main_module.MAIN_TAGS_TABLE_NAME
