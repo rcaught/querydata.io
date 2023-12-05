@@ -8,7 +8,7 @@ description_html: |-
   This site employs heavy caching techniques that may result in unexpected results for dynamic SQL values, such as RANDOM() or DATE('now').
 about_url: https://github.com/rcaught/querydata.io
 databases:
-  aws:
+  aws_whats_new:
     description_html: |-
       Inspired by <a href="https://bigorange.cloud/updates?ref=querydata.io" target="_blank">bigorange.cloud/updates</a> and others.
     tables:
@@ -17,17 +17,17 @@ databases:
         source: What's New with AWS?
         source_url: https://aws.amazon.com/new/
         description_html: |-
-          <a href="/aws#queries">Check out some examples queries</a>
+          <a href="/aws_whats_new#queries">Check out some examples queries</a>
           <br />
           Inspired by <a href="https://bigorange.cloud/updates?ref=querydata.io" target="_blank">bigorange.cloud/updates</a> and others.
       whats_new_tags:
         source: What's New with AWS?
         source_url: https://aws.amazon.com/new/
         description_html: |-
-          <a href="/aws#queries">Check out some examples queries</a>
+          <a href="/aws_whats_new#queries">Check out some examples queries</a>
       tags:
         description_html: |-
-          <a href="/aws#queries">Check out some examples queries</a>
+          <a href="/aws_whats_new#queries">Check out some examples queries</a>
     queries:
       whats_new_reinvent_updates:
         title: What's new - re:Invent updates
@@ -81,7 +81,7 @@ databases:
           My best guess is that there is another unpublished sort key (likely a GUID, as I would expect an auto increment to align with <code>dateCreated</code>).
           <br />
           <hr />
-          To scope by category, look at some other example queries, such as: <a href="https://querydata.io/aws/whats_new_tags_category_updates">What's new - updates by category tag</a>
+          To scope by category, look at some other example queries, such as: <a href="/aws_whats_new/whats_new_tags_category_updates">What's new - updates by category tag</a>
         sql: |-
           SELECT
             headline,
@@ -95,7 +95,7 @@ databases:
       whats_new_updates_over_time:
         title: What's new - updates over time (with graph)
         description_html: |-
-          <a href="https://querydata.io/aws/whats_new_updates_over_time?graph=true#g.mark=bar&g.x_column=postDate&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
+          <a href="/aws_whats_new/whats_new_updates_over_time?graph=true#g.mark=bar&g.x_column=postDate&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
         sql: |-
           WITH RECURSIVE dates(date) AS (
             VALUES('2004-10-01')
@@ -150,7 +150,7 @@ databases:
       whats_new_ipv6_updates_over_time:
         title: What's new - IPv6 mentions over time (with graph)
         description_html: |-
-          <a href="https://querydata.io/aws/whats_new_ipv6_updates_over_time?graph=true#g.mark=bar&g.x_column=postDate&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
+          <a href="/aws_whats_new/whats_new_ipv6_updates_over_time?graph=true#g.mark=bar&g.x_column=postDate&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
         sql: |-
           WITH RECURSIVE dates(date) AS (
             VALUES('2011-05-01')
@@ -193,7 +193,7 @@ databases:
       whats_new_tags_exact_product_updates:
         title: What's new - updates by product tag (eg. Fargate)
         description_html: |-
-          Check out <a href="https://querydata.io/aws/tags_all_general_products">this query</a> for all available product ids and names.
+          Check out <a href="/aws_whats_new/tags_all_general_products">this query</a> for all available product ids and names.
         sql: |-
           SELECT
             wn.headline,
@@ -213,7 +213,7 @@ databases:
       whats_new_tags_category_updates:
         title: What's new - updates by category tag (eg. databases)
         description_html: |-
-          Check out <a href="https://querydata.io/aws/tags_namespaces_names">this query</a> for all available <code>whats-new#marketing-marchitecture</code> names.
+          Check out <a href="/aws_whats_new/tags_namespaces_names">this query</a> for all available <code>whats-new#marketing-marchitecture</code> names.
         sql: |-
           SELECT
             wn.headline,
@@ -253,7 +253,7 @@ databases:
       whats_new_tags_updates_per_product:
         title: What's new - number of updates per product (with graph)
         description_html: |-
-          <a href="https://querydata.io/aws/whats_new_tags_updates_per_product?graph=true#g.mark=bar&g.x_column=graphLabel&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
+          <a href="/aws_whats_new/whats_new_tags_updates_per_product?graph=true#g.mark=bar&g.x_column=graphLabel&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
         sql: |-
           SELECT
             FORMAT(
@@ -345,4 +345,4 @@ databases:
         sql: |-
           SELECT id, name FROM tags WHERE tagNamespaceId = 'whats-new#general-products' ORDER BY id;
         description_html: |-
-          <a href="https://querydata.io/aws/tags_namespaces_names">Tags - unique tag namespaces and available names</a> truncates this larger set, so providing dedicated query.
+          <a href="/aws_whats_new/tags_namespaces_names">Tags - unique tag namespaces and available names</a> truncates this larger set, so providing dedicated query.
