@@ -368,6 +368,192 @@ databases:
           ORDER BY
             wn.createdDate DESC
           LIMIT 15;
+      blog_posts_dedicated_blogs:
+        title: Blog posts - dedicated blog reproduction (eg. database - https://aws.amazon.com/blogs/database/)
+        description_html: |-
+          Blog posts for a category tag ID, excluding APN, Partner or Customer posts.
+        sql: |-
+          WITH base AS (
+            SELECT
+              bpt.blog_post_hash,
+              tags.id
+            FROM
+              tags
+              JOIN blog_post_tags bpt ON bpt.tag_hash = tags.hash
+          ),
+          bph AS (
+            SELECT
+              blog_post_hash
+            FROM
+              base
+            WHERE
+              id = 'blog-posts#category#database'
+            EXCEPT
+            SELECT
+              blog_post_hash
+            FROM
+              base
+            WHERE
+              id LIKE '%apn%'
+              OR id LIKE '%partner%'
+              OR id LIKE '%customer%'
+          )
+          SELECT
+            title,
+            link,
+            postExcerpt,
+            createdDate
+          FROM
+            blog_posts
+          WHERE
+            hash IN (
+              SELECT
+                *
+              FROM
+                bph
+            )
+          ORDER BY
+            createdDate DESC
+          LIMIT
+            15;
+      blog_posts_atom_feed_simple:
+        title: Blog posts - simple atom/RSS feed (add your own conditions!)
+        description_html: |-
+          This would give you a feed of all AWS blog posts.
+          <br />
+          Append .atom to any URL that has these resulting column names, or click the link below.
+        sql: |-
+          SELECT
+            id as atom_id,
+            title as atom_title,
+            link as atom_link,
+            postExcerpt as atom_content,
+            createdDate as atom_updated,
+            "aws" as atom_author_name
+          FROM
+            blog_posts
+          ORDER BY
+            createdDate DESC
+          LIMIT
+            25;
+      blog_posts_atom_feed_selective:
+        title: Blog posts - selective atom/RSS feed (add your own conditions!)
+        description_html: |-
+          This example combines select blogs (database and security in this example) while excluding APN, Partner and Customer posts.
+          <br />
+          Append .atom to any URL that has these resulting column names, or click the link below.
+        sql: |-
+          WITH base AS (
+            SELECT
+              bpt.blog_post_hash,
+              tags.id
+            FROM
+              tags
+              JOIN blog_post_tags bpt ON bpt.tag_hash = tags.hash
+          ),
+          bph AS (
+            SELECT
+              blog_post_hash
+            FROM
+              base
+            WHERE
+              id = 'blog-posts#category#database'
+              OR id = 'blog-posts#category#security-identity-compliance'
+            EXCEPT
+            SELECT
+              blog_post_hash
+            FROM
+              base
+            WHERE
+              id LIKE '%apn%'
+              OR id LIKE '%partner%'
+              OR id LIKE '%customer%'
+          )
+          SELECT
+            title,
+            link,
+            postExcerpt,
+            createdDate
+          FROM
+            blog_posts
+          WHERE
+            hash IN (
+              SELECT
+                *
+              FROM
+                bph
+            )
+          ORDER BY
+            createdDate DESC
+          LIMIT
+            25;
+      blog_posts_tags_last_update_per_product:
+        title: Blog posts - last update per product
+        sql: |-
+          SELECT
+            tags.name,
+            bp.title,
+            bp.link,
+            MAX(bp.createdDate)
+          FROM
+            (
+              SELECT
+                *
+              FROM
+                tags
+              WHERE
+                tagNamespaceId = 'GLOBAL#product'
+            ) AS tags
+            JOIN blog_post_tags bpt ON bpt.tag_hash = tags.hash
+            JOIN blog_posts bp ON bp.hash = bpt.blog_post_hash
+          GROUP BY
+            tags.name
+          ORDER BY
+            tags.name ASC;
+      blog_posts_tags_posts_per_product:
+        title: Blog posts - number of posts per product (with graph)
+        description_html: |-
+          <a href="/aws_blog_posts/blog_posts_tags_posts_per_product?graph=true#g.mark=bar&g.x_column=graphLabel&g.x_type=ordinal&g.y_column=count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
+        sql: |-
+          SELECT
+            FORMAT(
+                '%03d',
+                ROW_NUMBER() OVER (ORDER BY COUNT(tags.name) DESC)
+              ) || '. ' || tags.name as graphLabel,
+            tags.name,
+            COUNT(tags.name) as count
+          FROM
+            (
+              SELECT
+                *
+              FROM
+                tags
+              WHERE
+                tagNamespaceId = 'GLOBAL#product'
+            ) AS tags
+          JOIN blog_post_tags bpt ON
+            bpt.tag_hash = tags.hash
+          JOIN blog_posts bp ON
+            bp.hash = bpt.blog_post_hash
+          GROUP BY
+            tags.name
+          ORDER BY
+            count DESC;
+      blog_posts_find_updates_from_when_i_was_away:
+        title: Blog posts - find updates from when I was away
+        description_html: |-
+          Date format, eg. <code>2023-11-01</code>
+        sql: |-
+          SELECT
+            title,
+            link,
+            strftime('%Y-%m-%d', createdDate) as dayDate
+          FROM
+            blog_posts
+          WHERE
+            dayDate BETWEEN :fromYearMonthDay AND :toYearMonthDay
+          ORDER BY
+            createdDate ASC;
       tags_namespaces_names:
         title: Tags - unique tag namespaces and available names
         sql: |-
