@@ -132,7 +132,7 @@ databases:
       whats_new_atom_feed:
         title: What's new - atom/RSS feed (add your own conditions!)
         description_html: |-
-          Append .atom to any URL that has these resulting fields, or click the link below.
+          Append .atom to any URL that has these resulting column names, or click the link below.
         sql: |-
           SELECT
             id as atom_id,
@@ -239,15 +239,20 @@ databases:
             wn.headlineUrl,
             MAX(wn.postDateTime)
           FROM
-            tags
+            (
+              SELECT
+                *
+              FROM
+                tags
+              WHERE
+                tagNamespaceId = 'whats-new#general-products'
+            ) AS tags
           JOIN whats_new_tags wnt ON
             wnt.tag_hash = tags.hash
           JOIN whats_new wn ON
             wn.hash = wnt.whats_new_hash
           GROUP BY
             tags.name
-          HAVING
-            tags.tagNamespaceId = 'whats-new#general-products'
           ORDER BY
             tags.name ASC;
       whats_new_tags_updates_per_product:
@@ -354,19 +359,19 @@ databases:
           Check out <a href="/aws_blog_posts/tags?_sort=name&tagNamespaceId__exact=blog-posts%23category">this page</a> for all available <code>blog-posts#category</code> ids.
         sql: |-
           SELECT
-            wn.title,
-            wn.link,
-            strftime('%Y-%m-%d', wn.createdDate) as dayDate
+            bp.title,
+            bp.link,
+            strftime('%Y-%m-%d', bp.createdDate) as dayDate
           FROM
             tags
-          JOIN blog_post_tags wnt ON
-            wnt.tag_hash = tags.hash
-          JOIN blog_posts wn ON
-            wn.hash = wnt.blog_post_hash
+          JOIN blog_post_tags bpt ON
+            bpt.tag_hash = tags.hash
+          JOIN blog_posts bp ON
+            bp.hash = bpt.blog_post_hash
           WHERE
             tags.id = 'blog-posts#category#big-data'
           ORDER BY
-            wn.createdDate DESC
+            bp.createdDate DESC
           LIMIT 15;
       blog_posts_dedicated_blogs:
         title: Blog posts - dedicated blog reproduction (eg. database - https://aws.amazon.com/blogs/database/)
@@ -581,7 +586,7 @@ databases:
       multiple_sources_aws_atom_feed:
         title: Multiple sources - AWS - atom/RSS feed (add your own conditions!)
         description_html: |-
-          Append .atom to any URL that has these resulting fields, or click the link below.
+          Append .atom to any URL that has these resulting column names, or click the link below.
         sql: |-
           SELECT
             atom_id,
