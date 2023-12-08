@@ -6,7 +6,6 @@ import time
 import duckdb
 import pandas as pd
 from sqlite_utils import Database
-from sqlite_utils.db import Table
 
 pd.set_option("display.max_rows", 500)
 pd.set_option("display.max_columns", 1000)
@@ -39,6 +38,7 @@ def final_database_optimisations(sqlitedb: Database, print_indent=0):
     print(f"{print_indent * ' '}Optimising database")
     print(f"{print_indent * ' '}===================")
     start = time.time()
+
     file_query = "select file from pragma_database_list where name='main';"
     print(
         f"{print_indent * ' '}- {sqlitedb.execute(file_query).fetchone()[0]}... ",
