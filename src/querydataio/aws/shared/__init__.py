@@ -210,6 +210,9 @@ def generate_urls(
     # 9999 records and that their union covers all records. This can be
     # verified by comparing our total with an unpartitioned totalHits request.
 
+    if partitions == []:
+        return [f"{main_module.URL_PREFIX}&size=2000&sort_order=desc"]
+
     partition_sizes = getTotalHits(ddb_con, main_module, partitions, print_indent)
 
     urls = []
