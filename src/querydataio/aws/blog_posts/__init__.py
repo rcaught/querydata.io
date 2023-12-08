@@ -89,6 +89,7 @@ def initial_sqlite_transform(sqlitedb: Database, main_table: str, print_indent=0
     main_table.transform(
         pk="hash",
     )
+    main_table.create_index(["id"])
     main_table.create_index(["createdDate"])
     main_table.create_index(["title"])
 
