@@ -1,7 +1,10 @@
 #!/bin/sh
 
 npm install -g vercel@32.2.5 && # breaks after this version
-poetry run datasette publish vercel dbs/aws_whats_new.sqlite3 dbs/aws_blog_posts.sqlite3 \
+poetry run datasette publish vercel \
+  dbs/aws_whats_new.sqlite3 \
+  dbs/aws_blog_posts.sqlite3 \
+  dbs/aws_general.sqlite3 \
   --project querydataio \
   --metadata metadata.yml \
   --crossdb \

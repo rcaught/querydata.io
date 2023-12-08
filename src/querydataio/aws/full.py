@@ -1,7 +1,6 @@
 from types import ModuleType
 from sqlite_utils import Database
-from querydataio.aws import blog_posts
-from querydataio.aws import whats_new
+from querydataio.aws import products, whats_new, blog_posts, security_bulletins
 from querydataio.aws import shared as aws_shared
 from querydataio import shared
 
@@ -24,6 +23,7 @@ databases_modules: dict[str, list[dict[ModuleType, list[str | int]]]] = {
     f"dbs/aws_{blog_posts.MAIN_TABLE_NAME}.sqlite3": [
         {blog_posts: blog_posts.aws_categories()}
     ],
+    "dbs/aws_general.sqlite3": [{security_bulletins: []}, {products: []}],
 }
 
 for database_filename, modules in databases_modules.items():
