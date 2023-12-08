@@ -602,6 +602,10 @@ databases:
             tagNamespaceId
           ORDER BY
             tagNamespaceId ASC;
+  aws_general:
+    tables:
+      security_bulletins:
+        sort_desc: bulletinDateSort
   _memory:
     queries:
       aws_all_sources_atom_feed:
