@@ -642,6 +642,19 @@ databases:
                 createdDate as sortDateTime
               FROM
                 blog_posts
+
+              UNION ALL
+
+              SELECT
+                id as atom_id,
+                bulletinId as atom_title,
+                dateUpdated as atom_updated,
+                bulletinSubjectUrl as atom_link,
+                bulletinSubject as atom_content,
+                author as atom_author_name,
+                bulletinDateSort as sortDateTime
+              FROM
+                security_bulletins
             )
           ORDER BY
             sortDateTime DESC
