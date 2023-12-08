@@ -492,8 +492,8 @@ databases:
             createdDate DESC
           LIMIT
             25;
-      blog_posts_tags_last_update_per_product:
-        title: Blog posts - last update per product
+      blog_posts_tags_last_post_per_product:
+        title: Blog posts - last post per product
         sql: |-
           SELECT
             tags.name,
