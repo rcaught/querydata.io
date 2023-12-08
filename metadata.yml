@@ -544,6 +544,27 @@ databases:
             tags.name
           ORDER BY
             count DESC;
+      blog_posts_authors:
+        title: Blog posts - authors (with graph)
+        description_html: |-
+          <a href="/aws_blog_posts/blog_posts_authors?graph=true#g.mark=bar&g.x_column=author&g.x_type=ordinal&g.y_column=post_count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
+        sql: |-
+          SELECT
+            FORMAT(
+                '%04d',
+                ROW_NUMBER() OVER (ORDER BY COUNT(item.value) DESC, author ASC)
+              ) || '. ' || item.value as author,
+            count(blog_posts.id) AS post_count
+          FROM
+            blog_posts,
+            json_each(author) as item
+          WHERE
+            json_valid(author)
+          GROUP BY
+            author
+          ORDER BY
+            post_count DESC, author ASC
+          LIMIT 500
       blog_posts_find_updates_from_when_i_was_away:
         title: Blog posts - find updates from when I was away
         description_html: |-
