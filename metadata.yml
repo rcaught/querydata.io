@@ -604,8 +604,8 @@ databases:
             tagNamespaceId ASC;
   _memory:
     queries:
-      multiple_sources_aws_atom_feed:
-        title: Multiple sources - AWS - atom/RSS feed (add your own conditions!)
+      aws_all_sources_atom_feed:
+        title: AWS - all sources - atom/RSS feed (add your own conditions!)
         description_html: |-
           Append .atom to any URL that has these resulting column names, or click the link below.
         sql: |-
@@ -660,8 +660,8 @@ databases:
             sortDateTime DESC
           LIMIT
             25;
-      multiple_sources_aws_reinvent_updates:
-        title: Multiple sources - AWS - re:Invent updates
+      aws_multiple_sources_reinvent_updates:
+        title: AWS - Multiple sources - re:Invent updates
         sql: |-
           SELECT
             type,
