@@ -49,7 +49,6 @@ def process(
         WHERE freeTierAvailability = ' ';
         """
     )
-    None
 
 
 def mid_alters(ddb_con: DuckDBPyConnection, main_table: str):
