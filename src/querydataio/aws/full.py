@@ -2,6 +2,7 @@ from types import ModuleType
 from sqlite_utils import Database
 from querydataio.aws import (
     analyst_reports,
+    media_coverage,
     products,
     whats_new,
     blog_posts,
@@ -31,8 +32,9 @@ databases_modules: dict[str, list[dict[ModuleType, list[str | int]]]] = {
     ],
     "dbs/aws_general.sqlite3": [
         {analyst_reports: []},
-        {security_bulletins: []},
+        {media_coverage: []},
         {products: []},
+        {security_bulletins: []},
     ],
 }
 
