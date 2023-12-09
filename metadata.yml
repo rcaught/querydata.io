@@ -659,11 +659,50 @@ databases:
                 bulletinDateSort as sortDateTime
               FROM
                 security_bulletins
+
+              UNION ALL
+
+              SELECT
+                id as atom_id,
+                headline as atom_title,
+                dateUpdated as atom_updated,
+                headlineUrl as atom_link,
+                description as atom_content,
+                author as atom_author_name,
+                dateCreated as sortDateTime
+              FROM
+                analyst_reports
+
+              UNION ALL
+
+              SELECT
+                id as atom_id,
+                name as atom_title,
+                dateUpdated as atom_updated,
+                url as atom_link,
+                description as atom_content,
+                author as atom_author_name,
+                dateArticlePublished as sortDateTime
+              FROM
+                media_coverage
+
+              UNION ALL
+
+              SELECT
+                id as atom_id,
+                headline as atom_title,
+                dateUpdated as atom_updated,
+                headlineUrl as atom_link,
+                description as atom_content,
+                author as atom_author_name,
+                sortDate as sortDateTime
+              FROM
+                executive_insights
             )
           ORDER BY
             sortDateTime DESC
           LIMIT
-            25;
+            100;
       aws_multiple_sources_reinvent_updates:
         title: AWS - Multiple sources - re:Invent updates
         sql: |-
