@@ -82,7 +82,7 @@ def unnest(ddb_con: DuckDBPyConnection, main_table: str):
           DateArticlePublished AS dateArticlePublished,
           Description AS description,
           headline,
-          source,
+          Source AS source,
           URL AS url,
           tags
         FROM unnested;
