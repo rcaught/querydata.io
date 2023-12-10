@@ -1,11 +1,9 @@
 import json
 from datasette import hookimpl
-from datasette.app import Datasette
-from datasette.utils import parse_metadata
 
 
 @hookimpl
-def get_metadata(datasette: Datasette, key, database, table):
+def get_metadata(datasette, key, database, table):
     try:
         last_refresh_file = open(f"{datasette.plugins_dir}/last_refresh.json", "r")
     except FileNotFoundError:
