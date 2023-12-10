@@ -17,4 +17,16 @@ Powered by <a href="https://datasette.io/" title="Datasette v{{ datasette_versio
             <a href="{{ metadata.about_url }}">
         {% endif %}{{ metadata.about or metadata.about_url }}{% if metadata.about_url %}</a>{% endif %}
     {% endif %}
+    {% if metadata.last_refresh %}&middot;
+        <script>
+          import LocalTime from "local-time"
+          LocalTime.start()
+        </script>
+        Last refresh:
+        <time
+          data-local="time-ago"
+          datetime="{{ metadata.last_refresh }}">
+            {{ metadata.last_refresh }}
+        </time>
+    {% endif %}
 {% endif %}

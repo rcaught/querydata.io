@@ -11,6 +11,7 @@ poetry run datasette publish vercel \
   --install=datasette-vega \
   --install=datasette-atom \
   --plugins-dir=plugins \
+  --template-dir=templates \
   --vercel-json=vercel.json \
   --setting default_page_size 100 \
   --setting allow_csv_stream off \
