@@ -1,7 +1,7 @@
 #!/bin/sh
 
 npm install -g vercel@32.2.5 && # breaks after this version
-poetry run datasette publish vercel \
+DATASETTE_UPDATED=$(date -Iseconds) poetry run datasette publish vercel \
   dbs/aws_whats_new.sqlite3 \
   dbs/aws_blog_posts.sqlite3 \
   dbs/aws_general.sqlite3 \
@@ -10,6 +10,7 @@ poetry run datasette publish vercel \
   --crossdb \
   --install=datasette-vega \
   --install=datasette-atom \
+  --install=git+https://github.com/rcaught/datasette-updated \
   --plugins-dir=plugins \
   --template-dir=templates \
   --vercel-json=vercel.json \

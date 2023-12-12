@@ -1,6 +1,5 @@
 dbs/
 .DS_Store
-plugins/last_refresh.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

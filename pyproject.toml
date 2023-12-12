@@ -16,6 +16,7 @@ python-cloudflare = "^1.0.1"
 datasette-vega = "^0.6.2"
 sqlite-utils = "^3.35.2"
 
+datasette-updated = { git = "https://github.com/rcaught/datasette-updated.git" }
 
 [tool.poetry.group.dev.dependencies]
 sqlite-utils = "^3.35.2"
