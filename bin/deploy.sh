@@ -1,7 +1,16 @@
 #!/bin/sh
 
 npm install -g vercel@32.2.5 && # breaks after this version
-DATASETTE_UPDATED=$(date -Iseconds) poetry run datasette publish vercel \
+PLUGIN_DATASETTE_UPDATED_METADATA=$(cat <<-END
+{
+  "plugins": {
+    "datasette-updated": {
+      "updated": "$(date -Iseconds)"
+    }
+  }
+}
+END
+) && poetry run datasette publish vercel \
   dbs/aws_whats_new.sqlite3 \
   dbs/aws_blog_posts.sqlite3 \
   dbs/aws_general.sqlite3 \
@@ -16,6 +25,7 @@ DATASETTE_UPDATED=$(date -Iseconds) poetry run datasette publish vercel \
   --vercel-json=vercel.json \
   --setting default_page_size 100 \
   --setting allow_csv_stream off \
+  --version-note="$(echo $PLUGIN_DATASETTE_UPDATED_METADATA)" \
   --token $VERCEL_TOKEN &&
 echo &&
 CLOUDFLARE_API_KEY=$CLOUDFLARE_PURGE_API_TOKEN poetry run \
