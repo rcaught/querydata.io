@@ -17,12 +17,12 @@ Powered by <a href="https://datasette.io/" title="Datasette v{{ datasette_versio
             <a href="{{ metadata.about_url }}">
         {% endif %}{{ metadata.about or metadata.about_url }}{% if metadata.about_url %}</a>{% endif %}
     {% endif %}
-    {% if metadata.updated %}&middot;
+    {% if updated %}&middot;
         Updated:
         <time
           data-local="time-ago"
-          datetime="{{ metadata.updated }}">
-            {{ metadata.updated }}
+          datetime="{{ updated }}">
+            {{ updated }}
         </time>
     {% endif %}
 {% endif %}
