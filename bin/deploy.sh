@@ -2,17 +2,14 @@
 
 npm install -g vercel@32.2.5 && # breaks after this version
 mkdir -p plugins/datasette-updated/ && \
-echo <<-END
-{
+echo -n '{
   "plugins": {
     "datasette-updated": {
-      "updated": "$(date -Iseconds)"
+      "updated": "'$(date -Iseconds)'"
     }
   }
-}
-END
-> plugins/datasette-updated/metadata.json
-&& poetry run datasette publish vercel \
+}' > plugins/datasette-updated/metadata.json && \
+poetry run datasette publish vercel \
   dbs/aws_whats_new.sqlite3 \
   dbs/aws_blog_posts.sqlite3 \
   dbs/aws_general.sqlite3 \
