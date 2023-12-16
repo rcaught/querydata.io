@@ -2,10 +2,10 @@
 
 npm install -g vercel@32.2.5 && # breaks after this version
 mkdir -p plugins/datasette-updated/ && \
-echo -n '{
+echo '{
   "plugins": {
     "datasette-updated": {
-      "updated": "'$(date -Iseconds)'"
+      "updated": "'"$(date -Iseconds)"'"
     }
   }
 }' > plugins/datasette-updated/metadata.json && \
