@@ -86,11 +86,10 @@ def initial_sqlite_transform(
             "link",
             "postExcerpt",
             "featuredImageUrl",
-        )
-    )
-    main_table.transform(
+        ),
         pk="hash",
     )
+
     main_table.create_index(["id"])
     main_table.create_index(["createdDate"])
     main_table.create_index(["title"])

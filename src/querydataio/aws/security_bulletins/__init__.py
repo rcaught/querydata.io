@@ -54,11 +54,9 @@ def initial_sqlite_transform(
 
     main_table.transform(
         types={"bulletinDateSort": str},
-    )
-
-    main_table.transform(
         pk="hash",
     )
+
     main_table.create_index(["id"])
     main_table.create_index(["bulletinId"])
 

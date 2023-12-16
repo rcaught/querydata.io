@@ -69,11 +69,9 @@ def initial_sqlite_transform(
 
     main_table.transform(
         types={"launchDate": str},
-    )
-
-    main_table.transform(
         pk="hash",
     )
+
     main_table.create_index(["id"])
     main_table.create_index(["name"])
     main_table.create_index(["productName"])
