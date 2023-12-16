@@ -2,6 +2,7 @@
 
 import os
 from types import ModuleType
+from typing import Any
 import pandas as pd
 from duckdb import DuckDBPyConnection
 from sqlite_utils import Database
@@ -17,7 +18,7 @@ TAGS_TABLE_NAME = "tags"
 
 
 def to_sqlite(
-    sqlitedb: Database, items: list[tuple[pd.DataFrame, str]], print_indent=0
+    sqlitedb: Database, items: list[tuple[pd.DataFrame, str]], print_indent: int = 0
 ):
     """Export Dataframe to SQLite"""
 
@@ -65,7 +66,7 @@ def process(
     main_table: str,
     main_tags_table: str,
     tags_main_table: str,
-    print_indent=0,
+    print_indent: int = 0,
 ):
     print()
     print(f"{print_indent * ' '}Processing data")
@@ -173,10 +174,10 @@ def download(
 def getTotalHits(
     ddb_con: DuckDBPyConnection,
     main_module: ModuleType,
-    partitions: range | list[any],
+    partitions: range | list[Any],
     print_indent: int = 0,
 ) -> dict[str, int]:
-    urls = []
+    urls: list[str] = []
     for partition in partitions:
         urls.append(
             f"{main_module.URL_PREFIX}&size=1"
@@ -199,7 +200,7 @@ def getTotalHits(
 def generate_urls(
     ddb_con: DuckDBPyConnection,
     main_module: ModuleType,
-    partitions: range | list[any],
+    partitions: range | list[Any],
     print_indent: int = 4,
 ):
     # The maximum records size is 2000, but you can never paginate past 9999
@@ -215,7 +216,7 @@ def generate_urls(
 
     partition_sizes = getTotalHits(ddb_con, main_module, partitions, print_indent)
 
-    urls = []
+    urls: list[str] = []
     for partition, size in partition_sizes.items():
         if size == 0:
             next
@@ -263,7 +264,7 @@ def generate_urls(
 def common_table_optimisations(
     sqlitedb: Database,
     main_module: ModuleType,
-    print_indent=0,
+    print_indent: int = 0,
 ):
     print()
     print(f"{print_indent * ' '}Optimising tables")

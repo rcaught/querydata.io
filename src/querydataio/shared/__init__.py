@@ -33,7 +33,7 @@ def delete_dbs(dbs: list[str], print_indent: int = 0):
             print(f"{print_indent * ' '}- WARNING: cannot remove {db}")
 
 
-def final_database_optimisations(sqlitedb: Database, print_indent=0):
+def final_database_optimisations(sqlitedb: Database, print_indent: int = 0):
     print()
     print(f"{print_indent * ' '}Optimising database")
     print(f"{print_indent * ' '}===================")

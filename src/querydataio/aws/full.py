@@ -1,4 +1,5 @@
 from types import ModuleType
+from typing import Sequence
 from sqlite_utils import Database
 from querydataio.aws import (
     analyst_reports,
@@ -24,7 +25,7 @@ shared.delete_dbs([aws_shared.DUCKDB_DB], 2)
 
 ddb_con = shared.init_duckdb(aws_shared.DUCKDB_DB)
 
-databases_modules: dict[str, list[dict[ModuleType, list[str | int]]]] = {
+databases_modules: dict[str, list[dict[ModuleType, Sequence[str | int]]]] = {
     f"dbs/aws_{whats_new.MAIN_TABLE_NAME}.sqlite3": [
         {whats_new: whats_new.all_years()}
     ],
@@ -48,7 +49,7 @@ for database_filename, modules in databases_modules.items():
     shared.delete_dbs([database_filename], 4)
     sqlitedb = Database(database_filename)
 
-    tags_tables = []
+    tags_tables: list[str] = []
     for module in modules:
         for main_module, partitions in module.items():
             print()

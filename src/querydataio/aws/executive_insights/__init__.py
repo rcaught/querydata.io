@@ -38,10 +38,12 @@ def process(
 
 
 def mid_alters(ddb_con: DuckDBPyConnection, main_table: str):
-    None
+    return None
 
 
-def initial_sqlite_transform(sqlitedb: Database, main_table: str, print_indent=0):
+def initial_sqlite_transform(
+    sqlitedb: Database, main_table: str, print_indent: int = 0
+):
     print()
     print(f"{print_indent * ' '}Optimising tables")
     print(f"{print_indent * ' '}=================")
