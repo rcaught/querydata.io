@@ -1,12 +1,10 @@
-from typing import Generator
 from duckdb import DuckDBPyConnection
-from pytest_mock import MockerFixture
 from querydataio import shared
 from querydataio.aws import shared as aws_shared
 from querydataio.aws import whats_new
 
 
-def test_generate_urls(mocker: Generator[MockerFixture, None, None]):
+def test_generate_urls(mocker):
     download = mocker.patch("querydataio.aws.shared.download")
 
     def download_side_effect(
@@ -31,7 +29,7 @@ def test_generate_urls(mocker: Generator[MockerFixture, None, None]):
             )
             return f"__{main_table}_downloads"
         else:
-            Exception("Update side effect")
+            raise Exception("Update side effect")
 
     download.side_effect = download_side_effect
 
