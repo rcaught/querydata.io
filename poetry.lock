@@ -433,13 +433,13 @@ test = ["pytest"]
 
 [[package]]
 name = "datasette-updated"
-version = "0.1"
+version = "0.1.2"
 description = "Display the date your data was updated"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "datasette-updated-0.1.tar.gz", hash = "sha256:ee7f878fc5b06f7faa612aebfea3e44d16932e868e56dccabd3c8353b211d0e3"},
-    {file = "datasette_updated-0.1-py3-none-any.whl", hash = "sha256:8399d22af7a0448c0884a4ab76baa1cf12e545aa8f31c493cabb33bd3e53b360"},
+    {file = "datasette-updated-0.1.2.tar.gz", hash = "sha256:1bb0f74aa0c583403992495013e01e18632cebd27e509c64436f97b30f10b204"},
+    {file = "datasette_updated-0.1.2-py3-none-any.whl", hash = "sha256:a6d23e66e0106d846f090ec67fca22d8165c98abfc74a398373c9ea4e2f0fe8e"},
 ]
 
 [package.dependencies]
