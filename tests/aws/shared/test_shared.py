@@ -4,6 +4,7 @@ from pytest_mock import MockerFixture
 from querydataio import shared
 from querydataio.aws import shared as aws_shared
 from querydataio.aws import whats_new
+from querydataio import test_utils
 
 BASE_URLS_PREFIX = "https://aws.amazon.com/api/dirs/items/search?item.locale=en_US&item.directoryId=whats-new&sort_by=item.additionalFields.postDateTime"
 EXPECTED_URLS_PREFIX = f"{BASE_URLS_PREFIX}&size=1&tags.id=whats-new%23year%23"
@@ -19,8 +20,10 @@ def test_generate_urls(mocker: MockerFixture) -> None:
         f"{EXPECTED_URLS_PREFIX}2008",
         f"{EXPECTED_URLS_PREFIX}2009",
     ]
-        mocker, expected_urls, "tests/aws/shared/test_shared.test_generate_urls.1.json"
     test_utils.download_side_effect(
+        mocker,
+        expected_urls,
+        "tests/fixtures/aws/shared/test_shared.test_generate_urls.1.json",
     )
 
     assert aws_shared.generate_urls(
@@ -74,8 +77,10 @@ def test_generate_urls_out_of_bounds(mocker: MockerFixture) -> None:
     expected_urls = [
         f"{EXPECTED_URLS_PREFIX}2010",
     ]
-        mocker, expected_urls, "tests/aws/shared/test_shared.test_generate_urls.2.json"
     test_utils.download_side_effect(
+        mocker,
+        expected_urls,
+        "tests/fixtures/aws/shared/test_shared.test_generate_urls.2.json",
     )
 
     with pytest.raises(Exception, match="Out of range downloads"):
@@ -88,7 +93,7 @@ def test_generate_urls_no_partitions(mocker: MockerFixture) -> None:
     test_utils.download_side_effect(
         mocker,
         [f"{BASE_URLS_PREFIX}&size=1"],
-        "tests/aws/shared/test_shared.test_generate_urls.3.json",
+        "tests/fixtures/aws/shared/test_shared.test_generate_urls.3.json",
     )
 
     assert aws_shared.generate_urls(shared.init_duckdb(":memory:"), whats_new, []) == [
