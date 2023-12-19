@@ -19,8 +19,8 @@ def test_generate_urls(mocker: MockerFixture) -> None:
         f"{EXPECTED_URLS_PREFIX}2008",
         f"{EXPECTED_URLS_PREFIX}2009",
     ]
-    download_side_effect(
         mocker, expected_urls, "tests/aws/shared/test_shared.test_generate_urls.1.json"
+    test_utils.download_side_effect(
     )
 
     assert aws_shared.generate_urls(
@@ -74,8 +74,8 @@ def test_generate_urls_out_of_bounds(mocker: MockerFixture) -> None:
     expected_urls = [
         f"{EXPECTED_URLS_PREFIX}2010",
     ]
-    download_side_effect(
         mocker, expected_urls, "tests/aws/shared/test_shared.test_generate_urls.2.json"
+    test_utils.download_side_effect(
     )
 
     with pytest.raises(Exception, match="Out of range downloads"):
@@ -85,7 +85,7 @@ def test_generate_urls_out_of_bounds(mocker: MockerFixture) -> None:
 
 
 def test_generate_urls_no_partitions(mocker: MockerFixture) -> None:
-    download_side_effect(
+    test_utils.download_side_effect(
         mocker,
         [f"{BASE_URLS_PREFIX}&size=1"],
         "tests/aws/shared/test_shared.test_generate_urls.3.json",
@@ -103,27 +103,3 @@ def test_generate_urls_no_partitions(mocker: MockerFixture) -> None:
         f"{BASE_URLS_PREFIX}&size=1111&page=8&sort_order=desc",
         f"{BASE_URLS_PREFIX}&size=2000&page=0&sort_order=asc",
     ]
-
-
-def download_side_effect(
-    mocker: MockerFixture, expected_urls: list[str], mock_json_filepath: str
-):
-    download = mocker.patch("querydataio.aws.shared.download")
-
-    def download_side_effect(
-        ddb_con: DuckDBPyConnection,
-        urls: list[str],
-        main_table: str,
-        print_indent: int = 0,
-    ) -> str:
-        if urls == expected_urls:
-            ddb_con.sql(
-                f"""
-                CREATE OR REPLACE TEMP TABLE __{main_table}_downloads AS SELECT * FROM read_json_auto('{mock_json_filepath}', format='array');
-                """
-            )
-            return f"__{main_table}_downloads"
-        else:
-            raise Exception("Update side effect")
-
-    download.side_effect = download_side_effect
