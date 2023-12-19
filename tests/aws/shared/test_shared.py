@@ -83,6 +83,27 @@ def test_generate_urls_out_of_bounds(mocker):
         )
 
 
+def test_generate_urls_no_partitions(mocker):
+    download_side_effect(
+        mocker,
+        [f"{BASE_URLS_PREFIX}&size=1"],
+        "tests/aws/shared/test_shared.test_generate_urls.3.json",
+    )
+
+    assert aws_shared.generate_urls(shared.init_duckdb(":memory:"), whats_new, []) == [
+        f"{BASE_URLS_PREFIX}&size=1111&page=0&sort_order=desc",
+        f"{BASE_URLS_PREFIX}&size=1111&page=1&sort_order=desc",
+        f"{BASE_URLS_PREFIX}&size=1111&page=2&sort_order=desc",
+        f"{BASE_URLS_PREFIX}&size=1111&page=3&sort_order=desc",
+        f"{BASE_URLS_PREFIX}&size=1111&page=4&sort_order=desc",
+        f"{BASE_URLS_PREFIX}&size=1111&page=5&sort_order=desc",
+        f"{BASE_URLS_PREFIX}&size=1111&page=6&sort_order=desc",
+        f"{BASE_URLS_PREFIX}&size=1111&page=7&sort_order=desc",
+        f"{BASE_URLS_PREFIX}&size=1111&page=8&sort_order=desc",
+        f"{BASE_URLS_PREFIX}&size=2000&page=0&sort_order=asc",
+    ]
+
+
 def download_side_effect(mocker, expected_urls, mock_json_filepath):
     download = mocker.patch("querydataio.aws.shared.download")
 

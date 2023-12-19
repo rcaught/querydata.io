@@ -1,0 +1,11 @@
+[
+  {
+    "items": [],
+    "metadata": {
+      "count": 1,
+      "totalHits": 11000
+    },
+    "fieldTypes": {},
+    "filename": "https://aws.amazon.com/api/dirs/items/search?item.locale=en_US&item.directoryId=whats-new&sort_by=item.additionalFields.postDateTime&size=1&page=0&sort_order=desc"
+  }
+]

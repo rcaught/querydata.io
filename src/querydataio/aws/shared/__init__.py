@@ -178,11 +178,14 @@ def getTotalHits(
     print_indent: int = 0,
 ) -> dict[str, int]:
     urls: list[str] = []
-    for partition in partitions:
-        urls.append(
-            f"{main_module.URL_PREFIX}&size=1"
-            f"&tags.id={main_module.TAG_ID_PREFIX}{partition}"
-        )
+
+    prefix = f"{main_module.URL_PREFIX}&size=1"
+
+    if partitions == []:
+        urls.append(prefix)
+    else:
+        for partition in partitions:
+            urls.append(f"{prefix}&tags.id={main_module.TAG_ID_PREFIX}{partition}")
     download_table = download(ddb_con, urls, "total_hits", print_indent)
 
     result = ddb_con.sql(
@@ -211,13 +214,12 @@ def generate_urls(
     # 9999 records and that their union covers all records. This can be
     # verified by comparing our total with an unpartitioned totalHits request.
 
-    if partitions == []:
-        return [f"{main_module.URL_PREFIX}&size=2000&sort_order=desc"]
-
     partition_sizes = getTotalHits(ddb_con, main_module, partitions, print_indent)
 
     urls: list[str] = []
     for partition, size in partition_sizes.items():
+        tags_id = f"&tags.id={partition}" if partition != "" else ""
+
         if size == 0:
             next
         elif size < 10000:
@@ -225,36 +227,31 @@ def generate_urls(
                 for i in range(0, int(size / 2000) + 1):
                     urls.append(
                         f"{main_module.URL_PREFIX}&size=2000"
-                        f"&page={i}&tags.id={partition}"
-                        f"&sort_order=desc"
+                        f"&page={i}{tags_id}&sort_order=desc"
                     )
             else:
                 for i in range(0, int(size / 1111) + 1):
                     urls.append(
                         f"{main_module.URL_PREFIX}&size=1111"
-                        f"&page={i}&tags.id={partition}"
-                        f"&sort_order=desc"
+                        f"&page={i}{tags_id}&sort_order=desc"
                     )
         elif size >= 10000 and size <= 20000:
             for i in range(0, 9):
                 urls.append(
                     f"{main_module.URL_PREFIX}&size=1111"
-                    f"&page={i}&tags.id={partition}"
-                    f"&sort_order=desc"
+                    f"&page={i}{tags_id}&sort_order=desc"
                 )
             if size <= 18000:
                 for i in range(0, int((size - 10000) / 2000) + 1):
                     urls.append(
                         f"{main_module.URL_PREFIX}&size=2000"
-                        f"&page={i}&tags.id={partition}"
-                        f"&sort_order=asc"
+                        f"&page={i}{tags_id}&sort_order=asc"
                     )
             else:
                 for i in range(0, int((size - 10000) / 1111) + 1):
                     urls.append(
                         f"{main_module.URL_PREFIX}&size=1111"
-                        f"&page={i}&tags.id={partition}"
-                        f"&sort_order=asc"
+                        f"&page={i}{tags_id}&sort_order=asc"
                     )
         else:
             raise Exception("Out of range downloads")
