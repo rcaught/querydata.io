@@ -186,7 +186,9 @@ def getTotalHits(
     else:
         for partition in partitions:
             urls.append(f"{prefix}&tags.id={main_module.TAG_ID_PREFIX}{partition}")
-    download_table = download(ddb_con, urls, "total_hits", print_indent)
+    download_table = download(
+        ddb_con, urls, f"{main_module.MAIN_TABLE_NAME}_total_hits", print_indent
+    )
 
     result = ddb_con.sql(
         f"""
