@@ -9,7 +9,10 @@ def duckdb_connect():
 
 
 def download_side_effect(
-    mocker: MockerFixture, expected_urls: list[str], mock_json_filepath: str
+    mocker: MockerFixture,
+    mock_json_filepath: str,
+    validate_expected_urls: bool = False,
+    expected_urls: list[str] | None = None,
 ):
     download = mocker.patch("querydataio.aws.shared.download")
 
@@ -19,14 +22,14 @@ def download_side_effect(
         main_table: str,
         print_indent: int = 0,
     ) -> str:
-        if urls == expected_urls:
-            ddb_con.sql(
-                f"""
+        if validate_expected_urls and urls != expected_urls:
+            raise Exception("Update side effect")
+
+        ddb_con.sql(
+            f"""
                 CREATE OR REPLACE TEMP TABLE __{main_table}_downloads AS SELECT * FROM read_json_auto('{mock_json_filepath}', format='array');
                 """
-            )
-            return f"__{main_table}_downloads"
-        else:
-            raise Exception("Update side effect")
+        )
+        return f"__{main_table}_downloads"
 
     download.side_effect = download_side_effect

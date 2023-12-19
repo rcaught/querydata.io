@@ -20,8 +20,9 @@ def test_generate_urls(mocker: MockerFixture) -> None:
     ]
     test_utils.download_side_effect(
         mocker,
-        expected_urls,
         "tests/fixtures/aws/shared/test_shared.test_generate_urls.1.json",
+        True,
+        expected_urls,
     )
 
     assert aws_shared.generate_urls(
@@ -79,8 +80,9 @@ def test_generate_urls_out_of_bounds(mocker: MockerFixture) -> None:
     ]
     test_utils.download_side_effect(
         mocker,
-        expected_urls,
         "tests/fixtures/aws/shared/test_shared.test_generate_urls.2.json",
+        True,
+        expected_urls,
     )
 
     with pytest.raises(Exception, match="Out of range downloads"):
@@ -94,8 +96,9 @@ def test_generate_urls_out_of_bounds(mocker: MockerFixture) -> None:
 def test_generate_urls_no_partitions(mocker: MockerFixture) -> None:
     test_utils.download_side_effect(
         mocker,
-        [f"{BASE_URLS_PREFIX}&size=1"],
         "tests/fixtures/aws/shared/test_shared.test_generate_urls.3.json",
+        True,
+        [f"{BASE_URLS_PREFIX}&size=1"],
     )
 
     assert aws_shared.generate_urls(
