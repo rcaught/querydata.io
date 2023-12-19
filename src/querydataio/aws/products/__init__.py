@@ -1,5 +1,6 @@
 import time
 from types import ModuleType
+from typing import cast
 from duckdb import DuckDBPyConnection
 from sqlite_utils import Database
 from sqlite_utils.db import Table
@@ -56,16 +57,16 @@ def mid_alters(ddb_con: DuckDBPyConnection, main_table: str):
 
 
 def initial_sqlite_transform(
-    sqlitedb: Database, main_table: str, print_indent: int = 0
+    sqlitedb: Database, main_table_name: str, print_indent: int = 0
 ):
     print()
     print(f"{print_indent * ' '}Optimising tables")
     print(f"{print_indent * ' '}=================")
 
     start = time.time()
-    print(f"{print_indent * ' '}- {main_table}... ", end="")
+    print(f"{print_indent * ' '}- {main_table_name}... ", end="")
 
-    main_table: Table = sqlitedb.table(main_table)
+    main_table = cast(Table, sqlitedb.table(main_table_name))
 
     main_table.transform(
         types={"launchDate": str},

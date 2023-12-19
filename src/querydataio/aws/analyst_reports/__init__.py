@@ -1,5 +1,6 @@
 import time
 from types import ModuleType
+from typing import cast
 from duckdb import DuckDBPyConnection
 from sqlite_utils import Database
 from sqlite_utils.db import Table
@@ -51,7 +52,7 @@ def initial_sqlite_transform(
     start = time.time()
     print(f"{print_indent * ' '}- {main_table_name}... ", end="")
 
-    main_table: Table = sqlitedb.table(main_table_name)
+    main_table = cast(Table, sqlitedb.table(main_table_name))
 
     main_table.transform(
         pk="hash",

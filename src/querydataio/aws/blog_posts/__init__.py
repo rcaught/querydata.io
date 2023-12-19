@@ -2,6 +2,7 @@ import pathlib
 import sys
 import time
 from types import ModuleType
+from typing import cast
 from duckdb import DuckDBPyConnection
 import json
 from sqlite_utils import Database
@@ -20,7 +21,7 @@ MAIN_TAGS_TABLE_NAME = "blog_post_tags"
 RELATION_ID = "blog_post_hash"
 
 
-def parse_aws_categories() -> dict[str, str]:
+def parse_aws_categories() -> dict[str, list[dict[str, list[dict[str, str]]]]]:
     # https://aws.amazon.com/blogs/
     # //*[@id="aws-element-44ba89e5-9024-4e8f-a95c-621b7efdc78e"]
     # ^ would likely change
@@ -34,7 +35,8 @@ def parse_aws_categories() -> dict[str, str]:
 def aws_categories() -> list[str]:
     result: list[str] = []
     categories = parse_aws_categories()
-    aws_filters: list[dict[str, str]] = categories["filters"]
+
+    aws_filters = categories["filters"]
     for aws_filter in aws_filters:
         if aws_filter["value"] == "category":
             for child in aws_filter["children"]:
@@ -67,26 +69,26 @@ def mid_alters(ddb_con: DuckDBPyConnection, main_table: str):
 
 
 def initial_sqlite_transform(
-    sqlitedb: Database, main_table: str, print_indent: int = 0
+    sqlitedb: Database, main_table_name: str, print_indent: int = 0
 ):
     print()
     print(f"{print_indent * ' '}Optimising tables")
     print(f"{print_indent * ' '}=================")
 
     start = time.time()
-    print(f"{print_indent * ' '}- {main_table}... ", end="")
+    print(f"{print_indent * ' '}- {main_table_name}... ", end="")
 
-    main_table: Table = sqlitedb.table(main_table)
+    main_table = cast(Table, sqlitedb.table(main_table_name))
 
     main_table.transform(
-        column_order=(
+        column_order=[
             "id",
             "createdDate",
             "title",
             "link",
             "postExcerpt",
             "featuredImageUrl",
-        ),
+        ],
         pk="hash",
     )
 
