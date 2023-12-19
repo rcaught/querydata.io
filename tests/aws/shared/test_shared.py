@@ -1,5 +1,6 @@
 from duckdb import DuckDBPyConnection
 import pytest
+from pytest_mock import MockerFixture
 from querydataio import shared
 from querydataio.aws import shared as aws_shared
 from querydataio.aws import whats_new
@@ -8,7 +9,7 @@ BASE_URLS_PREFIX = "https://aws.amazon.com/api/dirs/items/search?item.locale=en_
 EXPECTED_URLS_PREFIX = f"{BASE_URLS_PREFIX}&size=1&tags.id=whats-new%23year%23"
 
 
-def test_generate_urls(mocker):
+def test_generate_urls(mocker: MockerFixture) -> None:
     expected_urls = [
         f"{EXPECTED_URLS_PREFIX}2003",
         f"{EXPECTED_URLS_PREFIX}2004",
@@ -69,7 +70,7 @@ def test_generate_urls(mocker):
     ]
 
 
-def test_generate_urls_out_of_bounds(mocker):
+def test_generate_urls_out_of_bounds(mocker: MockerFixture) -> None:
     expected_urls = [
         f"{EXPECTED_URLS_PREFIX}2010",
     ]
@@ -83,7 +84,7 @@ def test_generate_urls_out_of_bounds(mocker):
         )
 
 
-def test_generate_urls_no_partitions(mocker):
+def test_generate_urls_no_partitions(mocker: MockerFixture) -> None:
     download_side_effect(
         mocker,
         [f"{BASE_URLS_PREFIX}&size=1"],
@@ -104,7 +105,9 @@ def test_generate_urls_no_partitions(mocker):
     ]
 
 
-def download_side_effect(mocker, expected_urls, mock_json_filepath):
+def download_side_effect(
+    mocker: MockerFixture, expected_urls: list[str], mock_json_filepath: str
+):
     download = mocker.patch("querydataio.aws.shared.download")
 
     def download_side_effect(

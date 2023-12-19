@@ -2,7 +2,7 @@
 
 import os
 from types import ModuleType
-from typing import Any
+from typing import Sequence, cast
 import pandas as pd
 from duckdb import DuckDBPyConnection
 from sqlite_utils import Database
@@ -57,7 +57,7 @@ def merge_duckdb_tables(
 
 
 def tags_table(sqlitedb: Database) -> Table:
-    return sqlitedb.table(TAGS_TABLE_NAME)
+    return cast(Table, sqlitedb.table(TAGS_TABLE_NAME))
 
 
 def process(
@@ -174,7 +174,7 @@ def download(
 def getTotalHits(
     ddb_con: DuckDBPyConnection,
     main_module: ModuleType,
-    partitions: range | list[Any],
+    partitions: Sequence[str | int],
     print_indent: int = 0,
 ) -> dict[str, int]:
     urls: list[str] = []
@@ -203,7 +203,7 @@ def getTotalHits(
 def generate_urls(
     ddb_con: DuckDBPyConnection,
     main_module: ModuleType,
-    partitions: range | list[Any],
+    partitions: Sequence[str | int],
     print_indent: int = 4,
 ):
     # The maximum records size is 2000, but you can never paginate past 9999
@@ -221,7 +221,7 @@ def generate_urls(
         tags_id = f"&tags.id={partition}" if partition != "" else ""
 
         if size == 0:
-            next
+            continue
         elif size < 10000:
             if size <= 8000:
                 for i in range(0, int(size / 2000) + 1):
@@ -268,8 +268,8 @@ def common_table_optimisations(
     print(f"{print_indent * ' '}=================")
 
     tags_table = aws_shared.tags_table(sqlitedb)
-    main_table: Table = sqlitedb.table(main_module.MAIN_TABLE_NAME)
-    main_tags_table: Table = sqlitedb.table(main_module.MAIN_TAGS_TABLE_NAME)
+    main_table = cast(Table, sqlitedb.table(main_module.MAIN_TABLE_NAME))
+    main_tags_table = cast(Table, sqlitedb.table(main_module.MAIN_TAGS_TABLE_NAME))
 
     start = time.time()
     print(f"{print_indent * ' '}- {main_tags_table.name}... ", end="")
