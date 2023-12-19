@@ -1,7 +1,5 @@
-from duckdb import DuckDBPyConnection
 import pytest
 from pytest_mock import MockerFixture
-from querydataio import shared
 from querydataio.aws import shared as aws_shared
 from querydataio.aws import whats_new
 from querydataio import test_utils
@@ -27,7 +25,9 @@ def test_generate_urls(mocker: MockerFixture) -> None:
     )
 
     assert aws_shared.generate_urls(
-        shared.init_duckdb(":memory:"), whats_new, range(2003, 2010)
+        test_utils.duckdb_connect(),
+        whats_new,
+        range(2003, 2010),
     ) == [
         f"{BASE_URLS_PREFIX}&size=2000&page=0&tags.id=whats-new%23year%232004&sort_order=desc",
         f"{BASE_URLS_PREFIX}&size=2000&page=0&tags.id=whats-new%23year%232005&sort_order=desc",
@@ -85,7 +85,9 @@ def test_generate_urls_out_of_bounds(mocker: MockerFixture) -> None:
 
     with pytest.raises(Exception, match="Out of range downloads"):
         aws_shared.generate_urls(
-            shared.init_duckdb(":memory:"), whats_new, range(2010, 2011)
+            test_utils.duckdb_connect(),
+            whats_new,
+            range(2010, 2011),
         )
 
 
@@ -96,7 +98,11 @@ def test_generate_urls_no_partitions(mocker: MockerFixture) -> None:
         "tests/fixtures/aws/shared/test_shared.test_generate_urls.3.json",
     )
 
-    assert aws_shared.generate_urls(shared.init_duckdb(":memory:"), whats_new, []) == [
+    assert aws_shared.generate_urls(
+        test_utils.duckdb_connect(),
+        whats_new,
+        [],
+    ) == [
         f"{BASE_URLS_PREFIX}&size=1111&page=0&sort_order=desc",
         f"{BASE_URLS_PREFIX}&size=1111&page=1&sort_order=desc",
         f"{BASE_URLS_PREFIX}&size=1111&page=2&sort_order=desc",
