@@ -1,5 +1,6 @@
 from types import ModuleType
-from typing import Sequence
+from typing import Any, Sequence
+import duckdb
 from sqlite_utils import Database
 from querydataio.aws import (
     analyst_reports,
@@ -17,12 +18,18 @@ from querydataio import shared
 class FullRun:
     def __init__(
         self,
-        ddb: str,
+        ddb_connect: dict[str, Any],
         databases_modules: dict[str, list[dict[ModuleType, Sequence[str | int]]]],
     ) -> None:
-        self.ddb = ddb
-        self.ddb_con = shared.init_duckdb(ddb)
+        self.ddb_name = ddb_connect["database"]
+
+        dfs = ddb_connect.get("config", None).pop("disabled_filesystems", None)
+        self.ddb_con = duckdb.connect(**ddb_connect)
+
         self.databases_modules = databases_modules
+
+        if dfs:
+            self.ddb_con.sql(f"SET disabled_filesystems='{dfs}';")
 
     def prepare(self):
         print()
@@ -33,7 +40,7 @@ class FullRun:
         print("AWS")
         print("===")
 
-        shared.delete_dbs([self.ddb], 2)
+        shared.delete_dbs([self.ddb_name], 2)
 
     def run(self):
         for database_filename, modules in self.databases_modules.items():

@@ -16,10 +16,6 @@ def current_year() -> int:
     return datetime.datetime.now().year
 
 
-def init_duckdb(db: str) -> duckdb.DuckDBPyConnection:
-    return duckdb.connect(database=db)
-
-
 def delete_dbs(dbs: list[str], print_indent: int = 0):
     print()
     print(f"{print_indent * ' '}Deleting DBs")
