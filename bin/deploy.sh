@@ -18,7 +18,7 @@ poetry run datasette publish vercel \
   --crossdb \
   --install=datasette-vega \
   --install=datasette-atom \
-  --install=git+https://github.com/rcaught/datasette-updated \
+  --install=datasette-updated \
   --plugins-dir=plugins \
   --template-dir=templates \
   --vercel-json=vercel.json \
