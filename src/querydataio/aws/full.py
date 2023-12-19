@@ -13,102 +13,124 @@ from querydataio.aws import (
 from querydataio.aws import shared as aws_shared
 from querydataio import shared
 
-print()
-print("Full download")
-print("=============")
 
-print()
-print("AWS")
-print("===")
+class FullRun:
+    def __init__(
+        self,
+        ddb: str,
+        databases_modules: dict[str, list[dict[ModuleType, Sequence[str | int]]]],
+    ) -> None:
+        self.ddb = ddb
+        self.ddb_con = shared.init_duckdb(ddb)
+        self.databases_modules = databases_modules
 
-shared.delete_dbs([aws_shared.DUCKDB_DB], 2)
+    def prepare(self):
+        print()
+        print("Full download")
+        print("=============")
 
-ddb_con = shared.init_duckdb(aws_shared.DUCKDB_DB)
+        print()
+        print("AWS")
+        print("===")
 
-databases_modules: dict[str, list[dict[ModuleType, Sequence[str | int]]]] = {
-    f"dbs/aws_{whats_new.MAIN_TABLE_NAME}.sqlite3": [
-        {whats_new: whats_new.all_years()}
-    ],
-    f"dbs/aws_{blog_posts.MAIN_TABLE_NAME}.sqlite3": [
-        {blog_posts: blog_posts.aws_categories()}
-    ],
-    "dbs/aws_general.sqlite3": [
-        {analyst_reports: []},
-        {executive_insights: []},
-        {media_coverage: []},
-        {products: []},
-        {security_bulletins: []},
-    ],
-}
+        shared.delete_dbs([self.ddb], 2)
 
-for database_filename, modules in databases_modules.items():
-    print()
-    print(f"  Database: {database_filename}")
-    print(f"  =========={len(database_filename) * '='}")
-
-    shared.delete_dbs([database_filename], 4)
-    sqlitedb = Database(database_filename)
-
-    tags_tables: list[str] = []
-    for module in modules:
-        for main_module, partitions in module.items():
+    def run(self):
+        for database_filename, modules in self.databases_modules.items():
             print()
-            print(f"    {main_module.DIRECTORY_ID}")
-            print(f"    {'=' * len(main_module.DIRECTORY_ID)}")
+            print(f"  Database: {database_filename}")
+            print(f"  =========={len(database_filename) * '='}")
 
-            main_table: str = main_module.MAIN_TABLE_NAME
-            main_tags_table: str = main_module.MAIN_TAGS_TABLE_NAME
-            tags_table: str = f"__tags_{main_module.MAIN_TABLE_NAME}"
-            tags_tables.append(tags_table)
+            shared.delete_dbs([database_filename], 4)
+            sqlitedb = Database(database_filename)
 
-            aws_shared.download(
-                ddb_con,
-                aws_shared.generate_urls(ddb_con, main_module, partitions, 6),
-                main_table,
-                6,
-            )
+            tags_tables: list[str] = []
+            for module in modules:
+                for main_module, partitions in module.items():
+                    print()
+                    print(f"    {main_module.DIRECTORY_ID}")
+                    print(f"    {'=' * len(main_module.DIRECTORY_ID)}")
 
-            main_module.process(
-                ddb_con,
-                main_module,
-                main_table,
-                main_tags_table,
-                tags_table,
-                6,
+                    main_table: str = main_module.MAIN_TABLE_NAME
+                    main_tags_table: str = main_module.MAIN_TAGS_TABLE_NAME
+                    tags_table: str = f"__tags_{main_module.MAIN_TABLE_NAME}"
+                    tags_tables.append(tags_table)
+
+                    aws_shared.download(
+                        self.ddb_con,
+                        aws_shared.generate_urls(
+                            self.ddb_con, main_module, partitions, 6
+                        ),
+                        main_table,
+                        6,
+                    )
+
+                    main_module.process(
+                        self.ddb_con,
+                        main_module,
+                        main_table,
+                        main_tags_table,
+                        tags_table,
+                        6,
+                    )
+
+                    aws_shared.to_sqlite(
+                        sqlitedb,
+                        [
+                            (self.ddb_con.table(main_table).df(), main_table),
+                            (self.ddb_con.table(main_tags_table).df(), main_tags_table),
+                        ],
+                        6,
+                    )
+
+                    main_module.initial_sqlite_transform(sqlitedb, main_table, 6)
+
+            aws_shared.merge_duckdb_tags(
+                self.ddb_con, aws_shared.TAGS_TABLE_NAME, tags_tables, 4
             )
 
             aws_shared.to_sqlite(
                 sqlitedb,
                 [
-                    [ddb_con.table(main_table).df(), main_table],
-                    [ddb_con.table(main_tags_table).df(), main_tags_table],
+                    (
+                        self.ddb_con.table(aws_shared.TAGS_TABLE_NAME).df(),
+                        aws_shared.TAGS_TABLE_NAME,
+                    ),
                 ],
-                6,
+                4,
             )
 
-            main_module.initial_sqlite_transform(sqlitedb, main_table, 6)
+            aws_shared.tag_table_optimisations(sqlitedb, 4)
 
-    aws_shared.merge_duckdb_tags(ddb_con, aws_shared.TAGS_TABLE_NAME, tags_tables, 4)
+            for module in modules:
+                for main_module, partitions in module.items():
+                    print()
+                    print(f"    {main_module.DIRECTORY_ID}")
+                    print(f"    {'=' * len(main_module.DIRECTORY_ID)}")
 
-    aws_shared.to_sqlite(
-        sqlitedb,
-        [
-            [
-                ddb_con.table(aws_shared.TAGS_TABLE_NAME).df(),
-                aws_shared.TAGS_TABLE_NAME,
-            ],
+                    aws_shared.common_table_optimisations(sqlitedb, main_module, 6)
+
+            shared.final_database_optimisations(sqlitedb, 2)
+
+
+full_run = FullRun(
+    aws_shared.DUCKDB_DB,
+    {
+        f"dbs/aws_{whats_new.MAIN_TABLE_NAME}.sqlite3": [
+            {whats_new: whats_new.all_years()}
         ],
-        4,
-    )
+        f"dbs/aws_{blog_posts.MAIN_TABLE_NAME}.sqlite3": [
+            {blog_posts: blog_posts.aws_categories()}
+        ],
+        "dbs/aws_general.sqlite3": [
+            {analyst_reports: []},
+            {executive_insights: []},
+            {media_coverage: []},
+            {products: []},
+            {security_bulletins: []},
+        ],
+    },
+)
 
-    aws_shared.tag_table_optimisations(sqlitedb, 4)
-
-    for module in modules:
-        for main_module, partitions in module.items():
-            print()
-            print(f"    {main_module.DIRECTORY_ID}")
-            print(f"    {'=' * len(main_module.DIRECTORY_ID)}")
-
-            aws_shared.common_table_optimisations(sqlitedb, main_module, 6)
-
-    shared.final_database_optimisations(sqlitedb, 2)
+full_run.prepare()
+full_run.run()
