@@ -26,6 +26,13 @@ jobs:
         run: poetry install
       - name: Run tests
         run: sh ./bin/test.sh
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-results
+          path: htmlcov/
+          if-no-files-found: error
+        if: ${{ always() }}
       - name: Restore Cache DBs
         id: cache-dbs-restore
         uses: actions/cache/restore@v3
