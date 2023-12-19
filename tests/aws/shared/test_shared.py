@@ -1,4 +1,5 @@
 from duckdb import DuckDBPyConnection
+import pytest
 from querydataio import shared
 from querydataio.aws import shared as aws_shared
 from querydataio.aws import whats_new
@@ -66,6 +67,20 @@ def test_generate_urls(mocker):
         f"{BASE_URLS_PREFIX}&size=1111&page=7&tags.id=whats-new%23year%232009&sort_order=asc",
         f"{BASE_URLS_PREFIX}&size=1111&page=8&tags.id=whats-new%23year%232009&sort_order=asc",
     ]
+
+
+def test_generate_urls_out_of_bounds(mocker):
+    expected_urls = [
+        f"{EXPECTED_URLS_PREFIX}2010",
+    ]
+    download_side_effect(
+        mocker, expected_urls, "tests/aws/shared/test_shared.test_generate_urls.2.json"
+    )
+
+    with pytest.raises(Exception, match="Out of range downloads"):
+        aws_shared.generate_urls(
+            shared.init_duckdb(":memory:"), whats_new, range(2010, 2011)
+        )
 
 
 def download_side_effect(mocker, expected_urls, mock_json_filepath):
