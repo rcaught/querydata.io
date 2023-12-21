@@ -44,7 +44,7 @@ jobs:
       - name: Build (full)
         # if: github.event_name == 'push'
         run: |
-          poetry run python -u src/querydataio/aws/full.py
+          poetry run python -u src/querydataio/full.py
       # - name: Build (partial)
       #   if: github.event.schedule == '*/30 * * * *'
       #   run: |
