@@ -14,7 +14,7 @@ class FullRun:
     ) -> None:
         self.ddb_name = ddb_connect["database"]
 
-        dfs = ddb_connect.get("config", None).pop("disabled_filesystems", None)
+        dfs = ddb_connect.get("config", {}).pop("disabled_filesystems", None)
         self.ddb_con = duckdb.connect(**ddb_connect)
 
         self.databases_modules = databases_modules
