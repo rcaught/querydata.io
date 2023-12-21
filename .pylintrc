@@ -1,1 +1,2 @@
-disable=missing-function-docstring
+disable=
+    missing-function-docstring

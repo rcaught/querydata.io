@@ -82,7 +82,7 @@ def unnest(ddb_con: DuckDBPyConnection, main_table: str):
           author,
           headline,
           subHeadline,
-          regexp_replace(headlineUrl, '\?.*', '') AS headlineUrl,
+          regexp_replace(headlineUrl, '\\?.*', '') AS headlineUrl,
           description,
           ItemExpirationDateTime AS itemExpirationDateTime,
           category,

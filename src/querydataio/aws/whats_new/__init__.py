@@ -7,7 +7,6 @@ from sqlite_utils.db import Table
 from querydataio import shared
 from querydataio.aws import shared as aws_shared
 
-
 DIRECTORY_ID = "whats-new"
 URL_PREFIX = (
     "https://aws.amazon.com/api/dirs/items/search?"

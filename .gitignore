@@ -1,6 +1,7 @@
 /dbs/
 /tests/dbs/
 .DS_Store
+plugins/datasette-updated/metadata.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

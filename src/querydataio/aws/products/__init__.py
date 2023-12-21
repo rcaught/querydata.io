@@ -40,10 +40,10 @@ def process(
         f"""
         UPDATE {main_table}
           SET
-            freeTierAvailability = regexp_replace(freeTierAvailability, '<p>(.*)<\/p>.*', '\\1', 's'),
-            productSummary = regexp_replace(productSummary, '<p>(.*)<\/p>.*', '\\1', 's'),
-            productUrl = regexp_replace(productUrl, '\?.*', ''),
-            pricingUrl = regexp_replace(pricingUrl, '\?.*', '');
+            freeTierAvailability = regexp_replace(freeTierAvailability, '<p>(.*)<\\/p>.*', '\\1', 's'),
+            productSummary = regexp_replace(productSummary, '<p>(.*)<\\/p>.*', '\\1', 's'),
+            productUrl = regexp_replace(productUrl, '\\?.*', ''),
+            pricingUrl = regexp_replace(pricingUrl, '\\?.*', '');
 
         UPDATE {main_table}
           SET freeTierAvailability = NULL
