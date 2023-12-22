@@ -1,5 +1,5 @@
 from pytest_mock import MockerFixture
-from querydataio import test_utils
+from tests import test_utils
 from querydataio.aws import (
     analyst_reports,
     blog_posts,
