@@ -14,7 +14,7 @@ import sqlite_utils
 import json
 
 
-def test_integration(mocker: MockerFixture) -> None:
+def run_full(mocker: MockerFixture) -> None:
     test_utils.download_side_effect(
         mocker,
         {
@@ -49,6 +49,10 @@ def test_integration(mocker: MockerFixture) -> None:
 
     full_run.prepare()
     full_run.run()
+
+
+def test_integration(mocker: MockerFixture) -> None:
+    run_full(mocker)
 
     # print(have) to generate json file
 
