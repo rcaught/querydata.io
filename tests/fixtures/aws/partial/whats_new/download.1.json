@@ -1,0 +1,806 @@
+{
+  "items": [
+    {
+      "item": {
+        "id": "whats-new#about-aws-whats-new-2023-12-aws-cloud9-amazon-linux-2023",
+        "locale": "en_US",
+        "directoryId": "whats-new",
+        "name": "/about-aws/whats-new/2023/12/aws-cloud9-amazon-linux-2023/",
+        "author": "aws",
+        "createdBy": "aws",
+        "lastUpdatedBy": "aws",
+        "numImpressions": 0,
+        "score": 0.0,
+        "dateCreated": "2023-12-18T18:04:03+0000",
+        "dateUpdated": "2023-12-18T18:04:03+0000",
+        "additionalFields": {
+          "postBody": "\u003cp\u003eTo get started with AWS Cloud9 and AL2023, create a new AWS Cloud9 environment using the Cloud9 management console, the AWS Command Line Interface\u0026nbsp;(CLI), \u003ca href\u003d\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eAWS CloudFormation\u003c/a\u003e or AWS SDK. For further information about AWS Cloud9 and \u003ca href\u003d\"https://docs.aws.amazon.com/cloud9/latest/user-guide/create-environment-main.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003elaunching new environments with AL2023\u003c/a\u003e, please refer to the documentation pages for AWS Cloud9.\u003c/p\u003e\r\n\u003cp\u003eFurther information on AWS Cloud9 and AL2023 is available here:\u003c/p\u003e\r\n\u003cul\u003e\r\n\u003cli\u003e\u003ca href\u003d\"https://docs.aws.amazon.com/cloud9/latest/user-guide/setting-up.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eAWS Cloud9 - Getting Started\u003c/a\u003e\u003c/li\u003e\r\n\u003cli\u003e\u003ca href\u003d\"https://docs.aws.amazon.com/linux/al2023/ug/what-is-amazon-linux.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eAmazon Linux 2023\u003c/a\u003e\u003c/li\u003e\r\n\u003c/ul\u003e\r\n",
+          "modifiedDate": "2023-12-18T18:03:55Z",
+          "headlineUrl": "/about-aws/whats-new/2023/12/aws-cloud9-amazon-linux-2023/",
+          "postDateTime": "2023-12-18T13:00:00Z",
+          "postSummary": "\u003cp\u003eYou can now launch AWS Cloud9 environments with \u003ca href\u003d\"/content/aws.amazon.com/live/en_US/linux/amazon-linux-2023.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eAmazon Linux 2023\u003c/a\u003e (AL2023).\u0026nbsp;AL2023 is the next generation of Amazon Linux, a Linux server operating system from Amazon Web Services (AWS).  AL2023 provides a secure, stable, and high performance execution environment to develop and run cloud and enterprise applications.  With AL2023, you get an application environment that offers long-term support with access to the latest innovations in Linux. AL2023 is provided at no additional charge.\u003c/p\u003e\r\n",
+          "contentType": "Launch Announcement",
+          "headline": "AWS Cloud9 now supports Amazon Linux 2023"
+        }
+      },
+      "tags": [
+        {
+          "id": "whats-new#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#year",
+          "name": "2023",
+          "description": "year#2023",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2023-01-03T18:17:59+0000",
+          "dateUpdated": "2023-01-03T18:17:59+0000"
+        },
+        {
+          "id": "whats-new#general-products#aws-cloud9",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#general-products",
+          "name": "aws-cloud9",
+          "description": "general:products/aws-cloud9",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:31:40+0000",
+          "dateUpdated": "2019-05-03T04:31:40+0000"
+        },
+        {
+          "id": "GLOBAL#content-type#launch-announcement",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#content-type",
+          "name": "Launch Announcement",
+          "description": "Launch Announcement",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2020-04-29T05:19:27+0000",
+          "dateUpdated": "2022-02-03T03:31:08+0000"
+        },
+        {
+          "id": "whats-new#marketing-marchitecture#compute",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#marketing-marchitecture",
+          "name": "compute",
+          "description": "marketing:marchitecture/compute",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:27:58+0000",
+          "dateUpdated": "2019-05-03T04:27:58+0000"
+        },
+        {
+          "id": "whats-new#marketing-marchitecture#developer-tools",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#marketing-marchitecture",
+          "name": "developer-tools",
+          "description": "marketing:marchitecture/developer-tools",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:26:01+0000",
+          "dateUpdated": "2019-05-03T04:26:01+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "whats-new#about-aws-whats-new-2023-12-amazon-opensearch-service-multimodal-support-neural-search",
+        "locale": "en_US",
+        "directoryId": "whats-new",
+        "name": "/about-aws/whats-new/2023/12/amazon-opensearch-service-multimodal-support-neural-search/",
+        "author": "aws",
+        "createdBy": "aws",
+        "lastUpdatedBy": "aws",
+        "numImpressions": 0,
+        "score": 0.0,
+        "dateCreated": "2023-12-18T18:04:28+0000",
+        "dateUpdated": "2023-12-18T18:04:28+0000",
+        "additionalFields": {
+          "postBody": "\u003cp\u003eMultimodal support enables builders to run search queries via OpenSearch APIs using image, text or both. This empowers customers to find images by describing visual characteristics, using an image to discover other visually similar images, or using image and text pairs to match on both semantic and visual similarity. \u003c/p\u003e\r\n\u003cp\u003eThis new feature is available in all AWS Regions that support OpenSearch 2.11+ on Amazon OpenSearch Service and Amazon Bedrock. To learn more about multimodal support for Neural Search, refer to the \u003ca href\u003d\"https://opensearch.org/docs/latest/search-plugins/neural-multimodal-search/\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003edocumentation\u003c/a\u003e.\u003c/p\u003e\r\n",
+          "modifiedDate": "2023-12-18T18:04:15Z",
+          "headlineUrl": "/about-aws/whats-new/2023/12/amazon-opensearch-service-multimodal-support-neural-search/",
+          "postDateTime": "2023-12-18T13:00:00Z",
+          "postSummary": "\u003cp\u003eAmazon OpenSearch Service adds multimodal support on Neural Search for OpenSearch 2.11 deployments. This empowers builders to create and operationalize multimodal search applications with significantly reduced undifferentiated heavy-lifting. For years, customers have been building vector search applications on OpenSearch k-NN, but they’ve been burdened with building middleware to integrate text embedding models into search and ingest pipelines. OpenSearch builders can now power multimodal search through out-of-the-box integrations with Amazon Bedrock text and image multimodal APIs to power search pipelines that run on-cluster.\u003c/p\u003e\r\n",
+          "contentType": "Launch Announcement",
+          "headline": "Amazon OpenSearch Service adds multimodal support for Neural Search"
+        }
+      },
+      "tags": [
+        {
+          "id": "whats-new#general-products#amazon-opensearch-service",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#general-products",
+          "name": "amazon-opensearch-service",
+          "description": "general:products/amazon-opensearch-service",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2021-09-08T20:41:51+0000",
+          "dateUpdated": "2021-09-08T20:41:51+0000"
+        },
+        {
+          "id": "whats-new#marketing-marchitecture#artificial-intelligence",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#marketing-marchitecture",
+          "name": "artificial-intelligence",
+          "description": "marketing:marchitecture/artificial-intelligence",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:27:58+0000",
+          "dateUpdated": "2019-05-03T04:27:58+0000"
+        },
+        {
+          "id": "whats-new#marketing-marchitecture#analytics",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#marketing-marchitecture",
+          "name": "analytics",
+          "description": "marketing:marchitecture/analytics",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:26:14+0000",
+          "dateUpdated": "2019-05-03T04:26:14+0000"
+        },
+        {
+          "id": "whats-new#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#year",
+          "name": "2023",
+          "description": "year#2023",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2023-01-03T18:17:59+0000",
+          "dateUpdated": "2023-01-03T18:17:59+0000"
+        },
+        {
+          "id": "GLOBAL#content-type#launch-announcement",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#content-type",
+          "name": "Launch Announcement",
+          "description": "Launch Announcement",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2020-04-29T05:19:27+0000",
+          "dateUpdated": "2022-02-03T03:31:08+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "whats-new#about-aws-whats-new-2023-12-integrated-mobile-experience-aws-services-console-mobile-app",
+        "locale": "en_US",
+        "directoryId": "whats-new",
+        "name": "/about-aws/whats-new/2023/12/integrated-mobile-experience-aws-services-console-mobile-app/",
+        "author": "aws",
+        "createdBy": "aws",
+        "lastUpdatedBy": "aws",
+        "numImpressions": 0,
+        "score": 0.0,
+        "dateCreated": "2023-12-18T18:02:19+0000",
+        "dateUpdated": "2023-12-18T18:02:20+0000",
+        "additionalFields": {
+          "postBody": "\u003cp\u003eNow, AWS customers who are on-the-go can use the AWS Console Mobile App exclusively to access natively supported services. Customers benefit from the AWS Console Mobile App\u0027s biometric authentication (sign-in), and mobile optimized customer experience (CX) with native support for common resource information and actions. For resource information and actions not available natively, customers can access the AWS Management Console via an in-app browser where they are deep linked to the relevant resource pages without additional authentication, manual navigation, or need to switch from the app to a browser.  \u003c/p\u003e\r\n\u003cp\u003eThe Console Mobile App lets users view and manage a select set of resources to stay informed and connected with their AWS resources while on-the-go. The sign in process supports biometrics authentication, making access to AWS resources simple, secure, and quick.\u003c/p\u003e\r\n\u003cp\u003eVisit the \u003ca href\u003d\"/content/aws.amazon.com/live/en_US/console/mobile.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eproduct page\u003c/a\u003e for more information about the Console Mobile App.\u003c/p\u003e\r\n",
+          "modifiedDate": "2023-12-18T18:02:10Z",
+          "headlineUrl": "/about-aws/whats-new/2023/12/integrated-mobile-experience-aws-services-console-mobile-app/",
+          "postDateTime": "2023-12-18T13:00:00Z",
+          "postSummary": "\u003cp\u003eAmazon Web Services (AWS) is announcing an integrated mobile experience for AWS services in the \u003ca href\u003d\"https://aws.amazon.com/console/mobile/\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eAWS Console Mobile App\u003c/a\u003e for iOS. AWS customers using the AWS Console Mobile App for iOS can now access the full breadth of AWS resource information and management functionality that’s available to them on the AWS Console for natively supported services including EC2, RDS, and S3 via an integrated mobile web browser experience in the Console Mobile App.\u003c/p\u003e\r\n",
+          "contentType": "Launch Announcement",
+          "headline": "AWS announces an integrated mobile experience for AWS services in the AWS Console Mobile App"
+        }
+      },
+      "tags": [
+        {
+          "id": "GLOBAL#content-type#launch-announcement",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#content-type",
+          "name": "Launch Announcement",
+          "description": "Launch Announcement",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2020-04-29T05:19:27+0000",
+          "dateUpdated": "2022-02-03T03:31:08+0000"
+        },
+        {
+          "id": "whats-new#marketing-marchitecture#management-and-governance",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#marketing-marchitecture",
+          "name": "management-and-governance",
+          "description": "marketing:marchitecture/management-and-governance",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:27:36+0000",
+          "dateUpdated": "2019-05-03T04:27:36+0000"
+        },
+        {
+          "id": "whats-new#general-products#aws-console-mobile-application",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#general-products",
+          "name": "aws-console-mobile-application",
+          "description": "general:products/aws-console-mobile-application",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2020-02-17T18:35:49+0000",
+          "dateUpdated": "2020-02-17T18:35:49+0000"
+        },
+        {
+          "id": "whats-new#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#year",
+          "name": "2023",
+          "description": "year#2023",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2023-01-03T18:17:59+0000",
+          "dateUpdated": "2023-01-03T18:17:59+0000"
+        },
+        {
+          "id": "whats-new#marketing-marchitecture#mobile-services",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#marketing-marchitecture",
+          "name": "mobile-services",
+          "description": "marketing:marchitecture/mobile-services",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:26:49+0000",
+          "dateUpdated": "2019-05-03T04:26:49+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "whats-new#about-aws-whats-new-2023-12-amazon-eks-controls-iam-cluster-access-management",
+        "locale": "en_US",
+        "directoryId": "whats-new",
+        "name": "/about-aws/whats-new/2023/12/amazon-eks-controls-iam-cluster-access-management/",
+        "author": "aws",
+        "createdBy": "aws",
+        "lastUpdatedBy": "aws",
+        "numImpressions": 0,
+        "score": 0.0,
+        "dateCreated": "2023-12-18T21:40:32+0000",
+        "dateUpdated": "2023-12-18T21:40:32+0000",
+        "additionalFields": {
+          "postBody": "\u003cp\u003eEKS already supports IAM identity authentication to Kubernetes clusters, removing the burden from cluster administrators of having to maintain and integrate a separate identity provider. This integration enables administrators to leverage IAM security features such as audit logging and multi-factor authentication. EKS access management controls introduced today simplify the process of mapping IAM to Kubernetes identities, by allowing administrators to fully define authorized IAM principals and their associated Kubernetes permissions directly through an EKS API during or after cluster creation. The IAM identity used to create a EKS cluster can have its Kubernetes permissions removed or scoped down to comply with security requirements, and control of a cluster can always be restored to an AWS account administrator. Other AWS services can use EKS access management controls to automatically obtain permissions to run applications on EKS clusters. EKS access management controls simplify the amount of work administrators need to do in order to create and manage clusters that are shared by multiple users and other AWS services.\u003c/p\u003e\r\n\u003cp\u003eEKS access management controls are supported in all \u003ca href\u003d\"/content/aws.amazon.com/live/en_US/about-aws/global-infrastructure/regional-product-services.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eAWS regions\u003c/a\u003e for newly created clusters using Kubernetes version 1.23 or later. Existing clusters need to be updated to a supported EKS platform version before using this feature. To get started visit the EKS \u003ca href\u003d\"https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003edocumentation\u003c/a\u003e. To learn more about the feature, see the launch \u003ca href\u003d\"https://aws.amazon.com/blogs/containers/a-deep-dive-into-simplified-amazon-eks-access-management-controls/\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eblog\u003c/a\u003e.\u003c/p\u003e\r\n",
+          "modifiedDate": "2023-12-18T21:40:21Z",
+          "headlineUrl": "/about-aws/whats-new/2023/12/amazon-eks-controls-iam-cluster-access-management/",
+          "postDateTime": "2023-12-18T13:00:00Z",
+          "postSummary": "\u003cp\u003eAmazon Elastic Kubernetes Service (EKS) now supports simplified configuration of AWS Identity and Access Management (IAM) users and roles with Kubernetes clusters, through a new set of APIs that tightly integrate IAM identities with Kubernetes authentication and authorization controls.\u003c/p\u003e\r\n",
+          "contentType": "Launch Announcement",
+          "headline": "Amazon EKS introduces simplified controls for IAM cluster access management"
+        }
+      },
+      "tags": [
+        {
+          "id": "GLOBAL#content-type#launch-announcement",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#content-type",
+          "name": "Launch Announcement",
+          "description": "Launch Announcement",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2020-04-29T05:19:27+0000",
+          "dateUpdated": "2022-02-03T03:31:08+0000"
+        },
+        {
+          "id": "whats-new#general-products#aws-iam",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#general-products",
+          "name": "aws-iam",
+          "description": "general:products/aws-iam",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:27:12+0000",
+          "dateUpdated": "2019-05-03T04:27:12+0000"
+        },
+        {
+          "id": "whats-new#marketing-marchitecture#security-identity-and-compliance",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#marketing-marchitecture",
+          "name": "security-identity-and-compliance",
+          "description": "marketing:marchitecture/security-identity-and-compliance",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:27:58+0000",
+          "dateUpdated": "2019-05-03T04:27:58+0000"
+        },
+        {
+          "id": "whats-new#general-products#aws-govcloud-us",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#general-products",
+          "name": "aws-govcloud-us",
+          "description": "general:products/aws-govcloud-us",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:25:48+0000",
+          "dateUpdated": "2019-05-03T04:25:48+0000"
+        },
+        {
+          "id": "whats-new#marketing-marchitecture#containers",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#marketing-marchitecture",
+          "name": "containers",
+          "description": "marketing:marchitecture/containers",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2020-05-01T20:07:34+0000",
+          "dateUpdated": "2020-05-01T20:07:34+0000"
+        },
+        {
+          "id": "whats-new#general-products#amazon-eks",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#general-products",
+          "name": "amazon-eks",
+          "description": "general:products/amazon-eks",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:25:49+0000",
+          "dateUpdated": "2019-05-03T04:25:49+0000"
+        },
+        {
+          "id": "whats-new#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#year",
+          "name": "2023",
+          "description": "year#2023",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2023-01-03T18:17:59+0000",
+          "dateUpdated": "2023-01-03T18:17:59+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "whats-new#about-aws-whats-new-2023-12-amazon-cognito-user-pools-customize-access-tokens",
+        "locale": "en_US",
+        "directoryId": "whats-new",
+        "name": "/about-aws/whats-new/2023/12/amazon-cognito-user-pools-customize-access-tokens/",
+        "author": "aws",
+        "createdBy": "aws",
+        "lastUpdatedBy": "aws",
+        "numImpressions": 0,
+        "score": 0.0,
+        "dateCreated": "2023-12-18T22:52:59+0000",
+        "dateUpdated": "2023-12-18T22:52:59+0000",
+        "additionalFields": {
+          "postBody": "\u003cp\u003e\u003ca href\u003d\"/content/aws.amazon.com/live/en_US/cognito.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eAmazon Cognito\u003c/a\u003e is\u0026nbsp;a service that makes it simpler to add authentication, authorization, and user management to your web and mobile apps. Amazon Cognito provides authentication for applications with millions of users and supports sign-in with social identity providers such as Apple, Facebook, Google, and Amazon, and enterprise identity providers via standards such as SAML 2.0 and OpenID Connect.\u0026nbsp;\u003c/p\u003e\r\n\u003cp\u003eThis new feature is now available as part of Cognito advanced security features in all AWS Regions, except AWS GovCloud (US) Regions.\u003cbr\u003e\r\n\u003c/p\u003e\r\n\u003cp\u003eTo get started, see the following resources:\u003c/p\u003e\r\n\u003cul\u003e\r\n\u003cli\u003e\u003ca href\u003d\"https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-token-generation.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eUser pool pre-token generation Lambda trigger\u003c/a\u003e\u003c/li\u003e\r\n\u003cli\u003e\u003ca href\u003d\"/content/aws.amazon.com/live/en_US/cognito/pricing.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eAmazon Cognito advanced security features pricing\u003c/a\u003e\u003c/li\u003e\r\n\u003c/ul\u003e\r\n",
+          "modifiedDate": "2023-12-18T22:52:48Z",
+          "headlineUrl": "/about-aws/whats-new/2023/12/amazon-cognito-user-pools-customize-access-tokens/",
+          "postDateTime": "2023-12-18T13:00:00Z",
+          "postSummary": "\u003cp\u003eAmazon Cognito user pools now support the ability to enrich access tokens with custom attributes in the form of OAuth 2.0 scopes and claims. You can make application-specific advanced authorization decisions using custom attributes in the access token. This feature also allows you to personalize end-user experiences and improve customer engagement.\u0026nbsp;\u003cbr\u003e\r\n\u003c/p\u003e\r\n",
+          "contentType": "Launch Announcement",
+          "headline": "Amazon Cognito user pools now support the ability to customize access tokens"
+        }
+      },
+      "tags": [
+        {
+          "id": "whats-new#marketing-marchitecture#security-identity-and-compliance",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#marketing-marchitecture",
+          "name": "security-identity-and-compliance",
+          "description": "marketing:marchitecture/security-identity-and-compliance",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:27:58+0000",
+          "dateUpdated": "2019-05-03T04:27:58+0000"
+        },
+        {
+          "id": "GLOBAL#content-type#launch-announcement",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#content-type",
+          "name": "Launch Announcement",
+          "description": "Launch Announcement",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2020-04-29T05:19:27+0000",
+          "dateUpdated": "2022-02-03T03:31:08+0000"
+        },
+        {
+          "id": "whats-new#general-products#amazon-cognito",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#general-products",
+          "name": "amazon-cognito",
+          "description": "general:products/amazon-cognito",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:32:16+0000",
+          "dateUpdated": "2019-05-03T04:32:16+0000"
+        },
+        {
+          "id": "whats-new#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#year",
+          "name": "2023",
+          "description": "year#2023",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2023-01-03T18:17:59+0000",
+          "dateUpdated": "2023-01-03T18:17:59+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "whats-new#about-aws-whats-new-2023-12-amazon-cloudwatch-container-account-observability-eks",
+        "locale": "en_US",
+        "directoryId": "whats-new",
+        "name": "/about-aws/whats-new/2023/12/amazon-cloudwatch-container-account-observability-eks/",
+        "author": "aws",
+        "createdBy": "aws",
+        "lastUpdatedBy": "aws",
+        "numImpressions": 0,
+        "score": 0.0,
+        "dateCreated": "2023-12-18T18:34:18+0000",
+        "dateUpdated": "2023-12-18T18:34:18+0000",
+        "additionalFields": {
+          "postBody": "\u003cp\u003eUsing cross-account observability in Container Insights for EKS, you do not need to switch accounts when you are troubleshooting, which saves you time and effort. With cross-account observability you can now filter your containers operating at high utilization by account ids or account labels and identify which teams require rightsizing in their resources. Cross-account observability enables you to drill down into an alarm on your containers regardless of the account owning the resource and identify the root-cause without account boundaries, reducing your mean time to resolution.\u003c/p\u003e\r\n\u003cp\u003eOnce you enable cross account observability for CloudWatch, it works with Container Insights for EKS out-of-the-box. After you complete the set up, you can use your monitoring accounts to access organization-wide container observability in Container Insights for EKS.\u003c/p\u003e\r\n\u003cp\u003eCross-account observability in Container Insights for EKS is now available in \u003ca href\u003d\"/content/aws.amazon.com/live/en_US/about-aws/global-infrastructure/regional-product-services.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eall public AWS Regions\u003c/a\u003e, including the AWS GovCloud (US) Regions and China (Beijing, operated by Sinnet), and China (Ningxia, operated by NWCD). Cross-account observability for Container Insights comes with no extra cost - see the \u003ca href\u003d\"/content/aws.amazon.com/live/en_US/cloudwatch/pricing.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eAmazon CloudWatch pricing page\u003c/a\u003e for details. To learn more about cross-account observability, see the \u003ca href\u003d\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eContainer Insights documentation\u003c/a\u003e.\u003c/p\u003e\r\n",
+          "modifiedDate": "2023-12-18T18:34:04Z",
+          "headlineUrl": "/about-aws/whats-new/2023/12/amazon-cloudwatch-container-account-observability-eks/",
+          "postDateTime": "2023-12-18T08:00:00Z",
+          "postSummary": "\u003cp\u003eAmazon CloudWatch Container Insights launches cross-account observability across Amazon Elastic Kubernetes Service (EKS) to help you monitor and troubleshoot applications that span across multiple AWS accounts within an AWS Region. Central Operational Teams managing container administration can now monitor and analyze container health and performance across their organization from a consolidated view and maintain the overall application health status to achieve the best business results.\u003c/p\u003e\r\n",
+          "contentType": "Launch Announcement",
+          "headline": "Amazon CloudWatch Container Insights launches cross-account observability for Amazon EKS"
+        }
+      },
+      "tags": [
+        {
+          "id": "whats-new#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#year",
+          "name": "2023",
+          "description": "year#2023",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2023-01-03T18:17:59+0000",
+          "dateUpdated": "2023-01-03T18:17:59+0000"
+        },
+        {
+          "id": "whats-new#marketing-marchitecture#management-and-governance",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#marketing-marchitecture",
+          "name": "management-and-governance",
+          "description": "marketing:marchitecture/management-and-governance",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:27:36+0000",
+          "dateUpdated": "2019-05-03T04:27:36+0000"
+        },
+        {
+          "id": "whats-new#general-products#amazon-cloudwatch",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#general-products",
+          "name": "amazon-cloudwatch",
+          "description": "general:products/amazon-cloudwatch",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:25:37+0000",
+          "dateUpdated": "2019-05-03T04:25:37+0000"
+        },
+        {
+          "id": "whats-new#general-products#aws-govcloud-us",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#general-products",
+          "name": "aws-govcloud-us",
+          "description": "general:products/aws-govcloud-us",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:25:48+0000",
+          "dateUpdated": "2019-05-03T04:25:48+0000"
+        },
+        {
+          "id": "GLOBAL#content-type#launch-announcement",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#content-type",
+          "name": "Launch Announcement",
+          "description": "Launch Announcement",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2020-04-29T05:19:27+0000",
+          "dateUpdated": "2022-02-03T03:31:08+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "whats-new#about-aws-whats-new-2023-12-amazon-dynamodb-local-two-api-features",
+        "locale": "en_US",
+        "directoryId": "whats-new",
+        "name": "/about-aws/whats-new/2023/12/amazon-dynamodb-local-two-api-features/",
+        "author": "aws",
+        "createdBy": "aws",
+        "lastUpdatedBy": "aws",
+        "numImpressions": 0,
+        "score": 0.0,
+        "dateCreated": "2023-12-18T22:58:57+0000",
+        "dateUpdated": "2023-12-18T22:58:57+0000",
+        "additionalFields": {
+          "postBody": "\u003cp\u003eDynamoDB local version 1.25.0 and version 2.2.0 offer the following features and improvements:\u003c/p\u003e\r\n\u003cul\u003e\r\n\u003cli\u003eSupport for the ReturnValuesOnConditionCheckFailure parameter. With this parameter enabled, DynamoDB error messages can include a copy of the item as it was during the write attempt in your DynamoDB local environment. This lets you easily test the condition error behavior and your response to failed conditional writes the same way as you would with the DynamoDB web service. To learn more about condition checks, see the corresponding API reference \u003ca href\u003d\"https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ConditionCheck.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003epage\u003c/a\u003e.\u003c/li\u003e\r\n\u003cli\u003eProtect your tables in DynamoDB local from accidental deletion when performing table management operations. You can now enable the deletion protection property for each table to test the behavior. The default setting for the deletion protection property is disabled. To learn more about deletion protection, see \u003ca href\u003d\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.Basics.html#WorkingWithTables.Basics.DeletionProtection\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eUsing deletion protection\u003c/a\u003e.\u003c/li\u003e\r\n\u003c/ul\u003e\r\n\u003cp\u003eDynamoDB local is free to download and available for macOS, Linux, and Windows. Get started with the latest version by downloading it from “\u003ca href\u003d\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eDeploying DynamoDB locally on your computer\u003c/a\u003e”. To learn more, see \u003ca href\u003d\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eSetting Up DynamoDB Local (Downloadable Version)\u003c/a\u003e.\u003c/p\u003e\r\n",
+          "modifiedDate": "2023-12-18T22:58:30Z",
+          "headlineUrl": "/about-aws/whats-new/2023/12/amazon-dynamodb-local-two-api-features/",
+          "postDateTime": "2023-12-18T08:00:00Z",
+          "postSummary": "\u003cp\u003eAmazon DynamoDB local now supports table deletion protection and the ReturnValuesOnConditionCheckFailure parameter. With DynamoDB local, you can develop and test applications by running DynamoDB in your local development environment without incurring any costs. DynamoDB local does not require an internet connection, and it works with your existing DynamoDB API calls.\u0026nbsp;\u003c/p\u003e\r\n",
+          "contentType": "Launch Announcement",
+          "headline": "Amazon DynamoDB local adds support for two DynamoDB API features "
+        }
+      },
+      "tags": [
+        {
+          "id": "whats-new#marketing-marchitecture#databases",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#marketing-marchitecture",
+          "name": "databases",
+          "description": "marketing:marchitecture/databases",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:25:48+0000",
+          "dateUpdated": "2019-05-03T04:25:48+0000"
+        },
+        {
+          "id": "GLOBAL#content-type#launch-announcement",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#content-type",
+          "name": "Launch Announcement",
+          "description": "Launch Announcement",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2020-04-29T05:19:27+0000",
+          "dateUpdated": "2022-02-03T03:31:08+0000"
+        },
+        {
+          "id": "whats-new#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#year",
+          "name": "2023",
+          "description": "year#2023",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2023-01-03T18:17:59+0000",
+          "dateUpdated": "2023-01-03T18:17:59+0000"
+        },
+        {
+          "id": "whats-new#general-products#amazon-dynamodb",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#general-products",
+          "name": "amazon-dynamodb",
+          "description": "general:products/amazon-dynamodb",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:27:01+0000",
+          "dateUpdated": "2019-05-03T04:27:01+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "whats-new#about-aws-whats-new-2023-12-amazon-ec2-hpc-instances-additional-regions",
+        "locale": "en_US",
+        "directoryId": "whats-new",
+        "name": "/about-aws/whats-new/2023/12/amazon-ec2-hpc-instances-additional-regions/",
+        "author": "aws",
+        "createdBy": "aws",
+        "lastUpdatedBy": "aws",
+        "numImpressions": 0,
+        "score": 0.0,
+        "dateCreated": "2023-12-18T18:00:33+0000",
+        "dateUpdated": "2023-12-18T18:00:34+0000",
+        "additionalFields": {
+          "postBody": "\u003cp\u003eEC2 Hpc7a instances are powered by 4th generation AMD EPYC processors with up to 192 cores, and 300 Gbps of Elastic Fabric Adapter (EFA) network bandwidth for fast and low-latency internode communications. Hpc7a instances feature Double Data Rate 5 (DDR5) memory, which enables high-speed access to data in memory. EC2 Hpc6a instances are powered by 96 cores of 3rd generation AMD EPYC processors, and 200 Gbps of EFA network bandwidth.\u003c/p\u003e\r\n\u003cp\u003eThese instances are ideal for compute-intensive, latency-sensitive high performance computing (HPC) workloads, helping you scale more efficiently on fewer nodes. Hpc7a and Hpc6a are designed to run your tightly coupled HPC workloads — such as computational fluid dynamics (CFD), weather forecasting, and multiphysics simulations — with better performance. To optimize HPC instances networking for tightly coupled workloads, you can access these instances in a single Availability Zone within a Region.\u003c/p\u003e\r\n\u003cp\u003eThese instances are ideal for compute-intensive, latency-sensitive high performance computing (HPC) workloads, helping you scale more efficiently on fewer nodes. Hpc7a and Hpc6a are designed to run your tightly coupled HPC workloads — such as computational fluid dynamics (CFD), weather forecasting, and multiphysics simulations — with better performance. To optimize HPC instances networking for tightly coupled workloads, you can access these instances in a single Availability Zone within a Region.\u003c/p\u003e\r\n\u003cp\u003eTo learn more, see \u003ca href\u003d\"/content/aws.amazon.com/live/en_US/ec2/instance-types/hpc7a.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eAmazon Hpc7a instances\u003c/a\u003e and \u003ca href\u003d\"/content/aws.amazon.com/live/en_US/ec2/instance-types/hpc6a.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eAmazon Hpc6a instances\u003c/a\u003e To get started, see the \u003ca href\u003d\"https://console.aws.amazon.com/\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eAWS Management Console\u003c/a\u003e.\u003c/p\u003e\r\n",
+          "modifiedDate": "2023-12-18T18:00:23Z",
+          "headlineUrl": "/about-aws/whats-new/2023/12/amazon-ec2-hpc-instances-additional-regions/",
+          "postDateTime": "2023-12-18T08:00:00Z",
+          "postSummary": "\u003cp\u003eStarting today, Amazon Elastic Compute Cloud (Amazon EC2) Hpc7a instances are available in Europe (Stockholm) Region, and EC2 Hpc6a instances are available in Asia Pacific (Sydney) Region.\u003c/p\u003e\r\n",
+          "contentType": "Launch Announcement",
+          "headline": "Amazon EC2 HPC instances now available in additional regions"
+        }
+      },
+      "tags": [
+        {
+          "id": "whats-new#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#year",
+          "name": "2023",
+          "description": "year#2023",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2023-01-03T18:17:59+0000",
+          "dateUpdated": "2023-01-03T18:17:59+0000"
+        },
+        {
+          "id": "whats-new#general-use-case#high-performance-computing",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#general-use-case",
+          "name": "high-performance-computing",
+          "description": "general:use-case/high-performance-computing",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:26:12+0000",
+          "dateUpdated": "2019-05-03T04:26:12+0000"
+        },
+        {
+          "id": "whats-new#general-products#amazon-ec2",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#general-products",
+          "name": "amazon-ec2",
+          "description": "general:products/amazon-ec2",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:26:12+0000",
+          "dateUpdated": "2019-05-03T04:26:12+0000"
+        },
+        {
+          "id": "GLOBAL#content-type#launch-announcement",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#content-type",
+          "name": "Launch Announcement",
+          "description": "Launch Announcement",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2020-04-29T05:19:27+0000",
+          "dateUpdated": "2022-02-03T03:31:08+0000"
+        },
+        {
+          "id": "whats-new#marketing-marchitecture#compute",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#marketing-marchitecture",
+          "name": "compute",
+          "description": "marketing:marchitecture/compute",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:27:58+0000",
+          "dateUpdated": "2019-05-03T04:27:58+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "whats-new#about-aws-whats-new-2023-12-amazon-codecatalyst-dev-environments-private-cloud",
+        "locale": "en_US",
+        "directoryId": "whats-new",
+        "name": "/about-aws/whats-new/2023/12/amazon-codecatalyst-dev-environments-private-cloud/",
+        "author": "aws",
+        "createdBy": "aws",
+        "lastUpdatedBy": "aws",
+        "numImpressions": 0,
+        "score": 0.0,
+        "dateCreated": "2023-12-18T18:17:24+0000",
+        "dateUpdated": "2023-12-18T18:17:25+0000",
+        "additionalFields": {
+          "postBody": "\u003cp\u003eUntil now, resources on a VPC could only be accessed from a dev environment if there was a public route to that resource. Moving forward, you can make an API call to validate the update of a private resource, download VPC accessible S3 files, or access a database schema from your Dev Environment.\u003c/p\u003e\r\n\u003cp\u003eThis feature is available in all Regions where CodeCatalyst is generally available. To learn more, see the \u003ca href\u003d\"https://docs.aws.amazon.com/codecatalyst/latest/userguide/devenvironment-using-vpc.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eVPC documentation\u003c/a\u003e in the Amazon CodeCatalyst Administrator Guide.\u003c/p\u003e\r\n",
+          "modifiedDate": "2023-12-18T18:17:15Z",
+          "headlineUrl": "/about-aws/whats-new/2023/12/amazon-codecatalyst-dev-environments-private-cloud/",
+          "postDateTime": "2023-12-18T08:00:00Z",
+          "postSummary": "\u003cp\u003eToday, AWS announces support for Virtual Private Cloud (VPC) within Amazon CodeCatalyst Dev Environments. This launch allows you to connect to a VPC from your Dev Environment, extending the number of developer scenarios supported by CodeCatalyst.\u003c/p\u003e\r\n",
+          "contentType": "Launch Announcement",
+          "headline": "Amazon CodeCatalyst Dev Environments now supports Virtual Private Cloud"
+        }
+      },
+      "tags": [
+        {
+          "id": "whats-new#general-products#amazon-codecatalyst",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#general-products",
+          "name": "amazon-codecatalyst",
+          "description": "general:products/amazon-codecatalyst",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2023-04-06T17:29:26+0000",
+          "dateUpdated": "2023-04-06T17:29:26+0000"
+        },
+        {
+          "id": "whats-new#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#year",
+          "name": "2023",
+          "description": "year#2023",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2023-01-03T18:17:59+0000",
+          "dateUpdated": "2023-01-03T18:17:59+0000"
+        },
+        {
+          "id": "GLOBAL#content-type#launch-announcement",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#content-type",
+          "name": "Launch Announcement",
+          "description": "Launch Announcement",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2020-04-29T05:19:27+0000",
+          "dateUpdated": "2022-02-03T03:31:08+0000"
+        },
+        {
+          "id": "whats-new#marketing-marchitecture#developer-tools",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#marketing-marchitecture",
+          "name": "developer-tools",
+          "description": "marketing:marchitecture/developer-tools",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:26:01+0000",
+          "dateUpdated": "2019-05-03T04:26:01+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "whats-new#about-aws-whats-new-2023-12-aws-security-hub-15-security-controls",
+        "locale": "en_US",
+        "directoryId": "whats-new",
+        "name": "/about-aws/whats-new/2023/12/aws-security-hub-15-security-controls/",
+        "author": "aws",
+        "createdBy": "aws",
+        "lastUpdatedBy": "aws",
+        "numImpressions": 0,
+        "score": 0.0,
+        "dateCreated": "2023-12-18T18:04:03+0000",
+        "dateUpdated": "2023-12-18T18:04:04+0000",
+        "additionalFields": {
+          "postBody": "\u003cp\u003eTo use the new controls, turn on the standard they belong to. Security Hub will then start evaluating your security posture and monitoring your resources for the relevant security controls. You can use \u003ca href\u003d\"https://docs.aws.amazon.com/securityhub/latest/userguide/central-configuration-intro.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003ecentral configuration\u003c/a\u003e to do so across all your organization accounts and linked Regions with a single action. If you are already using the relevant standards and have Security Hub configured to automatically enable new controls, these new controls will run without taking any additional action.\u003c/p\u003e\r\n\u003cp\u003eTo get started, consult the following list of resources:\u003c/p\u003e\r\n\u003cul\u003e\r\n\u003cli\u003eLearn more about Security Hub capabilities and features in the \u003ci\u003e\u003ca href\u003d\"https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eAWS Security Hub user guide\u003c/a\u003e\u003c/i\u003e\u003c/li\u003e\r\n\u003cli\u003eSubscribe to the \u003ca href\u003d\"https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-announcements.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eSecurity Hub SNS topic\u003c/a\u003e to receive notifications about new Security Hub features and controls\u003c/li\u003e\r\n\u003cli\u003eTry \u003ca href\u003d\"/content/aws.amazon.com/live/en_US/security-hub/pricing.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eSecurity Hub at no cost for 30 days\u003c/a\u003e on the AWS Free Tier\u003c/li\u003e\r\n\u003c/ul\u003e\r\n",
+          "modifiedDate": "2023-12-18T18:03:55Z",
+          "headlineUrl": "/about-aws/whats-new/2023/12/aws-security-hub-15-security-controls/",
+          "postDateTime": "2023-12-18T08:00:00Z",
+          "postSummary": "\u003cp\u003e\u003ca href\u003d\"/content/aws.amazon.com/live/en_US/security-hub.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eAWS Security Hub\u003c/a\u003e has released 15 new security controls, increasing the number of controls offered to 307. Security Hub now supports additional AWS services such as Amazon FSx and AWS Private Certificate Authority (AWS Private CA).  Security Hub also released new controls against previously supported services like Amazon Elastic Compute Cloud (Amazon EC2), Amazon Elastic Kubernetes Service (Amazon EKS), and Amazon Simple Storage Service (Amazon S3). For the full list of recently released controls and the AWS Regions in which they are available, visit the \u003ca href\u003d\"https://docs.aws.amazon.com/securityhub/latest/userguide/doc-history.html\" target\u003d\"_blank\" rel\u003d\"noopener\"\u003eSecurity Hub user guide\u003c/a\u003e.\u003c/p\u003e\r\n",
+          "contentType": "Launch Announcement",
+          "headline": "AWS Security Hub launches 15 new security controls"
+        }
+      },
+      "tags": [
+        {
+          "id": "GLOBAL#content-type#launch-announcement",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#content-type",
+          "name": "Launch Announcement",
+          "description": "Launch Announcement",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2020-04-29T05:19:27+0000",
+          "dateUpdated": "2022-02-03T03:31:08+0000"
+        },
+        {
+          "id": "whats-new#general-products#aws-security-hub",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#general-products",
+          "name": "aws-security-hub",
+          "description": "general:products/aws-security-hub",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:45:37+0000",
+          "dateUpdated": "2019-05-03T04:45:37+0000"
+        },
+        {
+          "id": "whats-new#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#year",
+          "name": "2023",
+          "description": "year#2023",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2023-01-03T18:17:59+0000",
+          "dateUpdated": "2023-01-03T18:17:59+0000"
+        },
+        {
+          "id": "whats-new#marketing-marchitecture#security-identity-and-compliance",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#marketing-marchitecture",
+          "name": "security-identity-and-compliance",
+          "description": "marketing:marchitecture/security-identity-and-compliance",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2019-05-03T04:27:58+0000",
+          "dateUpdated": "2019-05-03T04:27:58+0000"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "count": 10,
+    "totalHits": 15417
+  },
+  "fieldTypes": {
+    "relatedBlog": "Text",
+    "postBody": "Text",
+    "modifiedDate": "DateTime",
+    "headlineUrl": "Text",
+    "postDateTime": "DateTime",
+    "postSummary": "Text",
+    "headline": "Text",
+    "contentType": "Text"
+  }
+}
