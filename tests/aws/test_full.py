@@ -14,8 +14,15 @@ from querydataio.aws.full import FullRun
 from tests import test_utils
 
 
+@pytest.fixture(autouse=True)
+def run_around_tests():
+    for file in glob.glob("tests/dbs/*.*"):
+        os.remove(file)
 
-def run_full(mocker: MockerFixture) -> None:
+    yield
+
+
+def run_full(mocker: MockerFixture) -> str:
     test_utils.download_side_effect(
         mocker,
         {
@@ -35,21 +42,16 @@ def run_full(mocker: MockerFixture) -> None:
             f"tests/dbs/aws_{whats_new.MAIN_TABLE_NAME}.sqlite3": [
                 {whats_new: whats_new.all_years()}
             ],
-            # f"tests/dbs/aws_{blog_posts.MAIN_TABLE_NAME}.sqlite3": [
-            #     {blog_posts: blog_posts.aws_categories()}
-            # ],
             "tests/dbs/aws_general.sqlite3": [
                 {analyst_reports: []},
-                #     {executive_insights: []},
-                #     {media_coverage: []},
-                #     {products: []},
-                #     {security_bulletins: []},
             ],
         },
     )
 
     full_run.prepare()
     full_run.run()
+
+    return full_run.ddb_name
 
 
 def test_integration(mocker: MockerFixture) -> None:
