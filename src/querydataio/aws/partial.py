@@ -16,10 +16,28 @@ class PartialRun:
         ddb_connect: dict[str, Any],
         databases_modules: dict[str, list[dict[ModuleType, Sequence[str | int]]]],
     ) -> None:
+        if not os.path.exists(ddb_connect["database"]):
+            print()
+            print(
+                f"{ddb_connect['database']} does not exist... hard exiting as full run should happen first"
+            )
+            sys.exit(3)
+
         self.ddb_name = ddb_connect["database"]
 
         dfs = ddb_connect.get("config", {}).pop("disabled_filesystems", None)
         self.ddb_con = duckdb.connect(**ddb_connect)
+
+        for _database_filename, modules in databases_modules.items():
+            for module in modules:
+                for main_module, _partitions in module.items():
+                    result = self.ddb_con.sql(
+                        f"SELECT COUNT(*) FROM aws.information_schema.tables WHERE table_name IN ('{main_module.MAIN_TABLE_NAME}', '{main_module.MAIN_TAGS_TABLE_NAME}')"
+                    ).fetchone()
+
+                    if result is not None:
+                        if result[0] != 2:
+                            sys.exit(4)
 
         self.databases_modules = databases_modules
 
@@ -101,7 +119,7 @@ class PartialRun:
                         print()
                         print("    No new data... hard exiting to stop deploy")
                         print("    ==========================================")
-                        sys.exit(1)
+                        sys.exit(2)
                     else:
                         print()
                         print("    New data")

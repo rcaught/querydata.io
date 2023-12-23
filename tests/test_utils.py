@@ -4,7 +4,7 @@ from pytest_mock import MockerFixture
 
 def duckdb_connect():
     ddb_con = duckdb.connect(":memory:")
-    ddb_con.sql(f"SET disabled_filesystems='HTTPFileSystem';")
+    ddb_con.sql("SET disabled_filesystems='HTTPFileSystem';")
     return ddb_con
 
 

@@ -1,10 +1,4 @@
 from querydataio.aws import (
-    analyst_reports,
-    blog_posts,
-    executive_insights,
-    media_coverage,
-    products,
-    security_bulletins,
     whats_new,
 )
 from querydataio.aws import shared as aws_shared
@@ -23,16 +17,6 @@ partial_run = PartialRun(
                 ]
             }
         ],
-        # f"dbs/aws_{blog_posts.MAIN_TABLE_NAME}.sqlite3": [
-        #     {blog_posts: blog_posts.aws_categories()}
-        # ],
-        # "dbs/aws_general.sqlite3": [
-        #     {analyst_reports: []},
-        #     {executive_insights: []},
-        #     {media_coverage: []},
-        #     {products: []},
-        #     {security_bulletins: []},
-        # ],
     },
 )
 
