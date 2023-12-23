@@ -76,22 +76,26 @@ class PartialRun:
                     main_table: str = main_module.MAIN_TABLE_NAME
                     main_tags_table: str = main_module.MAIN_TAGS_TABLE_NAME
 
-                    before = self.ddb_con.sql(
-                        f"SELECT COUNT(*) FROM {main_table}"
-                    ).fetchone()[0]
+                    result = self.ddb_con.table(main_table).count("*").fetchone()
+                    if result is not None:
+                        before = result[0]
+                    else:
+                        raise Exception("No result")
 
                     aws_shared.merge_duckdb_tables(
                         self.ddb_con,
                         [
-                            [main_table, main_new_table],
-                            [main_tags_table, main_tags_new_table],
+                            (main_table, main_new_table),
+                            (main_tags_table, main_tags_new_table),
                         ],
                         4,
                     )
 
-                    after = self.ddb_con.sql(
-                        f"SELECT COUNT(*) FROM {main_table}"
-                    ).fetchone()[0]
+                    result = self.ddb_con.table(main_table).count("*").fetchone()
+                    if result is not None:
+                        after = result[0]
+                    else:
+                        raise Exception("No result")
 
                     if before == after:
                         print()
@@ -107,8 +111,8 @@ class PartialRun:
                     aws_shared.to_sqlite(
                         sqlitedb,
                         [
-                            [self.ddb_con.table(main_table).df(), main_table],
-                            [self.ddb_con.table(main_tags_table).df(), main_tags_table],
+                            (self.ddb_con.table(main_table).df(), main_table),
+                            (self.ddb_con.table(main_tags_table).df(), main_tags_table),
                         ],
                         4,
                     )
@@ -127,10 +131,10 @@ class PartialRun:
                 aws_shared.to_sqlite(
                     sqlitedb,
                     [
-                        [
+                        (
                             self.ddb_con.table(aws_shared.TAGS_TABLE_NAME).df(),
                             aws_shared.TAGS_TABLE_NAME,
-                        ],
+                        ),
                     ],
                     2,
                 )
