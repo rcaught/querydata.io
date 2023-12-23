@@ -1,19 +1,16 @@
+import glob
+import os
+import duckdb
 from pytest_mock import MockerFixture
 from tests import test_utils
 from querydataio.aws import (
     analyst_reports,
-    blog_posts,
-    executive_insights,
-    media_coverage,
-    products,
-    security_bulletins,
     whats_new,
 )
 from querydataio.aws import shared as aws_shared
 from querydataio.aws.partial import PartialRun
-import sqlite_utils
-import json
 from tests.aws.test_full import run_full
+import pytest
 
 
 def test_integration(mocker: MockerFixture) -> None:

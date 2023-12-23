@@ -1,10 +1,13 @@
+import os
 import sys
 from types import ModuleType
 from typing import Any, Sequence
+
 import duckdb
 from sqlite_utils import Database
-from querydataio.aws import shared as aws_shared
+
 from querydataio import shared
+from querydataio.aws import shared as aws_shared
 
 
 class PartialRun:

@@ -1,5 +1,6 @@
 import pytest
 from pytest_mock import MockerFixture
+
 from querydataio.aws import shared as aws_shared
 from querydataio.aws import whats_new
 from tests import test_utils

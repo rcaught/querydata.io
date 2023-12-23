@@ -3,7 +3,7 @@
 import datetime
 import os
 import time
-import duckdb
+
 import pandas as pd
 from sqlite_utils import Database
 
