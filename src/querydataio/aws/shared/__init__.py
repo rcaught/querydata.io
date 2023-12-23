@@ -145,7 +145,10 @@ def process(
 
 
 def download(
-    ddb_con: DuckDBPyConnection, urls: list[str], main_table: str, print_indent: int = 0
+    ddb_con: DuckDBPyConnection,
+    urls: Sequence[str | int],
+    main_table: str,
+    print_indent: int = 0,
 ) -> str:
     print()
     print(f"{print_indent * ' '}Downloading")
