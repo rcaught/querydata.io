@@ -1,6 +1,7 @@
 /dbs/*.sqlite3
 /dbs/*.db
 /tests/dbs/*.sqlite3
+/tests/dbs/*.db
 .DS_Store
 plugins/datasette-updated/metadata.json
 
