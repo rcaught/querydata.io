@@ -138,5 +138,19 @@
     "category": "Compute",
     "dateCreated": "2023-12-07T18:21:03+0000",
     "dateUpdated": "2023-12-07T18:21:59+0000"
+  },
+  {
+    "hash": "7e47e62112",
+    "id": "analyst-reports#something-new",
+    "name": "somthing-new",
+    "author": "michebep",
+    "headline": "Gartner | Vendor Rating: Amazon ",
+    "subHeadline": "Gartner",
+    "headlineUrl": "https://aws.amazon.com/resources/analyst-reports/gartner/something-new",
+    "description": "something new",
+    "itemExpirationDateTime": "2024-07-11T09:00:00+00:00",
+    "category": "Infrastructure",
+    "dateCreated": "2023-12-24T17:22:01+0000",
+    "dateUpdated": "2023-12-24T17:24:12+0000"
   }
 ]

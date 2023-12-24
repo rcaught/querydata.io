@@ -1,0 +1,238 @@
+{
+  "items": [
+    {
+      "item": {
+        "id": "analyst-reports#global-ar-report-ardm-23-worldwide-cloud-and-applications-centric-marketplaces",
+        "locale": "en_US",
+        "directoryId": "analyst-reports",
+        "name": "IDC MarketScape | Worldwide Cloud and Applications-Centric Marketplaces 2023 Vendor Assessment",
+        "author": "michebep",
+        "createdBy": "michebep",
+        "lastUpdatedBy": "michebep",
+        "dateCreated": "2023-12-08T19:30:35+0000",
+        "dateUpdated": "2023-12-09T15:59:43+0000",
+        "additionalFields": {
+          "datePublished": "2024-11-30",
+          "featureFlag": "New",
+          "footerInfoSubtext": "Published",
+          "dateExpires": "2023-12-01",
+          "footerInfoText": "December 2023",
+          "description": "\u003cp\u003eIDC named Amazon a Leader, noting that \u0026ldquo;AWS Marketplace provides a seamless procurement and deployment experience for buyers and sellers.\u0026rdquo; Amazon also leads in strategy, with IDC noting that, \u0026ldquo;Continuous innovation has been a hallmark of AWS Marketplace\u0026#39;s rapid cadence of new features and capabilities that address evolving customer needs.\u0026rdquo;\u003c/p\u003e\n",
+          "headlineUrl": "https://aws.amazon.com/resources/analyst-reports/idc/global-ar-report-ardm-23-worldwide-cloud-and-applications-centric-marketplaces/?trk\u003da6bf73bf-f901-4c40-a7a5-cf7b645f538a\u0026sc_channel\u003del",
+          "enableShare": "1",
+          "category": "Partner",
+          "headline": "IDC MarketScape | Worldwide Cloud and Applications-Centric Marketplaces 2023 Vendor Assessment",
+          "dateAdded": "2023-12-08",
+          "ItemExpirationDateTime": "2024-11-30T09:00:00-05:00"
+        }
+      },
+      "tags": [
+        {
+          "id": "GLOBAL#content-type#analyst-report",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#content-type",
+          "name": "Analyst Report",
+          "description": "Analyst Report",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2020-04-29T05:19:14+0000",
+          "dateUpdated": "2022-02-03T03:31:06+0000"
+        },
+        {
+          "id": "GLOBAL#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#year",
+          "name": "2023",
+          "description": "2023",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2020-06-13T00:06:56+0000",
+          "dateUpdated": "2020-06-13T00:06:58+0000"
+        },
+        {
+          "id": "analyst-reports#flag#partner-network",
+          "locale": "en_US",
+          "tagNamespaceId": "analyst-reports#flag",
+          "name": "Partner Network",
+          "description": "\u003cp\u003eFeature \u003d Partner Network\u003c/p\u003e\r\n",
+          "createdBy": "shaomamo",
+          "lastUpdatedBy": "shaomamo",
+          "dateCreated": "2022-11-25T19:30:39+0000",
+          "dateUpdated": "2022-11-25T19:30:39+0000"
+        },
+        {
+          "id": "analyst-reports#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "analyst-reports#year",
+          "name": "2023",
+          "description": "\u003cp\u003e2023\u003c/p\u003e\r\n",
+          "createdBy": "michebep",
+          "lastUpdatedBy": "michebep",
+          "dateCreated": "2023-02-02T01:06:13+0000",
+          "dateUpdated": "2023-02-02T01:06:13+0000"
+        },
+        {
+          "id": "analyst-reports#flag#new",
+          "locale": "en_US",
+          "tagNamespaceId": "analyst-reports#flag",
+          "name": "New",
+          "description": "\u003cp\u003eNew\u003c/p\u003e\n",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2018-12-19T10:54:28+0000",
+          "dateUpdated": "2020-03-03T07:03:58+0000"
+        },
+        {
+          "id": "analyst-reports#firm#idc",
+          "locale": "en_US",
+          "tagNamespaceId": "analyst-reports#firm",
+          "name": "IDC",
+          "description": "\u003cp\u003efirm\u003c/p\u003e\n",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2018-12-19T10:53:39+0000",
+          "dateUpdated": "2020-03-03T07:03:52+0000"
+        },
+        {
+          "id": "GLOBAL#flag#new",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#flag",
+          "name": "New",
+          "description": "New",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2020-01-16T17:42:47+0000",
+          "dateUpdated": "2022-02-03T03:31:19+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "analyst-reports#something-new",
+        "locale": "en_US",
+        "directoryId": "analyst-reports",
+        "name": "somthing-new",
+        "author": "michebep",
+        "createdBy": "michebep",
+        "lastUpdatedBy": "michebep",
+        "dateCreated": "2023-12-24T17:22:01+0000",
+        "dateUpdated": "2023-12-24T17:24:12+0000",
+        "additionalFields": {
+          "featureFlag": "New",
+          "footerInfoText": "December 2023",
+          "description": "something new",
+          "headlineUrl": "https://aws.amazon.com/resources/analyst-reports/gartner/something-new?trk\u003d131850cc-1cd1-4327-98e6-08a28374852d\u0026sc_channel\u003del",
+          "dateAdded": "2023-12-24",
+          "datePublished": "2023-12-24",
+          "footerInfoSubtext": "Published",
+          "dateExpires": "2024-07-11",
+          "subHeadline": "Gartner",
+          "enableShare": "1",
+          "category": "Infrastructure",
+          "headline": "Gartner | Vendor Rating: Amazon ",
+          "ItemExpirationDateTime": "2024-07-11T09:00:00+00:00"
+        }
+      },
+      "tags": [
+        {
+          "id": "GLOBAL#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#year",
+          "name": "2023",
+          "description": "2023",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2020-06-13T00:06:56+0000",
+          "dateUpdated": "2020-06-13T00:06:58+0000"
+        },
+        {
+          "id": "analyst-reports#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "analyst-reports#year",
+          "name": "2023",
+          "description": "\u003cp\u003e2023\u003c/p\u003e\r\n",
+          "createdBy": "michebep",
+          "lastUpdatedBy": "michebep",
+          "dateCreated": "2023-02-02T01:06:13+0000",
+          "dateUpdated": "2023-02-02T01:06:13+0000"
+        },
+        {
+          "id": "analyst-reports#flag#new",
+          "locale": "en_US",
+          "tagNamespaceId": "analyst-reports#flag",
+          "name": "New",
+          "description": "\u003cp\u003eNew\u003c/p\u003e\n",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2018-12-19T10:54:28+0000",
+          "dateUpdated": "2020-03-03T07:03:58+0000"
+        },
+        {
+          "id": "analyst-reports#firm#gartner",
+          "locale": "en_US",
+          "tagNamespaceId": "analyst-reports#firm",
+          "name": "Gartner",
+          "description": "\u003cp\u003eGartner\u003c/p\u003e\n",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2018-12-19T10:53:30+0000",
+          "dateUpdated": "2020-03-03T07:03:51+0000"
+        },
+        {
+          "id": "analyst-reports#categories#infrastructure",
+          "locale": "en_US",
+          "tagNamespaceId": "analyst-reports#categories",
+          "name": "Infrastructure",
+          "description": "\u003cp\u003eInfrastructure\u003c/p\u003e\n",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2018-12-19T10:54:18+0000",
+          "dateUpdated": "2020-03-03T07:04:13+0000"
+        },
+        {
+          "id": "GLOBAL#content-type#analyst-report",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#content-type",
+          "name": "Analyst Report",
+          "description": "Analyst Report",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2020-04-29T05:19:14+0000",
+          "dateUpdated": "2022-02-03T03:31:06+0000"
+        },
+        {
+          "id": "GLOBAL#language#english",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#language",
+          "name": "English",
+          "description": "English",
+          "createdBy": "jenbar",
+          "lastUpdatedBy": "jenbar",
+          "dateCreated": "2020-03-03T06:40:42+0000",
+          "dateUpdated": "2022-02-03T03:31:23+0000"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "count": 2,
+    "totalHits": 74
+  },
+  "fieldTypes": {
+    "imageSrcUrl": "URL",
+    "featureFlag": "Text",
+    "footerInfoText": "Text",
+    "description": "LongText",
+    "headlineUrl": "URL",
+    "dateAdded": "Date",
+    "datePublished": "Date",
+    "footerInfoSubtext": "Text",
+    "subHeadline": "Text",
+    "dateExpires": "Date",
+    "enableShare": "Boolean",
+    "category": "Text",
+    "headline": "Text",
+    "contentType": "Text",
+    "ItemExpirationDateTime": "DateTime"
+  }
+}
