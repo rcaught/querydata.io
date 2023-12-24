@@ -1,3 +1,4 @@
+from result import Ok, do
 from querydataio.aws import (
     analyst_reports,
     blog_posts,
@@ -19,7 +20,7 @@ full_run = FullRun(
             {whats_new: whats_new.all_years()}
         ],
         f"dbs/aws_{blog_posts.MAIN_TABLE_NAME}.sqlite3": [
-            {blog_posts: blog_posts.aws_categories()}
+            {blog_posts: blog_posts.aws_categories().unwrap_or_raise(SystemExit)}
         ],
         "dbs/aws_general.sqlite3": [
             {analyst_reports: []},
@@ -31,5 +32,6 @@ full_run = FullRun(
     },
 )
 
-full_run.prepare()
-full_run.run()
+do(Ok(None) for b in full_run.run() for a in full_run.prepare()).unwrap_or_raise(
+    SystemExit
+)

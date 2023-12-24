@@ -48,8 +48,8 @@ def run_full(mocker: MockerFixture) -> str:
         },
     )
 
-    full_run.prepare()
-    full_run.run()
+    full_run.prepare().unwrap_or_raise(SystemExit)
+    full_run.run().unwrap_or_raise(SystemExit)
 
     return full_run.ddb_name
 

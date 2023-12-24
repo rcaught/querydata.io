@@ -1,3 +1,4 @@
+from result import Ok, do
 from querydataio.aws import (
     whats_new,
 )
@@ -20,5 +21,6 @@ partial_run = PartialRun(
     },
 )
 
-partial_run.prepare()
-partial_run.run()
+do(Ok(None) for b in partial_run.run() for a in partial_run.prepare()).unwrap_or_raise(
+    SystemExit
+)

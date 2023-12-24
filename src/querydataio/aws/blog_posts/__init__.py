@@ -5,6 +5,7 @@ from types import ModuleType
 from typing import cast
 from duckdb import DuckDBPyConnection
 import json
+from result import Err, Ok, Result
 from sqlite_utils import Database
 from sqlite_utils.db import Table
 from querydataio.aws import shared as aws_shared
@@ -32,7 +33,7 @@ def parse_aws_categories() -> dict[str, list[dict[str, list[dict[str, str]]]]]:
         return json.loads(file.read())
 
 
-def aws_categories() -> list[str]:
+def aws_categories() -> Result[list[str], str]:
     result: list[str] = []
     categories = parse_aws_categories()
 
@@ -42,8 +43,8 @@ def aws_categories() -> list[str]:
             for child in aws_filter["children"]:
                 result.append(child["value"])
         else:
-            sys.exit(1)  # not AWS filter category
-    return result
+            return Err("Not AWS filter category")
+    return Ok(result)
 
 
 def process(

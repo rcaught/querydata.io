@@ -1227,6 +1227,17 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
+name = "result"
+version = "0.15.0"
+description = "A Rust-like result type for Python"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "result-0.15.0-py3-none-any.whl", hash = "sha256:5478238faeceb000a31b3904fdac9edbc3bcb471ac269c9ca059b0bf5a14fbb7"},
+    {file = "result-0.15.0.tar.gz", hash = "sha256:efd53ffc042252da3ee42d75b2e351cee396d0d3b9a31b366d7c9f93a451af9a"},
+]
+
+[[package]]
 name = "ruff"
 version = "0.1.9"
 description = "An extremely fast Python linter and code formatter, written in Rust."
@@ -1250,6 +1261,17 @@ files = [
     {file = "ruff-0.1.9-py3-none-win_amd64.whl", hash = "sha256:c497d769164df522fdaf54c6eba93f397342fe4ca2123a2e014a5b8fc7df81c7"},
     {file = "ruff-0.1.9-py3-none-win_arm64.whl", hash = "sha256:0e17f53bcbb4fff8292dfd84cf72d767b5e146f009cccd40c2fad27641f8a7a9"},
     {file = "ruff-0.1.9.tar.gz", hash = "sha256:b041dee2734719ddbb4518f762c982f2e912e7f28b8ee4fe1dee0b15d1b6e800"},
+]
+
+[[package]]
+name = "rustedpy-maybe"
+version = "0.0.0"
+description = "A Rust-like option type for Python"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "rustedpy-maybe-0.0.0.tar.gz", hash = "sha256:7737f67186a74ea50db4e2511f1238560047b38a61c5e49b7f7e755b31a6aace"},
+    {file = "rustedpy_maybe-0.0.0-py3-none-any.whl", hash = "sha256:0808636203133c69c1573f8b07c0375dd72b6ab1e5f32ef3ed42295ee63d93d3"},
 ]
 
 [[package]]

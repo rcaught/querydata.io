@@ -9,6 +9,7 @@ from querydataio.aws import (
 )
 from querydataio.aws import shared as aws_shared
 from querydataio.aws.partial import PartialRun
+from result import Ok, Result, do
 from tests.aws.test_full import run_full
 import pytest
 
@@ -58,17 +59,18 @@ def test_integration_no_updates(mocker: MockerFixture) -> None:
     test_utils.download_side_effect(mocker, default_side_effect)
 
     partial_run = PartialRun(*default_config)
+    result: Result[None, str] = do(
+        Ok(None) for _ in partial_run.prepare() for _ in partial_run.run()
+    )
 
-    partial_run.prepare()
-
-    with pytest.raises(SystemExit, match="2"):
-        partial_run.run()
+    assert result.is_err and result.unwrap_err() == "No new data"
 
 
 def test_integration_handles_no_preexisting_database(mocker: MockerFixture) -> None:
-    with pytest.raises(SystemExit, match="3"):
-        PartialRun(*default_config)
+    partial_run = PartialRun(*default_config)
+    result = partial_run.prepare()
 
+    assert result.is_err and result.unwrap_err() == "DuckDB Database does not exist"
 
 def test_integration_handles_no_preexisting_directory_table(
     mocker: MockerFixture,
@@ -81,8 +83,10 @@ def test_integration_handles_no_preexisting_directory_table(
 
     test_utils.download_side_effect(mocker, default_side_effect)
 
-    with pytest.raises(SystemExit, match="4"):
-        PartialRun(*default_config)
+    partial_run = PartialRun(*default_config)
+    result = partial_run.prepare()
+
+    assert result.is_err and result.unwrap_err() == "DuckDB table(s) missing"
 
 
 def test_integration_success(mocker: MockerFixture) -> None:
