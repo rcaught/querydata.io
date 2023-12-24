@@ -1,14 +1,16 @@
 """Shared utilities for AWS"""
 
 import os
+import time
 from types import ModuleType
 from typing import Sequence, cast
+
 import pandas as pd
 from duckdb import DuckDBPyConnection
 from sqlite_utils import Database
 from sqlite_utils.db import Table
+
 from querydataio.aws import shared as aws_shared
-import time
 
 MAX_RECORDS_SIZE = 1000
 PARTIAL_COLLECTION_SIZE = 200

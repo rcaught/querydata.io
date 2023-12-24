@@ -1,5 +1,4 @@
 import os
-import sys
 from types import ModuleType
 from typing import Any, Sequence
 

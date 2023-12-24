@@ -1,8 +1,8 @@
 import pytest
 from pytest_mock import MockerFixture
-
 from querydataio.aws import shared as aws_shared
 from querydataio.aws import whats_new
+
 from tests import test_utils
 
 BASE_URLS_PREFIX = "https://aws.amazon.com/api/dirs/items/search?item.locale=en_US&item.directoryId=whats-new&sort_by=item.additionalFields.postDateTime"

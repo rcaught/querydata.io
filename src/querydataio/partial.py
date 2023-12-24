@@ -1,10 +1,10 @@
 from result import Ok, do
+
+from querydataio.aws import shared as aws_shared
 from querydataio.aws import (
     whats_new,
 )
-from querydataio.aws import shared as aws_shared
 from querydataio.aws.partial import PartialRun
-
 
 partial_run = PartialRun(
     {

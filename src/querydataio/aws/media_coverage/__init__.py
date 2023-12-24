@@ -1,11 +1,12 @@
 import time
 from types import ModuleType
 from typing import cast
+
 from duckdb import DuckDBPyConnection
 from sqlite_utils import Database
 from sqlite_utils.db import Table
-from querydataio.aws import shared as aws_shared
 
+from querydataio.aws import shared as aws_shared
 
 DIRECTORY_ID = "media-coverage"
 URL_PREFIX = (

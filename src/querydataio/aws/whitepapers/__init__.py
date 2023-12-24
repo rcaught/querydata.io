@@ -1,8 +1,10 @@
 import time
 from types import ModuleType
+
 from duckdb import DuckDBPyConnection
 from sqlite_utils import Database
 from sqlite_utils.db import Table
+
 from querydataio.aws import shared as aws_shared
 
 # The following tags break the normal convention. tag ids usually always match the tagNamespaceId, name combo.

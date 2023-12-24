@@ -1,9 +1,11 @@
 import time
 from types import ModuleType
 from typing import cast
+
 from duckdb import DuckDBPyConnection
 from sqlite_utils import Database
 from sqlite_utils.db import Table
+
 from querydataio import shared
 from querydataio.aws import shared as aws_shared
 

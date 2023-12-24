@@ -1,16 +1,11 @@
-import glob
-import json
-import os
 import pytest
-
-import sqlite_utils
 from pytest_mock import MockerFixture
-
 from querydataio.aws import (
     analyst_reports,
     whats_new,
 )
 from querydataio.aws.full import FullRun
+
 from tests import test_utils
 
 

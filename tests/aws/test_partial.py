@@ -1,8 +1,6 @@
-import glob
-import os
 import duckdb
+import pytest
 from pytest_mock import MockerFixture
-from tests import test_utils
 from querydataio.aws import (
     analyst_reports,
     whats_new,
@@ -10,8 +8,9 @@ from querydataio.aws import (
 from querydataio.aws import shared as aws_shared
 from querydataio.aws.partial import PartialRun
 from result import Ok, Result, do
+
+from tests import test_utils
 from tests.aws.test_full import run_full
-import pytest
 
 
 @pytest.fixture(autouse=True)

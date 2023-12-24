@@ -10,7 +10,6 @@ from querydataio.aws import (
 )
 from querydataio.aws.full import FullRun
 
-
 full_run = FullRun(
     {
         "database": "dbs/aws.duckdb.db",
