@@ -9,6 +9,13 @@ BASE_URLS_PREFIX = "https://aws.amazon.com/api/dirs/items/search?item.locale=en_
 EXPECTED_URLS_PREFIX = f"{BASE_URLS_PREFIX}&size=1&tags.id=whats-new%23year%23"
 
 
+@pytest.fixture(autouse=True)
+def run_around_tests():
+    test_utils.clean_test_dbs()
+
+    yield
+
+
 def test_generate_urls(mocker: MockerFixture) -> None:
     expected_urls = [
         f"{EXPECTED_URLS_PREFIX}2003",

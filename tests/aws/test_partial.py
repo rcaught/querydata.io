@@ -15,8 +15,7 @@ from tests.aws.test_full import run_full
 
 @pytest.fixture(autouse=True)
 def run_around_tests():
-    for file in glob.glob("tests/dbs/*.*"):
-        os.remove(file)
+    test_utils.clean_test_dbs()
 
     yield
 
@@ -88,10 +87,59 @@ def test_integration_handles_no_preexisting_directory_table(
     assert result.is_err and result.unwrap_err() == "DuckDB table(s) missing"
 
 
-def test_integration_success(mocker: MockerFixture) -> None:
-    test_utils.download_side_effect(mocker, default_side_effect)
+def test_integration_success_both_new_data(mocker: MockerFixture) -> None:
+    run_full(mocker)
+
+    mocker.resetall(side_effect=True)
+
+    test_utils.download_side_effect(
+        mocker,
+        # The following data has 1 existing and 1 new record
+        {
+            "whats_new_new": "tests/fixtures/aws/partial/whats_new/download.2.json",
+            "analyst_reports_new": "tests/fixtures/aws/partial/analyst_reports/download.2.json",
+        },
+    )
 
     partial_run = PartialRun(*default_config)
 
-    partial_run.prepare()
-    partial_run.run()
+    partial_run = PartialRun(*default_config)
+    result: Result[None, str] = do(
+        Ok(None) for _ in partial_run.prepare() for _ in partial_run.run()
+    )
+
+    assert result.is_ok and result.unwrap() is None
+
+    test_utils.assert_query_result(
+        "tests/dbs/aws_whats_new.sqlite3",
+        "SELECT * FROM whats_new ORDER BY id",
+        "tests/fixtures/aws/partial/whats_new/query.1.json",
+    )
+
+    test_utils.assert_query_result(
+        "tests/dbs/aws_general.sqlite3",
+        "SELECT * FROM analyst_reports ORDER BY id",
+        "tests/fixtures/aws/partial/analyst_reports/query.1.json",
+    )
+
+
+def test_integration_success_one_new_data(mocker: MockerFixture) -> None:
+    run_full(mocker)
+
+    mocker.resetall(side_effect=True)
+
+    test_utils.download_side_effect(
+        mocker,
+        # analyst_reports_new data has 1 existing and 1 new record
+        {
+            "whats_new_new": "tests/fixtures/aws/partial/whats_new/download.1.json",
+            "analyst_reports_new": "tests/fixtures/aws/partial/analyst_reports/download.2.json",
+        },
+    )
+
+    partial_run = PartialRun(*default_config)
+    result: Result[None, str] = do(
+        Ok(None) for _ in partial_run.prepare() for _ in partial_run.run()
+    )
+
+    assert result.is_ok and result.unwrap() is None

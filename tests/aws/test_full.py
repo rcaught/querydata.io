@@ -11,8 +11,7 @@ from tests import test_utils
 
 @pytest.fixture(autouse=True)
 def run_around_tests():
-    for file in glob.glob("tests/dbs/*.*"):
-        os.remove(file)
+    test_utils.clean_test_dbs()
 
     yield
 
@@ -52,24 +51,14 @@ def run_full(mocker: MockerFixture) -> str:
 def test_integration(mocker: MockerFixture) -> None:
     run_full(mocker)
 
-    # print(have) to generate json file
+    test_utils.assert_query_result(
+        "tests/dbs/aws_whats_new.sqlite3",
+        "SELECT * FROM whats_new ORDER BY id",
+        "tests/fixtures/aws/full/whats_new/query.1.json",
+    )
 
-    with open("tests/fixtures/aws/full/whats_new/query.1.json", "r") as file:
-        want = json.dumps(json.load(file))
-        have = json.dumps(
-            sqlite_utils.Database(
-                "tests/dbs/aws_whats_new.sqlite3"
-            ).execute_returning_dicts("SELECT * FROM whats_new ORDER BY id")
-        )
-
-        assert want == have
-
-    with open("tests/fixtures/aws/full/analyst_reports/query.1.json", "r") as file:
-        want = json.dumps(json.load(file))
-        have = json.dumps(
-            sqlite_utils.Database(
-                "tests/dbs/aws_general.sqlite3"
-            ).execute_returning_dicts("SELECT * FROM analyst_reports ORDER BY id")
-        )
-
-        assert want == have
+    test_utils.assert_query_result(
+        "tests/dbs/aws_general.sqlite3",
+        "SELECT * FROM analyst_reports ORDER BY id",
+        "tests/fixtures/aws/full/analyst_reports/query.1.json",
+    )

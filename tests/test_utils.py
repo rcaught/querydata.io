@@ -1,5 +1,9 @@
+import glob
+import json
+import os
 import duckdb
 from pytest_mock import MockerFixture
+import sqlite_utils
 
 
 def duckdb_connect():
@@ -33,3 +37,21 @@ def download_side_effect(
         return f"__{table_prefix}_downloads"
 
     download.side_effect = download_side_effect
+
+
+def assert_query_result(database: str, query: str, json_result: str):
+    # print(have) to generate json file
+
+    with open(json_result, "r") as file:
+        want = json.dumps(json.load(file))
+        have = json.dumps(
+            sqlite_utils.Database(database).execute_returning_dicts(query)
+        )
+
+        assert want == have
+
+
+def clean_test_dbs():
+    for file in glob.glob("tests/dbs/*.*"):
+        print(f"removing {file}")
+        os.remove(file)
