@@ -173,7 +173,6 @@ class PartialRun:
 
                     aws_shared.tag_table_optimisations(sqlitedb, 2)
 
-                for module in modules:
                     for main_module, partitions in module.items():
                         print()
                         print(f"    {main_module.DIRECTORY_ID}")
