@@ -20,8 +20,8 @@ jobs:
         run: pipx install poetry
       - uses: actions/setup-python@v4
         with:
-          python-version: '3.11.3'
-          cache: 'poetry'
+          python-version: "3.12.2"
+          cache: "poetry"
       - name: Install deps
         run: poetry install
       - name: Run tests
