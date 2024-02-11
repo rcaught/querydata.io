@@ -166,7 +166,7 @@ def download(
         SELECT
           *
         FROM
-          read_json_auto(?, filename = true);
+          read_json_auto(?, filename = true, maximum_object_size = 33554432);
         """,
         [urls],
     )
