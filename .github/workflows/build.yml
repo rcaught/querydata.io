@@ -20,7 +20,7 @@ jobs:
         run: pipx install poetry
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12.2"
+          python-version-file: "pyproject.toml"
           cache: "poetry"
       - name: Install deps
         run: poetry install
