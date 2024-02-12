@@ -6,3 +6,15 @@ updates:
       interval: daily
       time: "02:00"
       timezone: "Australia/Brisbane"
+  - package-ecosystem: devcontainers
+    directory: /
+    schedule:
+      interval: daily
+      time: "02:00"
+      timezone: "Australia/Brisbane"
+  - package-ecosystem: github-actions
+    schedule:
+      interval: daily
+      time: "02:00"
+      timezone: "Australia/Brisbane"
+
