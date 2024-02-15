@@ -9,7 +9,7 @@ import pandas as pd
 from duckdb import DuckDBPyConnection
 from sqlite_utils import Database
 from sqlite_utils.db import Table
-import tenacity
+from tenacity import retry
 
 from querydataio.aws import shared as aws_shared
 
