@@ -16,7 +16,6 @@ datasette-vega = "^0.6.2"
 datasette-updated = "^0.1"
 result = "^0.16.0"
 rustedpy-maybe = "^0.0.0"
-tenacity = "^8.2.3"
 
 [tool.poetry.group.dev.dependencies]
 cloudflare = "^2.18.1"
@@ -26,6 +25,7 @@ pytest = "^8.0.0"
 pytest-mock = "^3.12.0"
 pytest-cov = "^4.1.0"
 ruff = "^0.2.1"
+tenacity = "^8.2.3"
 
 [build-system]
 requires = ["poetry-core"]
