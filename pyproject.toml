@@ -16,6 +16,7 @@ datasette-vega = "^0.6.2"
 datasette-updated = "^0.1"
 result = "^0.16.0"
 rustedpy-maybe = "^0.0.0"
+tenacity = "^8.2.3"
 
 [tool.poetry.group.dev.dependencies]
 cloudflare = "^2.18.1"

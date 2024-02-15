@@ -145,7 +145,7 @@ def process(
 
     print(f"done ({time.time() - start})")
 
-
+@retry(wait=wait_exponential(multiplier=1, min=4, max=10))
 def download(
     ddb_con: DuckDBPyConnection,
     urls: Sequence[str | int],
