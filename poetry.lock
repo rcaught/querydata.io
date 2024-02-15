@@ -243,12 +243,12 @@ test = ["pytest"]
 
 [[package]]
 name = "cloudflare"
-version = "2.18.1"
+version = "2.18.2"
 description = "Python wrapper for the Cloudflare v4 API"
 optional = false
 python-versions = "*"
 files = [
-    {file = "cloudflare-2.18.1.tar.gz", hash = "sha256:7530fd1cedba7a515d7cd309c65c8ad6329fe3159ccfdf3f5eb288dc4a544ac7"},
+    {file = "cloudflare-2.18.2.tar.gz", hash = "sha256:17c78d5d4504b131bf41ab3df94ce602d25a1eb2f1b2df644195760b72e64c3f"},
 ]
 
 [package.dependencies]
@@ -1415,4 +1415,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.12,<3.13"
-content-hash = "e5107ce65966b83eb202abe7bc11dbdbc39739fe9bde6903418ec8ff8863c6bb"
+content-hash = "c351ad6458b0ffc0dfe2b9685dc5fbb06f89203544d4aecc08f6347e1358e5b5"
