@@ -24,7 +24,7 @@ datasette-publish-vercel = "^0.14.2"
 pytest = "^8.0.0"
 pytest-mock = "^3.12.0"
 pytest-cov = "^4.1.0"
-ruff = "^0.2.1"
+ruff = "^0.2.2"
 tenacity = "^8.2.3"
 
 [build-system]
