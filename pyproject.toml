@@ -18,7 +18,7 @@ result = "^0.16.0"
 rustedpy-maybe = "^0.0.0"
 
 [tool.poetry.group.dev.dependencies]
-cloudflare = "^2.18.1"
+cloudflare = "^2.19.2"
 sqlite-utils = "^3.35.2"
 datasette-publish-vercel = "^0.14.2"
 pytest = "^8.0.1"
