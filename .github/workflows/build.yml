@@ -14,6 +14,8 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: docker test
+        run: docker run --rm moul/retry --max-attempts 3 false
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install poetry
@@ -61,4 +63,4 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           CLOUDFLARE_PURGE_API_TOKEN: ${{ secrets.CLOUDFLARE_PURGE_API_TOKEN }}
         run: |-
-          docker run --rm -it moul/retry --max-attempts 3 sh ./bin/deploy.sh
+          docker run --rm moul/retry --max-attempts 3 sh ./bin/deploy.sh
