@@ -14,7 +14,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: docker test
+      - name: Install retry
         run: docker cp $(docker create --name retry moul/retry):/bin/retry /usr/local/bin/retry && docker rm retry; retry --version
       - name: Checkout
         uses: actions/checkout@v4
@@ -63,4 +63,4 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           CLOUDFLARE_PURGE_API_TOKEN: ${{ secrets.CLOUDFLARE_PURGE_API_TOKEN }}
         run: |-
-          docker run --rm moul/retry --max-attempts 3 sh ./bin/deploy.sh
+          retry --max-attempts 3 sh ./bin/deploy.sh
