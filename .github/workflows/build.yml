@@ -15,7 +15,7 @@ jobs:
       contents: write
     steps:
       - name: docker test
-        run: docker cp $(docker create --name retry moul/retry):/bin/retry /bin/retry && docker rm retry; retry --version
+        run: docker cp $(docker create --name retry moul/retry):/bin/retry /usr/local/bin/retry && docker rm retry; retry --version
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install poetry
