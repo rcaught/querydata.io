@@ -4,17 +4,17 @@ updates:
     directory: /
     schedule:
       interval: daily
-      time: "02:00"
+      time: "14:00"
       timezone: "Australia/Brisbane"
   - package-ecosystem: devcontainers
-    directory: /
+    directory: /.devcontainer
     schedule:
       interval: daily
-      time: "02:00"
+      time: "14:00"
       timezone: "Australia/Brisbane"
   - package-ecosystem: github-actions
+    directory: /.github/workflows
     schedule:
       interval: daily
-      time: "02:00"
+      time: "14:00"
       timezone: "Australia/Brisbane"
-
