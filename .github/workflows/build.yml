@@ -1,12 +1,11 @@
 name: build
 
 on:
+  push:
   schedule:
     # update these below if changing
     - cron: "*/30 * * * *" # every 30 mins
     # - cron: "0 0 * * 0" # once a week "At 00:00 on Sunday."
-  push:
-    branches: [master]
 
 jobs:
   build:
@@ -63,4 +62,4 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           CLOUDFLARE_PURGE_API_TOKEN: ${{ secrets.CLOUDFLARE_PURGE_API_TOKEN }}
         run: |-
-          retry --max-attempts 3 sh ./bin/deploy.sh
+          retry --max-attempts 3 bash ./bin/deploy.sh

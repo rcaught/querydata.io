@@ -55,18 +55,18 @@ def process(
 
 
 def mid_alters(ddb_con: DuckDBPyConnection, main_table: str):
-    None
+    pass
 
 
-def initial_sqlite_transform(sqlitedb: Database, main_table: str, print_indent=0):
+def initial_sqlite_transform(sqlitedb: Database, main_table_name: str, print_indent=0):
     print()
     print(f"{print_indent * ' '}Optimising tables")
     print(f"{print_indent * ' '}=================")
 
     start = time.time()
-    print(f"{print_indent * ' '}- {main_table}... ", end="")
+    print(f"{print_indent * ' '}- {main_table_name}... ", end="")
 
-    main_table: Table = sqlitedb.table(main_table)
+    main_table: Table = sqlitedb.table(main_table_name)
 
     main_table.transform(
         pk="hash",
