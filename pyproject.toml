@@ -12,7 +12,7 @@ datasette = "^0.64.6"
 datasette-atom = "^0.9"
 datasette-vega = "^0.6.2"
 datasette-updated = "^0.1"
-result = "^0.16.0"
+result = "^0.16.1"
 rustedpy-maybe = "^0.0.0"
 
 [tool.poetry.group.dev.dependencies]
