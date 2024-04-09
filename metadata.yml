@@ -616,11 +616,11 @@ databases:
           SELECT
             atom_id,
             atom_title,
-            atom_updated,
+            strftime('%Y-%m-%d %H:%M:%S+0000', datetime(substr(atom_updated, 1, 19))) as atom_updated,
             atom_link,
             atom_content,
             atom_author_name,
-            sortDateTime
+            strftime('%Y-%m-%d %H:%M:%S+0000', datetime(substr(sortDateTime, 1, 19))) as sortDateTime
           FROM
             (
               SELECT
@@ -750,4 +750,3 @@ databases:
             END
           ORDER BY
             sortDateTime ASC;
-
