@@ -544,26 +544,26 @@ databases:
             tags.name
           ORDER BY
             count DESC;
-      blog_posts_authors:
-        title: Blog posts - authors (with graph)
+      blog_posts_contributors:
+        title: Blog posts - contributors (with graph)
         description_html: |-
-          <a href="/aws_blog_posts/blog_posts_authors?graph=true#g.mark=bar&g.x_column=author&g.x_type=ordinal&g.y_column=post_count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
+          <a href="/aws_blog_posts/blog_posts_contributors?graph=true#g.mark=bar&g.x_column=contributors&g.x_type=ordinal&g.y_column=post_count&g.y_type=quantitative">Graph (click here and then scroll down)</a>
         sql: |-
           SELECT
             FORMAT(
                 '%04d',
-                ROW_NUMBER() OVER (ORDER BY COUNT(item.value) DESC, author ASC)
-              ) || '. ' || item.value as author,
+                ROW_NUMBER() OVER (ORDER BY COUNT(item.value) DESC, contributors ASC)
+              ) || '. ' || item.value as contributors,
             count(blog_posts.id) AS post_count
           FROM
             blog_posts,
-            json_each(author) as item
+            json_each(contributors) as item
           WHERE
-            json_valid(author)
+            json_valid(contributors)
           GROUP BY
-            author
+            contributors
           ORDER BY
-            post_count DESC, author ASC
+            post_count DESC, contributors ASC
           LIMIT 500
       blog_posts_find_updates_from_when_i_was_away:
         title: Blog posts - find updates from when I was away
@@ -642,7 +642,7 @@ databases:
                 modifiedDate as atom_updated,
                 link as atom_link,
                 postExcerpt as atom_content,
-                author as atom_author_name,
+                contributors as atom_author_name,
                 createdDate as sortDateTime
               FROM
                 blog_posts
@@ -655,7 +655,7 @@ databases:
                 dateUpdated as atom_updated,
                 bulletinSubjectUrl as atom_link,
                 bulletinSubject as atom_content,
-                author as atom_author_name,
+                "aws" as atom_author_name,
                 bulletinDateSort as sortDateTime
               FROM
                 security_bulletins
@@ -668,7 +668,7 @@ databases:
                 dateUpdated as atom_updated,
                 headlineUrl as atom_link,
                 description as atom_content,
-                author as atom_author_name,
+                "aws" as atom_author_name,
                 dateCreated as sortDateTime
               FROM
                 analyst_reports
@@ -681,7 +681,7 @@ databases:
                 dateUpdated as atom_updated,
                 url as atom_link,
                 description as atom_content,
-                author as atom_author_name,
+                "aws" as atom_author_name,
                 dateArticlePublished as sortDateTime
               FROM
                 media_coverage
@@ -694,7 +694,7 @@ databases:
                 dateUpdated as atom_updated,
                 headlineUrl as atom_link,
                 description as atom_content,
-                author as atom_author_name,
+                "aws" as atom_author_name,
                 sortDate as sortDateTime
               FROM
                 executive_insights
