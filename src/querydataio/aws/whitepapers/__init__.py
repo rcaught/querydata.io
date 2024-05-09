@@ -1,5 +1,6 @@
 import time
 from types import ModuleType
+from typing import cast
 
 from duckdb import DuckDBPyConnection
 from sqlite_utils import Database
@@ -55,18 +56,18 @@ def process(
 
 
 def mid_alters(ddb_con: DuckDBPyConnection, main_table: str):
-    None
+    pass
 
 
-def initial_sqlite_transform(sqlitedb: Database, main_table: str, print_indent=0):
+def initial_sqlite_transform(sqlitedb: Database, main_table_name: str, print_indent=0):
     print()
     print(f"{print_indent * ' '}Optimising tables")
     print(f"{print_indent * ' '}=================")
 
     start = time.time()
-    print(f"{print_indent * ' '}- {main_table}... ", end="")
+    print(f"{print_indent * ' '}- {main_table_name}... ", end="")
 
-    main_table: Table = sqlitedb.table(main_table)
+    main_table = cast(Table, sqlitedb.table(main_table_name))
 
     main_table.transform(
         pk="hash",
@@ -93,14 +94,13 @@ def unnest(ddb_con: DuckDBPyConnection, main_table: str):
           md5(id)[:10] as hash,
           id,
           name,
-          author,
           dateCreated,
           dateUpdated,
           datePublished,
           sortDate,
           description,
           docTitle,
-          regexp_replace(primaryURL, '\?.*', '') AS primaryURL,
+          regexp_replace(primaryURL, r'?.*', '') AS primaryURL,
           tags
         FROM unnested;
         """

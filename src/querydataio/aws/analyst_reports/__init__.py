@@ -40,7 +40,7 @@ def process(
 
 
 def mid_alters(ddb_con: DuckDBPyConnection, main_table: str):
-    return None
+    pass
 
 
 def initial_sqlite_transform(
@@ -80,12 +80,11 @@ def unnest(ddb_con: DuckDBPyConnection, main_table: str):
           md5(id)[:10] as hash,
           id,
           name,
-          author,
           headline,
           subHeadline,
           regexp_replace(headlineUrl, '\\?.*', '') AS headlineUrl,
           description,
-          ItemExpirationDateTime AS itemExpirationDateTime,
+          dateExpires AS dateExpires,
           category,
           dateCreated,
           dateUpdated,

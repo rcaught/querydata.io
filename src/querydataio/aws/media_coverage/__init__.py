@@ -39,7 +39,7 @@ def process(
 
 
 def mid_alters(ddb_con: DuckDBPyConnection, main_table: str):
-    return None
+    pass
 
 
 def initial_sqlite_transform(
@@ -80,7 +80,6 @@ def unnest(ddb_con: DuckDBPyConnection, main_table: str):
           md5(id)[:10] as hash,
           id,
           name,
-          author,
           dateCreated,
           dateUpdated,
           DateArticlePublished AS dateArticlePublished,

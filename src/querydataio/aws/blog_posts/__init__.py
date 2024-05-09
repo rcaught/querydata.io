@@ -118,7 +118,7 @@ def unnest(ddb_con: DuckDBPyConnection, main_table: str):
           link,
           postExcerpt,
           featuredImageUrl,
-          author,
+          contributors,
           createdDate,
           modifiedDate,
           displayDate,

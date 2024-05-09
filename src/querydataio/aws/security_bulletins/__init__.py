@@ -83,7 +83,6 @@ def unnest(ddb_con: DuckDBPyConnection, main_table: str):
           bulletinSubject,
           bulletinDateSort,
           bulletinDate,
-          author,
           dateCreated,
           dateUpdated,
           tags
