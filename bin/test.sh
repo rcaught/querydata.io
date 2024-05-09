@@ -1,3 +1,3 @@
 #!/bin/sh
 
-poetry run pytest --cov=querydataio --cov-report html
+poetry run pytest -vv --cov=querydataio --cov-report html
