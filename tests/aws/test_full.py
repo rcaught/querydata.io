@@ -5,6 +5,7 @@ import pytest
 from querydataio import shared
 from querydataio.aws import (
     analyst_reports,
+    blog_posts,
     executive_insights,
     media_coverage,
     products,
@@ -52,6 +53,7 @@ def test_integration() -> None:
         f"tests/dbs/aws_{whats_new.MAIN_TABLE_NAME}.sqlite3": [
             {whats_new: range(shared.current_year(), shared.current_year() + 1)}
         ],
+        f"dbs/aws_{blog_posts.MAIN_TABLE_NAME}.sqlite3": [{blog_posts: ["big-data"]}],
         "tests/dbs/aws_general.sqlite3": [
             {analyst_reports: []},
             {executive_insights: []},

@@ -1,0 +1,198 @@
+{
+  "items": [
+    {
+      "item": {
+        "id": "blog-posts#3-51603",
+        "locale": "en_US",
+        "directoryId": "blog-posts",
+        "name": "blog-posts#3-51603",
+        "numImpressions": 0,
+        "score": 0.0,
+        "dateCreated": "2024-05-02T05:11:20+0000",
+        "dateUpdated": "2024-05-10T04:28:13+0000",
+        "additionalFields": {
+          "postExcerpt": "By Israel Mendes, Data Engineering leader \u2013 Caylent By Washim Nawaz, Analytics Specialist \u2013 AWS By Isaac Owusu-Hemeng, Customer Solutions Manager \u2013 AWS By Muz Syed, Sr. Partner Solutions Architect \u2013 AWS Caylent In this post, we will discuss how APN Premier partner Caylent leveraged a 3-Day Experience Based Acceleration (EBA) workshop to finalize and [...]",
+          "createdDate": "2024-05-02T17:13:05Z",
+          "displayDate": "02 May 2024",
+          "link": "https://aws.amazon.com/blogs/apn/unlocking-the-power-of-customer-data-how-caylent-and-aws-modernized-an-analytics-pipeline/",
+          "modifiedDate": "2024-05-06T19:32:35Z",
+          "contributors": "Washim Nawaz",
+          "title": "Unlocking the Power of Customer Data: How Caylent and AWS Modernized an Analytics Pipeline",
+          "contentType": "Blog Post",
+          "slug": "unlocking-the-power-of-customer-data-how-caylent-and-aws-modernized-an-analytics-pipeline"
+        }
+      },
+      "tags": [
+        {
+          "id": "GLOBAL#content-type#blog-post",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#content-type",
+          "name": "Blog Post",
+          "description": "Blog Post",
+          "dateCreated": "2020-04-29T05:19:18+0000",
+          "dateUpdated": "2022-02-03T03:31:06+0000"
+        },
+        {
+          "id": "blog-posts#category-post-types#customer-solutions",
+          "locale": "en_US",
+          "tagNamespaceId": "blog-posts#category-post-types",
+          "name": "customer-solutions",
+          "description": "{\"name\":\"Customer Solutions\",\"description\":\"No Description Provided\"}",
+          "dateCreated": "2020-03-02T14:05:47+0000",
+          "dateUpdated": "2020-05-12T11:35:53+0000"
+        },
+        {
+          "id": "blog-posts#category-post-types#thought-leadership",
+          "locale": "en_US",
+          "tagNamespaceId": "blog-posts#category-post-types",
+          "name": "thought-leadership",
+          "description": "{\"name\":\"Thought Leadership\",\"description\":\"No Description Provided\"}",
+          "dateCreated": "2020-03-09T21:41:40+0000",
+          "dateUpdated": "2020-05-12T11:35:54+0000"
+        },
+        {
+          "id": "blog-posts#category-analytics#amazon-redshift-analytics",
+          "locale": "en_US",
+          "tagNamespaceId": "blog-posts#category-analytics",
+          "name": "amazon-redshift-analytics",
+          "description": "{\"name\":\"Amazon Redshift\",\"description\":\"No Description Provided\"}",
+          "dateCreated": "2017-08-23T23:33:13+0000",
+          "dateUpdated": "2020-05-12T00:32:18+0000"
+        },
+        {
+          "id": "blog-posts#category#analytics",
+          "locale": "en_US",
+          "tagNamespaceId": "blog-posts#category",
+          "name": "analytics",
+          "description": "{\"name\":\"Analytics\",\"description\":\"No Description Provided\"}",
+          "dateCreated": "2017-08-17T03:36:05+0000",
+          "dateUpdated": "2020-05-12T00:32:27+0000"
+        },
+        {
+          "id": "GLOBAL#product#redshift",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#product",
+          "name": "Amazon Redshift",
+          "description": "Amazon Redshift",
+          "dateCreated": "2020-03-02T07:05:02+0000",
+          "dateUpdated": "2022-02-03T03:32:56+0000"
+        },
+        {
+          "id": "blog-posts#category#post-types",
+          "locale": "en_US",
+          "tagNamespaceId": "blog-posts#category",
+          "name": "post-types",
+          "description": "{\"name\":\"*Post Types\",\"description\":\"No Description Provided\"}",
+          "dateCreated": "2020-03-02T14:05:47+0000",
+          "dateUpdated": "2020-05-12T11:35:54+0000"
+        },
+        {
+          "id": "GLOBAL#product#glue",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#product",
+          "name": "AWS Glue",
+          "description": "AWS Glue",
+          "dateCreated": "2020-03-02T07:03:41+0000",
+          "dateUpdated": "2022-02-03T03:32:39+0000"
+        },
+        {
+          "id": "GLOBAL#product#database-migration-service",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#product",
+          "name": "AWS Database Migration Service (DMS)",
+          "description": "AWS Database Migration Service (DMS)",
+          "dateCreated": "2020-03-02T07:02:30+0000",
+          "dateUpdated": "2022-02-03T03:32:27+0000"
+        },
+        {
+          "id": "GLOBAL#tech-category#analytics",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#tech-category",
+          "name": "Analytics",
+          "description": "Analytics",
+          "dateCreated": "2020-01-16T17:43:03+0000",
+          "dateUpdated": "2022-02-03T03:35:22+0000"
+        },
+        {
+          "id": "blog-posts#category#database",
+          "locale": "en_US",
+          "tagNamespaceId": "blog-posts#category",
+          "name": "database",
+          "description": "{\"name\":\"Database\",\"description\":\"No Description Provided\"}",
+          "dateCreated": "2017-08-17T03:36:27+0000",
+          "dateUpdated": "2020-05-12T00:32:18+0000"
+        },
+        {
+          "id": "blog-posts#category-database#aws-database-migration-service",
+          "locale": "en_US",
+          "tagNamespaceId": "blog-posts#category-database",
+          "name": "aws-database-migration-service",
+          "description": "{\"name\":\"AWS Database Migration Service\",\"description\":\"No Description Provided\"}",
+          "dateCreated": "2017-08-17T03:36:27+0000",
+          "dateUpdated": "2020-05-06T22:21:08+0000"
+        },
+        {
+          "id": "blog-posts#category-analytics#aws-glue",
+          "locale": "en_US",
+          "tagNamespaceId": "blog-posts#category-analytics",
+          "name": "aws-glue",
+          "description": "{\"name\":\"AWS Glue\",\"description\":\"No Description Provided\"}",
+          "dateCreated": "2017-08-17T03:36:05+0000",
+          "dateUpdated": "2020-05-12T00:32:27+0000"
+        },
+        {
+          "id": "blog-posts#category#aws-partner-network",
+          "locale": "en_US",
+          "tagNamespaceId": "blog-posts#category",
+          "name": "aws-partner-network",
+          "description": "{\"name\":\"AWS Partner Network\",\"description\":\"No Description Provided\"}",
+          "dateCreated": "2017-08-17T03:35:48+0000",
+          "dateUpdated": "2020-05-11T18:58:52+0000"
+        },
+        {
+          "id": "blog-posts#category-post-types-customer-solutions#experience-based-acceleration",
+          "locale": "en_US",
+          "tagNamespaceId": "blog-posts#category-post-types-customer-solutions",
+          "name": "experience-based-acceleration",
+          "description": "{\"name\":\"Experience-Based Acceleration\",\"description\":\"No Description Provided\"}",
+          "dateCreated": "2024-02-08T20:04:28+0000",
+          "dateUpdated": "2024-02-08T20:04:28+0000"
+        },
+        {
+          "id": "blog-posts#category#big-data",
+          "locale": "en_US",
+          "tagNamespaceId": "blog-posts#category",
+          "name": "big-data",
+          "description": "{\"name\":\"AWS Big Data\",\"description\":\"No Description Provided\"}",
+          "dateCreated": "2017-08-17T03:59:21+0000",
+          "dateUpdated": "2020-05-12T00:32:26+0000"
+        },
+        {
+          "id": "GLOBAL#tech-category#databases",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#tech-category",
+          "name": "Databases",
+          "description": "Databases",
+          "dateCreated": "2020-01-16T17:43:14+0000",
+          "dateUpdated": "2022-02-03T03:35:27+0000"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "count": 1,
+    "totalHits": 898
+  },
+  "fieldTypes": {
+    "featuredImageUrl": "URL",
+    "postExcerpt": "Text",
+    "createdDate": "DateTime",
+    "displayDate": "Text",
+    "modifiedDate": "DateTime",
+    "link": "Text",
+    "contributors": "Text",
+    "title": "Text",
+    "contentType": "Text",
+    "slug": "Text"
+  }
+}
