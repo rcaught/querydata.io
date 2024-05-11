@@ -27,7 +27,7 @@ def parse_aws_categories() -> dict[str, list[dict[str, list[dict[str, str]]]]]:
     # https://aws.amazon.com/blogs/
     # //*[@id="aws-element-44ba89e5-9024-4e8f-a95c-621b7efdc78e"]
     # ^ would likely change
-    # html.no-js.aws-lng-en_US.aws-with-target.aws-ember body.awsm div#aws-page-content.lb-none-pad.lb-page-content.lb-page-with-sticky-subnav main#aws-page-content-main div.lb-grid.lb-row.lb-row-max-large.lb-snap div.lb-col.lb-tiny-24.lb-mid-5 div.lb-data-attr-wrapper.data-attr-wrapper div.lb-filter-container.lb-filter-light .lb-filter-checkbox
+    # html.no-js.aws-lng-en_US.aws-with-target.aws-ember body.awsm div#aws-page-content.lb-none-pad.lb-page-content.lb-page-with-sticky-subnav main#aws-page-content-main div.lb-grid.lb-row.lb-row-max-large.lb-snap div.lb-col.lb-tiny-24.lb-mid-5 div.lb-data-attr-wrapper.data-attr-wrapper div.lb-filter-container.lb-filter-light .lb-filter-checkbox  # noqa: E501
     with open(pathlib.Path(__file__).with_name("categories.json"), encoding="utf8") as file:
         return json.loads(file.read())
 

@@ -41,7 +41,9 @@ def process(
         f"""
         UPDATE {main_table}
           SET
-            freeTierAvailability = regexp_replace(freeTierAvailability, '<p>(.*)<\\/p>.*', '\\1', 's'),
+            freeTierAvailability = regexp_replace(
+              freeTierAvailability, '<p>(.*)<\\/p>.*', '\\1', 's'
+            ),
             productSummary = regexp_replace(productSummary, '<p>(.*)<\\/p>.*', '\\1', 's'),
             productUrl = regexp_replace(productUrl, '\\?.*', ''),
             pricingUrl = regexp_replace(pricingUrl, '\\?.*', '');
@@ -57,9 +59,7 @@ def mid_alters(ddb_con: DuckDBPyConnection, main_table: str):
     return None
 
 
-def initial_sqlite_transform(
-    sqlitedb: Database, main_table_name: str, print_indent: int = 0
-):
+def initial_sqlite_transform(sqlitedb: Database, main_table_name: str, print_indent: int = 0):
     print()
     print(f"{print_indent * ' '}Optimising tables")
     print(f"{print_indent * ' '}=================")

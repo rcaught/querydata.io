@@ -26,6 +26,8 @@ jobs:
           cache: "poetry"
       - name: Install deps
         run: poetry install
+      - name: Run lint
+        run: poetry run ruff check ./
       - name: Run tests
         run: sh ./bin/test.sh
       - name: Upload test results
