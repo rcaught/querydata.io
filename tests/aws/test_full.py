@@ -1,11 +1,9 @@
 from types import ModuleType
 from typing import Sequence
+
 import pytest
 from querydataio import shared
-from querydataio.aws import (
-    analyst_reports,
-    whats_new,
-)
+from querydataio.aws import analyst_reports, whats_new, whitepapers
 from querydataio.aws.full import FullRun
 
 from tests import test_utils
@@ -53,6 +51,7 @@ def test_integration() -> None:
         ],
         "tests/dbs/aws_general.sqlite3": [
             {analyst_reports: []},
+            {whitepapers: []},
         ],
     }
 
@@ -60,7 +59,7 @@ def test_integration() -> None:
 
     for database_filename, modules in database_modules.items():
         for module in modules:
-            for module_name, partitions in module.items():
+            for module_name, _ in module.items():
                 test_utils.assert_query_result(
                     database_filename,
                     f"SELECT * FROM {module_name.MAIN_TABLE_NAME} ORDER BY id",

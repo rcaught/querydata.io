@@ -1,4 +1,5 @@
 from result import Ok, do
+
 from querydataio.aws import (
     analyst_reports,
     blog_posts,

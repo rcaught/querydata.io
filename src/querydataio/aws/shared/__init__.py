@@ -8,8 +8,8 @@ from types import ModuleType
 from typing import Sequence, cast
 
 import pandas as pd
-from duckdb import DuckDBPyConnection
 import requests
+from duckdb import DuckDBPyConnection
 from sqlite_utils import Database
 from sqlite_utils.db import Table
 from tenacity import retry, wait_exponential

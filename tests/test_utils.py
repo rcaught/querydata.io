@@ -1,10 +1,10 @@
 import glob
 import json
 import os
-import duckdb
-from pytest_mock import MockerFixture
-import sqlite_utils
 
+import duckdb
+import sqlite_utils
+from pytest_mock import MockerFixture
 from querydataio.aws.shared import safe_filename
 
 
