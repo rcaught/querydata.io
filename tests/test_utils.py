@@ -27,6 +27,8 @@ def download_side_effect(
         urls: list[str],
         table_prefix: str,
         print_indent: int = 0,
+        fixtures_use: bool = False,
+        fixtures_create: bool = False,
     ) -> str:
         if validate_expected_urls and urls != expected_urls:
             raise Exception("Update side effect")
