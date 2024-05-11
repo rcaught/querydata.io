@@ -17,7 +17,6 @@ from tenacity import retry, wait_exponential
 from querydataio.aws import shared as aws_shared
 
 MAX_RECORDS_SIZE = 1000
-PARTIAL_COLLECTION_SIZE = 200
 SQLITE_DB = "dbs/aws.db"
 DUCKDB_DB = "dbs/aws.duckdb.db"
 TAGS_TABLE_NAME = "tags"
