@@ -1,5 +1,6 @@
+from types import ModuleType
+from typing import Sequence
 import pytest
-from pytest_mock import MockerFixture
 from querydataio import shared
 from querydataio.aws import (
     analyst_reports,
@@ -17,7 +18,10 @@ def run_around_tests():
     yield
 
 
-def run_full(fixtures_create: bool = False) -> str:
+def run_full(
+    database_modules: dict[str, list[dict[ModuleType, Sequence[str | int]]]],
+    fixtures_create: bool = False,
+) -> str:
     if fixtures_create:
         config = {"disabled_filesystems": "HTTPFileSystem"}
     else:
@@ -28,14 +32,7 @@ def run_full(fixtures_create: bool = False) -> str:
             "database": "tests/dbs/aws.duckdb.db",
             "config": config,
         },
-        {
-            f"tests/dbs/aws_{whats_new.MAIN_TABLE_NAME}.sqlite3": [
-                {whats_new: range(shared.current_year(), shared.current_year() + 1)}
-            ],
-            "tests/dbs/aws_general.sqlite3": [
-                {analyst_reports: []},
-            ],
-        },
+        database_modules,
         fixtures_use=True,
         fixtures_create=fixtures_create,
     )
@@ -48,18 +45,24 @@ def run_full(fixtures_create: bool = False) -> str:
 
 def test_integration() -> None:
     # Change this to recreate fixtures
-    fixtures_create = False
+    fixtures_recreate = False
 
-    run_full(fixtures_create)
+    database_modules = {
+        f"tests/dbs/aws_{whats_new.MAIN_TABLE_NAME}.sqlite3": [
+            {whats_new: range(shared.current_year(), shared.current_year() + 1)}
+        ],
+        "tests/dbs/aws_general.sqlite3": [
+            {analyst_reports: []},
+        ],
+    }
 
-    test_utils.assert_query_result(
-        "tests/dbs/aws_whats_new.sqlite3",
-        "SELECT * FROM whats_new ORDER BY id",
-        fixtures_create,
-    )
+    run_full(database_modules, fixtures_recreate)
 
-    test_utils.assert_query_result(
-        "tests/dbs/aws_general.sqlite3",
-        "SELECT * FROM analyst_reports ORDER BY id",
-        fixtures_create,
-    )
+    for database_filename, modules in database_modules.items():
+        for module in modules:
+            for module_name, partitions in module.items():
+                test_utils.assert_query_result(
+                    database_filename,
+                    f"SELECT * FROM {module_name.MAIN_TABLE_NAME} ORDER BY id",
+                    fixtures_recreate,
+                )
