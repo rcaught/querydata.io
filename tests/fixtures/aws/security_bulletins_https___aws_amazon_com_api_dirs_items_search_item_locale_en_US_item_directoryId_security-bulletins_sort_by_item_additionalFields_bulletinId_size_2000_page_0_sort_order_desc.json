@@ -1,0 +1,4999 @@
+{
+  "items": [
+    {
+      "item": {
+        "id": "security-bulletins#aws-2024-004",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2024-004",
+        "dateCreated": "2024-04-19T15:33:02+0000",
+        "dateUpdated": "2024-04-19T16:04:18+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2024-04-19",
+          "bulletinDate": "19-apr-24",
+          "bulletinId": "AWS-2024-004",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2024-004/",
+          "bulletinSubject": "AWS Response to March 2024 CSRB report"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2024",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2024",
+          "description": "<p>2024</p>\n",
+          "dateCreated": "2022-03-22T21:55:15+0000",
+          "dateUpdated": "2022-03-22T21:55:15+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2024-003",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2024-003",
+        "dateCreated": "2024-04-12T19:58:23+0000",
+        "dateUpdated": "2024-04-15T13:59:30+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2024-04-15",
+          "bulletinDate": "15-apr-24",
+          "bulletinId": "AWS-2024-003",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2024-003/",
+          "bulletinSubject": "CVE-2024-28056"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2024",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2024",
+          "description": "<p>2024</p>\n",
+          "dateCreated": "2022-03-22T21:55:15+0000",
+          "dateUpdated": "2022-03-22T21:55:15+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2024-002",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2024-002",
+        "dateCreated": "2024-03-29T19:11:30+0000",
+        "dateUpdated": "2024-03-29T19:12:59+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2024-03-29",
+          "bulletinDate": "29-mar-24",
+          "bulletinId": "AWS-2024-002",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2024-002/",
+          "bulletinSubject": "CVE-2024-3094"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2024",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2024",
+          "description": "<p>2024</p>\n",
+          "dateCreated": "2022-03-22T21:55:15+0000",
+          "dateUpdated": "2022-03-22T21:55:15+0000"
+        },
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2024-001",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2024-001",
+        "dateCreated": "2024-01-31T19:42:36+0000",
+        "dateUpdated": "2024-01-31T21:35:38+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2024-01-31",
+          "bulletinId": "AWS-2024-001",
+          "bulletinDate": "31-jan-24",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2024-001/",
+          "bulletinSubject": "CVE-2024-21626 - Runc container issue"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2024",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2024",
+          "description": "<p>2024</p>\n",
+          "dateCreated": "2022-03-22T21:55:15+0000",
+          "dateUpdated": "2022-03-22T21:55:15+0000"
+        },
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2023-014",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2023-014",
+        "dateCreated": "2023-11-26T14:09:25+0000",
+        "dateUpdated": "2023-11-27T16:44:16+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2023-11-26",
+          "bulletinId": "AWS-2023-014",
+          "bulletinDate": "26-nov-23",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2023-014/",
+          "bulletinSubject": "FetchBench - Issue with Prefetchers in Arm Processors"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2023",
+          "description": "<p>2023</p>\n",
+          "dateCreated": "2022-03-22T17:54:52+0000",
+          "dateUpdated": "2022-03-22T17:54:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2023-013",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2023-013",
+        "dateCreated": "2023-11-14T19:49:54+0000",
+        "dateUpdated": "2023-11-14T19:52:11+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2023-11-14",
+          "bulletinId": "AWS-2023-013",
+          "bulletinDate": "14-nov-23",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2023-013/",
+          "bulletinSubject": "CVE-2023-23583"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2023",
+          "description": "<p>2023</p>\n",
+          "dateCreated": "2022-03-22T17:54:52+0000",
+          "dateUpdated": "2022-03-22T17:54:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2023-012",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2023-012",
+        "dateCreated": "2023-10-17T21:28:05+0000",
+        "dateUpdated": "2023-11-14T19:38:44+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2023-11-14",
+          "bulletinId": "AWS-2023-012",
+          "bulletinDate": "14-nov-23",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2023-012/",
+          "bulletinSubject": "CVE-2023-5528"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2023",
+          "description": "<p>2023</p>\n",
+          "dateCreated": "2022-03-22T17:54:52+0000",
+          "dateUpdated": "2022-03-22T17:54:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2023-011",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2023-011",
+        "dateCreated": "2023-10-10T01:54:53+0000",
+        "dateUpdated": "2023-10-10T12:02:32+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2023-10-10",
+          "bulletinId": "AWS-2023-011",
+          "bulletinDate": "10-oct-23",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2023-011/",
+          "bulletinSubject": "CVE-2023-44487 - HTTP/2 Rapid Reset Attack"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2023",
+          "description": "<p>2023</p>\n",
+          "dateCreated": "2022-03-22T17:54:52+0000",
+          "dateUpdated": "2022-03-22T17:54:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2023-010",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2023-010",
+        "dateCreated": "2023-10-06T22:11:31+0000",
+        "dateUpdated": "2023-10-06T22:46:18+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2023-10-06",
+          "bulletinId": "AWS-2023-010",
+          "bulletinDate": "06-oct-23",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2023-010/",
+          "bulletinSubject": "Issue with Amazon WorkSpaces Windows Client Version 5.9 and 5.10"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2023",
+          "description": "<p>2023</p>\n",
+          "dateCreated": "2022-03-22T17:54:52+0000",
+          "dateUpdated": "2022-03-22T17:54:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2023-009",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2023-009",
+        "dateCreated": "2023-10-02T01:55:43+0000",
+        "dateUpdated": "2023-10-02T18:01:32+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2023-10-02",
+          "bulletinId": "AWS-2023-009",
+          "bulletinDate": "02-oct-23",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2023-009/",
+          "bulletinSubject": "Reported TorchServe Issue (CVE-2023-43654)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2023",
+          "description": "<p>2023</p>\n",
+          "dateCreated": "2022-03-22T17:54:52+0000",
+          "dateUpdated": "2022-03-22T17:54:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2023-008",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2023-008",
+        "dateCreated": "2023-08-23T17:07:54+0000",
+        "dateUpdated": "2023-08-23T21:30:09+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2023-08-23",
+          "bulletinId": "AWS-2023-008",
+          "bulletinDate": "23-aug-23",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2023-008/",
+          "bulletinSubject": "Kubernetes Security Issues (CVE-2023-3676, CVE-2023-3893, CVE-2023-3955)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2023",
+          "description": "<p>2023</p>\n",
+          "dateCreated": "2022-03-22T17:54:52+0000",
+          "dateUpdated": "2022-03-22T17:54:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2023-007",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2023-007",
+        "dateCreated": "2023-08-08T19:51:59+0000",
+        "dateUpdated": "2023-08-08T20:03:32+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2023-08-08",
+          "bulletinId": "AWS-2023-007",
+          "bulletinDate": "08-aug-23",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2023-007/",
+          "bulletinSubject": "CVE-2022-40982 - Gather Data Sampling - Downfall"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2023",
+          "description": "<p>2023</p>\n",
+          "dateCreated": "2022-03-22T17:54:52+0000",
+          "dateUpdated": "2022-03-22T17:54:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2023-006",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2023-006",
+        "dateCreated": "2023-08-08T18:15:26+0000",
+        "dateUpdated": "2023-08-10T00:30:56+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2023-08-08",
+          "bulletinId": "AWS-2023-006",
+          "bulletinDate": "08-aug-23",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2023-006/",
+          "bulletinSubject": "CVE-2023-20569 - RAS Poisoning - Inception"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2023",
+          "description": "<p>2023</p>\n",
+          "dateCreated": "2022-03-22T17:54:52+0000",
+          "dateUpdated": "2022-03-22T17:54:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2023-005",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2023-005",
+        "dateCreated": "2023-08-01T17:12:49+0000",
+        "dateUpdated": "2023-08-01T17:28:12+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2023-08-01",
+          "bulletinId": "AWS-2023-005",
+          "bulletinDate": "01-aug-23",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2023-005/",
+          "bulletinSubject": "Recent Software-based Power Side-Channel Security Research"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2023",
+          "description": "<p>2023</p>\n",
+          "dateCreated": "2022-03-22T17:54:52+0000",
+          "dateUpdated": "2022-03-22T17:54:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2023-004",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2023-004",
+        "dateCreated": "2023-07-26T18:13:22+0000",
+        "dateUpdated": "2023-07-26T18:14:40+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2023-07-26",
+          "bulletinId": "AWS-2023-004",
+          "bulletinDate": "26-jul-23",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2023-004/",
+          "bulletinSubject": "CVE-2023-20593"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2023",
+          "description": "<p>2023</p>\n",
+          "dateCreated": "2022-03-22T17:54:52+0000",
+          "dateUpdated": "2022-03-22T17:54:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2023-003",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2023-003",
+        "dateCreated": "2023-06-14T23:41:50+0000",
+        "dateUpdated": "2023-06-15T00:02:02+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2023-06-14",
+          "bulletinId": "AWS-2023-003",
+          "bulletinDate": "14-jun-23",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2023-003/",
+          "bulletinSubject": "Issue with AWS Directory Service EnableRoleAccess"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2023",
+          "description": "<p>2023</p>\n",
+          "dateCreated": "2022-03-22T17:54:52+0000",
+          "dateUpdated": "2022-03-22T17:54:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2023-002",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2023-002",
+        "dateCreated": "2023-05-15T16:15:50+0000",
+        "dateUpdated": "2023-05-18T14:02:04+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2023-05-18",
+          "bulletinId": "AWS-2023-002",
+          "bulletinDate": "18-may-23",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2023-002/",
+          "bulletinSubject": "Reported GuardDuty Finding Issue"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2023",
+          "description": "<p>2023</p>\n",
+          "dateCreated": "2022-03-22T17:54:52+0000",
+          "dateUpdated": "2022-03-22T17:54:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2023-001",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2023-001",
+        "dateCreated": "2023-04-25T13:42:44+0000",
+        "dateUpdated": "2023-04-25T14:09:25+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2023-04-25",
+          "bulletinId": "AWS-2023-001",
+          "bulletinDate": "25-apr-23",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2023-001/",
+          "bulletinSubject": "Issue With IAM Supporting Multiple MFA Devices"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2023",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2023",
+          "description": "<p>2023</p>\n",
+          "dateCreated": "2022-03-22T17:54:52+0000",
+          "dateUpdated": "2022-03-22T17:54:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2022-010",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2022-010",
+        "dateCreated": "2022-12-09T19:33:42+0000",
+        "dateUpdated": "2022-12-13T14:00:56+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2022-12-13",
+          "bulletinId": "AWS-2022-010",
+          "bulletinDate": "13-Dec-22",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2022-010/",
+          "bulletinSubject": "Reported ECR Public Gallery Issue"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2022",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2022",
+          "description": "<p>2022</p>\n",
+          "dateCreated": "2022-03-22T17:54:33+0000",
+          "dateUpdated": "2022-03-22T17:54:33+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2022-009",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2022-009",
+        "dateCreated": "2022-11-18T17:01:34+0000",
+        "dateUpdated": "2022-11-21T15:03:55+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2022-11-21",
+          "bulletinId": "AWS-2022-009",
+          "bulletinDate": "21-Nov-22",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2022-009/",
+          "bulletinSubject": "Reported AWS AppSync Issue"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2022",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2022",
+          "description": "<p>2022</p>\n",
+          "dateCreated": "2022-03-22T17:54:33+0000",
+          "dateUpdated": "2022-03-22T17:54:33+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2022-008",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2022-008",
+        "dateCreated": "2022-11-01T16:32:18+0000",
+        "dateUpdated": "2022-11-01T16:56:59+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2022-11-01",
+          "bulletinId": "AWS-2022-008",
+          "bulletinDate": "1-Nov-22",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2022-008/",
+          "bulletinSubject": "OpenSSL Security Advisories - November 2022"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2022",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2022",
+          "description": "<p>2022</p>\n",
+          "dateCreated": "2022-03-22T17:54:33+0000",
+          "dateUpdated": "2022-03-22T17:54:33+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2022-007",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2022-007",
+        "dateCreated": "2022-07-11T17:17:35+0000",
+        "dateUpdated": "2022-07-11T17:22:11+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2022-07-11",
+          "bulletinId": "AWS-2022-007",
+          "bulletinDate": "11-Jul-22",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2022-007/",
+          "bulletinSubject": "Reported EKS IAM Authenticator Issue"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2022",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2022",
+          "description": "<p>2022</p>\n",
+          "dateCreated": "2022-03-22T17:54:33+0000",
+          "dateUpdated": "2022-03-22T17:54:33+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2022-006",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2022-006",
+        "dateCreated": "2022-04-19T17:47:01+0000",
+        "dateUpdated": "2022-04-19T21:34:32+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2022-04-19",
+          "bulletinId": "AWS-2022-006",
+          "bulletinDate": "19-Apr-22",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2022-006/",
+          "bulletinSubject": "Reported Apache Log4j Hotpatch Issues"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2022",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2022",
+          "description": "<p>2022</p>\n",
+          "dateCreated": "2022-03-22T17:54:33+0000",
+          "dateUpdated": "2022-03-22T17:54:33+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2022-005",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2022-005",
+        "dateCreated": "2022-04-12T22:20:49+0000",
+        "dateUpdated": "2022-04-13T21:15:17+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2022-04-12",
+          "bulletinId": "AWS-2022-005",
+          "bulletinDate": "12-Apr-22",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2022-005/",
+          "bulletinSubject": "Reported AWS Desktop VPN Client for Windows Issue"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2022",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2022",
+          "description": "<p>2022</p>\n",
+          "dateCreated": "2022-03-22T17:54:33+0000",
+          "dateUpdated": "2022-03-22T17:54:33+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2022-004",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2022-004",
+        "dateCreated": "2022-04-11T23:34:40+0000",
+        "dateUpdated": "2022-04-11T23:37:05+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2022-04-11",
+          "bulletinId": "AWS-2022-004",
+          "bulletinDate": "11-Apr-22",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2022-004/",
+          "bulletinSubject": "Reported Amazon RDS PostgreSQL issue"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2022",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2022",
+          "description": "<p>2022</p>\n",
+          "dateCreated": "2022-03-22T17:54:33+0000",
+          "dateUpdated": "2022-03-22T17:54:33+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2022-003",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2022-003",
+        "dateCreated": "2022-03-18T03:55:42+0000",
+        "dateUpdated": "2022-03-22T22:16:25+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2022-03-17",
+          "bulletinId": "AWS-2022-003",
+          "bulletinDate": "17-Mar-22",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2022-003/",
+          "bulletinSubject": "CVE-2022-0778 awareness"
+        }
+      },
+      "tags": [
+        {
+          "id": "GLOBAL#year#2022",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#year",
+          "name": "2022",
+          "description": "2022",
+          "dateCreated": "2020-06-13T00:06:59+0000",
+          "dateUpdated": "2020-06-13T00:07:00+0000"
+        },
+        {
+          "id": "security-bulletins#year#2022",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2022",
+          "description": "<p>2022</p>\n",
+          "dateCreated": "2022-03-22T17:54:33+0000",
+          "dateUpdated": "2022-03-22T17:54:33+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2022-002",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2022-002",
+        "dateCreated": "2022-01-13T21:42:26+0000",
+        "dateUpdated": "2022-03-22T22:17:11+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2022-01-13",
+          "bulletinId": "AWS-2022-002",
+          "bulletinDate": "13-Jan-22",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2022-002/",
+          "bulletinSubject": "Reported AWS Glue Issue"
+        }
+      },
+      "tags": [
+        {
+          "id": "GLOBAL#year#2022",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#year",
+          "name": "2022",
+          "description": "2022",
+          "dateCreated": "2020-06-13T00:06:59+0000",
+          "dateUpdated": "2020-06-13T00:07:00+0000"
+        },
+        {
+          "id": "security-bulletins#year#2022",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2022",
+          "description": "<p>2022</p>\n",
+          "dateCreated": "2022-03-22T17:54:33+0000",
+          "dateUpdated": "2022-03-22T17:54:33+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2022-001",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2022-001",
+        "dateCreated": "2022-01-13T21:20:31+0000",
+        "dateUpdated": "2022-03-22T22:17:51+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2022-01-13",
+          "bulletinId": "AWS-2022-001",
+          "bulletinDate": "13-Jan-22",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2022-001/",
+          "bulletinSubject": "Reported AWS CloudFormation Issue"
+        }
+      },
+      "tags": [
+        {
+          "id": "GLOBAL#year#2022",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#year",
+          "name": "2022",
+          "description": "2022",
+          "dateCreated": "2020-06-13T00:06:59+0000",
+          "dateUpdated": "2020-06-13T00:07:00+0000"
+        },
+        {
+          "id": "security-bulletins#year#2022",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2022",
+          "description": "<p>2022</p>\n",
+          "dateCreated": "2022-03-22T17:54:33+0000",
+          "dateUpdated": "2022-03-22T17:54:33+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2021-007",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2021-007",
+        "dateCreated": "2021-12-23T21:24:36+0000",
+        "dateUpdated": "2021-12-23T22:48:50+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2021-12-23",
+          "bulletinId": "AWS-2021-007",
+          "bulletinDate": "23-Dec-21",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2021-007/",
+          "bulletinSubject": "AWSSupportServiceRolePolicy Informational Update"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2021",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2021",
+          "description": "<p>2021</p>\r\n",
+          "dateCreated": "2020-12-30T14:15:59+0000",
+          "dateUpdated": "2020-12-30T14:15:59+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2021-006",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2021-006",
+        "dateCreated": "2021-12-12T03:43:44+0000",
+        "dateUpdated": "2021-12-12T03:47:40+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2021-12-11",
+          "bulletinId": "AWS-2021-006",
+          "bulletinDate": "11-Dec-21",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2021-006/",
+          "bulletinSubject": "Update for Apache Log4j2 Issue (CVE-2021-44228)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2021",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2021",
+          "description": "<p>2021</p>\r\n",
+          "dateCreated": "2020-12-30T14:15:59+0000",
+          "dateUpdated": "2020-12-30T14:15:59+0000"
+        },
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2021-005",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2021-005",
+        "dateCreated": "2021-12-11T03:06:06+0000",
+        "dateUpdated": "2021-12-11T03:08:58+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2021-12-10",
+          "bulletinId": "AWS-2021-005",
+          "bulletinDate": "21-Dec-10",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2021-005/",
+          "bulletinSubject": " Apache Log4j2 Issue (CVE-2021-44228)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2021",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2021",
+          "description": "<p>2021</p>\r\n",
+          "dateCreated": "2020-12-30T14:15:59+0000",
+          "dateUpdated": "2020-12-30T14:15:59+0000"
+        },
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2021-004",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2021-004",
+        "dateCreated": "2021-06-08T22:36:43+0000",
+        "dateUpdated": "2021-06-08T23:25:30+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2021-06-08",
+          "bulletinId": "AWS-2021-004",
+          "bulletinDate": "21-Jun-08",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2021-004/",
+          "bulletinSubject": "Xen Security Advisories (XSA-372, 373, 374, 375, and 377)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2021",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2021",
+          "description": "<p>2021</p>\r\n",
+          "dateCreated": "2020-12-30T14:15:59+0000",
+          "dateUpdated": "2020-12-30T14:15:59+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2021-003",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2021-003",
+        "dateCreated": "2021-06-08T21:25:37+0000",
+        "dateUpdated": "2021-06-08T21:29:40+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2021-06-08",
+          "bulletinId": "AWS-2021-003",
+          "bulletinDate": "21-Jun-08",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2021-003/",
+          "bulletinSubject": "runC Security Issue (CVE-2021-30465)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2021",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2021",
+          "description": "<p>2021</p>\r\n",
+          "dateCreated": "2020-12-30T14:15:59+0000",
+          "dateUpdated": "2020-12-30T14:15:59+0000"
+        },
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2021-002",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2021-002",
+        "dateCreated": "2021-04-26T17:59:22+0000",
+        "dateUpdated": "2021-04-26T18:04:45+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2021-04-26",
+          "bulletinId": "AWS-2021-002",
+          "bulletinDate": "26-April-21",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2021-002/",
+          "bulletinSubject": "Resolved: Application Load Balancer Session Ticket Issue"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2021",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2021",
+          "description": "<p>2021</p>\r\n",
+          "dateCreated": "2020-12-30T14:15:59+0000",
+          "dateUpdated": "2020-12-30T14:15:59+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2021-001",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2021-001",
+        "dateCreated": "2021-01-26T22:27:56+0000",
+        "dateUpdated": "2021-01-27T21:28:01+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2021-01-27",
+          "bulletinId": "AWS-2021-001",
+          "bulletinDate": "21-Jan-27",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2021-001",
+          "bulletinSubject": "Sudo Security Issue (CVE-2021-3156)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2021",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2021",
+          "description": "<p>2021</p>\r\n",
+          "dateCreated": "2020-12-30T14:15:59+0000",
+          "dateUpdated": "2020-12-30T14:15:59+0000"
+        },
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2020-005",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2020-005",
+        "dateCreated": "2020-10-24T00:12:26+0000",
+        "dateUpdated": "2020-10-24T00:22:42+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2020-10-23",
+          "bulletinId": "AWS-2020-005",
+          "bulletinDate": "23-10-20",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2020-005/",
+          "bulletinSubject": "Xen Security Advisory (XSA-286)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2020",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2020",
+          "description": "<p>2020</p>\r\n",
+          "dateCreated": "2019-11-18T20:42:37+0000",
+          "dateUpdated": "2019-11-18T20:42:37+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2020-004",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2020-004",
+        "dateCreated": "2020-09-22T16:26:35+0000",
+        "dateUpdated": "2020-09-22T16:32:31+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2020-09-22",
+          "bulletinId": "AWS-2020-004",
+          "bulletinDate": "22-Sep-20",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2020-004/",
+          "bulletinSubject": "Xen Security Advisory 337 (XSA-337) (CVE-2020-25595)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2020",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2020",
+          "description": "<p>2020</p>\r\n",
+          "dateCreated": "2019-11-18T20:42:37+0000",
+          "dateUpdated": "2019-11-18T20:42:37+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2020-003",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2020-003",
+        "dateCreated": "2020-09-22T16:17:04+0000",
+        "dateUpdated": "2020-09-22T16:20:30+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2020-09-22",
+          "bulletinId": "AWS-2020-003",
+          "bulletinDate": "22-Sep-20",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2020-003/",
+          "bulletinSubject": "Xen Security Advisory 336 (XSA-336) (CVE-2020-25604)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2020",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2020",
+          "description": "<p>2020</p>\r\n",
+          "dateCreated": "2019-11-18T20:42:37+0000",
+          "dateUpdated": "2019-11-18T20:42:37+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2020-002v2",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2020-002v2",
+        "dateCreated": "2020-07-10T04:08:21+0000",
+        "dateUpdated": "2020-07-10T04:11:20+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2020-07-09",
+          "bulletinId": "AWS-2020-002v2",
+          "bulletinDate": "09-July-20",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2020-002/",
+          "bulletinSubject": "Container Networking Security Issue (CVE-2020-8558)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2020",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2020",
+          "description": "<p>2020</p>\r\n",
+          "dateCreated": "2019-11-18T20:42:37+0000",
+          "dateUpdated": "2019-11-18T20:42:37+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2020-001",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2020-001",
+        "dateCreated": "2020-03-31T18:35:21+0000",
+        "dateUpdated": "2020-03-31T18:37:51+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2020-03-31",
+          "bulletinId": "AWS-2020-001",
+          "bulletinDate": "31-Mar-20",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2020-001/",
+          "bulletinSubject": "Minimum Version of TLS 1.2 Required for FIPS Endpoints by March 31, 2021"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2020",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2020",
+          "description": "<p>2020</p>\r\n",
+          "dateCreated": "2019-11-18T20:42:37+0000",
+          "dateUpdated": "2019-11-18T20:42:37+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2019-007",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2019-007",
+        "dateCreated": "2019-09-12T05:55:36+0000",
+        "dateUpdated": "2019-10-10T03:22:38+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2019-08-15",
+          "bulletinId": "AWS-2019-007",
+          "bulletinDate": "15-Aug-19",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2019-007/",
+          "bulletinSubject": "Kubernetes Security Issue (CVE-2019-11249)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2019",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2019",
+          "description": "<p>2019</p>\r\n",
+          "dateCreated": "2019-09-26T19:30:35+0000",
+          "dateUpdated": "2019-09-26T19:30:35+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2019-006",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2019-006",
+        "dateCreated": "2019-09-26T19:12:01+0000",
+        "dateUpdated": "2019-10-10T03:22:36+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2019-07-02",
+          "bulletinId": "AWS-2019-006",
+          "bulletinDate": "2-Jul-19",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2019-006/",
+          "bulletinSubject": "Kubernetes Security Issue (CVE-2019-11246)\u00a0"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2019",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2019",
+          "description": "<p>2019</p>\r\n",
+          "dateCreated": "2019-09-26T19:30:35+0000",
+          "dateUpdated": "2019-09-26T19:30:35+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2019-005",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2019-005",
+        "dateCreated": "2019-09-26T19:12:03+0000",
+        "dateUpdated": "2019-10-10T03:22:33+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2019-06-17",
+          "bulletinId": "AWS-2019-005",
+          "bulletinDate": "17-Jun-19",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2019-005/",
+          "bulletinSubject": "Linux Kernel TCP SACK Denial of Service Issues"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2019",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2019",
+          "description": "<p>2019</p>\r\n",
+          "dateCreated": "2019-09-26T19:30:35+0000",
+          "dateUpdated": "2019-09-26T19:30:35+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2019-004",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2019-004",
+        "dateCreated": "2019-09-26T19:12:05+0000",
+        "dateUpdated": "2019-10-10T03:22:31+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2019-05-14",
+          "bulletinId": "AWS-2019-004",
+          "bulletinDate": "14-May-19",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2019-004/",
+          "bulletinSubject": "Intel Quarterly Security Release 2019.1 (CVE-2018-12126, CVE-2018-12127, CVE-2018-12130)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2019",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2019",
+          "description": "<p>2019</p>\r\n",
+          "dateCreated": "2019-09-26T19:30:35+0000",
+          "dateUpdated": "2019-09-26T19:30:35+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2019-003",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2019-003",
+        "dateCreated": "2019-09-26T19:12:06+0000",
+        "dateUpdated": "2019-10-10T03:22:29+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2019-03-28",
+          "bulletinId": "AWS-2019-003",
+          "bulletinDate": "28-Mar-19",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2019-003/",
+          "bulletinSubject": "Kubernetes Security Issues (CVE-2019-1002101 and CVE-2019-9946)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2019",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2019",
+          "description": "<p>2019</p>\r\n",
+          "dateCreated": "2019-09-26T19:30:35+0000",
+          "dateUpdated": "2019-09-26T19:30:35+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2019-002",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2019-002",
+        "dateCreated": "2019-09-26T19:12:08+0000",
+        "dateUpdated": "2019-10-10T03:22:27+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2019-02-11",
+          "bulletinId": "AWS-2019-002",
+          "bulletinDate": "11-Feb-19",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2019-002/",
+          "bulletinSubject": "Container Security Issue (CVE-2019-5736)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2019",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2019",
+          "description": "<p>2019</p>\r\n",
+          "dateCreated": "2019-09-26T19:30:35+0000",
+          "dateUpdated": "2019-09-26T19:30:35+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2019-001",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2019-001",
+        "dateCreated": "2019-09-26T19:12:10+0000",
+        "dateUpdated": "2019-10-10T03:22:25+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2019-01-04",
+          "bulletinId": "AWS-2019-001",
+          "bulletinDate": "4-Jan-19",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2019-001/",
+          "bulletinSubject": "Kubernetes Security Issues (CVE-2018-18264 and kubectl proxy)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2019",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2019",
+          "description": "<p>2019</p>\r\n",
+          "dateCreated": "2019-09-26T19:30:35+0000",
+          "dateUpdated": "2019-09-26T19:30:35+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2018-020",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2018-020",
+        "dateCreated": "2019-09-26T19:12:11+0000",
+        "dateUpdated": "2019-10-10T03:22:22+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2018-12-04",
+          "bulletinId": "AWS-2018-020",
+          "bulletinDate": "4-Dec-18",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2018-020/",
+          "bulletinSubject": "Kubernetes Security Issue (CVE-2018-1002105)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2018",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2018",
+          "description": "<p>2018</p>\r\n",
+          "dateCreated": "2019-09-26T19:31:08+0000",
+          "dateUpdated": "2019-09-26T19:31:08+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2018-019",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2018-019",
+        "dateCreated": "2019-09-26T19:12:13+0000",
+        "dateUpdated": "2019-10-10T03:22:20+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2018-08-14",
+          "bulletinId": "AWS-2018-019",
+          "bulletinDate": "14-Aug-18",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2018-019/",
+          "bulletinSubject": "L1 Terminal Fault Speculative Execution Issue"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2018",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2018",
+          "description": "<p>2018</p>\r\n",
+          "dateCreated": "2019-09-26T19:31:08+0000",
+          "dateUpdated": "2019-09-26T19:31:08+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2018-018",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2018-018",
+        "dateCreated": "2019-09-26T19:12:15+0000",
+        "dateUpdated": "2019-10-10T03:22:18+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2018-08-06",
+          "bulletinId": "AWS-2018-018",
+          "bulletinDate": "6-Aug-18",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2018-018/",
+          "bulletinSubject": "Linux Kernel Updates to address SegmentSmack & FragmentSmack"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2018",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2018",
+          "description": "<p>2018</p>\r\n",
+          "dateCreated": "2019-09-26T19:31:08+0000",
+          "dateUpdated": "2019-09-26T19:31:08+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2018-017",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2018-017",
+        "dateCreated": "2019-09-26T19:12:16+0000",
+        "dateUpdated": "2019-10-10T03:22:16+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2018-06-13",
+          "bulletinId": "AWS-2018-017",
+          "bulletinDate": "13-Jun-18",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2018-017/",
+          "bulletinSubject": "Xen Security Advisory 267"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2018",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2018",
+          "description": "<p>2018</p>\r\n",
+          "dateCreated": "2019-09-26T19:31:08+0000",
+          "dateUpdated": "2019-09-26T19:31:08+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2018-016",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2018-016",
+        "dateCreated": "2019-09-26T19:12:18+0000",
+        "dateUpdated": "2019-10-10T03:22:13+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2018-06-13",
+          "bulletinId": "AWS-2018-016",
+          "bulletinDate": "13-Jun-18",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2018-016/",
+          "bulletinSubject": "Redis Security Advisory"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2018",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2018",
+          "description": "<p>2018</p>\r\n",
+          "dateCreated": "2019-09-26T19:31:08+0000",
+          "dateUpdated": "2019-09-26T19:31:08+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2018-015",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2018-015",
+        "dateCreated": "2019-09-26T19:12:20+0000",
+        "dateUpdated": "2019-10-10T03:22:11+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2018-05-21",
+          "bulletinId": "AWS-2018-015",
+          "bulletinDate": "21-May-18",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2018-015/",
+          "bulletinSubject": "Additional Processor Speculative Execution Research Disclosures"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2018",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2018",
+          "description": "<p>2018</p>\r\n",
+          "dateCreated": "2019-09-26T19:31:08+0000",
+          "dateUpdated": "2019-09-26T19:31:08+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2018-014",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2018-014",
+        "dateCreated": "2019-09-26T19:12:21+0000",
+        "dateUpdated": "2019-10-10T03:22:09+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2018-05-08",
+          "bulletinId": "AWS-2018-014",
+          "bulletinDate": "8-May-18",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2018-014/",
+          "bulletinSubject": "Xen Security Advisories 260-262 (XSA-260, XSA-261, XSA-262)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2018",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2018",
+          "description": "<p>2018</p>\r\n",
+          "dateCreated": "2019-09-26T19:31:08+0000",
+          "dateUpdated": "2019-09-26T19:31:08+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2018-013",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2018-013",
+        "dateCreated": "2019-09-26T19:12:23+0000",
+        "dateUpdated": "2019-10-10T03:22:07+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2018-01-03",
+          "bulletinId": "AWS-2018-013",
+          "bulletinDate": "3-Jan-18",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2018-013/",
+          "bulletinSubject": "Processor Speculative Execution Research Disclosure"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2018",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2018",
+          "description": "<p>2018</p>\r\n",
+          "dateCreated": "2019-09-26T19:31:08+0000",
+          "dateUpdated": "2019-09-26T19:31:08+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2017-012",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2017-012",
+        "dateCreated": "2019-09-26T19:12:24+0000",
+        "dateUpdated": "2019-10-10T03:22:04+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2017-12-15",
+          "bulletinId": "AWS-2017-012",
+          "bulletinDate": "15-Dec-17",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2017-012/",
+          "bulletinSubject": "ROBOT TLS security issue"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2017",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2017",
+          "description": "<p>2017</p>\r\n",
+          "dateCreated": "2019-10-09T04:03:54+0000",
+          "dateUpdated": "2019-10-09T04:03:54+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2017-011",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2017-011",
+        "dateCreated": "2019-09-26T19:12:26+0000",
+        "dateUpdated": "2019-10-10T03:22:02+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2017-10-12",
+          "bulletinId": "AWS-2017-011",
+          "bulletinDate": "12-Oct-17",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2017-011/",
+          "bulletinSubject": "Xen Security Advisories - October 2017"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2017",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2017",
+          "description": "<p>2017</p>\r\n",
+          "dateCreated": "2019-10-09T04:03:54+0000",
+          "dateUpdated": "2019-10-09T04:03:54+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2017-010",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2017-010",
+        "dateCreated": "2019-09-26T19:12:28+0000",
+        "dateUpdated": "2019-10-10T03:22:00+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2017-09-12",
+          "bulletinId": "AWS-2017-010",
+          "bulletinDate": "12-Sep-17",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2017-010/",
+          "bulletinSubject": "Xen Security Advisories -\u00a0September 2017"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2017",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2017",
+          "description": "<p>2017</p>\r\n",
+          "dateCreated": "2019-10-09T04:03:54+0000",
+          "dateUpdated": "2019-10-09T04:03:54+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2017-009",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2017-009",
+        "dateCreated": "2019-09-26T19:12:30+0000",
+        "dateUpdated": "2019-10-10T03:21:58+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2017-08-15",
+          "bulletinId": "AWS-2017-009",
+          "bulletinDate": "15-Aug-17",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2017-009/",
+          "bulletinSubject": "Xen Security Advisories - August 2017"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2017",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2017",
+          "description": "<p>2017</p>\r\n",
+          "dateCreated": "2019-10-09T04:03:54+0000",
+          "dateUpdated": "2019-10-09T04:03:54+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2017-008",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2017-008",
+        "dateCreated": "2019-09-26T19:12:31+0000",
+        "dateUpdated": "2019-10-10T03:21:56+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2017-06-20",
+          "bulletinId": "AWS-2017-008",
+          "bulletinDate": "20-Jun-17",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2017-008/",
+          "bulletinSubject": "Xen Security Advisories - June 2017"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2017",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2017",
+          "description": "<p>2017</p>\r\n",
+          "dateCreated": "2019-10-09T04:03:54+0000",
+          "dateUpdated": "2019-10-09T04:03:54+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2017-007",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2017-007",
+        "dateCreated": "2019-09-26T19:12:33+0000",
+        "dateUpdated": "2019-10-10T03:21:53+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2017-06-19",
+          "bulletinId": "AWS-2017-007",
+          "bulletinDate": "19-Jun-17",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2017-007/",
+          "bulletinSubject": "Linux Security Advisories - June 2017"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2017",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2017",
+          "description": "<p>2017</p>\r\n",
+          "dateCreated": "2019-10-09T04:03:54+0000",
+          "dateUpdated": "2019-10-09T04:03:54+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2017-006",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2017-006",
+        "dateCreated": "2019-09-26T19:12:35+0000",
+        "dateUpdated": "2019-10-10T03:21:51+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2017-05-17",
+          "bulletinId": "AWS-2017-006",
+          "bulletinDate": "17-May-17",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2017-006/",
+          "bulletinSubject": "Microsoft Security Bulletin MS17-010 Advisory"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2017",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2017",
+          "description": "<p>2017</p>\r\n",
+          "dateCreated": "2019-10-09T04:03:54+0000",
+          "dateUpdated": "2019-10-09T04:03:54+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2017-005",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2017-005",
+        "dateCreated": "2019-09-26T19:12:36+0000",
+        "dateUpdated": "2019-10-10T03:21:49+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2017-05-02",
+          "bulletinId": "AWS-2017-005",
+          "bulletinDate": "2-May-17",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2017-005/",
+          "bulletinSubject": "Xen Security Advisories - May 2017"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2017",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2017",
+          "description": "<p>2017</p>\r\n",
+          "dateCreated": "2019-10-09T04:03:54+0000",
+          "dateUpdated": "2019-10-09T04:03:54+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2017-004",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2017-004",
+        "dateCreated": "2019-09-26T19:12:38+0000",
+        "dateUpdated": "2019-10-10T03:21:47+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2017-04-04",
+          "bulletinId": "AWS-2017-004",
+          "bulletinDate": "4-Apr-17",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2017-004/",
+          "bulletinSubject": "Xen Security Advisory 212 (XSA-212)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2017",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2017",
+          "description": "<p>2017</p>\r\n",
+          "dateCreated": "2019-10-09T04:03:54+0000",
+          "dateUpdated": "2019-10-09T04:03:54+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2017-003",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2017-003",
+        "dateCreated": "2019-09-26T19:12:40+0000",
+        "dateUpdated": "2019-10-10T03:21:44+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2017-03-14",
+          "bulletinId": "AWS-2017-003",
+          "bulletinDate": "14-Mar-17",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2017-003/",
+          "bulletinSubject": "Xen Security Advisory 211 (XSA-211)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2017",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2017",
+          "description": "<p>2017</p>\r\n",
+          "dateCreated": "2019-10-09T04:03:54+0000",
+          "dateUpdated": "2019-10-09T04:03:54+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2017-002",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2017-002",
+        "dateCreated": "2019-09-26T19:12:41+0000",
+        "dateUpdated": "2019-10-10T03:21:42+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2017-02-21",
+          "bulletinId": "AWS-2017-002",
+          "bulletinDate": "21-Feb-17",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2017-002/",
+          "bulletinSubject": "Xen Security Advisory 209 (XSA-209)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2017",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2017",
+          "description": "<p>2017</p>\r\n",
+          "dateCreated": "2019-10-09T04:03:54+0000",
+          "dateUpdated": "2019-10-09T04:03:54+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2017-001",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2017-001",
+        "dateCreated": "2019-09-26T19:12:43+0000",
+        "dateUpdated": "2019-10-10T03:21:40+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2017-02-10",
+          "bulletinId": "AWS-2017-001",
+          "bulletinDate": "10-Feb-17",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2017-001/",
+          "bulletinSubject": "Xen Security Advisory 208 (XSA-208)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2017",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2017",
+          "description": "<p>2017</p>\r\n",
+          "dateCreated": "2019-10-09T04:03:54+0000",
+          "dateUpdated": "2019-10-09T04:03:54+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2016-012",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2016-012",
+        "dateCreated": "2019-10-09T04:07:50+0000",
+        "dateUpdated": "2019-10-10T03:21:38+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2016-12-13",
+          "bulletinId": "AWS-2016-012",
+          "bulletinDate": "13-Dec-16",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/xen-security-advisory-200/",
+          "bulletinSubject": "Xen Security Advisory 200 (XSA-200)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2016",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2016",
+          "description": "<p>2016</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:06+0000",
+          "dateUpdated": "2019-10-09T04:04:06+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2016-011",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2016-011",
+        "dateCreated": "2019-10-09T04:07:53+0000",
+        "dateUpdated": "2019-10-10T03:21:36+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2016-11-22",
+          "bulletinId": "AWS-2016-011",
+          "bulletinDate": "22-Nov-16",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/xen-security-advisories-november-2016/",
+          "bulletinSubject": "Xen Security Advisories - November 2016"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2016",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2016",
+          "description": "<p>2016</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:06+0000",
+          "dateUpdated": "2019-10-09T04:04:06+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2016-010",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2016-010",
+        "dateCreated": "2019-10-09T04:07:57+0000",
+        "dateUpdated": "2019-10-10T03:21:33+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2016-11-11",
+          "bulletinId": "AWS-2016-010",
+          "bulletinDate": "11-Nov-16",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/amazon-rds-security-advisory-cve-2016-6663-cve-2016-6664/",
+          "bulletinSubject": "Amazon RDS Security Advisory (CVE-2016-6663 and CVE-2016-6664)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2016",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2016",
+          "description": "<p>2016</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:06+0000",
+          "dateUpdated": "2019-10-09T04:04:06+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2016-009",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2016-009",
+        "dateCreated": "2019-10-09T04:07:59+0000",
+        "dateUpdated": "2019-10-10T03:21:31+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2016-09-13",
+          "bulletinId": "AWS-2016-009",
+          "bulletinDate": "13-Sep-16",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/amazon-rds-mysql-security-advisory-cve-2016-6662/",
+          "bulletinSubject": "Amazon RDS - MySQL Security Advisory (CVE-2016-6662)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2016",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2016",
+          "description": "<p>2016</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:06+0000",
+          "dateUpdated": "2019-10-09T04:04:06+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2016-008",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2016-008",
+        "dateCreated": "2019-10-09T04:08:02+0000",
+        "dateUpdated": "2019-10-10T03:21:29+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2016-09-08",
+          "bulletinId": "AWS-2016-008",
+          "bulletinDate": "8-Sep-16",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/xen-security-advisories-september-2016/",
+          "bulletinSubject": "Xen Security Advisories - September 2016"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2016",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2016",
+          "description": "<p>2016</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:06+0000",
+          "dateUpdated": "2019-10-09T04:04:06+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2016-007",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2016-007",
+        "dateCreated": "2019-10-09T04:08:05+0000",
+        "dateUpdated": "2019-10-10T03:21:27+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2016-07-26",
+          "bulletinId": "AWS-2016-007",
+          "bulletinDate": "26-Jul-16",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/xsa-security-advisory-xsa-182/",
+          "bulletinSubject": "XSA Security Advisory (XSA-182)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2016",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2016",
+          "description": "<p>2016</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:06+0000",
+          "dateUpdated": "2019-10-09T04:04:06+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2016-006",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2016-006",
+        "dateCreated": "2019-10-09T04:08:08+0000",
+        "dateUpdated": "2019-10-10T03:21:24+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2016-05-09",
+          "bulletinId": "AWS-2016-006",
+          "bulletinDate": "9-May-16",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/xsa-security-advisory-xsa-179/",
+          "bulletinSubject": "XSA Security Advisory (XSA-179)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2016",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2016",
+          "description": "<p>2016</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:06+0000",
+          "dateUpdated": "2019-10-09T04:04:06+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2016-005",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2016-005",
+        "dateCreated": "2019-10-09T04:08:11+0000",
+        "dateUpdated": "2019-10-10T03:21:22+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2016-05-03",
+          "bulletinId": "AWS-2016-005",
+          "bulletinDate": "3-May-16",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/openssl-security-advisory-may-2016/",
+          "bulletinSubject": "OpenSSL Security Advisory - May 2016"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2016",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2016",
+          "description": "<p>2016</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:06+0000",
+          "dateUpdated": "2019-10-09T04:04:06+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2016-004",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2016-004",
+        "dateCreated": "2019-10-09T04:08:14+0000",
+        "dateUpdated": "2019-10-10T03:21:20+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2016-04-12",
+          "bulletinId": "AWS-2016-004",
+          "bulletinDate": "12-Apr-16",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/microsoft-and-samba-security-advisories---april-2016/",
+          "bulletinSubject": "Microsoft and Samba Security Advisories"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2016",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2016",
+          "description": "<p>2016</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:06+0000",
+          "dateUpdated": "2019-10-09T04:04:06+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2016-003",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2016-003",
+        "dateCreated": "2019-10-09T04:08:17+0000",
+        "dateUpdated": "2019-10-10T03:21:18+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2016-03-09",
+          "bulletinId": "AWS-2016-003",
+          "bulletinDate": "9-Mar-16",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/isc-bind-security-advisory---march/",
+          "bulletinSubject": "ISC BIND Security Advisory - March 2016"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2016",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2016",
+          "description": "<p>2016</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:06+0000",
+          "dateUpdated": "2019-10-09T04:04:06+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2016-002",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2016-002",
+        "dateCreated": "2019-10-09T04:08:20+0000",
+        "dateUpdated": "2019-10-10T03:21:15+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2016-03-01",
+          "bulletinId": "AWS-2016-002",
+          "bulletinDate": "1-Mar-16",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/cve-2016-0800-advisory/",
+          "bulletinSubject": "CVE-2016-0800 Advisory"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2016",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2016",
+          "description": "<p>2016</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:06+0000",
+          "dateUpdated": "2019-10-09T04:04:06+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2016-001",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2016-001",
+        "dateCreated": "2019-10-09T04:08:23+0000",
+        "dateUpdated": "2019-10-10T03:21:13+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2016-02-16",
+          "bulletinId": "AWS-2016-001",
+          "bulletinDate": "16-Feb-16",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/cve-2015-7547-advisory/",
+          "bulletinSubject": "CVE-2015-7547 Advisory"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2016",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2016",
+          "description": "<p>2016</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:06+0000",
+          "dateUpdated": "2019-10-09T04:04:06+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2015-019",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2015-019",
+        "dateCreated": "2019-10-09T04:08:26+0000",
+        "dateUpdated": "2019-10-10T03:21:11+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2015-12-24",
+          "bulletinId": "AWS-2015-019",
+          "bulletinDate": "24-Dec-15",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/juniper-security-advisory-december15/",
+          "bulletinSubject": "Juniper Security Advisory"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2015",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2015",
+          "description": "<p>2015</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:23+0000",
+          "dateUpdated": "2019-10-09T04:04:23+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2015-018",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2015-018",
+        "dateCreated": "2019-10-09T04:08:29+0000",
+        "dateUpdated": "2019-10-10T03:21:09+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2015-12-16",
+          "bulletinId": "AWS-2015-018",
+          "bulletinDate": "16-Dec-15",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/XSAsecurityadvisories-December/",
+          "bulletinSubject": "XSA Security Advisories"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2015",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2015",
+          "description": "<p>2015</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:23+0000",
+          "dateUpdated": "2019-10-09T04:04:23+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2015-017",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2015-017",
+        "dateCreated": "2019-10-09T04:08:32+0000",
+        "dateUpdated": "2019-10-10T03:21:06+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2015-10-29",
+          "bulletinId": "AWS-2015-017",
+          "bulletinDate": "29-Oct-15",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/XSAsecurityadvisories-October/",
+          "bulletinSubject": "XSA Security Advisories"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2015",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2015",
+          "description": "<p>2015</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:23+0000",
+          "dateUpdated": "2019-10-09T04:04:23+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2015-016",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2015-016",
+        "dateCreated": "2019-10-09T04:08:35+0000",
+        "dateUpdated": "2019-10-10T03:21:04+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2015-09-02",
+          "bulletinId": "AWS-2015-016",
+          "bulletinDate": "2-Sep-15",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/isc-bind-security-advisory---september-2015/",
+          "bulletinSubject": "ISC BIND Security Advisory - September 2015"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2015",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2015",
+          "description": "<p>2015</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:23+0000",
+          "dateUpdated": "2019-10-09T04:04:23+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2015-015",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2015-015",
+        "dateCreated": "2019-10-09T04:08:38+0000",
+        "dateUpdated": "2019-10-10T03:21:02+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2015-08-19",
+          "bulletinId": "AWS-2015-015",
+          "bulletinDate": "19-Aug-15",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/ms15-093-advisory/",
+          "bulletinSubject": "MS15-093 Advisory"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2015",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2015",
+          "description": "<p>2015</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:23+0000",
+          "dateUpdated": "2019-10-09T04:04:23+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2015-014",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2015-014",
+        "dateCreated": "2019-10-09T04:08:41+0000",
+        "dateUpdated": "2019-10-10T03:20:59+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2015-07-28",
+          "bulletinId": "AWS-2015-014",
+          "bulletinDate": "28-Jul-15",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/android-security-advisory/",
+          "bulletinSubject": "Android Security Advisory"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2015",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2015",
+          "description": "<p>2015</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:23+0000",
+          "dateUpdated": "2019-10-09T04:04:23+0000"
+        },
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2015-013",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2015-013",
+        "dateCreated": "2019-10-09T04:08:44+0000",
+        "dateUpdated": "2019-10-10T03:20:57+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2015-07-28",
+          "bulletinId": "AWS-2015-013",
+          "bulletinDate": "28-Jul-15",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/isc-bind-security-advisory--cve-2015-5477--/",
+          "bulletinSubject": "ISC BIND Security Advisory (CVE-2015-5477)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2015",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2015",
+          "description": "<p>2015</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:23+0000",
+          "dateUpdated": "2019-10-09T04:04:23+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2015-012",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2015-012",
+        "dateCreated": "2019-10-09T04:08:47+0000",
+        "dateUpdated": "2019-10-10T03:20:55+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2015-07-27",
+          "bulletinId": "AWS-2015-012",
+          "bulletinDate": "27-Jul-15",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/xsa-security-advisory-cve-2015-5154/",
+          "bulletinSubject": "XSA Security Advisory CVE-2015-5154"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2015",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2015",
+          "description": "<p>2015</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:23+0000",
+          "dateUpdated": "2019-10-09T04:04:23+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2015-011",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2015-011",
+        "dateCreated": "2019-10-09T04:08:49+0000",
+        "dateUpdated": "2019-10-10T03:20:53+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2015-07-20",
+          "bulletinId": "AWS-2015-011",
+          "bulletinDate": "20-Jul-15",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/ms15-078-advisory/",
+          "bulletinSubject": "MS15-078 Advisory"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2015",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2015",
+          "description": "<p>2015</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:23+0000",
+          "dateUpdated": "2019-10-09T04:04:23+0000"
+        },
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2015-010",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2015-010",
+        "dateCreated": "2019-10-09T04:08:53+0000",
+        "dateUpdated": "2019-10-10T03:20:50+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2015-07-09",
+          "bulletinId": "AWS-2015-010",
+          "bulletinDate": "9-Jul-15",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/openssl-security-advisory---july-2015/",
+          "bulletinSubject": "OpenSSL Security Advisory - July 2015"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2015",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2015",
+          "description": "<p>2015</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:23+0000",
+          "dateUpdated": "2019-10-09T04:04:23+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2015-009",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2015-009",
+        "dateCreated": "2019-10-09T04:08:56+0000",
+        "dateUpdated": "2019-10-10T03:20:48+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2015-06-29",
+          "bulletinId": "AWS-2015-009",
+          "bulletinDate": "29-Jun-15",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/update-on-aws-switch-to-sha256-for-ssl-certificates/",
+          "bulletinSubject": "Update on AWS's Switch to SHA256 for SSL Certificates"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2015",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2015",
+          "description": "<p>2015</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:23+0000",
+          "dateUpdated": "2019-10-09T04:04:23+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2015-008",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2015-008",
+        "dateCreated": "2019-10-09T04:08:59+0000",
+        "dateUpdated": "2019-10-10T03:20:46+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2015-05-13",
+          "bulletinId": "AWS-2015-008",
+          "bulletinDate": "13-May-15",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/aws-to-switch-to-sha256-hash-algorithm-for-ssl-certificates/",
+          "bulletinSubject": "AWS to Switch to SHA256 Hash Algorithm for SSL Certificates"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2015",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2015",
+          "description": "<p>2015</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:23+0000",
+          "dateUpdated": "2019-10-09T04:04:23+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2015-007",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2015-007",
+        "dateCreated": "2019-10-09T04:09:02+0000",
+        "dateUpdated": "2019-10-10T03:20:44+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2015-05-12",
+          "bulletinId": "AWS-2015-007",
+          "bulletinDate": "12-May-15",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/XSA_Security_Advisory_CVE_2015_3456/",
+          "bulletinSubject": "XSA Security Advisory CVE-2015-3456 \"VENOM\""
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2015",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2015",
+          "description": "<p>2015</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:23+0000",
+          "dateUpdated": "2019-10-09T04:04:23+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2015-006",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2015-006",
+        "dateCreated": "2019-10-09T04:09:05+0000",
+        "dateUpdated": "2019-10-10T03:20:41+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2015-03-19",
+          "bulletinId": "AWS-2015-006",
+          "bulletinDate": "19-Mar-15",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/openssl-security-advisory---march-2015/",
+          "bulletinSubject": "OpenSSL Security Advisory - March 2015"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2015",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2015",
+          "description": "<p>2015</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:23+0000",
+          "dateUpdated": "2019-10-09T04:04:23+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2015-005",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2015-005",
+        "dateCreated": "2019-10-09T04:09:08+0000",
+        "dateUpdated": "2019-10-10T03:20:39+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2015-03-10",
+          "bulletinId": "AWS-2015-005",
+          "bulletinDate": "10-Mar-15",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/XSASecurityAdvisories-march/",
+          "bulletinSubject": "XSA Security Advisories"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2015",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2015",
+          "description": "<p>2015</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:23+0000",
+          "dateUpdated": "2019-10-09T04:04:23+0000"
+        },
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2015-004",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2015-004",
+        "dateCreated": "2019-10-09T04:09:10+0000",
+        "dateUpdated": "2019-10-10T03:20:37+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2015-03-03",
+          "bulletinId": "AWS-2015-004",
+          "bulletinDate": "3-Mar-15",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/ssl-issue--freak-attack-/",
+          "bulletinSubject": "SSL Issue \"FREAK Attack\""
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2015",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2015",
+          "description": "<p>2015</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:23+0000",
+          "dateUpdated": "2019-10-09T04:04:23+0000"
+        },
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2015-003",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2015-003",
+        "dateCreated": "2019-10-09T04:09:13+0000",
+        "dateUpdated": "2019-10-10T03:20:35+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2015-01-27",
+          "bulletinId": "AWS-2015-003",
+          "bulletinDate": "27-Jan-15",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/cve-2015-0235-advisory--ghost-/",
+          "bulletinSubject": "CVE-2015-0235 Advisory (Ghost)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2015",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2015",
+          "description": "<p>2015</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:23+0000",
+          "dateUpdated": "2019-10-09T04:04:23+0000"
+        },
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2015-002",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2015-002",
+        "dateCreated": "2019-10-09T04:09:16+0000",
+        "dateUpdated": "2019-10-10T03:20:32+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2015-01-20",
+          "bulletinId": "AWS-2015-002",
+          "bulletinDate": "20-Jan-15",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/oracle-critical-patch--january-2015-/",
+          "bulletinSubject": "Oracle Critical Patch (January 2015)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2015",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2015",
+          "description": "<p>2015</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:23+0000",
+          "dateUpdated": "2019-10-09T04:04:23+0000"
+        },
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2015-001",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2015-001",
+        "dateCreated": "2019-10-09T04:09:19+0000",
+        "dateUpdated": "2019-10-10T03:20:30+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2015-01-08",
+          "bulletinId": "AWS-2015-001",
+          "bulletinDate": "8-Jan-15",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/openssl-security-advisory--january--/",
+          "bulletinSubject": "OpenSSL Security Advisory (January)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2015",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2015",
+          "description": "<p>2015</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:23+0000",
+          "dateUpdated": "2019-10-09T04:04:23+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2014-012",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2014-012",
+        "dateCreated": "2019-10-09T04:09:22+0000",
+        "dateUpdated": "2019-10-10T03:20:28+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2014-11-24",
+          "bulletinId": "AWS-2014-012",
+          "bulletinDate": "24-Nov-14",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/cve-2014-2478/",
+          "bulletinSubject": "Amazon RDS - Oracle Security Advisory"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2014",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2014",
+          "description": "<p>2014</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:37+0000",
+          "dateUpdated": "2019-10-09T04:04:37+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2014-011",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2014-011",
+        "dateCreated": "2019-10-09T04:09:25+0000",
+        "dateUpdated": "2019-10-10T03:20:26+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2014-11-11",
+          "bulletinId": "AWS-2014-011",
+          "bulletinDate": "11-Nov-14",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/ms14-066-advisory/",
+          "bulletinSubject": "MS14-066 Advisory"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2014",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2014",
+          "description": "<p>2014</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:37+0000",
+          "dateUpdated": "2019-10-09T04:04:37+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2014-010",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2014-010",
+        "dateCreated": "2019-10-09T04:09:28+0000",
+        "dateUpdated": "2019-10-10T03:20:23+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2014-10-17",
+          "bulletinId": "AWS-2014-010",
+          "bulletinDate": "17-Oct-14",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/mysql-5-5-and-5-6-security-advisory/",
+          "bulletinSubject": "Amazon RDS \u2013 MySQL Security Advisory"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2014",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2014",
+          "description": "<p>2014</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:37+0000",
+          "dateUpdated": "2019-10-09T04:04:37+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2014-009",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2014-009",
+        "dateCreated": "2019-10-09T04:09:31+0000",
+        "dateUpdated": "2019-10-10T03:20:21+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2014-10-14",
+          "bulletinId": "AWS-2014-009",
+          "bulletinDate": "14-Oct-14",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/CVE-2014-3566-advisory/",
+          "bulletinSubject": "CVE-2014-3566 Advisory (POODLE)"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2014",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2014",
+          "description": "<p>2014</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:37+0000",
+          "dateUpdated": "2019-10-09T04:04:37+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2014-008",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2014-008",
+        "dateCreated": "2019-10-09T04:09:33+0000",
+        "dateUpdated": "2019-10-10T03:20:19+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2014-10-01",
+          "bulletinId": "AWS-2014-008",
+          "bulletinDate": "1-Oct-14",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/xen-security-advisory-108/",
+          "bulletinSubject": "XSA Security Advisory 108"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2014",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2014",
+          "description": "<p>2014</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:37+0000",
+          "dateUpdated": "2019-10-09T04:04:37+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2014-007",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2014-007",
+        "dateCreated": "2019-10-09T04:09:37+0000",
+        "dateUpdated": "2019-10-10T03:20:17+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2014-09-24",
+          "bulletinId": "AWS-2014-007",
+          "bulletinDate": "24-Sep-14",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/CVE_2014_6271_advisory/",
+          "bulletinSubject": "CVE-2014-6271 Advisory"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2014",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2014",
+          "description": "<p>2014</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:37+0000",
+          "dateUpdated": "2019-10-09T04:04:37+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2014-006",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2014-006",
+        "dateCreated": "2019-10-09T04:09:39+0000",
+        "dateUpdated": "2019-10-10T03:20:15+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2014-06-05",
+          "bulletinId": "AWS-2014-006",
+          "bulletinDate": "5-Jun-14",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/openssl-security-advisory/",
+          "bulletinSubject": "OpenSSL Security Advisory"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2014",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2014",
+          "description": "<p>2014</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:37+0000",
+          "dateUpdated": "2019-10-09T04:04:37+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2014-005",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2014-005",
+        "dateCreated": "2019-10-09T04:09:42+0000",
+        "dateUpdated": "2019-10-10T03:20:12+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2014-05-29",
+          "bulletinId": "AWS-2014-005",
+          "bulletinDate": "29-May-14",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/possible-insecure-elasticsearch-configuration/",
+          "bulletinSubject": "Possible Insecure Elasticsearch Configuration"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2014",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2014",
+          "description": "<p>2014</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:37+0000",
+          "dateUpdated": "2019-10-09T04:04:37+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2014-004",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2014-004",
+        "dateCreated": "2019-10-09T04:09:45+0000",
+        "dateUpdated": "2019-10-10T03:20:10+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2014-04-08",
+          "bulletinId": "AWS-2014-004",
+          "bulletinDate": "8-Apr-14",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/heartbleed-bug-update/",
+          "bulletinSubject": "HeartBleed Bug Update"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2014",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2014",
+          "description": "<p>2014</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:37+0000",
+          "dateUpdated": "2019-10-09T04:04:37+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2014-003",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2014-003",
+        "dateCreated": "2019-10-09T04:09:48+0000",
+        "dateUpdated": "2019-10-10T03:20:08+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2014-04-08",
+          "bulletinId": "AWS-2014-003",
+          "bulletinDate": "8-Apr-14",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/aws-services-updated-to-address-openssl-vulnerability/",
+          "bulletinSubject": "AWS Services Updated to Address OpenSSL Vulnerability"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2014",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2014",
+          "description": "<p>2014</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:37+0000",
+          "dateUpdated": "2019-10-09T04:04:37+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2014-002",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2014-002",
+        "dateCreated": "2019-10-09T04:09:51+0000",
+        "dateUpdated": "2019-10-10T03:20:06+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2014-04-08",
+          "bulletinId": "AWS-2014-002",
+          "bulletinDate": "8-Apr-14",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/rds-postgresql-updated-to-address-openssl-vulnerability/",
+          "bulletinSubject": "RDS PostgreSQL Updated to Address OpenSSL Vulnerability"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2014",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2014",
+          "description": "<p>2014</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:37+0000",
+          "dateUpdated": "2019-10-09T04:04:37+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2014-001",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2014-001",
+        "dateCreated": "2019-10-09T04:09:54+0000",
+        "dateUpdated": "2019-10-10T03:20:03+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2014-04-07",
+          "bulletinId": "AWS-2014-001",
+          "bulletinDate": "7-Apr-14",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/heartbleed-bug-concern/",
+          "bulletinSubject": "HeartBleed Bug Concern"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2014",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2014",
+          "description": "<p>2014</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:37+0000",
+          "dateUpdated": "2019-10-09T04:04:37+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2013-001",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2013-001",
+        "dateCreated": "2019-10-09T04:09:57+0000",
+        "dateUpdated": "2019-10-10T03:20:01+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2013-05-23",
+          "bulletinId": "AWS-2013-001",
+          "bulletinDate": "23-May-13",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/red-hat-and-other-third-party-public-amis-security-concern/",
+          "bulletinSubject": "Red Hat and Other Third-party Public AMIs Security Concern"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2013",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2013",
+          "description": "<p>2013</p>\r\n",
+          "dateCreated": "2019-10-09T04:04:51+0000",
+          "dateUpdated": "2019-10-09T04:04:51+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2012-005",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2012-005",
+        "dateCreated": "2019-10-09T04:10:00+0000",
+        "dateUpdated": "2019-10-10T03:19:58+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2012-11-02",
+          "bulletinId": "AWS-2012-005",
+          "bulletinDate": "2-Nov-12",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/reported-ssl-certificate-validation-errors-in-api-tools-and-sdks/",
+          "bulletinSubject": "Reported SSL Certificate Validation Errors in API Tools and SDKs"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2012",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2012",
+          "description": "<p>2012</p>\r\n",
+          "dateCreated": "2019-10-09T04:05:02+0000",
+          "dateUpdated": "2019-10-09T04:05:02+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2012-004",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2012-004",
+        "dateCreated": "2019-10-09T04:10:04+0000",
+        "dateUpdated": "2019-10-10T03:19:56+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2012-09-11",
+          "bulletinId": "AWS-2012-004",
+          "bulletinDate": "11-Sep-12",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/xen-security-advisories-09112012/",
+          "bulletinSubject": "Xen Security Advisories"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2012",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2012",
+          "description": "<p>2012</p>\r\n",
+          "dateCreated": "2019-10-09T04:05:02+0000",
+          "dateUpdated": "2019-10-09T04:05:02+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2012-003",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2012-003",
+        "dateCreated": "2019-10-09T04:10:07+0000",
+        "dateUpdated": "2019-10-10T03:19:54+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2012-06-15",
+          "bulletinId": "AWS-2012-003",
+          "bulletinDate": "15-Jun-12",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/microsoft-windows-rdp-vulnerability-06152012/",
+          "bulletinSubject": "Microsoft Windows RDP Vulnerability"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2012",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2012",
+          "description": "<p>2012</p>\r\n",
+          "dateCreated": "2019-10-09T04:05:02+0000",
+          "dateUpdated": "2019-10-09T04:05:02+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2012-002",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2012-002",
+        "dateCreated": "2019-10-09T04:10:10+0000",
+        "dateUpdated": "2019-10-10T03:19:52+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2012-06-12",
+          "bulletinId": "AWS-2012-002",
+          "bulletinDate": "12-Jun-12",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/xen-security-advisories/",
+          "bulletinSubject": "Xen Security Advisories"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2012",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2012",
+          "description": "<p>2012</p>\r\n",
+          "dateCreated": "2019-10-09T04:05:02+0000",
+          "dateUpdated": "2019-10-09T04:05:02+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2012-001",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2012-001",
+        "dateCreated": "2019-10-09T04:10:13+0000",
+        "dateUpdated": "2019-10-10T03:19:49+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2012-03-13",
+          "bulletinId": "AWS-2012-001",
+          "bulletinDate": "13-Mar-12",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/microsoft-windows-rdp-vulnerability/",
+          "bulletinSubject": "Microsoft Windows RDP Vulnerability"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2012",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2012",
+          "description": "<p>2012</p>\r\n",
+          "dateCreated": "2019-10-09T04:05:02+0000",
+          "dateUpdated": "2019-10-09T04:05:02+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2011-005",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2011-005",
+        "dateCreated": "2019-10-09T04:10:17+0000",
+        "dateUpdated": "2019-10-10T03:19:47+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2011-10-23",
+          "bulletinId": "AWS-2011-005",
+          "bulletinDate": "23-Oct-11",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/jboss-worm-spreading-via-unpatched-or-unsecured-jboss-application-server/",
+          "bulletinSubject": "JBoss Worm Spreading via Unpatched or Unsecured JBoss Application Server"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2011",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2011",
+          "description": "<p>2011</p>\r\n",
+          "dateCreated": "2019-10-09T04:05:13+0000",
+          "dateUpdated": "2019-10-09T04:05:13+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2011-004",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2011-004",
+        "dateCreated": "2019-10-09T04:10:20+0000",
+        "dateUpdated": "2019-10-10T03:19:45+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2011-10-20",
+          "bulletinId": "AWS-2011-004",
+          "bulletinDate": "20-Oct-11",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/reported-soap-request-parsing-vulnerabilities-reso/",
+          "bulletinSubject": "Reported SOAP Request Parsing Vulnerabilities"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2011",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2011",
+          "description": "<p>2011</p>\r\n",
+          "dateCreated": "2019-10-09T04:05:13+0000",
+          "dateUpdated": "2019-10-09T04:05:13+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2011-003",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2011-003",
+        "dateCreated": "2019-10-09T04:10:23+0000",
+        "dateUpdated": "2019-10-10T03:19:43+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2011-08-31",
+          "bulletinId": "AWS-2011-003",
+          "bulletinDate": "31-Aug-11",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/morto-worm-spreading-via-remote-desktop-protocol/",
+          "bulletinSubject": "Morto Worm Spreading via Remote Desktop Protocol"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2011",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2011",
+          "description": "<p>2011</p>\r\n",
+          "dateCreated": "2019-10-09T04:05:13+0000",
+          "dateUpdated": "2019-10-09T04:05:13+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2011-002",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2011-002",
+        "dateCreated": "2019-10-09T04:10:26+0000",
+        "dateUpdated": "2019-10-10T03:19:41+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2011-06-04",
+          "bulletinId": "AWS-2011-002",
+          "bulletinDate": "4-Jun-11",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/reminder-about-safely-sharing-and-using-public-amis/",
+          "bulletinSubject": "Reminder about Safely Sharing and Using Public AMIs"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2011",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2011",
+          "description": "<p>2011</p>\r\n",
+          "dateCreated": "2019-10-09T04:05:13+0000",
+          "dateUpdated": "2019-10-09T04:05:13+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2011-001",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2011-001",
+        "dateCreated": "2019-10-09T04:10:29+0000",
+        "dateUpdated": "2019-10-10T03:19:38+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2011-02-18",
+          "bulletinId": "AWS-2011-001",
+          "bulletinDate": "18-Feb-11",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/windows-cifs-browser-heap-vulnerability/",
+          "bulletinSubject": "Windows CIFS Browser Protocol Heap Corruption Vulnerability"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2011",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2011",
+          "description": "<p>2011</p>\r\n",
+          "dateCreated": "2019-10-09T04:05:13+0000",
+          "dateUpdated": "2019-10-09T04:05:13+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2010-005",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2010-005",
+        "dateCreated": "2019-10-09T04:10:31+0000",
+        "dateUpdated": "2019-10-10T03:19:36+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2010-09-22",
+          "bulletinId": "AWS-2010-005",
+          "bulletinDate": "22-Sep-10",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/amazon-payments-signature-validation/",
+          "bulletinSubject": "Amazon Payments Signature Validation"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2010",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2010",
+          "description": "<p>2010</p>\r\n",
+          "dateCreated": "2019-10-09T04:05:31+0000",
+          "dateUpdated": "2019-10-09T04:05:31+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2010-004",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2010-004",
+        "dateCreated": "2019-10-09T04:10:34+0000",
+        "dateUpdated": "2019-10-10T03:19:34+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2010-09-18",
+          "bulletinId": "AWS-2010-004",
+          "bulletinDate": "18-Sep-10",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/linux-kernel-ia32-system-call-emulation-vulnerability/",
+          "bulletinSubject": "Linux kernel IA32 System Call Emulation Vulnerability"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#important",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "important",
+          "description": "<p>important</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:33+0000",
+          "dateUpdated": "2019-09-26T19:05:33+0000"
+        },
+        {
+          "id": "security-bulletins#year#2010",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2010",
+          "description": "<p>2010</p>\r\n",
+          "dateCreated": "2019-10-09T04:05:31+0000",
+          "dateUpdated": "2019-10-09T04:05:31+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2010-003",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2010-003",
+        "dateCreated": "2019-10-09T04:10:37+0000",
+        "dateUpdated": "2019-10-10T03:19:32+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2010-08-10",
+          "bulletinId": "AWS-2010-003",
+          "bulletinDate": "10-Aug-10",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/possible-insecure-memcached-configuration/",
+          "bulletinSubject": "Possible Insecure memcached Configuration"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2010",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2010",
+          "description": "<p>2010</p>\r\n",
+          "dateCreated": "2019-10-09T04:05:31+0000",
+          "dateUpdated": "2019-10-09T04:05:31+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2010-002",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2010-002",
+        "dateCreated": "2019-10-09T04:10:40+0000",
+        "dateUpdated": "2019-10-10T03:19:29+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2010-07-13",
+          "bulletinId": "AWS-2010-002",
+          "bulletinDate": "13-Jul-10",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/gmail-accounts-accessed-by-ec2-ips/",
+          "bulletinSubject": "Gmail Accounts Accessed by EC2 IPs"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2010",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2010",
+          "description": "<p>2010</p>\r\n",
+          "dateCreated": "2019-10-09T04:05:31+0000",
+          "dateUpdated": "2019-10-09T04:05:31+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2010-001",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2010-001",
+        "dateCreated": "2019-10-09T04:10:43+0000",
+        "dateUpdated": "2019-10-10T03:19:27+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2010-04-18",
+          "bulletinId": "AWS-2010-001",
+          "bulletinDate": "18-Apr-10",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/sip-abuse/",
+          "bulletinSubject": "SIP abuse"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2010",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2010",
+          "description": "<p>2010</p>\r\n",
+          "dateCreated": "2019-10-09T04:05:31+0000",
+          "dateUpdated": "2019-10-09T04:05:31+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2009-006",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2009-006",
+        "dateCreated": "2019-10-09T04:10:46+0000",
+        "dateUpdated": "2019-10-10T03:19:25+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2009-12-12",
+          "bulletinId": "AWS-2009-006",
+          "bulletinDate": "12-Dec-09",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/zeus-botnet-controller/",
+          "bulletinSubject": "Zeus Botnet Controller"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2009-005",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2009-005",
+        "dateCreated": "2019-10-09T04:13:50+0000",
+        "dateUpdated": "2019-10-10T03:19:22+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2009-12-03",
+          "bulletinId": "AWS-2009-005",
+          "bulletinDate": "3-Dec-09",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/ssl-and-tls-renegotiation-vulnerabilities/",
+          "bulletinSubject": "SSL and TLS renegotiation vulnerabilities"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2009",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2009",
+          "description": "<p>2009</p>\r\n",
+          "dateCreated": "2019-10-09T04:12:23+0000",
+          "dateUpdated": "2019-10-09T04:12:23+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2009-004",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2009-004",
+        "dateCreated": "2019-10-09T04:13:53+0000",
+        "dateUpdated": "2019-10-10T03:19:20+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2009-11-05",
+          "bulletinId": "AWS-2009-004",
+          "bulletinDate": "5-Nov-09",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/linux-2-6-kernel-vulnerability-in-certain-ec2-amis/",
+          "bulletinSubject": "Linux 2.6 kernel vulnerability in certain EC2 AMIs"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2009",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2009",
+          "description": "<p>2009</p>\r\n",
+          "dateCreated": "2019-10-09T04:12:23+0000",
+          "dateUpdated": "2019-10-09T04:12:23+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2009-003",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2009-003",
+        "dateCreated": "2019-10-09T04:13:56+0000",
+        "dateUpdated": "2019-11-18T20:46:29+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2009-10-13",
+          "bulletinId": "AWS-2009-003",
+          "bulletinDate": "13-Oct-09",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/udp-traffic-to-ec2-instances/",
+          "bulletinSubject": "UDP traffic to EC2 instances"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2009",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2009",
+          "description": "<p>2009</p>\r\n",
+          "dateCreated": "2019-10-09T04:12:23+0000",
+          "dateUpdated": "2019-10-09T04:12:23+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2009-002",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2009-002",
+        "dateCreated": "2019-10-09T04:13:59+0000",
+        "dateUpdated": "2019-10-10T03:19:16+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2009-09-29",
+          "bulletinId": "AWS-2009-002",
+          "bulletinDate": "29-Sep-09",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/linux-kernal-vulnerability-in-certain-ec2-amis/",
+          "bulletinSubject": "Linux kernal vulnerability in certain EC2 AMIs"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2009",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2009",
+          "description": "<p>2009</p>\r\n",
+          "dateCreated": "2019-10-09T04:12:23+0000",
+          "dateUpdated": "2019-10-09T04:12:23+0000"
+        }
+      ]
+    },
+    {
+      "item": {
+        "id": "security-bulletins#aws-2009-001",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2009-001",
+        "dateCreated": "2019-10-09T04:14:02+0000",
+        "dateUpdated": "2019-10-10T03:19:13+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2009-09-17",
+          "bulletinId": "AWS-2009-001",
+          "bulletinDate": "17-Sep-09",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/mit-and-uc-san-diego-researchers-publish-report/",
+          "bulletinSubject": "MIT and UC San Diego researchers publish report"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        },
+        {
+          "id": "security-bulletins#year#2009",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2009",
+          "description": "<p>2009</p>\r\n",
+          "dateCreated": "2019-10-09T04:12:23+0000",
+          "dateUpdated": "2019-10-09T04:12:23+0000"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "count": 132,
+    "totalHits": 132
+  },
+  "fieldTypes": {
+    "sortDate": "Text",
+    "bulletinDateSort": "Date",
+    "bulletinId": "Text",
+    "bulletinDate": "Text",
+    "bulletinSubjectUrl": "URL",
+    "bulletinSubject": "Text"
+  }
+}

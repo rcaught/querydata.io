@@ -1,0 +1,107 @@
+{
+  "items": [
+    {
+      "item": {
+        "id": "executive-insights#video-get-to-know-the-aws-ciso-circle-program",
+        "locale": "en_US",
+        "directoryId": "executive-insights",
+        "name": "video-get-to-know-the-aws-ciso-circle-program",
+        "dateCreated": "2024-05-10T14:07:43+0000",
+        "dateUpdated": "2024-05-10T14:08:11+0000",
+        "additionalFields": {
+          "imageSrcUrl": "https://d1.awsstatic.com/executive-insights/en_US/reInforce_DanielleRuderman_Thumbnail%20400x200.300435f9d533a2667180d229ddc9ed7f7898a926.png",
+          "subHeadline": " A conversation with Danielle Ruderman, Senior Manager of AWS Worldwide Security Specialists",
+          "description": "<p>Effective leaders recognize that security can&rsquo;t be done in a vacuum, but must be a collective pursuit. In this interview, hear from Danielle Ruderman, leader of the AWS CISO Circle program about how AWS is helping security leaders build a global community of knowledge sharing and support.</p>\n\n<p><a href=\"https://aws.amazon.com/executive-insights/content/get-to-know-the-aws-ciso-circle-program/?executive-insights-cards.sort-by=item.additionalFields.sortDate&amp;executive-insights-cards.sort-order=desc\">Watch now</a></p>\n",
+          "sortDate": "2024-05-10",
+          "enableShare": "1",
+          "headlineUrl": "https://aws.amazon.com/executive-insights/content/get-to-know-the-aws-ciso-circle-program/?executive-insights-cards.sort-by=item.additionalFields.sortDate&executive-insights-cards.sort-order=desc",
+          "category": "Video",
+          "headline": " Get to Know the AWS CISO Circle Program"
+        }
+      },
+      "tags": [
+        {
+          "id": "executive-insights#author#clarke-rodgers",
+          "locale": "en_US",
+          "tagNamespaceId": "executive-insights#author",
+          "name": "clarke-rodgers",
+          "description": "<p>clarke-rodgers</p>\r\n",
+          "dateCreated": "2021-03-30T17:11:39+0000",
+          "dateUpdated": "2021-03-30T17:11:39+0000"
+        },
+        {
+          "id": "executive-insights#region#global",
+          "locale": "en_US",
+          "tagNamespaceId": "executive-insights#region",
+          "name": "global",
+          "description": "<p>global</p>\r\n",
+          "dateCreated": "2021-04-15T00:52:22+0000",
+          "dateUpdated": "2021-04-15T00:52:22+0000"
+        },
+        {
+          "id": "executive-insights#topic#leadership",
+          "locale": "en_US",
+          "tagNamespaceId": "executive-insights#topic",
+          "name": "leadership",
+          "description": "<p>leadership</p>\r\n",
+          "dateCreated": "2021-03-30T16:55:53+0000",
+          "dateUpdated": "2021-03-30T16:55:53+0000"
+        },
+        {
+          "id": "GLOBAL#content-type#video",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#content-type",
+          "name": "Video",
+          "description": "Video",
+          "dateCreated": "2020-04-29T05:19:43+0000",
+          "dateUpdated": "2022-02-03T03:31:11+0000"
+        },
+        {
+          "id": "GLOBAL#year#2024",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#year",
+          "name": "2024",
+          "description": "2024",
+          "dateCreated": "2020-06-13T00:06:55+0000",
+          "dateUpdated": "2020-06-13T00:06:55+0000"
+        },
+        {
+          "id": "executive-insights#audience#c-suite",
+          "locale": "en_US",
+          "tagNamespaceId": "executive-insights#audience",
+          "name": "c-suite",
+          "description": "<p>c-suite</p>\r\n",
+          "dateCreated": "2021-03-30T16:58:44+0000",
+          "dateUpdated": "2021-03-30T16:58:44+0000"
+        },
+        {
+          "id": "executive-insights#topic#security",
+          "locale": "en_US",
+          "tagNamespaceId": "executive-insights#topic",
+          "name": "security",
+          "description": "<p>security</p>\r\n",
+          "dateCreated": "2021-03-30T16:56:17+0000",
+          "dateUpdated": "2021-03-30T16:56:17+0000"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "count": 1,
+    "totalHits": 748
+  },
+  "fieldTypes": {
+    "imageSrcUrl": "URL",
+    "subHeadline": "Text",
+    "sortOrder": "Number",
+    "description": "LongText",
+    "campaign": "Text",
+    "sortDate": "Date",
+    "headlineUrl": "URL",
+    "enableShare": "Boolean",
+    "video-url": "URL",
+    "category": "Text",
+    "headline": "Text",
+    "podcast-url": "URL"
+  }
+}

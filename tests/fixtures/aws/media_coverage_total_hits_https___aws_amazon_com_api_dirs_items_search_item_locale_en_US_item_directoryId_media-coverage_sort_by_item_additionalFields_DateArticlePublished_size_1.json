@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "item": {
+        "id": "media-coverage#2024-3-22-crn-aws-ceo-talks-new-ai-offerings-with-nvidia-anthropic-and-partners",
+        "locale": "en_US",
+        "directoryId": "media-coverage",
+        "name": "AWS CEO Talks New AI Offerings With Nvidia, Anthropic And Partners",
+        "dateCreated": "2024-03-25T16:43:20+0000",
+        "dateUpdated": "2024-03-25T16:52:18+0000",
+        "additionalFields": {
+          "DateArticlePublished": "2024-03-22",
+          "Description": "<p>&lsquo;AWS is heavily investing in all areas of AI for customer innovation,&rsquo; says AWS CEO Adam Selipsky. Here&rsquo;s five big new AI offerings AWS launched recently, including with Anthropic, Nvidia and a new generative AI competency for channel partners.</p>\n",
+          "headline": "AWS CEO Talks New AI Offerings With Nvidia, Anthropic And Partners",
+          "Source": "CRN",
+          "URL": "https://www.crn.com/news/cloud/2024/aws-ceo-talks-new-ai-offers-with-nvidia-anthropic-and-partners?page=1",
+          "PostedBy": "AWS PR"
+        }
+      },
+      "tags": [
+        {
+          "id": "GLOBAL#content-type#article",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#content-type",
+          "name": "Article",
+          "description": "Article",
+          "dateCreated": "2020-04-29T05:19:16+0000",
+          "dateUpdated": "2022-02-03T03:31:06+0000"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "count": 1,
+    "totalHits": 1751
+  },
+  "fieldTypes": {
+    "DateArticlePublished": "Date",
+    "Description": "LongText",
+    "CallToAction": "Text",
+    "PostedBy": "Text",
+    "headline": "Text",
+    "URL": "URL",
+    "Source": "Text"
+  }
+}

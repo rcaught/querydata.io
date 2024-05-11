@@ -1,0 +1,98 @@
+{
+  "items": [
+    {
+      "item": {
+        "id": "aws-products#cloudeendure-disaster-recovery",
+        "locale": "en_US",
+        "directoryId": "aws-products",
+        "name": "cloudeendure-disaster-recovery",
+        "dateCreated": "2020-07-02T05:17:11+0000",
+        "dateUpdated": "2022-08-24T22:28:48+0000",
+        "additionalFields": {
+          "pricingUrl": "https://aws.amazon.com/disaster-recovery/pricing/?did=ap_card&trk=ap_card",
+          "freeTierAvailability": "<p>\u00a0</p>",
+          "productSummary": "<p>Scalable, cost-effective application recovery to AWS</p>",
+          "launchDate": "2019-10-31",
+          "productUrl": "https://aws.amazon.com/disaster-recovery/?did=ap_card&trk=ap_card",
+          "productName": "AWS Elastic Disaster Recovery (DRS)",
+          "productNameLowercase": "elastic disaster recovery",
+          "productCategory": "Storage"
+        }
+      },
+      "tags": [
+        {
+          "id": "aws-products#type#service",
+          "locale": "en_US",
+          "tagNamespaceId": "aws-products#type",
+          "name": "Service",
+          "description": "Service",
+          "dateCreated": "2021-11-17T07:18:04+0000",
+          "dateUpdated": "2022-04-01T20:23:51+0000"
+        },
+        {
+          "id": "GLOBAL#year#2019",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#year",
+          "name": "2019",
+          "description": "2019",
+          "dateCreated": "2020-06-13T00:07:08+0000",
+          "dateUpdated": "2020-06-13T00:07:08+0000"
+        },
+        {
+          "id": "GLOBAL#product#cloudendure-disaster",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#product",
+          "name": "CloudEndure Disaster Recovery",
+          "description": "CloudEndure Disaster Recovery",
+          "dateCreated": "2020-12-08T20:22:55+0000",
+          "dateUpdated": "2022-02-03T03:32:21+0000"
+        },
+        {
+          "id": "GLOBAL#product#drs",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#product",
+          "name": "AWS Elastic Disaster Recovery (DRS)",
+          "description": "AWS Elastic Disaster Recovery (DRS)",
+          "dateCreated": "2022-01-06T00:53:39+0000",
+          "dateUpdated": "2022-02-03T03:32:31+0000"
+        },
+        {
+          "id": "GLOBAL#tech-category#storage",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#tech-category",
+          "name": "Storage",
+          "description": "Storage",
+          "dateCreated": "2020-01-16T17:43:35+0000",
+          "dateUpdated": "2022-02-03T03:35:33+0000"
+        },
+        {
+          "id": "GLOBAL#featured-on#pricing",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#featured-on",
+          "name": "Pricing",
+          "description": "Pricing",
+          "dateCreated": "2022-08-17T06:21:30+0000",
+          "dateUpdated": "2022-08-17T06:21:30+0000"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "count": 1,
+    "totalHits": 326
+  },
+  "fieldTypes": {
+    "pricingUrl": "URL",
+    "imageSrcUrl": "URL",
+    "featuredRank": "Number",
+    "featureFlag": "Text",
+    "freeTierAvailability": "LongText",
+    "subHeadline": "Text",
+    "productSummary": "LongText",
+    "launchDate": "Date",
+    "productUrl": "URL",
+    "productNameLowercase": "Text",
+    "productName": "Text",
+    "productCategory": "Text"
+  }
+}

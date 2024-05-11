@@ -1,0 +1,84 @@
+{
+  "items": [
+    {
+      "item": {
+        "id": "whitepapers#building-scalable-secure-multi-vpc-network-infrastructure",
+        "locale": "en_US",
+        "directoryId": "whitepapers",
+        "name": "building-scalable-secure-multi-vpc-network-infrastructure",
+        "dateCreated": "2022-03-08T22:31:20+0000",
+        "dateUpdated": "2024-04-18T20:57:50+0000",
+        "additionalFields": {
+          "datePublished": "2019-11-15",
+          "updateDate": "2024-04-17",
+          "featureFlag": "Updated",
+          "publishedText": "April 2024",
+          "description": "<p>This whitepaper describes best practices for creating scalable and secure network architectures in a large network using AWS services. It demonstrates solutions for managing growing infrastructure, ensuring scalability, high availability, and security while keeping overhead costs low.</p>\r\n\r\n<p><a href=\"https://docs.aws.amazon.com/whitepapers/latest/building-scalable-secure-multi-vpc-network-infrastructure/welcome.html?did=wp_card&amp;trk=wp_card\" rel=\"noopener\" target=\"_blank\">HTML</a> | <a href=\"https://docs.aws.amazon.com/whitepapers/latest/building-scalable-secure-multi-vpc-network-infrastructure/building-scalable-secure-multi-vpc-network-infrastructure.pdf?did=wp_card&amp;trk=wp_card#welcome\" rel=\"noopener\" target=\"_blank\">PDF</a></p>\r\n\r\n<p>Networking &amp; Content Delivery</p>\r\n",
+          "docTitle": "Building a Scalable and Secure Multi-VPC AWS Network Infrastructure",
+          "sortDate": "2024-04-17",
+          "enableShare": "1",
+          "contentType": "Whitepaper",
+          "primaryURL": "https://docs.aws.amazon.com/whitepapers/latest/building-scalable-secure-multi-vpc-network-infrastructure/welcome.html?did=wp_card&trk=wp_card"
+        }
+      },
+      "tags": [
+        {
+          "id": "GLOBAL#content-type#whitepaper",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#content-type",
+          "name": "Whitepaper",
+          "description": "Whitepaper",
+          "dateCreated": "2020-04-29T05:19:41+0000",
+          "dateUpdated": "2022-02-03T03:31:11+0000"
+        },
+        {
+          "id": "GLOBAL#year#2024",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#year",
+          "name": "2024",
+          "description": "2024",
+          "dateCreated": "2020-06-13T00:06:55+0000",
+          "dateUpdated": "2020-06-13T00:06:55+0000"
+        },
+        {
+          "id": "GLOBAL#flag#updated",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#flag",
+          "name": "Updated",
+          "description": "Updated",
+          "dateCreated": "2020-01-16T17:42:49+0000",
+          "dateUpdated": "2022-02-03T03:31:19+0000"
+        },
+        {
+          "id": "GLOBAL#tech-category#networking-content-dev",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#tech-category",
+          "name": "Networking & Content Delivery",
+          "description": "Networking & Content Delivery",
+          "dateCreated": "2020-01-16T17:43:28+0000",
+          "dateUpdated": "2022-02-03T03:35:29+0000"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "count": 1,
+    "totalHits": 651
+  },
+  "fieldTypes": {
+    "updateDate": "Date",
+    "imageSrcUrl": "URL",
+    "featureFlag": "Text",
+    "description": "LongText",
+    "sortDate": "Date",
+    "docTitle": "Text",
+    "primaryURL": "URL",
+    "datePublished": "Date",
+    "publishedText": "Text",
+    "footerInfoSubtext": "Text",
+    "subHeadline": "Text",
+    "enableShare": "Boolean",
+    "category": "Text",
+    "contentType": "Text"
+  }
+}

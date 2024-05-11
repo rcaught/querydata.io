@@ -3,7 +3,15 @@ from typing import Sequence
 
 import pytest
 from querydataio import shared
-from querydataio.aws import analyst_reports, whats_new, whitepapers
+from querydataio.aws import (
+    analyst_reports,
+    executive_insights,
+    media_coverage,
+    products,
+    security_bulletins,
+    whats_new,
+    whitepapers,
+)
 from querydataio.aws.full import FullRun
 
 from tests import test_utils
@@ -46,6 +54,10 @@ def test_integration() -> None:
         ],
         "tests/dbs/aws_general.sqlite3": [
             {analyst_reports: []},
+            {executive_insights: []},
+            {media_coverage: []},
+            {products: []},
+            {security_bulletins: []},
             {whitepapers: []},
         ],
     }

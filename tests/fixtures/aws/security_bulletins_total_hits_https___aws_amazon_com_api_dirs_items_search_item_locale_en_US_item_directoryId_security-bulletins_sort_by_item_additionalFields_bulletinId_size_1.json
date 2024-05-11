@@ -1,0 +1,53 @@
+{
+  "items": [
+    {
+      "item": {
+        "id": "security-bulletins#aws-2024-004",
+        "locale": "en_US",
+        "directoryId": "security-bulletins",
+        "name": "AWS-2024-004",
+        "dateCreated": "2024-04-19T15:33:02+0000",
+        "dateUpdated": "2024-04-19T16:04:18+0000",
+        "additionalFields": {
+          "bulletinDateSort": "2024-04-19",
+          "bulletinDate": "19-apr-24",
+          "bulletinId": "AWS-2024-004",
+          "bulletinSubjectUrl": "https://aws.amazon.com/security/security-bulletins/AWS-2024-004/",
+          "bulletinSubject": "AWS Response to March 2024 CSRB report"
+        }
+      },
+      "tags": [
+        {
+          "id": "security-bulletins#year#2024",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#year",
+          "name": "2024",
+          "description": "<p>2024</p>\n",
+          "dateCreated": "2022-03-22T21:55:15+0000",
+          "dateUpdated": "2022-03-22T21:55:15+0000"
+        },
+        {
+          "id": "security-bulletins#flag#informational",
+          "locale": "en_US",
+          "tagNamespaceId": "security-bulletins#flag",
+          "name": "informational",
+          "description": "<p>informational</p>\r\n",
+          "dateCreated": "2019-09-26T19:05:52+0000",
+          "dateUpdated": "2019-09-26T19:05:52+0000"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "count": 1,
+    "totalHits": 132
+  },
+  "fieldTypes": {
+    "sortDate": "Text",
+    "bulletinDateSort": "Date",
+    "bulletinId": "Text",
+    "bulletinDate": "Text",
+    "bulletinSubjectUrl": "URL",
+    "bulletinSubject": "Text"
+  }
+}
