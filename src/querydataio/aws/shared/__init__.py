@@ -112,7 +112,7 @@ def process(
             __{main_table}_unnested_downloads
         )
         SELECT
-          md5(id)[:10] AS hash,
+          md5(CONCAT(id, tagNamespaceId, name))[:10] AS hash,
           id,
           tagNamespaceId,
           name,
@@ -131,7 +131,7 @@ def process(
         SELECT
           DISTINCT
           {main_module.RELATION_ID},
-          md5(id)[:10] as tag_hash
+          md5(CONCAT(id, tagNamespaceId, name))[:10] as tag_hash
         FROM
           {tags_main_table};
 
@@ -386,8 +386,9 @@ def tag_table_optimisations(sqlitedb: Database, print_indent: int = 0):
     tags_table.transform(
         pk="hash",
     )
-    tags_table.create_index(["id"], unique=True)
+    tags_table.create_index(["id"])
     tags_table.create_index(["tagNamespaceId"])
-    tags_table.create_index(["tagNamespaceId", "name"], unique=True)
+    tags_table.create_index(["tagNamespaceId", "name"])
+    tags_table.create_index(["id", "tagNamespaceId", "name"], unique=True)
 
     print(f"done ({time.time() - start})")
