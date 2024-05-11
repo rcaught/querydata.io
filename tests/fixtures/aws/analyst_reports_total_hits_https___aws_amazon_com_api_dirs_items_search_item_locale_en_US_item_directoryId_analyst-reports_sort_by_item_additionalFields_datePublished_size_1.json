@@ -1,0 +1,113 @@
+{
+  "items": [
+    {
+      "item": {
+        "id": "analyst-reports#global-ar-report-ardm-24-isg-mainframe-application-modernization-software",
+        "locale": "en_US",
+        "directoryId": "analyst-reports",
+        "name": "ISG | Provider Lens Mainframes \u2013 Services and Solutions",
+        "dateCreated": "2024-04-11T17:48:38+0000",
+        "dateUpdated": "2024-04-11T17:49:00+0000",
+        "additionalFields": {
+          "datePublished": "2024-04-10",
+          "featureFlag": "NEW",
+          "footerInfoSubtext": "Published",
+          "dateExpires": "2025-04-30",
+          "footerInfoText": "April 2024",
+          "description": "<p>AWS is a leader in ISG Provider Lens Mainframe Application Modernization Software U.S. quadrant 2024 report.</p>\n",
+          "enableShare": "1",
+          "headlineUrl": "https://aws.amazon.com/resources/analyst-reports/isg/global-ar-report-ardm-24-isg-mainframe-application-modernization-software/?trk=7b901f0c-726a-412b-b461-7942fdb6b435&sc_channel=el",
+          "category": "Enterprise Migration",
+          "headline": "ISG | Provider Lens Mainframes \u2013 Services and Solutions",
+          "dateAdded": "2024-04-11"
+        }
+      },
+      "tags": [
+        {
+          "id": "analyst-reports#firm#isg",
+          "locale": "en_US",
+          "tagNamespaceId": "analyst-reports#firm",
+          "name": "ISG",
+          "description": "<p>ISG</p>\n",
+          "dateCreated": "2018-12-19T10:53:37+0000",
+          "dateUpdated": "2020-03-03T07:03:54+0000"
+        },
+        {
+          "id": "analyst-reports#location#americas",
+          "locale": "en_US",
+          "tagNamespaceId": "analyst-reports#location",
+          "name": "Americas",
+          "description": "<p>North America, Latin America, South America</p>\n",
+          "dateCreated": "2018-12-19T10:54:36+0000",
+          "dateUpdated": "2020-03-03T07:04:18+0000"
+        },
+        {
+          "id": "analyst-reports#year#2024",
+          "locale": "en_US",
+          "tagNamespaceId": "analyst-reports#year",
+          "name": "2024",
+          "description": "<p>2024</p>\r\n",
+          "dateCreated": "2024-01-03T22:40:03+0000",
+          "dateUpdated": "2024-01-03T22:40:03+0000"
+        },
+        {
+          "id": "GLOBAL#year#2024",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#year",
+          "name": "2024",
+          "description": "2024",
+          "dateCreated": "2020-06-13T00:06:55+0000",
+          "dateUpdated": "2020-06-13T00:06:55+0000"
+        },
+        {
+          "id": "analyst-reports#categories#migration",
+          "locale": "en_US",
+          "tagNamespaceId": "analyst-reports#categories",
+          "name": "Migration",
+          "description": "<p>Migration</p>\n",
+          "dateCreated": "2018-12-19T10:54:26+0000",
+          "dateUpdated": "2020-03-03T07:04:06+0000"
+        },
+        {
+          "id": "analyst-reports#flag#new",
+          "locale": "en_US",
+          "tagNamespaceId": "analyst-reports#flag",
+          "name": "New",
+          "description": "<p>New</p>\n",
+          "dateCreated": "2018-12-19T10:54:28+0000",
+          "dateUpdated": "2020-03-03T07:03:58+0000"
+        },
+        {
+          "id": "GLOBAL#content-type#analyst-report",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#content-type",
+          "name": "Analyst Report",
+          "description": "Analyst Report",
+          "dateCreated": "2020-04-29T05:19:14+0000",
+          "dateUpdated": "2022-02-03T03:31:06+0000"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "count": 1,
+    "totalHits": 62
+  },
+  "fieldTypes": {
+    "imageSrcUrl": "URL",
+    "featureFlag": "Text",
+    "footerInfoText": "Text",
+    "description": "LongText",
+    "headlineUrl": "URL",
+    "dateAdded": "Date",
+    "datePublished": "Date",
+    "footerInfoSubtext": "Text",
+    "subHeadline": "Text",
+    "dateExpires": "Date",
+    "enableShare": "Boolean",
+    "category": "Text",
+    "headline": "Text",
+    "contentType": "Text",
+    "ItemExpirationDateTime": "DateTime"
+  }
+}

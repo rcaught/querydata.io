@@ -1,0 +1,104 @@
+{
+  "items": [
+    {
+      "item": {
+        "id": "whats-new#about-aws-whats-new-2024-05-amazon-managed-service-prometheus-collector-eks-access-management-controls",
+        "locale": "en_US",
+        "directoryId": "whats-new",
+        "name": "/about-aws/whats-new/2024/05/amazon-managed-service-prometheus-collector-eks-access-management-controls/",
+        "numImpressions": 0,
+        "score": 0.0,
+        "dateCreated": "2024-05-10T17:18:01+0000",
+        "dateUpdated": "2024-05-10T17:18:02+0000",
+        "additionalFields": {
+          "postBody": "<p>Amazon Managed Service for Prometheus collector with support for EKS access management controls is available in all regions where Amazon Managed Service for Prometheus is available. To learn more about Amazon Managed Service for Prometheus collector, visit the <a href=\"https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector.html\" target=\"_blank\" rel=\"noopener\">user guide</a> or <a href=\"/content/aws.amazon.com/live/en_US/prometheus.html\" target=\"_blank\" rel=\"noopener\">product page</a>.</p>\r\n",
+          "modifiedDate": "2024-05-10T17:17:50Z",
+          "headlineUrl": "/about-aws/whats-new/2024/05/amazon-managed-service-prometheus-collector-eks-access-management-controls/",
+          "postDateTime": "2024-05-10T12:00:00Z",
+          "postSummary": "<p>Amazon Managed Service for Prometheus collector, a fully-managed agentless collector for Prometheus metrics now integrates with the <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html\" target=\"_blank\" rel=\"noopener\">Amazon EKS access management controls</a>. Starting today, the collector utilizes the EKS access management controls to create a managed access policy that allows the collector to discover and collect Prometheus metrics.</p>\r\n",
+          "contentType": "Launch Announcement",
+          "headline": "Amazon Managed Service for Prometheus collector integrates with Amazon EKS access management controls"
+        }
+      },
+      "tags": [
+        {
+          "id": "whats-new#year#2024",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#year",
+          "name": "2024",
+          "description": "year#2024",
+          "dateCreated": "2024-01-02T21:27:38+0000",
+          "dateUpdated": "2024-01-02T21:27:38+0000"
+        },
+        {
+          "id": "whats-new#marketing-marchitecture#analytics",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#marketing-marchitecture",
+          "name": "analytics",
+          "description": "marketing:marchitecture/analytics",
+          "dateCreated": "2019-05-03T04:26:14+0000",
+          "dateUpdated": "2019-05-03T04:26:14+0000"
+        },
+        {
+          "id": "whats-new#marketing-marchitecture#management-and-governance",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#marketing-marchitecture",
+          "name": "management-and-governance",
+          "description": "marketing:marchitecture/management-and-governance",
+          "dateCreated": "2019-05-03T04:27:36+0000",
+          "dateUpdated": "2019-05-03T04:27:36+0000"
+        },
+        {
+          "id": "whats-new#general-products#amazon-eks",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#general-products",
+          "name": "amazon-eks",
+          "description": "general:products/amazon-eks",
+          "dateCreated": "2019-05-03T04:25:49+0000",
+          "dateUpdated": "2019-05-03T04:25:49+0000"
+        },
+        {
+          "id": "whats-new#general-products#amazon-amp",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#general-products",
+          "name": "amazon-amp",
+          "description": "general:products/amazon-amp",
+          "dateCreated": "2020-12-15T18:21:50+0000",
+          "dateUpdated": "2020-12-15T18:21:50+0000"
+        },
+        {
+          "id": "GLOBAL#content-type#launch-announcement",
+          "locale": "en_US",
+          "tagNamespaceId": "GLOBAL#content-type",
+          "name": "Launch Announcement",
+          "description": "Launch Announcement",
+          "dateCreated": "2020-04-29T05:19:27+0000",
+          "dateUpdated": "2022-02-03T03:31:08+0000"
+        },
+        {
+          "id": "whats-new#marketing-marchitecture#containers",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new#marketing-marchitecture",
+          "name": "containers",
+          "description": "marketing:marchitecture/containers",
+          "dateCreated": "2020-05-01T20:07:34+0000",
+          "dateUpdated": "2020-05-01T20:07:34+0000"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "count": 1,
+    "totalHits": 737
+  },
+  "fieldTypes": {
+    "relatedBlog": "Text",
+    "postBody": "Text",
+    "modifiedDate": "DateTime",
+    "headlineUrl": "Text",
+    "postDateTime": "DateTime",
+    "postSummary": "Text",
+    "headline": "Text",
+    "contentType": "Text"
+  }
+}

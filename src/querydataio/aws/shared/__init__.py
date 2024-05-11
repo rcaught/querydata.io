@@ -1,12 +1,15 @@
 """Shared utilities for AWS"""
 
+import json
 import os
+import re
 import time
 from types import ModuleType
 from typing import Sequence, cast
 
 import pandas as pd
 from duckdb import DuckDBPyConnection
+import requests
 from sqlite_utils import Database
 from sqlite_utils.db import Table
 from tenacity import retry, wait_exponential
@@ -146,12 +149,36 @@ def process(
 
     print(f"done ({time.time() - start})")
 
+
+def safe_filename(prefix: str, main: str) -> str:
+    safe_filename = re.sub(r"[^A-Za-z0-9_\-]", "_", f"{prefix}_{main}")
+
+    file_path = os.path.join(
+        os.getcwd(),
+        f"tests/fixtures/aws/{safe_filename}.json",
+    )
+
+    return file_path
+
+
+def create_fixture(prefix: str, url: str):
+    response = requests.get(url)
+    response.raise_for_status()
+    data = response.json()
+
+    with open(safe_filename(prefix, url), "w") as file:
+        # Dump as formatted json to read file easier
+        json.dump(data, file, indent=2)
+
+
 @retry(wait=wait_exponential(multiplier=1, min=4, max=10))
 def download(
     ddb_con: DuckDBPyConnection,
-    urls: Sequence[str | int],
+    urls: Sequence[str],
     main_table: str,
     print_indent: int = 0,
+    fixtures_use: bool = False,
+    fixtures_create: bool = False,
 ) -> str:
     print()
     print(f"{print_indent * ' '}Downloading")
@@ -160,6 +187,13 @@ def download(
     print(f"{print_indent * ' '}- {len(urls)} files... ", end="")
 
     temp = "TEMP" if os.getenv("CI") else ""
+
+    if fixtures_create:
+        for url in urls:
+            create_fixture(main_table, url)
+
+    if fixtures_use:
+        urls = [safe_filename(main_table, url) for url in urls]
 
     ddb_con.execute(
         f"""--sql
@@ -182,6 +216,8 @@ def getTotalHits(
     main_module: ModuleType,
     partitions: Sequence[str | int],
     print_indent: int = 0,
+    fixtures_use: bool = False,
+    fixtures_create: bool = False,
 ) -> dict[str, int]:
     urls: list[str] = []
 
@@ -193,7 +229,12 @@ def getTotalHits(
         for partition in partitions:
             urls.append(f"{prefix}&tags.id={main_module.TAG_ID_PREFIX}{partition}")
     download_table = download(
-        ddb_con, urls, f"{main_module.MAIN_TABLE_NAME}_total_hits", print_indent
+        ddb_con,
+        urls,
+        f"{main_module.MAIN_TABLE_NAME}_total_hits",
+        print_indent,
+        fixtures_use,
+        fixtures_create,
     )
 
     result = ddb_con.sql(
@@ -213,6 +254,8 @@ def generate_urls(
     main_module: ModuleType,
     partitions: Sequence[str | int],
     print_indent: int = 4,
+    fixtures_use: bool = False,
+    fixtures_create: bool = False,
 ):
     # The maximum records size is 2000, but you can never paginate past 9999
     # total results (no matter the size set). If we look at factors of 9999
@@ -222,7 +265,9 @@ def generate_urls(
     # 9999 records and that their union covers all records. This can be
     # verified by comparing our total with an unpartitioned totalHits request.
 
-    partition_sizes = getTotalHits(ddb_con, main_module, partitions, print_indent)
+    partition_sizes = getTotalHits(
+        ddb_con, main_module, partitions, print_indent, fixtures_use, fixtures_create
+    )
 
     urls: list[str] = []
     for partition, size in partition_sizes.items():

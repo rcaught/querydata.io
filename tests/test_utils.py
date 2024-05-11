@@ -5,6 +5,8 @@ import duckdb
 from pytest_mock import MockerFixture
 import sqlite_utils
 
+from querydataio.aws.shared import safe_filename
+
 
 def duckdb_connect():
     ddb_con = duckdb.connect(":memory:")
@@ -39,14 +41,17 @@ def download_side_effect(
     download.side_effect = download_side_effect
 
 
-def assert_query_result(database: str, query: str, json_result: str):
-    # print(have) to generate json file
+def assert_query_result(database: str, query: str, fixtures_create: bool = False):
+    result = safe_filename(database, query)
 
-    with open(json_result, "r") as file:
+    have = json.dumps(sqlite_utils.Database(database).execute_returning_dicts(query))
+
+    if fixtures_create:
+        with open(result, "w") as file:
+            json.dump(json.loads(have), file, indent=2)
+
+    with open(result, "r") as file:
         want = json.dumps(json.load(file))
-        have = json.dumps(
-            sqlite_utils.Database(database).execute_returning_dicts(query)
-        )
 
         assert want == have
 

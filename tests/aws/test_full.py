@@ -1,5 +1,6 @@
 import pytest
 from pytest_mock import MockerFixture
+from querydataio import shared
 from querydataio.aws import (
     analyst_reports,
     whats_new,
@@ -16,30 +17,27 @@ def run_around_tests():
     yield
 
 
-def run_full(mocker: MockerFixture) -> str:
-    test_utils.download_side_effect(
-        mocker,
-        {
-            "whats_new_total_hits": "tests/fixtures/aws/full/whats_new/download.1.json",
-            "whats_new": "tests/fixtures/aws/full/whats_new/download.2.json",
-            "analyst_reports_total_hits": "tests/fixtures/aws/full/analyst_reports/download.1.json",
-            "analyst_reports": "tests/fixtures/aws/full/analyst_reports/download.2.json",
-        },
-    )
+def run_full(fixtures_create: bool = False) -> str:
+    if fixtures_create:
+        config = {"disabled_filesystems": "HTTPFileSystem"}
+    else:
+        config = {}
 
     full_run = FullRun(
         {
             "database": "tests/dbs/aws.duckdb.db",
-            "config": {"disabled_filesystems": "HTTPFileSystem"},
+            "config": config,
         },
         {
             f"tests/dbs/aws_{whats_new.MAIN_TABLE_NAME}.sqlite3": [
-                {whats_new: whats_new.all_years()}
+                {whats_new: range(shared.current_year(), shared.current_year() + 1)}
             ],
             "tests/dbs/aws_general.sqlite3": [
                 {analyst_reports: []},
             ],
         },
+        fixtures_use=True,
+        fixtures_create=fixtures_create,
     )
 
     full_run.prepare().unwrap_or_raise(SystemExit)
@@ -48,17 +46,20 @@ def run_full(mocker: MockerFixture) -> str:
     return full_run.ddb_name
 
 
-def test_integration(mocker: MockerFixture) -> None:
-    run_full(mocker)
+def test_integration() -> None:
+    # Change this to recreate fixtures
+    fixtures_create = False
+
+    run_full(fixtures_create)
 
     test_utils.assert_query_result(
         "tests/dbs/aws_whats_new.sqlite3",
         "SELECT * FROM whats_new ORDER BY id",
-        "tests/fixtures/aws/full/whats_new/query.1.json",
+        fixtures_create,
     )
 
     test_utils.assert_query_result(
         "tests/dbs/aws_general.sqlite3",
         "SELECT * FROM analyst_reports ORDER BY id",
-        "tests/fixtures/aws/full/analyst_reports/query.1.json",
+        fixtures_create,
     )
