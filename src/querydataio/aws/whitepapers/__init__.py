@@ -100,7 +100,7 @@ def unnest(ddb_con: DuckDBPyConnection, main_table: str):
           sortDate,
           description,
           docTitle,
-          regexp_replace(primaryURL, r'?.*', '') AS primaryURL,
+          regexp_replace(primaryURL, '\\?.*', '') AS primaryURL,
           tags
         FROM unnested;
         """
