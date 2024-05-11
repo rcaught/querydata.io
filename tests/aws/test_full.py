@@ -20,15 +20,10 @@ def run_full(
     database_modules: dict[str, list[dict[ModuleType, Sequence[str | int]]]],
     fixtures_create: bool = False,
 ) -> str:
-    if fixtures_create:
-        config = {"disabled_filesystems": "HTTPFileSystem"}
-    else:
-        config = {}
-
     full_run = FullRun(
         {
             "database": "tests/dbs/aws.duckdb.db",
-            "config": config,
+            "config": {} if fixtures_create else {"disabled_filesystems": "HTTPFileSystem"},
         },
         database_modules,
         fixtures_use=True,

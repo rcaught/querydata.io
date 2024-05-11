@@ -35,7 +35,8 @@ def download_side_effect(
 
         ddb_con.sql(
             f"""
-                CREATE OR REPLACE TEMP TABLE __{table_prefix}_downloads AS SELECT * FROM read_json_auto('{mock_json_filepaths[table_prefix]}', format='auto');
+                CREATE OR REPLACE TEMP TABLE __{table_prefix}_downloads AS
+                SELECT * FROM read_json_auto('{mock_json_filepaths[table_prefix]}', format='auto');
                 """
         )
         return f"__{table_prefix}_downloads"
@@ -52,7 +53,7 @@ def assert_query_result(database: str, query: str, fixtures_create: bool = False
         with open(result, "w") as file:
             json.dump(json.loads(have), file, indent=2)
 
-    with open(result, "r") as file:
+    with open(result) as file:
         want = json.dumps(json.load(file))
 
         assert want == have

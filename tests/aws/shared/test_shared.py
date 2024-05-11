@@ -28,9 +28,7 @@ def test_generate_urls(mocker: MockerFixture) -> None:
     ]
     test_utils.download_side_effect(
         mocker,
-        {
-            "whats_new_total_hits": "tests/fixtures/aws/shared/test_shared.test_generate_urls.1.json"
-        },
+        {"whats_new_total_hits": "tests/fixtures/aws/shared/test_shared.test_generate_urls.1.json"},
         True,
         expected_urls,
     )
@@ -90,9 +88,7 @@ def test_generate_urls_out_of_bounds(mocker: MockerFixture) -> None:
     ]
     test_utils.download_side_effect(
         mocker,
-        {
-            "whats_new_total_hits": "tests/fixtures/aws/shared/test_shared.test_generate_urls.2.json"
-        },
+        {"whats_new_total_hits": "tests/fixtures/aws/shared/test_shared.test_generate_urls.2.json"},
         True,
         expected_urls,
     )
@@ -108,9 +104,7 @@ def test_generate_urls_out_of_bounds(mocker: MockerFixture) -> None:
 def test_generate_urls_no_partitions(mocker: MockerFixture) -> None:
     test_utils.download_side_effect(
         mocker,
-        {
-            "whats_new_total_hits": "tests/fixtures/aws/shared/test_shared.test_generate_urls.3.json"
-        },
+        {"whats_new_total_hits": "tests/fixtures/aws/shared/test_shared.test_generate_urls.3.json"},
         True,
         [f"{BASE_URLS_PREFIX}&size=1"],
     )

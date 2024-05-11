@@ -128,7 +128,7 @@ class FullRun:
                 aws_shared.tag_table_optimisations(sqlitedb, 4)
 
                 for module in modules:
-                    for main_module, partitions in module.items():
+                    for main_module, _ in module.items():
                         print()
                         print(f"    {main_module.DIRECTORY_ID}")
                         print(f"    {'=' * len(main_module.DIRECTORY_ID)}")

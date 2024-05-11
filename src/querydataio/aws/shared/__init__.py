@@ -23,9 +23,7 @@ DUCKDB_DB = "dbs/aws.duckdb.db"
 TAGS_TABLE_NAME = "tags"
 
 
-def to_sqlite(
-    sqlitedb: Database, items: list[tuple[pd.DataFrame, str]], print_indent: int = 0
-):
+def to_sqlite(sqlitedb: Database, items: list[tuple[pd.DataFrame, str]], print_indent: int = 0):
     """Export Dataframe to SQLite"""
 
     print("")
@@ -137,7 +135,8 @@ def process(
         FROM
           {tags_main_table};
 
-        CREATE UNIQUE INDEX {main_tags_table}_hash_idx ON {main_tags_table} ({main_module.RELATION_ID}, tag_hash);
+        CREATE UNIQUE INDEX {main_tags_table}_hash_idx
+        ON {main_tags_table} ({main_module.RELATION_ID}, tag_hash);
         """
     )
 
@@ -279,32 +278,27 @@ def generate_urls(
             if size <= 8000:
                 for i in range(0, int(size / 2000) + 1):
                     urls.append(
-                        f"{main_module.URL_PREFIX}&size=2000"
-                        f"&page={i}{tags_id}&sort_order=desc"
+                        f"{main_module.URL_PREFIX}&size=2000" f"&page={i}{tags_id}&sort_order=desc"
                     )
             else:
                 for i in range(0, int(size / 1111) + 1):
                     urls.append(
-                        f"{main_module.URL_PREFIX}&size=1111"
-                        f"&page={i}{tags_id}&sort_order=desc"
+                        f"{main_module.URL_PREFIX}&size=1111" f"&page={i}{tags_id}&sort_order=desc"
                     )
         elif size >= 10000 and size <= 20000:
             for i in range(0, 9):
                 urls.append(
-                    f"{main_module.URL_PREFIX}&size=1111"
-                    f"&page={i}{tags_id}&sort_order=desc"
+                    f"{main_module.URL_PREFIX}&size=1111" f"&page={i}{tags_id}&sort_order=desc"
                 )
             if size <= 18000:
                 for i in range(0, int((size - 10000) / 2000) + 1):
                     urls.append(
-                        f"{main_module.URL_PREFIX}&size=2000"
-                        f"&page={i}{tags_id}&sort_order=asc"
+                        f"{main_module.URL_PREFIX}&size=2000" f"&page={i}{tags_id}&sort_order=asc"
                     )
             else:
                 for i in range(0, int((size - 10000) / 1111) + 1):
                     urls.append(
-                        f"{main_module.URL_PREFIX}&size=1111"
-                        f"&page={i}{tags_id}&sort_order=asc"
+                        f"{main_module.URL_PREFIX}&size=1111" f"&page={i}{tags_id}&sort_order=asc"
                     )
         else:
             raise Exception("Out of range downloads")
@@ -328,9 +322,7 @@ def common_table_optimisations(
     print(f"{print_indent * ' '}- {main_tags_table.name}... ", end="")
 
     main_tags_table.transform(pk=[main_module.RELATION_ID, "tag_hash"])
-    main_tags_table.add_foreign_key(
-        main_module.RELATION_ID, main_table.name, "hash", ignore=True
-    )
+    main_tags_table.add_foreign_key(main_module.RELATION_ID, main_table.name, "hash", ignore=True)
     main_tags_table.add_foreign_key("tag_hash", tags_table.name, "hash", ignore=True)
 
     print(f"done ({time.time() - start})")
@@ -352,9 +344,7 @@ def merge_duckdb_tags(
         end="",
     )
 
-    tag_union = " UNION ".join(
-        [f"SELECT * FROM {tag_table}" for tag_table in other_tag_tables]
-    )
+    tag_union = " UNION ".join([f"SELECT * FROM {tag_table}" for tag_table in other_tag_tables])
 
     ddb_con.execute(
         f"""--sql

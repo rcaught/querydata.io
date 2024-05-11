@@ -35,3 +35,23 @@ build-backend = "poetry.core.masonry.api"
 typeCheckingMode = "basic"
 include = ["src"]
 exclude = ["**/__pycache__"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+  # pycodestyle
+  "E",
+  # Pyflakes
+  "F",
+  # pyupgrade
+  "UP",
+  # flake8-bugbear
+  "B",
+  # flake8-simplify
+  "SIM",
+  # isort
+  "I",
+]
+fixable = ["ALL"]

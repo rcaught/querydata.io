@@ -28,9 +28,7 @@ def parse_aws_categories() -> dict[str, list[dict[str, list[dict[str, str]]]]]:
     # //*[@id="aws-element-44ba89e5-9024-4e8f-a95c-621b7efdc78e"]
     # ^ would likely change
     # html.no-js.aws-lng-en_US.aws-with-target.aws-ember body.awsm div#aws-page-content.lb-none-pad.lb-page-content.lb-page-with-sticky-subnav main#aws-page-content-main div.lb-grid.lb-row.lb-row-max-large.lb-snap div.lb-col.lb-tiny-24.lb-mid-5 div.lb-data-attr-wrapper.data-attr-wrapper div.lb-filter-container.lb-filter-light .lb-filter-checkbox
-    with open(
-        pathlib.Path(__file__).with_name("categories.json"), encoding="utf8"
-    ) as file:
+    with open(pathlib.Path(__file__).with_name("categories.json"), encoding="utf8") as file:
         return json.loads(file.read())
 
 
@@ -70,9 +68,7 @@ def mid_alters(ddb_con: DuckDBPyConnection, main_table: str):
     return None
 
 
-def initial_sqlite_transform(
-    sqlitedb: Database, main_table_name: str, print_indent: int = 0
-):
+def initial_sqlite_transform(sqlitedb: Database, main_table_name: str, print_indent: int = 0):
     print()
     print(f"{print_indent * ' '}Optimising tables")
     print(f"{print_indent * ' '}=================")
