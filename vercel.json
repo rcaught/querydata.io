@@ -1,4 +1,5 @@
 {
+  "name": "querydataio",
   "version": 2,
   "builds": [
     {
