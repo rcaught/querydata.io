@@ -192,7 +192,22 @@ def download(
             create_fixture(main_table, url)
 
     if fixtures_use:
-        urls = [safe_filename(main_table, url) for url in urls]
+        urls_filenames = [{"url": url, "filename": safe_filename(main_table, url)} for url in urls]
+
+        missing = [
+            urls_filename
+            for urls_filename in urls_filenames
+            if not os.path.exists(urls_filename["filename"])
+        ]
+
+        if len(missing) > 0:
+            for file in missing:
+                print(f"Missing fixture, creating: {file["filename"]}")
+                create_fixture(main_table, file["url"])
+
+            raise Exception("Missing fixtures")
+        else:
+            urls = [urls_filename["filename"] for urls_filename in urls_filenames]
 
     ddb_con.execute(
         f"""--sql
