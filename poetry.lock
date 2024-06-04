@@ -1270,13 +1270,13 @@ use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
 name = "result"
-version = "0.16.1"
+version = "0.17.0"
 description = "A Rust-like result type for Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "result-0.16.1-py3-none-any.whl", hash = "sha256:47598bb9bde342251f5b0f49e3637cd30dc144c086b29dc58fff458477650669"},
-    {file = "result-0.16.1.tar.gz", hash = "sha256:379f0233cdf8cf157588c77bb2ab1ac367431d9bf6e8456a336b026d528cee0d"},
+    {file = "result-0.17.0-py3-none-any.whl", hash = "sha256:49fd668b4951ad15800b8ccefd98b6b94effc789607e19c65064b775570933e8"},
+    {file = "result-0.17.0.tar.gz", hash = "sha256:b73da420c0cb1a3bf741dbd41ff96dedafaad6a1b3ef437a9e33e380bb0d91cf"},
 ]
 
 [[package]]
@@ -1494,4 +1494,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.12,<3.13"
-content-hash = "eb147e8829551af9813854ae260eece17c2b3f7818c123a92536ac441fa6b0d6"
+content-hash = "20539935dd024dd991a63ac56626dcf5757627f2e9ecaa21f6684d496f7b0552"
