@@ -43,9 +43,7 @@ def mid_alters(ddb_con: DuckDBPyConnection, main_table: str):
     pass
 
 
-def initial_sqlite_transform(
-    sqlitedb: Database, main_table_name: str, print_indent: int = 0
-):
+def initial_sqlite_transform(sqlitedb: Database, main_table_name: str, print_indent: int = 0):
     print()
     print(f"{print_indent * ' '}Optimising tables")
     print(f"{print_indent * ' '}=================")
@@ -81,7 +79,6 @@ def unnest(ddb_con: DuckDBPyConnection, main_table: str):
           id,
           name,
           headline,
-          subHeadline,
           regexp_replace(headlineUrl, '\\?.*', '') AS headlineUrl,
           description,
           dateExpires AS dateExpires,
