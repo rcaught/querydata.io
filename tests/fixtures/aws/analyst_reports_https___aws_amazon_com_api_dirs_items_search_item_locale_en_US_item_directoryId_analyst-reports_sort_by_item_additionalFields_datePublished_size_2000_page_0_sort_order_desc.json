@@ -105,7 +105,6 @@
           "datePublished": "2024-02-29",
           "footerInfoSubtext": "Published",
           "dateExpires": "2025-03-01",
-          "subHeadline": "451 Research",
           "enableShare": "1",
           "category": "Compute Services",
           "headline": "451 Research Report | Serverless Technology Impact on Business",
@@ -222,7 +221,6 @@
           "datePublished": "2024-02-21",
           "footerInfoSubtext": "Published",
           "dateExpires": "2025-02-28",
-          "subHeadline": "Forrester",
           "enableShare": "1",
           "category": "AI-ML",
           "headline": "Forrester | Advance GenAI Marketing From Pilot Projects To Proficiency",
@@ -437,7 +435,6 @@
           "datePublished": "2024-01-11",
           "footerInfoSubtext": "Published",
           "dateExpires": "2025-01-31",
-          "subHeadline": "Forrester",
           "enableShare": "1",
           "category": "AI-ML",
           "headline": "Forrester | The Architect\u2019s Guide To Generative AI",
@@ -3326,7 +3323,6 @@
         "additionalFields": {
           "datePublished": "2023-06-29",
           "footerInfoSubtext": "Published",
-          "subHeadline": "Forrester",
           "dateExpires": "2024-06-28",
           "footerInfoText": "June 2023",
           "description": "<p>Forrester&rsquo;s Public Cloud Buying Guide covers key criteria decision makers should consider when choosing their primary public cloud provider. The report can be a great tool for decision makers to help select the best public cloud provider for their unique needs.</p>\r\n",
@@ -3467,7 +3463,6 @@
         "additionalFields": {
           "datePublished": "2023-06-23",
           "footerInfoSubtext": "Published",
-          "subHeadline": "Forrester",
           "dateExpires": "2024-06-22",
           "footerInfoText": "June 2023",
           "description": "<p>AWS Lambda named a leader in The Forrester Wave: Functions-As-A-Service Platforms, Q2 2023. The Forrester Wave evaluation highlights Leaders, Strong Performers, Contenders, and Challengers. It&rsquo;s an assessment of the top vendors in the market.</p>\r\n",
@@ -3784,7 +3779,6 @@
         "additionalFields": {
           "datePublished": "2023-05-30",
           "footerInfoSubtext": "Published",
-          "subHeadline": "Forrester",
           "dateExpires": "2024-06-20",
           "footerInfoText": "May 2023",
           "description": "<p>Amazon Web Services (AWS) is named a Strong Performer in Forrester&rsquo;s 2023 Integrated Software Delivery Platform (ISDP) Wave. ISDPs combine the automated DevOps tools and infrastructure used to take software from code to production into integrated platforms that include continuous integration and delivery (CI/CD), developer tools, application security, and infrastructure-as-code (IaC).</p>\r\n",
@@ -3925,7 +3919,6 @@
         "additionalFields": {
           "datePublished": "2023-05-19",
           "footerInfoSubtext": "Published",
-          "subHeadline": "Gartner",
           "dateExpires": "2024-05-15",
           "footerInfoText": "May 2023",
           "description": "<p>In this report, Gartner measures Amazon&rsquo;s overall sustainability program across 19 sustainability metrics aligned within the three dimensions of the ESG model - Environmental sustainability, Social sustainability and Governance.</p>\r\n",
@@ -4135,7 +4128,6 @@
         "additionalFields": {
           "datePublished": "2023-05-01",
           "footerInfoSubtext": "Published",
-          "subHeadline": "IDC",
           "dateExpires": "2024-05-31",
           "footerInfoText": "May 2023",
           "description": "<p>IDC Observes Market Developments and Dynamics Affecting AWS Amidst Communications Services Providers (CSPs) Rapid Cloud Native Adoption and 5G Monetization. Communication service providers (SPs) are shifting their focus to build/adopt cloud native services, implement data in their decision making process, and automate applications for their networks. John Byrne of IDC dives deeper into how AWS is working with CSPs to meet the market where it is, developing technology enabling CSPs to reach their desired business outcomes.</p>\n",
@@ -4215,7 +4207,6 @@
         "additionalFields": {
           "datePublished": "2023-04-28",
           "footerInfoSubtext": "Published",
-          "subHeadline": "IDC",
           "dateExpires": "2024-05-18",
           "footerInfoText": "April 2023",
           "description": "<p>In this report read IDC&rsquo;s perspective on cloud cost management trends and how AWS is helping customers to optimize and manage cloud costs through AWS Cloud Financial Management solutions.</p>\r\n",
@@ -4286,7 +4277,6 @@
         "additionalFields": {
           "datePublished": "2023-04-28",
           "footerInfoSubtext": "Published",
-          "subHeadline": "IDC",
           "dateExpires": "2024-08-08",
           "footerInfoText": "April 2023",
           "description": "<p>IDC examines survey results of Communications Services Providers for execution of Digital Transformation Goals. A key finding revealed that 81% of communication service providers identified cloud providers as the partners best suited to help with their digital transformation plans, up from 78% in 2021.</p>\n",
@@ -4366,7 +4356,6 @@
         "additionalFields": {
           "datePublished": "2023-04-28",
           "footerInfoSubtext": "Published",
-          "subHeadline": "Omdia",
           "dateExpires": "2025-04-23",
           "footerInfoText": "April 2023",
           "description": "<p>In the report, you&rsquo;ll learn how Amazon SageMaker Canvas helps elevate automatic ML development with a visual interface that allows business analysts to generate accurate ML predictions on their own&mdash;without requiring any ML experience or having to write a single line of code.</p>\r\n",
@@ -4525,7 +4514,6 @@
         "additionalFields": {
           "datePublished": "2023-04-18",
           "footerInfoSubtext": "Published",
-          "subHeadline": "Aite-Novarica",
           "dateExpires": "2025-04-18",
           "footerInfoText": "April 2023",
           "description": "<p>For the last 10 years, the Aite-Novarica Impact Awards have recognized IT initiatives that have had a real, positive impact on insurers&rsquo; businesses. Aite-Novarica&#39;s Impact Awards are designed to recognize and celebrate innovation achieved by financial institutions and insurers globally, leveraging technology to surpass the status quo. Find details on business goals, project sponsors, team structure, project timeline, tools and technology, challenges faced, success factors, and business results delivered. We hope you find the information valuable.</p>\r\n",
@@ -4684,7 +4672,6 @@
         "additionalFields": {
           "datePublished": "2023-03-26",
           "footerInfoSubtext": "Published",
-          "subHeadline": "Forrester",
           "dateExpires": "2025-03-26",
           "footerInfoText": "March 2023",
           "description": "<p>Discover why Forrester recognized AWS as a Leader and learn how you can transform your customer experience with Amazon Connect.</p>\r\n",
@@ -4764,7 +4751,6 @@
         "additionalFields": {
           "datePublished": "2023-03-24",
           "footerInfoSubtext": "Published",
-          "subHeadline": "Canalys",
           "dateExpires": "2025-11-27",
           "footerInfoText": "March 2023",
           "description": "<p>Amazon Web Services (AWS) Partners with a breadth of offerings can achieve a $6.40 multiplier per $1 AWS sold. Learn about the Partner multiplier opportunities at a country level.</p>\r\n",
@@ -4924,7 +4910,6 @@
           "datePublished": "2023-02-16",
           "footerInfoSubtext": "Published",
           "dateExpires": "2025-02-16",
-          "subHeadline": "Omdia",
           "footerInfoText": "February 2023",
           "description": "<p>Industry analyst firm Omdia, takes an in-depth look on an industry facing substantial challenges from regulatory constraints, rising customer data volumes, intense pricing competition, and challenges of generating sustainable returns from an increasingly complex technology estate.</p>\n",
           "headlineUrl": "https://pages.awscloud.com/GLOBAL-brand-awareness-content-download-omdia-ardm-the-future-of-telcos-and-the-cloud-report-learn.html?trk=d7f723fb-5946-46b0-b30a-964fe8696d0b&sc_channel=el",
@@ -5012,7 +4997,6 @@
         "additionalFields": {
           "datePublished": "2023-01-18",
           "footerInfoSubtext": "Published",
-          "subHeadline": "IDC",
           "dateExpires": "2025-02-06",
           "footerInfoText": "January 2023",
           "description": "<p>Learn how AWS Modernization Accelerator (ModAx) offers prescriptive guidance and hands on support through a structured Modernization Accelerator program.</p>\r\n",
@@ -5110,7 +5094,6 @@
         "additionalFields": {
           "datePublished": "2022-11-18",
           "footerInfoSubtext": "Published",
-          "subHeadline": "451 Research ",
           "dateExpires": "2024-11-18",
           "footerInfoText": "November 2022",
           "description": "<p style=\"margin-left:0in; margin-right:0in\">In following report, 451 Research&rsquo;s Brian Partridge dives deeper into how NTT Docomo/NEC were able to unlock a power consumption savings of ~72% by utilizing AWS&rsquo;s in house Silicon processor, Graviton 2, lifting and shifting NEC&rsquo;s 5G Core software on to AWS Infrastructure.</p>\r\n",
@@ -5199,7 +5182,6 @@
         "additionalFields": {
           "datePublished": "2022-09-22",
           "footerInfoSubtext": "Published",
-          "subHeadline": "Forrester",
           "dateExpires": "2024-09-22",
           "footerInfoText": "September 2022",
           "description": "<p>In this report, Forrester outlines the major developments&mdash;both external and internal&mdash;that will transform manufacturing in the coming years and decades.</p>\r\n",
@@ -5288,7 +5270,6 @@
         "additionalFields": {
           "datePublished": "2022-03-16",
           "footerInfoSubtext": "Published",
-          "subHeadline": "Celent",
           "dateExpires": "2025-03-16",
           "footerInfoText": "March 2022",
           "description": "<p>FWD Group was awarded the Celent Model Insurer award in 2022 for the Data, Analytics, and AI category, for its ability to orchestrate an overarching data strategy with the FWD Smart Insurance Framework providing data-centric guidance for developing analytics and AI/ML initiatives. Learn how to create a simpler, faster and smoother customer journey in insurance by developing a data strategy framework and placing data management at the core.</p>\r\n",
