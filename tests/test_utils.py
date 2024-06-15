@@ -27,8 +27,6 @@ def download_side_effect(
         urls: list[str],
         table_prefix: str,
         print_indent: int = 0,
-        fixtures_use: bool = False,
-        fixtures_create: bool = False,
     ) -> str:
         if validate_expected_urls and urls != expected_urls:
             raise Exception("Update side effect")
@@ -44,14 +42,10 @@ def download_side_effect(
     download.side_effect = download_side_effect
 
 
-def assert_query_result(database: str, query: str, fixtures_create: bool = False):
+def assert_query_result(database: str, query: str):
     result = safe_filename(database, query)
 
     have = json.dumps(sqlite_utils.Database(database).execute_returning_dicts(query))
-
-    if fixtures_create:
-        with open(result, "w") as file:
-            json.dump(json.loads(have), file, indent=2)
 
     with open(result) as file:
         want = json.dumps(json.load(file))

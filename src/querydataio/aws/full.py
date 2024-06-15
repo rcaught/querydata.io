@@ -14,13 +14,9 @@ class FullRun:
         self,
         ddb_connect: dict[str, Any],
         databases_modules: dict[str, list[dict[ModuleType, Sequence[str | int]]]],
-        fixtures_use: bool = False,
-        fixtures_create: bool = False,
     ) -> None:
         self.ddb_connect = ddb_connect
         self.databases_modules = databases_modules
-        self.fixtures_use = fixtures_use
-        self.fixtures_create = fixtures_create
 
     def prepare(self) -> Result[None, str]:
         try:
@@ -78,13 +74,9 @@ class FullRun:
                                 main_module,
                                 partitions,
                                 6,
-                                self.fixtures_use,
-                                self.fixtures_create,
                             ),
                             main_table,
                             6,
-                            self.fixtures_use,
-                            self.fixtures_create,
                         )
 
                         main_module.process(

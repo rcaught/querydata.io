@@ -175,8 +175,6 @@ def download(
     urls: Sequence[str],
     main_table: str,
     print_indent: int = 0,
-    fixtures_use: bool = False,
-    fixtures_create: bool = False,
 ) -> str:
     print()
     print(f"{print_indent * ' '}Downloading")
@@ -185,28 +183,6 @@ def download(
     print(f"{print_indent * ' '}- {len(urls)} files... ", end="")
 
     temp = "TEMP" if os.getenv("CI") else ""
-
-    if fixtures_create:
-        for url in urls:
-            create_fixture(main_table, url)
-
-    if fixtures_use:
-        urls_filenames = [{"url": url, "filename": safe_filename(main_table, url)} for url in urls]
-
-        missing = [
-            urls_filename
-            for urls_filename in urls_filenames
-            if not os.path.exists(urls_filename["filename"])
-        ]
-
-        if len(missing) > 0:
-            for file in missing:
-                print(f"Missing fixture, creating: {file["filename"]}")
-                create_fixture(main_table, file["url"])
-
-            raise Exception("Missing fixtures")
-        else:
-            urls = [urls_filename["filename"] for urls_filename in urls_filenames]
 
     ddb_con.execute(
         f"""--sql
@@ -229,8 +205,6 @@ def getTotalHits(
     main_module: ModuleType,
     partitions: Sequence[str | int],
     print_indent: int = 0,
-    fixtures_use: bool = False,
-    fixtures_create: bool = False,
 ) -> dict[str, int]:
     urls: list[str] = []
 
@@ -246,8 +220,6 @@ def getTotalHits(
         urls,
         f"{main_module.MAIN_TABLE_NAME}_total_hits",
         print_indent,
-        fixtures_use,
-        fixtures_create,
     )
 
     result = ddb_con.sql(
@@ -267,8 +239,6 @@ def generate_urls(
     main_module: ModuleType,
     partitions: Sequence[str | int],
     print_indent: int = 4,
-    fixtures_use: bool = False,
-    fixtures_create: bool = False,
 ):
     # The maximum records size is 2000, but you can never paginate past 9999
     # total results (no matter the size set). If we look at factors of 9999
@@ -278,9 +248,7 @@ def generate_urls(
     # 9999 records and that their union covers all records. This can be
     # verified by comparing our total with an unpartitioned totalHits request.
 
-    partition_sizes = getTotalHits(
-        ddb_con, main_module, partitions, print_indent, fixtures_use, fixtures_create
-    )
+    partition_sizes = getTotalHits(ddb_con, main_module, partitions, print_indent)
 
     urls: list[str] = []
     for partition, size in partition_sizes.items():
