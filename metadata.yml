@@ -69,7 +69,8 @@ databases:
             FROM
               whats_new
             ORDER BY
-              postDateTime DESC
+              postDateTime DESC,
+              headline DESC
           ) SELECT * FROM ranked WHERE batch <= CAST(:numberOfBatches AS int);
       whats_new_simple_feed:
         title: What's new - Simple feed (like https://aws.amazon.com/new/)
@@ -90,7 +91,8 @@ databases:
           FROM
             whats_new
           ORDER BY
-            postDateTime DESC
+            postDateTime DESC,
+            headline DESC
           LIMIT 15;
       whats_new_updates_over_time:
         title: What's new - updates over time (with graph)
@@ -144,7 +146,8 @@ databases:
           FROM
             whats_new
           ORDER BY
-            postDateTime DESC
+            postDateTime DESC,
+            headline DESC
           LIMIT
             25;
       whats_new_ipv6_updates_over_time:
@@ -228,7 +231,8 @@ databases:
           WHERE
             tags.id = 'whats-new-v2#marketing-marchitecture#databases'
           ORDER BY
-            postDateTime DESC
+            postDateTime DESC,
+            headline DESC
           LIMIT 15;
       whats_new_tags_last_update_per_product:
         title: What's new - last update per product
@@ -246,6 +250,8 @@ databases:
                 tags
               WHERE
                 tagNamespaceId = 'whats-new-v2#general-products'
+              ORDER BY
+                id ASC
             ) AS tags
           JOIN whats_new_tags wnt ON
             wnt.tag_hash = tags.hash
