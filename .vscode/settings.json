@@ -1,0 +1,7 @@
+{
+  "python.analysis.typeCheckingMode": "basic",
+  "editor.defaultFormatter": "charliermarsh.ruff",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
+}

@@ -4,6 +4,7 @@
 /tests/dbs/*.db
 .DS_Store
 plugins/datasette-updated/metadata.json
+*.wal
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
