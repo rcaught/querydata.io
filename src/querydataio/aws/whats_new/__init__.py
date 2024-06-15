@@ -9,16 +9,16 @@ from sqlite_utils.db import Table
 from querydataio import shared
 from querydataio.aws import shared as aws_shared
 
-DIRECTORY_ID = "whats-new"
+DIRECTORY_ID = "whats-new-v2"
 URL_PREFIX = (
     "https://aws.amazon.com/api/dirs/items/search?"
     f"item.locale=en_US&item.directoryId={DIRECTORY_ID}"
     "&sort_by=item.additionalFields.postDateTime"
 )
-# https://aws.amazon.com/api/dirs/items/search?item.directoryId=whats-new&sort_by=item.additionalFields.postDateTime&sort_order=asc&size=1&item.locale=en_US&page=0&tags.id=whats-new%23year%232004|whats-new%23year%232005|whats-new%23year%232006|whats-new%23year%232007|whats-new%23year%232008|whats-new%23year%232009|whats-new%23year%232010|whats-new%23year%232011|whats-new%23year%232012|whats-new%23year%232013|whats-new%23year%232014|whats-new%23year%232015|whats-new%23year%232016|whats-new%23year%232017|whats-new%23year%232018|whats-new%23year%232019|whats-new%23year%232020|whats-new%23year%232021|whats-new%23year%232022|whats-new%23year%232023
-# https://aws.amazon.com/api/dirs/items/search?item.directoryId=whats-new&sort_by=item.additionalFields.postDateTime&sort_order=asc&size=1&item.locale=en_US&page=0
+# https://aws.amazon.com/api/dirs/items/search?item.directoryId=whats-new-v2&sort_by=item.additionalFields.postDateTime&sort_order=asc&size=1&item.locale=en_US&page=0&tags.id=whats-new-v2%23year%232004|whats-new-v2%23year%232005|whats-new-v2%23year%232006|whats-new-v2%23year%232007|whats-new-v2%23year%232008|whats-new-v2%23year%232009|whats-new-v2%23year%232010|whats-new-v2%23year%232011|whats-new-v2%23year%232012|whats-new-v2%23year%232013|whats-new-v2%23year%232014|whats-new-v2%23year%232015|whats-new-v2%23year%232016|whats-new-v2%23year%232017|whats-new-v2%23year%232018|whats-new-v2%23year%232019|whats-new-v2%23year%232020|whats-new-v2%23year%232021|whats-new-v2%23year%232022|whats-new-v2%23year%232023
+# https://aws.amazon.com/api/dirs/items/search?item.directoryId=whats-new-v2&sort_by=item.additionalFields.postDateTime&sort_order=asc&size=1&item.locale=en_US&page=0
 # There is one post somewhere without a year tag
-TAG_ID_PREFIX = "whats-new%23year%23"
+TAG_ID_PREFIX = "whats-new-v2%23year%23"
 FIRST_YEAR = 2004
 MAIN_TABLE_NAME = "whats_new"
 MAIN_TAGS_TABLE_NAME = "whats_new_tags"

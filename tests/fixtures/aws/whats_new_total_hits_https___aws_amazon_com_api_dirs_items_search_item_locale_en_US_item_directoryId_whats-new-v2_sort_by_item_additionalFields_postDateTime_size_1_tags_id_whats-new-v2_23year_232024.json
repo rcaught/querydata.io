@@ -1,0 +1,82 @@
+{
+  "items": [
+    {
+      "item": {
+        "id": "whats-new-v2#p133571231",
+        "locale": "en_US",
+        "directoryId": "whats-new-v2",
+        "name": "m8m8MeQW1RCPExjog4rDpf",
+        "author": "morrette",
+        "createdBy": "morrette",
+        "lastUpdatedBy": "morrette",
+        "dateCreated": "2024-06-11T20:26:44+0000",
+        "dateUpdated": "2024-06-14T19:12:59+0000",
+        "additionalFields": {
+          "regionalAvailability": "<p>These features are available in <a href=\"https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4\" target=\"_blank\">all the AWS commercial regions</a> where Amazon DataZone is currently available.<br />\n<br />\nFor more information about Amazon DataZone and to get started, refer to the <a href=\"https://aws.amazon.com/datazone/\" target=\"_blank\">product page</a> and <a href=\"https://docs.aws.amazon.com/datazone/latest/userguide/\" target=\"_blank\">documentation</a>.</p>\n",
+          "nofollow": "0",
+          "noindex": "0",
+          "postBody": "<p><a href=\"https://aws.amazon.com/datazone/\" target=\"_blank\">Amazon DataZone</a> is a fully managed data management service to catalog, discover, analyze, share, and govern data between data producers and consumers in a customer&rsquo;s organization. Amazon DataZone introduces advanced search filtering capabilities in its business data catalog. This include improved rendering of glossary term facets, the ability to switch between &#39;AND&#39; and &#39;OR&#39; logic for filtering, and clear summaries of selected filters, making data discovery more efficient and intuitive.<br />\n<br />\nData consumers can navigate and select from hundreds of glossary terms in an expandable, collapsible hierarchy and perform more precise searches using logic filters to help find data quickly. For example, a financial analyst preparing a report on investment performance can navigate and select relevant glossary terms from a hierarchical list, apply &#39;OR&#39; logic to broaden the search or &#39;AND&#39; logic to combine criteria such as investment type and industry for precise data, and review clear summaries of selected filters to efficiently adjust search results.</p>\n",
+          "nosnippet": "0",
+          "headlineUrl": "/about-aws/whats-new/2024/06/amazon-datazone-advanced-search-filtering-capabilities",
+          "postDateTime": "2024-06-14T16:00:00-04:00",
+          "contentType": "launch announcement",
+          "headline": "Amazon DataZone introduces advanced search filtering capabilities"
+        }
+      },
+      "tags": [
+        {
+          "id": "whats-new-v2#year#2024",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new-v2#year",
+          "name": "2024",
+          "description": "year#2024",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2024-01-02T21:28:59+0000",
+          "dateUpdated": "2024-01-02T21:28:59+0000"
+        },
+        {
+          "id": "whats-new-v2#marketing-marchitecture#analytics",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new-v2#marketing-marchitecture",
+          "name": "analytics",
+          "description": "marketing:marchitecture/analytics",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2023-11-07T22:36:01+0000",
+          "dateUpdated": "2023-11-07T22:36:01+0000"
+        },
+        {
+          "id": "whats-new-v2#general-products#amazon-datazone",
+          "locale": "en_US",
+          "tagNamespaceId": "whats-new-v2#general-products",
+          "name": "amazon-datazone",
+          "description": "general:products/amazon-datazone",
+          "createdBy": "aws",
+          "lastUpdatedBy": "aws",
+          "dateCreated": "2023-11-09T15:06:16+0000",
+          "dateUpdated": "2023-11-09T15:06:16+0000"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "count": 1,
+    "totalHits": 921
+  },
+  "fieldTypes": {
+    "regionalAvailability": "LongText",
+    "nofollow": "Boolean",
+    "noindex": "Boolean",
+    "headlineUrl": "Text",
+    "postDateTime": "DateTime",
+    "postSummary": "LongText",
+    "videoImageUrl": "URL",
+    "postBody": "LongText",
+    "nosnippet": "Boolean",
+    "Video": "URL",
+    "modifiedDate": "DateTime",
+    "headline": "Text",
+    "contentType": "Text"
+  }
+}

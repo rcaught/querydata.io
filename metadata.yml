@@ -206,14 +206,14 @@ databases:
           JOIN whats_new wn ON
             wn.hash = wnt.whats_new_hash
           WHERE
-            tags.id = 'whats-new#general-products#aws-fargate'
+            tags.id = 'whats-new-v2#general-products#aws-fargate'
           ORDER BY
             postDateTime DESC
           LIMIT 15;
       whats_new_tags_category_updates:
         title: What's new - updates by category tag (eg. databases)
         description_html: |-
-          Check out <a href="/aws_whats_new/tags_namespaces_names">this query</a> for all available <code>whats-new#marketing-marchitecture</code> names.
+          Check out <a href="/aws_whats_new/tags_namespaces_names">this query</a> for all available <code>whats-new-v2#marketing-marchitecture</code> names.
         sql: |-
           SELECT
             wn.headline,
@@ -226,7 +226,7 @@ databases:
           JOIN whats_new wn ON
             wn.hash = wnt.whats_new_hash
           WHERE
-            tags.id = 'whats-new#marketing-marchitecture#databases'
+            tags.id = 'whats-new-v2#marketing-marchitecture#databases'
           ORDER BY
             postDateTime DESC
           LIMIT 15;
@@ -245,7 +245,7 @@ databases:
               FROM
                 tags
               WHERE
-                tagNamespaceId = 'whats-new#general-products'
+                tagNamespaceId = 'whats-new-v2#general-products'
             ) AS tags
           JOIN whats_new_tags wnt ON
             wnt.tag_hash = tags.hash
@@ -276,7 +276,7 @@ databases:
           GROUP BY
             tags.name
           HAVING
-            tags.tagNamespaceId = 'whats-new#general-products'
+            tags.tagNamespaceId = 'whats-new-v2#general-products'
           ORDER BY
             count DESC;
       whats_new_find_updates_from_when_i_was_away:
@@ -348,7 +348,7 @@ databases:
       tags_all_general_products:
         title: Tags - all general products, tag ids and names
         sql: |-
-          SELECT id, name FROM tags WHERE tagNamespaceId = 'whats-new#general-products' ORDER BY id;
+          SELECT id, name FROM tags WHERE tagNamespaceId = 'whats-new-v2#general-products' ORDER BY id;
         description_html: |-
           <a href="/aws_whats_new/tags_namespaces_names">Tags - unique tag namespaces and available names</a> truncates this larger set, so providing dedicated query.
   aws_blog_posts:
