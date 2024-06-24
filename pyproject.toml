@@ -8,7 +8,7 @@ packages = [{ include = "querydataio", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.12.4"
-datasette = "^0.64.7"
+datasette = "^0.64.8"
 datasette-atom = "^0.9"
 datasette-vega = "^0.6.2"
 datasette-updated = "^0.2"
