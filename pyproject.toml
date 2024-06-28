@@ -23,7 +23,7 @@ pytest = "^8.2.2"
 pytest-mock = "^3.14.0"
 pytest-cov = "^5.0.0"
 result = "^0.17.0"
-ruff = "^0.4.10"
+ruff = "^0.5.0"
 rustedpy-maybe = "^0.0.0"
 tenacity = "^8.4.2"
 
